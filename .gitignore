@@ -19,3 +19,10 @@ data/raw/*
 !data/raw/.gitkeep
 tmp/
 output/
+
+# Website build and local Cloudflare state
+website/node_modules/
+website/dist/
+website/.next/
+website/.vinext/
+website/.wrangler/

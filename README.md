@@ -48,11 +48,15 @@ sql/               Analytical schema and saved queries
 src/               Extraction, validation, analysis and reporting code
 tests/             Selected automated checks
 tools/             PDF generation code
+website/           Public Cloudflare Workers website and editing guide
 ```
 
 The [code map](docs/CODE_MAP.md) connects each research step to its main
 implementation files and explains the historical review-status labels retained
 in the workflow code.
+
+The [website guide](website/README.md) gives simple Visual Studio Code,
+Terminal, testing and Cloudflare deployment instructions.
 
 ## Reproduce the workflow
 
