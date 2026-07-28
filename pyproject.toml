@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-business-intelligence-lab"
+version = "0.1.0"
+description = "Reproducible evidence workflow for UK business AI adoption research"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "reportlab>=4.0,<5",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
