@@ -6,6 +6,12 @@ using, integrating and governing artificial intelligence.
 ## Public outputs
 
 - [Live evidence website](https://ai-business-intelligence-lab.moricz-labs.workers.dev/)
+- [Report 1 — AI Use by Business Size](publications/SME_Report_01_AI_Use_by_Business_Size.pdf)
+- [Report 2 — AI Adoption and System Integration](publications/SME_Report_02_AI_Adoption_and_System_Integration_by_Size.pdf)
+- [Report 3 — AI Governance by Business Size](publications/SME_Report_03_AI_Governance_by_Business_Size.pdf)
+- [Report 4 — How UK Businesses Use AI](publications/SME_Report_04_How_UK_Businesses_Use_AI.pdf)
+- [Report 5 — Operational AI Adoption Pathways](publications/SME_Report_05_Operational_AI_Adoption_Pathways.pdf)
+- [Cross-report synthesis — AI Adoption and Operationalisation](publications/SME_Cross_Report_Synthesis_AI_Adoption_and_Operationalisation.pdf)
 - [Plain-language Data and Methods Guide](publications/AI_Business_Intelligence_Lab_Data_and_Methods_Guide.pdf)
 - [Technical Reproducibility Appendix](publications/AI_Business_Intelligence_Lab_Technical_Reproducibility_Appendix.pdf)
 - [Code map](docs/CODE_MAP.md)
@@ -26,6 +32,11 @@ Innovation and Technology's UK Business Data Survey 2026. They cover:
 The primary analytical scope is micro, small and medium businesses. Large
 businesses are shown only as a separately labelled reference benchmark.
 
+The cross-report synthesis brings the five reports together without combining
+incompatible percentages. Its main evidence-led interpretation is that reported
+AI reach and operational depth are different questions: wider reported use does
+not mean that tools are integrated, governed or developed in the same way.
+
 ## Evidence rules
 
 - Every estimate keeps its published denominator.
@@ -42,7 +53,7 @@ businesses are shown only as a separately labelled reference benchmark.
 ```text
 data/public/       Publication-ready result extracts
 docs/              Methods, source register and website completion plan
-publications/      Public PDF methods documents
+publications/      Five research reports, synthesis and methods documents
 scripts/           Source acquisition helper
 sql/               Analytical schema and saved queries
 src/               Extraction, validation, analysis and reporting code
@@ -78,9 +89,9 @@ derived result extracts used in the reports are available in `data/public/`.
 
 ## Status
 
-This repository is the public evidence and reproducibility layer. The live
-website remains the reader-facing product and will receive a final content,
-navigation, accessibility and presentation pass.
+This repository is the public evidence and reproducibility layer. The five
+reports and cross-report synthesis are owner-reviewed publication editions.
+The website remains the main reader-facing product.
 
 ## Licensing
 
