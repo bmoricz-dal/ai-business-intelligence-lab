@@ -15,6 +15,15 @@ This repository preserves the implementation behind the first five reports.
 | Build charts and evidence briefs | `src/analysis/` |
 | Build Reports 1–5 | `src/reporting/` |
 | Generate the public methods PDFs | `tools/generate_public_method_pdfs.py` |
+| Publication-ready reports and synthesis | `publications/SME_Report_*.pdf`, `publications/SME_Cross_Report_*.pdf` |
+
+## Publication suite
+
+The repository includes the five final research reports and a separate
+cross-report synthesis. The synthesis does not calculate a maturity score or
+combine estimates with different denominators. It connects the reports through
+bounded descriptive interpretations while the individual PDFs retain the exact
+estimates, supplied confidence intervals, respondent bases and limitations.
 
 ## Tests included
 
@@ -52,4 +61,3 @@ The repository does not include:
 - local SQLite databases or temporary processing files;
 - private development logs and internal working notes; or
 - website deployment credentials and platform configuration.
-
