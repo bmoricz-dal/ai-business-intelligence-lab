@@ -38,7 +38,7 @@ test("serves every top-level research section as a separate page", async () => {
   }
 });
 
-test("uses direct, accessible navigation on every page", async () => {
+test("keeps headings linked to pages and restores accessible dropdown toggles", async () => {
   for (const [path] of routes) {
     const html = await (await render(path)).text();
     assert.match(html, /aria-label="Main navigation"/);
@@ -48,8 +48,29 @@ test("uses direct, accessible navigation on every page", async () => {
     assert.match(html, /href="\/sectors"/);
     assert.match(html, /href="\/adoption-pathways"/);
     assert.match(html, /href="\/methods"/);
-    assert.doesNotMatch(html, /navDropdownPanel|aria-expanded=/);
+    assert.match(html, /aria-label="Toggle About submenu"/);
+    assert.match(html, /aria-label="Toggle AI in business submenu"/);
+    assert.match(html, /aria-label="Toggle Sectors submenu"/);
+    assert.match(html, /aria-label="Toggle Adoption pathways submenu"/);
+    assert.match(html, /aria-expanded="false"/);
   }
+});
+
+test("dropdowns support hover, click, focus departure and Escape", async () => {
+  const component = await readFile(new URL("../app/dropdown-nav.tsx", import.meta.url), "utf8");
+  const shell = await readFile(new URL("../app/site-shell.tsx", import.meta.url), "utf8");
+  assert.match(component, /className="navMenuLink"/);
+  assert.match(component, /href=\{href\}/);
+  assert.match(component, /onMouseEnter=\{\(\) => setOpen\(true\)\}/);
+  assert.match(component, /onMouseLeave=\{\(\) => setOpen\(false\)\}/);
+  assert.match(component, /onClick=\{\(\) => setOpen\(\(current\) => !current\)\}/);
+  assert.match(component, /event\.key === "Escape"/);
+  assert.match(component, /event\.currentTarget\.contains\(event\.relatedTarget\)/);
+  assert.match(component, /className="navDropdownPanel"/);
+  assert.match(shell, /\/about#background/);
+  assert.match(shell, /\/ai-in-business#reports/);
+  assert.match(shell, /\/sectors\/accounting/);
+  assert.match(shell, /\/adoption-pathways#governance/);
 });
 
 test("makes Overview the project homepage", async () => {
@@ -125,6 +146,8 @@ test("uses the shared DAL multi-page publication theme and generated share card"
   assert.match(css, /--sky: #dff3ff/);
   assert.match(css, /\.pageSiteHeader/);
   assert.match(css, /\.pageNavigation/);
+  assert.match(css, /\.navMenuLink/);
+  assert.match(css, /\.navMenuToggle/);
   assert.match(css, /\.pageHero/);
   assert.match(css, /\.pathwayPageTable/);
   assert.match(layout, /\/og\.png/);

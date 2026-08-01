@@ -32,7 +32,7 @@ export default function SectorsPage() {
           </div>
         </section>
 
-        <section className="pageSection accountingSectorFeature">
+        <section className="pageSection accountingSectorFeature" id="accounting">
           <div>
             <p className="kicker light">Published sector report · 01</p>
             <h2>UK Accounting SMEs: AI Adoption and Operational Readiness, 2026</h2>
@@ -57,8 +57,8 @@ export default function SectorsPage() {
         <section className="pageSection upcomingSectors">
           <div className="sectionLead"><p className="kicker">Future sector programme</p><h2>Planned only where evidence is strong enough.</h2></div>
           <div className="sectorCardGrid">
-            <article><span>In development</span><h3>Technology SMEs</h3><p>Adoption depth, product development, technical capability, internal build pathways and governance.</p><small>Publication depends on sector-specific source coverage and comparability review.</small></article>
-            <article><span>Research candidate</span><h3>Financial services SMEs</h3><p>AI use in regulated workflows, customer service, risk, compliance, data controls and human oversight.</p><small>Scope will distinguish regulated firms from in-house finance functions.</small></article>
+            <article id="technology"><span>In development</span><h3>Technology SMEs</h3><p>Adoption depth, product development, technical capability, internal build pathways and governance.</p><small>Publication depends on sector-specific source coverage and comparability review.</small></article>
+            <article id="financial-services"><span>Research candidate</span><h3>Financial services SMEs</h3><p>AI use in regulated workflows, customer service, risk, compliance, data controls and human oversight.</p><small>Scope will distinguish regulated firms from in-house finance functions.</small></article>
             <article><span>Evidence-led expansion</span><h3>Additional sectors</h3><p>New sectors will be prioritised by SME relevance, open-data quality and the practical value of a dedicated study.</p><small>No sector will be published from a broad proxy alone.</small></article>
           </div>
         </section>

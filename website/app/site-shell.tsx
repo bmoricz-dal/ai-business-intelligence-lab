@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NavDropdown } from "./dropdown-nav";
 
 type NavigationLabel =
   | "Overview"
@@ -7,15 +8,6 @@ type NavigationLabel =
   | "Sectors"
   | "Adoption pathways"
   | "Methods";
-
-const navigation: Array<{ href: string; label: NavigationLabel }> = [
-  { href: "/", label: "Overview" },
-  { href: "/about", label: "About" },
-  { href: "/ai-in-business", label: "AI in business" },
-  { href: "/sectors", label: "Sectors" },
-  { href: "/adoption-pathways", label: "Adoption pathways" },
-  { href: "/methods", label: "Methods" },
-];
 
 export const PUBLIC_REPOSITORY =
   "https://github.com/bmoricz-dal/ai-business-intelligence-lab";
@@ -32,15 +24,51 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
         </span>
       </Link>
       <nav className="pageNavigation" aria-label="Main navigation">
-        {navigation.map((item) => (
-          <Link
-            aria-current={item.label === active ? "page" : undefined}
-            href={item.href}
-            key={item.href}
-          >
-            {item.label}
-          </Link>
-        ))}
+        <Link aria-current={active === "Overview" ? "page" : undefined} href="/">Overview</Link>
+        <NavDropdown
+          active={active === "About"}
+          href="/about"
+          label="About"
+          items={[
+            { href: "/about#background", label: "Background" },
+            { href: "/about#purpose", label: "Purpose" },
+            { href: "/about#values", label: "Values" },
+            { href: "/about#contact", label: "Contact" },
+          ]}
+        />
+        <NavDropdown
+          active={active === "AI in business"}
+          href="/ai-in-business"
+          label="AI in business"
+          items={[
+            { href: "/ai-in-business#snapshot", label: "Evidence snapshot" },
+            { href: "/ai-in-business#reports", label: "Five reports" },
+            { href: "/ai-in-business#synthesis", label: "Cross-report synthesis" },
+          ]}
+        />
+        <NavDropdown
+          active={active === "Sectors"}
+          href="/sectors"
+          label="Sectors"
+          items={[
+            { href: "/sectors#technology", label: "Technology" },
+            { href: "/sectors/accounting", label: "Accounting" },
+            { href: "/sectors#financial-services", label: "Financial services" },
+          ]}
+        />
+        <NavDropdown
+          active={active === "Adoption pathways"}
+          href="/adoption-pathways"
+          label="Adoption pathways"
+          items={[
+            { href: "/adoption-pathways#use", label: "Use cases" },
+            { href: "/adoption-pathways#integration", label: "System integration" },
+            { href: "/adoption-pathways#automation", label: "Automated decisions" },
+            { href: "/adoption-pathways#build", label: "Build and training" },
+            { href: "/adoption-pathways#governance", label: "Governance" },
+          ]}
+        />
+        <Link aria-current={active === "Methods" ? "page" : undefined} href="/methods">Methods</Link>
         <a className="navRepository" href={PUBLIC_REPOSITORY} rel="noreferrer" target="_blank">
           GitHub
         </a>

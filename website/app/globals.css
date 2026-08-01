@@ -424,7 +424,7 @@ a {
 }
 
 .siteHeader nav > a,
-.navMenu button {
+.navMenuLink {
   position: relative;
   color: rgba(255, 255, 255, 0.84);
   font-size: 0.86rem;
@@ -434,7 +434,7 @@ a {
 }
 
 .siteHeader nav > a::before,
-.navMenu button::before {
+.navMenuLink::before {
   content: "";
   position: absolute;
   right: 50%;
@@ -447,40 +447,61 @@ a {
 
 .siteHeader nav > a:hover,
 .siteHeader nav > a:focus-visible,
-.navMenu button:hover,
-.navMenu button:focus-visible {
+.navMenuLink:hover,
+.navMenuLink:focus-visible {
   color: var(--white);
 }
 
 .siteHeader nav > a:hover::before,
 .siteHeader nav > a:focus-visible::before,
-.navMenu button:hover::before,
-.navMenu button:focus-visible::before,
-.navMenu.open button::before {
+.navMenuLink:hover::before,
+.navMenuLink:focus-visible::before,
+.navMenu.open .navMenuLink::before {
   right: 0;
   left: 0;
 }
 
 .navMenu {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
 }
 
-.navMenu button {
+.navMenuLink {
+  white-space: nowrap;
+}
+
+.navMenuToggle {
+  display: grid;
+  width: 1.05rem;
+  height: 1.2rem;
   padding: 0;
+  place-items: center;
   border: 0;
   background: transparent;
+  color: var(--sky-strong);
   cursor: pointer;
 }
 
-.navMenu button::after {
-  content: "⌄";
-  display: inline-block;
-  margin-left: 0.3rem;
-  color: var(--sky-strong);
+.navMenuToggle span {
+  display: block;
+  line-height: 1;
   transition: transform 160ms ease;
 }
 
-.navMenu.open button::after {
+.navMenuToggle:hover,
+.navMenuToggle:focus-visible {
+  color: var(--white);
+}
+
+.navMenuToggle:focus-visible {
+  outline: 2px solid var(--sky-strong);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.navMenu.open .navMenuToggle span {
   transform: rotate(180deg);
 }
 
@@ -2898,7 +2919,7 @@ footer nav a:focus-visible {
   }
 
   .siteHeader nav > a,
-  .navMenu button {
+  .navMenuLink {
     font-size: 0.72rem;
   }
 
@@ -3284,11 +3305,13 @@ footer nav a:focus-visible {
   min-height: 78px;
 }
 
-.pageNavigation a[aria-current="page"] {
+.pageNavigation a[aria-current="page"],
+.pageNavigation .navMenuLink[aria-current="page"] {
   color: var(--white);
 }
 
-.pageNavigation a[aria-current="page"]::before {
+.pageNavigation a[aria-current="page"]::before,
+.pageNavigation .navMenuLink[aria-current="page"]::before {
   right: 0;
   left: 0;
 }
@@ -3721,7 +3744,8 @@ footer nav a:focus-visible {
 @media (max-width: 1100px) {
   .pageSiteHeader { align-items: flex-start; flex-direction: column; padding-top: 0.9rem; padding-bottom: 0.9rem; }
   .pageNavigation { width: 100%; overflow-x: auto; padding-bottom: 0.3rem; }
-  .pageNavigation a { white-space: nowrap; }
+  .pageNavigation > a,
+  .pageNavigation .navMenuLink { white-space: nowrap; }
   .reportPageGrid article,
   .valueCards article,
   .valueCards article:nth-child(4),
