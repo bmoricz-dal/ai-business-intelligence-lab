@@ -19,7 +19,7 @@ export default function AboutPage() {
           introduction="The project combines economic reasoning, transparent data work and accessible communication to help SMEs understand what AI adoption evidence really says."
         />
 
-        <section className="pageSection profileSection">
+        <section className="pageSection profileSection" id="background">
           <div className="profileMark" aria-hidden="true"><span>BM</span><small>DAL</small></div>
           <div>
             <p className="kicker">Research profile</p>
@@ -42,7 +42,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="pageSection aboutPurpose">
+        <section className="pageSection aboutPurpose" id="purpose">
           <div className="sectionLead">
             <p className="kicker">Why the lab exists</p>
             <h2>Evidence should support decisions, not distance people from them.</h2>
@@ -61,7 +61,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="pageSection valuesSection">
+        <section className="pageSection valuesSection" id="values">
           <div className="sectionLead"><p className="kicker">Values</p><h2>How the work is judged.</h2></div>
           <div className="valueCards">
             <article><span>01</span><h3>Meaning before metrics</h3><p>A percentage is useful only when its population, definition and uncertainty remain attached.</p></article>
@@ -72,7 +72,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="pageSection contactSection">
+        <section className="pageSection contactSection" id="contact">
           <div><p className="kicker light">Contact</p><h2>Research, collaboration and enquiries.</h2><p>I welcome conversations about the research, its methods and future sector studies.</p></div>
           <div className="contactCards">
             <a href="mailto:benedict.moricz@gmail.com"><span>Email</span><strong>benedict.moricz@gmail.com</strong></a>

@@ -27,7 +27,7 @@ export default function AIInBusinessPage() {
           introduction="Five reports examine reported AI use, system integration, governance, use cases and operational pathways by UK business size. A synthesis connects them without mixing incompatible denominators."
         />
 
-        <section className="pageSection evidenceSnapshot">
+        <section className="pageSection evidenceSnapshot" id="snapshot">
           <div className="sectionLead">
             <p className="kicker">Evidence snapshot</p>
             <h2>Reported AI use rises with business size.</h2>
@@ -43,7 +43,7 @@ export default function AIInBusinessPage() {
           </div>
         </section>
 
-        <section className="pageSection reportLibrary">
+        <section className="pageSection reportLibrary" id="reports">
           <div className="sectionLead">
             <p className="kicker">Five-report series</p>
             <h2>Each report answers a different operational question.</h2>
@@ -62,7 +62,7 @@ export default function AIInBusinessPage() {
           </div>
         </section>
 
-        <section className="pageSection synthesisFeature">
+        <section className="pageSection synthesisFeature" id="synthesis">
           <div>
             <p className="kicker light">Cross-report synthesis</p>
             <h2>Reported use is broader than operational depth.</h2>

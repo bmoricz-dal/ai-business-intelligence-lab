@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 const pathways = [
-  { number: "01", title: "Use", summary: "Employees access ready-made or general-purpose AI for specific tasks.", signal: "The broadest and most visible entry point." },
-  { number: "02", title: "Integrate", summary: "AI tools connect with recurring workflows and business systems.", signal: "Reported by roughly 27%-32% of AI-using SMEs." },
-  { number: "03", title: "Automate", summary: "AI supports or executes repeatable decisions and process steps.", signal: "Automated decisions remain below 6% among AI-using SMEs." },
-  { number: "04", title: "Build", summary: "The business develops or trains AI using its own data and capability.", signal: "In-house development remains below 7% across SME groups." },
-  { number: "05", title: "Govern", summary: "Policies, approved use, human review and accountability shape operations.", signal: "Policy or guidance rises with business size but is not universal." },
+  { id: "use", number: "01", title: "Use", summary: "Employees access ready-made or general-purpose AI for specific tasks.", signal: "The broadest and most visible entry point." },
+  { id: "integration", number: "02", title: "Integrate", summary: "AI tools connect with recurring workflows and business systems.", signal: "Reported by roughly 27%-32% of AI-using SMEs." },
+  { id: "automation", number: "03", title: "Automate", summary: "AI supports or executes repeatable decisions and process steps.", signal: "Automated decisions remain below 6% among AI-using SMEs." },
+  { id: "build", number: "04", title: "Build", summary: "The business develops or trains AI using its own data and capability.", signal: "In-house development remains below 7% across SME groups." },
+  { id: "governance", number: "05", title: "Govern", summary: "Policies, approved use, human review and accountability shape operations.", signal: "Policy or guidance rises with business size but is not universal." },
 ];
 
 export default function AdoptionPathwaysPage() {
@@ -32,7 +32,7 @@ export default function AdoptionPathwaysPage() {
           <div className="sectionLead"><p className="kicker">Five pathways</p><h2>Different routes imply different operational demands.</h2></div>
           <div className="pathwayConceptGrid">
             {pathways.map((item) => (
-              <article key={item.number}>
+              <article id={item.id} key={item.number}>
                 <span>{item.number}</span><h3>{item.title}</h3><p>{item.summary}</p><strong>{item.signal}</strong>
               </article>
             ))}
