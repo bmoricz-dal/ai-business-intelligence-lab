@@ -5,7 +5,9 @@ using, integrating and governing artificial intelligence.
 
 ## Public outputs
 
-- [Live evidence website](https://ai-business-intelligence-lab.moricz-labs.workers.dev/)
+- [Live evidence website](https://dal-data-ai-lab.moricz-labs.workers.dev/)
+- [Accounting sector page](https://dal-data-ai-lab.moricz-labs.workers.dev/sectors/accounting)
+- [UK Accounting SMEs: AI Adoption and Operational Readiness, 2026](publications/UK_Accounting_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf)
 - [Report 1 — AI Use by Business Size](publications/SME_Report_01_AI_Use_by_Business_Size.pdf)
 - [Report 2 — AI Adoption and System Integration](publications/SME_Report_02_AI_Adoption_and_System_Integration_by_Size.pdf)
 - [Report 3 — AI Governance by Business Size](publications/SME_Report_03_AI_Governance_by_Business_Size.pdf)
@@ -37,6 +39,13 @@ incompatible percentages. Its main evidence-led interpretation is that reported
 AI reach and operational depth are different questions: wider reported use does
 not mean that tools are integrated, governed or developed in the same way.
 
+The first sector report combines those five dimensions for UK accounting SMEs.
+It uses secondary evidence only and keeps direct accounting surveys, official
+broad-sector context and the ONS SIC 69.20 population frame separate. It finds
+that AI is no longer niche, with current use concentrated in research, drafting,
+summarisation, client communication and document work; however, no official open
+source supports one exact accounting-SME adoption rate.
+
 ## Evidence rules
 
 - Every estimate keeps its published denominator.
@@ -52,8 +61,8 @@ not mean that tools are integrated, governed or developed in the same way.
 
 ```text
 data/public/       Publication-ready result extracts
-docs/              Methods, source register and website completion plan
-publications/      Five research reports, synthesis and methods documents
+docs/              Methods, source registers and sector research packages
+publications/      General reports, sector reports and methods documents
 scripts/           Source acquisition helper
 sql/               Analytical schema and saved queries
 src/               Extraction, validation, analysis and reporting code
@@ -78,8 +87,9 @@ python -m unittest discover -s tests -v
 python tools/generate_public_method_pdfs.py
 ```
 
-The source download script retrieves the two official ODS workbooks and checks
-their SHA-256 fingerprints before they are used.
+The source download script retrieves the core official ODS workbooks and checks
+their SHA-256 fingerprints before they are used. The accounting package records
+the checksums and retrieval dates for its additional secondary sources.
 
 ## Data availability
 
@@ -91,7 +101,8 @@ derived result extracts used in the reports are available in `data/public/`.
 
 This repository is the public evidence and reproducibility layer. The five
 reports and cross-report synthesis are owner-reviewed publication editions.
-The website remains the main reader-facing product.
+The accounting sector report and its public observation-level CSV are now part
+of this public evidence layer. The website remains the main reader-facing product.
 
 ## Licensing
 
