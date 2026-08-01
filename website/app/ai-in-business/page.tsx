@@ -1,0 +1,99 @@
+import type { Metadata } from "next";
+import { REPORTS, SYNTHESIS } from "../research-data";
+import { PageHero, SiteFooter, SiteHeader } from "../site-shell";
+
+export const metadata: Metadata = {
+  title: "AI in Business | DAL Data & AI Lab",
+  description: "Five evidence-led reports on AI use, integration, governance, use cases and operational pathways among UK businesses.",
+};
+
+const snapshots = [
+  { label: "Micro businesses reporting AI use", value: "37.4%", width: "37.4%" },
+  { label: "Small businesses reporting AI use", value: "50.8%", width: "50.8%" },
+  { label: "Medium businesses reporting AI use", value: "57.1%", width: "57.1%" },
+  { label: "Large-business benchmark", value: "78.2%", width: "78.2%", benchmark: true },
+];
+
+export default function AIInBusinessPage() {
+  return (
+    <>
+      <a className="skipLink" href="#main">Skip to AI in business</a>
+      <SiteHeader active="AI in business" />
+      <main className="multiPage" id="main">
+        <PageHero
+          kicker="AI in business"
+          marker="REPORTS 01–05 · UKBDS 2026"
+          title="The general evidence foundation."
+          introduction="Five reports examine reported AI use, system integration, governance, use cases and operational pathways by UK business size. A synthesis connects them without mixing incompatible denominators."
+        />
+
+        <section className="pageSection evidenceSnapshot">
+          <div className="sectionLead">
+            <p className="kicker">Evidence snapshot</p>
+            <h2>Reported AI use rises with business size.</h2>
+            <p>Large businesses are shown as a separate benchmark, not part of the core SME conclusion.</p>
+          </div>
+          <div className="snapshotBars" aria-label="Reported AI use estimates by business size">
+            {snapshots.map((item) => (
+              <div key={item.label} className={item.benchmark ? "benchmark" : undefined}>
+                <span>{item.label}</span><strong>{item.value}</strong>
+                <i aria-hidden="true"><b style={{ width: item.width }} /></i>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="pageSection reportLibrary">
+          <div className="sectionLead">
+            <p className="kicker">Five-report series</p>
+            <h2>Each report answers a different operational question.</h2>
+          </div>
+          <div className="reportPageGrid">
+            {REPORTS.map((report) => (
+              <article key={report.number}>
+                <span className="reportIndex">{report.number}</span>
+                <p>{report.theme}</p>
+                <h3>{report.title}</h3>
+                <strong>{report.finding}</strong>
+                <small><b>Denominator:</b> {report.denominator}</small>
+                <a href={report.href}>Read report {report.number}</a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="pageSection synthesisFeature">
+          <div>
+            <p className="kicker light">Cross-report synthesis</p>
+            <h2>Reported use is broader than operational depth.</h2>
+            <p>
+              Access to AI, the tasks it supports, system integration, governance
+              and in-house development are different questions. The synthesis
+              connects them without calculating unsupported conversion rates or a
+              readiness score.
+            </p>
+          </div>
+          <div className="synthesisPoints">
+            <article><span>Reach</span><strong>Use expands before integration.</strong></article>
+            <article><span>Tasks</span><strong>Information work is the leading entry point.</strong></article>
+            <article><span>Operations</span><strong>Integration and governance are separate workstreams.</strong></article>
+            <a className="lightButton" href={SYNTHESIS.href}>Read the synthesis</a>
+          </div>
+        </section>
+
+        <section className="pageSection evidenceBoundaryPage">
+          <div className="sectionLead"><p className="kicker">Evidence boundary</p><h2>What these reports can—and cannot—show.</h2></div>
+          <ul>
+            <li>Estimates describe reported patterns, not causal business impact.</li>
+            <li>All-business and AI-user percentages remain separate.</li>
+            <li>Multiple-response use cases are not added together.</li>
+            <li>Supplied 95% confidence intervals and respondent bases are retained.</li>
+            <li>No formal pairwise significance claim is inferred from overlapping intervals alone.</li>
+          </ul>
+          <a className="inlineLink" href="/methods">Read the full methods and limitations</a>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
