@@ -5,8 +5,12 @@ using, integrating and governing artificial intelligence.
 
 ## Public outputs
 
-- [Live evidence website](https://dal-data-ai-lab.moricz-labs.workers.dev/)
+- [Project overview](https://dal-data-ai-lab.moricz-labs.workers.dev/)
+- [AI in business](https://dal-data-ai-lab.moricz-labs.workers.dev/ai-in-business)
+- [Sector research](https://dal-data-ai-lab.moricz-labs.workers.dev/sectors)
 - [Accounting sector page](https://dal-data-ai-lab.moricz-labs.workers.dev/sectors/accounting)
+- [Adoption pathways](https://dal-data-ai-lab.moricz-labs.workers.dev/adoption-pathways)
+- [Methods](https://dal-data-ai-lab.moricz-labs.workers.dev/methods)
 - [UK Accounting SMEs: AI Adoption and Operational Readiness, 2026](publications/UK_Accounting_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf)
 - [Report 1 — AI Use by Business Size](publications/SME_Report_01_AI_Use_by_Business_Size.pdf)
 - [Report 2 — AI Adoption and System Integration](publications/SME_Report_02_AI_Adoption_and_System_Integration_by_Size.pdf)
@@ -68,6 +72,7 @@ sql/               Analytical schema and saved queries
 src/               Extraction, validation, analysis and reporting code
 tests/             Selected automated checks
 tools/             PDF generation code
+website/           Public website source, route checks and deployment configuration
 ```
 
 The [code map](docs/CODE_MAP.md) connects each research step to its main
