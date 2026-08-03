@@ -36,7 +36,7 @@ The third accounting-sector study examines published implementation journeys fro
 - Data dictionary: `adoption_journeys_data_dictionary.md`
 - Decision log: `adoption_journeys_decision_log.md`
 
-Status: complete locally on 2026-08-03. Public claims, GitHub push and deployment require a separate research-director approval.
+Status: approved and published on 2026-08-03. Research package release: GitHub commit `fa40765`. Website release: Sites version 7 with the existing owner-only access setting.
 
 ### Phase 2A - benefits and system fit
 

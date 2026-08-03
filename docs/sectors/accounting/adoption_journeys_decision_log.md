@@ -35,3 +35,9 @@
 - **Date:** 2026-08-03
 - **Decision:** Complete and test locally, then request a separate research-director publication approval before GitHub push or Cloudflare deployment.
 - **Reason:** The page introduces new public research claims and source interpretations.
+
+## AJ-D07 — Publication approved and released
+
+- **Date:** 2026-08-03
+- **Decision:** Approve the research package, public case index and Adoption Journeys webpage for release.
+- **Outcome:** Published to GitHub at commit `fa40765` and deployed as Sites version 7 using the existing owner-only access setting.

@@ -92,12 +92,12 @@ Backlog items are evidence tasks, not deadline commitments. Only one primary pha
 
 | ID | Task | Evidence of completion | Owner | Status |
 |---|---|---|---|---|
-| ACC-D01 | Freeze the journey question, case boundary and evidence hierarchy | Secondary-only protocol, six-grade hierarchy and eleven-stage lifecycle | Research director | Complete locally; publication approval required |
-| ACC-D02 | Register and grade implementation evidence | Fourteen open sources with primary, contextual, comparator and transfer roles | Project owner | Complete locally |
-| ACC-D03 | Build the claim-level journey matrix | Twenty-three lifecycle observations retaining outcome status, grade and transfer boundary | Project owner | Complete locally |
-| ACC-D04 | Publish the public case index | Six transparent rows separating core cases, synthesis, comparators and transfer cases | Project owner | Complete locally; not yet published |
-| ACC-D05 | Build the Accounting AI Adoption Journeys page | Dedicated route, nested Accounting navigation, source links, limitations and Lab hand-off | Project owner | Complete locally; lint, production build and 12 website tests pass |
-| ACC-D06 | Approve public claims and release | Research-director review, GitHub commit, Cloudflare deployment and live verification | Research director | Awaiting approval after local validation |
+| ACC-D01 | Freeze the journey question, case boundary and evidence hierarchy | Secondary-only protocol, six-grade hierarchy and eleven-stage lifecycle | Research director | Complete and approved 2026-08-03 |
+| ACC-D02 | Register and grade implementation evidence | Fourteen open sources with primary, contextual, comparator and transfer roles | Project owner | Complete and published |
+| ACC-D03 | Build the claim-level journey matrix | Twenty-three lifecycle observations retaining outcome status, grade and transfer boundary | Project owner | Complete and published |
+| ACC-D04 | Publish the public case index | Six transparent rows separating core cases, synthesis, comparators and transfer cases | Project owner | Complete and published |
+| ACC-D05 | Build the Accounting AI Adoption Journeys page | Dedicated route, nested Accounting navigation, source links, limitations and Lab hand-off | Project owner | Complete; lint, production build and 12 website tests pass |
+| ACC-D06 | Approve public claims and release | Research-director review, GitHub commit, Cloudflare deployment and live verification | Research director | Complete - GitHub `fa40765`; Sites version 7, owner-only |
 | ACC-D07 | Extend to independently measured UK micro-practice outcomes | Triggered by a named longitudinal case with baseline, quality, cost and control measures | Research director | Monitoring - evidence gap |
 
 ## Completed by handover baseline - Gate G1
