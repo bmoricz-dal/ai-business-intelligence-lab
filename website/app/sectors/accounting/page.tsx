@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ReadinessConsole } from "../../intelligence-ui";
-import { SignalScene, SiteFooter, SiteHeader } from "../../site-shell";
+import { LandscapeStory, SignalScene, SiteFooter, SiteHeader } from "../../site-shell";
 
 const REPORT = "/reports/UK_Accounting_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf";
 const DATA = "/data/accounting_ai_readiness_2026.csv";
@@ -175,6 +175,17 @@ export default function AccountingSectorPage() {
             </article>
           </div>
         </section>
+
+        <LandscapeStory
+          variant="city"
+          src="/manchester-skyline-cc-by.jpg"
+          alt="A wide view across the Manchester skyline"
+          kicker="OPERATING CONTEXT"
+          title="Adoption becomes real when it reaches the operating core."
+          description="For accounting practices, the decisive shift is from isolated assistance to controlled use across records, reconciliation, close, reporting and review."
+          credit="Manchester skyline · Pete Morris / CC BY 2.0"
+          creditHref="https://commons.wikimedia.org/wiki/File:Manchester_Skyline_2025.jpg"
+        />
 
         <section className="accountingUseCases" id="use-cases">
           <div>

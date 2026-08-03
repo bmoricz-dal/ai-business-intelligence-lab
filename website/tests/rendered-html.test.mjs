@@ -26,6 +26,7 @@ const routes = [
   ["/sectors", "Sectors"],
   ["/adoption-pathways", "AI in practice"],
   ["/methods", "Methods"],
+  ["/sectors/accounting", "Sectors"],
   ["/sectors/accounting/benefits", "Sectors"],
   ["/sectors/accounting/adoption-journeys", "Sectors"],
   ["/adoption-pathways/accounting-micro-case-study", "AI in practice"],
@@ -104,11 +105,37 @@ test("integrates reliable section navigation and varied motion scenes", async ()
   assert.doesNotMatch(experience, /Page outline|editorialOutline/);
   assert.match(shell, /pageSectionNavigatorMount/);
   assert.match(shell, /export function SignalScene/);
+  assert.match(shell, /export function LandscapeStory/);
   assert.match(shell, /"network" \| "ledger" \| "flow" \| "horizon" \| "provenance"/);
+  assert.match(shell, /"city" \| "water" \| "highlands" \| "coast"/);
   assert.match(css, /\.pageSectionNavigator/);
   assert.match(css, /\.signalScene--ledger/);
   assert.match(css, /\.signalScene--horizon/);
+  assert.match(css, /\.landscapeStory/);
+  assert.match(css, /animation-timeline: view\(\)/);
+  assert.match(css, /@keyframes landscapeScroll/);
   assert.match(css, /prefers-reduced-motion: reduce/);
+});
+
+test("sustains visual storytelling beyond the opening hero on every public route", async () => {
+  for (const [path] of routes) {
+    const html = await (await render(path)).text();
+    assert.match(
+      html,
+      /landscapeStory|cityAerialStory|cinematicInterlude/,
+      `${path} should include a mid-page environmental visual chapter`,
+    );
+  }
+
+  const accounting = await (await render("/sectors/accounting")).text();
+  const benefits = await (await render("/sectors/accounting/benefits")).text();
+  const journeys = await (await render("/sectors/accounting/adoption-journeys")).text();
+  const lab = await (await render("/adoption-pathways/accounting-micro-case-study")).text();
+  assert.match(accounting, /manchester-skyline-cc-by\.jpg/);
+  assert.match(benefits, /esthwaite-water-aerial-cc-by\.jpg/);
+  assert.match(journeys, /scottish-highlands-cc-by\.jpg/);
+  assert.match(lab, /felixstowe-aerial-cc-by\.jpg/);
+  assert.match(lab, /John Fielding \/ CC BY 2\.0/);
 });
 
 test("provides a connected accounting-cycle test drive and secondary adoption planner", async () => {

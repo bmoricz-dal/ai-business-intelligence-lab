@@ -38,7 +38,9 @@ It is informed by representative official BCG and McKinsey pages, but it does no
 - Deep navy editorial fields, white space and restrained cyan/emerald/violet signal colours.
 - Two original signature motifs: the evidence sphere for traceable signals and route lines for movement from national context to workflow decisions.
 - Cinematic media has a narrative job: the aerial London sequence represents the UK business system; the office sequence represents firm-level workflow adoption.
+- Every long page changes visual register beyond the hero. Environmental chapters appear after substantive content so city, water, coast and highland views act as chapter transitions rather than decorative opening banners.
 - Motion is slow, directional and varied by analytical purpose. Network, ledger, flow, horizon and provenance scenes create continuity without turning evidence into decoration.
+- Where supported, view-linked image depth and section atmospheres respond to scroll position. Route lines and signal pulses connect the landscape to DAL's evidence-to-decision language; static fallbacks preserve the full composition.
 - Cards and controls respond to hover, focus and selection with position, light and border changes. Every control remains keyboard operable.
 - The hero-integrated “Explore this page” rail replaces the floating outline. Direct section buttons, active-section tracking, reading progress and section reveals support long-form navigation without covering content.
 - Reduced-motion preferences disable continuous motion and reveal transitions.
@@ -56,6 +58,10 @@ It is informed by representative official BCG and McKinsey pages, but it does no
 
 - `site/public/uk-sme-ai-workplace-2026.png`: original DAL editorial image generated for this project; no external brand imagery used.
 - `site/public/london-city-aerial-cc-by.jpg`: *Aerial view of London city* by GillyBerlin, sourced from Wikimedia Commons, licensed [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). The website applies colour treatment, crop and slow movement and provides visible attribution.
+- `site/public/manchester-skyline-cc-by.jpg`: [*Manchester Skyline 2025*](https://commons.wikimedia.org/wiki/File:Manchester_Skyline_2025.jpg) by Pete Morris / LimeSpiked, sourced from Wikimedia Commons and licensed [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). The source link is visible on the website.
+- `site/public/esthwaite-water-aerial-cc-by.jpg`: [*Esthwaite Water aerial photograph, July 2019*](https://commons.wikimedia.org/wiki/File:Esthwaite_Water_aerial_photograph_July_2019.jpg) by Ian Dick, sourced from Wikimedia Commons and licensed [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). The source link is visible on the website.
+- `site/public/scottish-highlands-cc-by.jpg`: [*Scottish Highlands*](https://commons.wikimedia.org/wiki/File:Scottish_Highlands_(24045266327).jpg) by Gary Ullah, sourced from Wikimedia Commons and licensed [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). The source link is visible on the website.
+- `site/public/felixstowe-aerial-cc-by.jpg`: [*Felixstowe Beach aerial image – Suffolk UK coast*](https://commons.wikimedia.org/wiki/File:Felixstowe_Beach_aerial_image_-_Suffolk_UK_coast_(14871964066).jpg) by John Fielding, sourced from Wikimedia Commons and licensed [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/). The source link is visible on the website.
 
 ## Quality boundary
 

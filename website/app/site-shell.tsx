@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { NavDropdown } from "./dropdown-nav";
 
 type NavigationLabel =
@@ -168,6 +169,43 @@ export function SignalScene({
           </article>
         ))}
       </div>
+    </section>
+  );
+}
+
+export function LandscapeStory({
+  variant,
+  src,
+  alt,
+  kicker,
+  title,
+  description,
+  credit,
+  creditHref,
+}: {
+  variant: "city" | "water" | "highlands" | "coast";
+  src: string;
+  alt: string;
+  kicker: string;
+  title: string;
+  description: string;
+  credit: string;
+  creditHref: string;
+}) {
+  return (
+    <section className={`landscapeStory landscapeStory--${variant}`} aria-label={`${kicker}: ${title}`}>
+      <Image alt={alt} fill sizes="100vw" src={src} unoptimized />
+      <div className="landscapeStoryGrid" aria-hidden="true">
+        <i /><i /><i /><i />
+        <span className="landscapePulse pulseOne" /><span className="landscapePulse pulseTwo" /><span className="landscapePulse pulseThree" />
+      </div>
+      <div className="landscapeStoryCopy">
+        <span>{kicker}</span>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <div className="landscapeStoryTelemetry" aria-hidden="true"><span>CONTEXT</span><i /><span>SIGNAL</span><i /><span>DECISION</span></div>
+      <a className="landscapeStoryCredit" href={creditHref} rel="noreferrer" target="_blank">{credit}</a>
     </section>
   );
 }

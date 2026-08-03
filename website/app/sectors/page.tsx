@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ACCOUNTING_REPORT } from "../research-data";
-import { PageHero, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
+import { LandscapeStory, PageHero, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
 
 export const metadata: Metadata = {
   title: "Sector Research | DAL Data & AI Lab",
@@ -47,6 +47,17 @@ export default function SectorsPage() {
             <article><span>03</span><h3>Reflect real work</h3><p>Use cases and controls should map to the tasks, professional duties and data handled in that sector.</p></article>
           </div>
         </section>
+
+        <LandscapeStory
+          variant="water"
+          src="/esthwaite-water-aerial-cc-by.jpg"
+          alt="Aerial dawn view across Esthwaite Water and the surrounding Lake District landscape."
+          kicker="DIFFERENT TERRAIN · DIFFERENT ROUTES"
+          title="Sector depth reveals the operating landscape beneath the headline."
+          description="A national adoption estimate is a starting point. Useful sector intelligence follows the contours of the work, the data, the controls and the firms expected to act."
+          credit="Esthwaite Water: Ian Dick / CC BY 2.0"
+          creditHref="https://commons.wikimedia.org/wiki/File:Esthwaite_Water_aerial_photograph_July_2019.jpg"
+        />
 
         <section className="pageSection accountingSectorFeature" id="accounting">
           <div>

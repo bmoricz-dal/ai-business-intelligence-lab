@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PATHWAY_ROWS } from "../research-data";
-import { PageHero, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
+import { LandscapeStory, PageHero, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
 
 export const metadata: Metadata = {
   title: "AI in Practice | DAL Data & AI Lab",
@@ -85,6 +85,17 @@ export default function AdoptionPathwaysPage() {
             ))}
           </div>
         </section>
+
+        <LandscapeStory
+          variant="highlands"
+          src="/scottish-highlands-cc-by.jpg"
+          alt="Wide view across a mountainous Scottish Highlands landscape."
+          kicker="ADOPTION IS A ROUTE · NOT A FINISH LINE"
+          title="The path should follow the workflow—not the technology fashion."
+          description="A practical route has turns, evidence gates and stop points. Firms can use, integrate, automate or build in different combinations—and can decide not to proceed."
+          credit="Scottish Highlands: Gary Ullah / CC BY 2.0"
+          creditHref="https://commons.wikimedia.org/wiki/File:Scottish_Highlands_(24045266327).jpg"
+        />
 
         <section className="pageSection pathwayEvidence">
           <div className="sectionLead">

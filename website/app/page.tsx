@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SYNTHESIS } from "./research-data";
 import { EvidenceLens, ProgrammeConsole } from "./intelligence-ui";
-import { PageHero, SiteFooter, SiteHeader } from "./site-shell";
+import { LandscapeStory, PageHero, SiteFooter, SiteHeader } from "./site-shell";
 
 const MICRO_CASE_REPORT = "/reports/UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026.pdf";
 
@@ -60,6 +60,17 @@ export default function OverviewPage() {
             <a className="inlineLink" href="/about">Read about the project and its values</a>
           </div>
         </section>
+
+        <LandscapeStory
+          variant="city"
+          src="/manchester-skyline-cc-by.jpg"
+          alt="Manchester skyline under a dramatic evening sky."
+          kicker="A NATIONAL SME LANDSCAPE"
+          title="AI adoption will not look the same in every business centre."
+          description="DAL moves beyond one headline market view to examine how size, sector, workflow and local operating conditions shape the decision to adopt."
+          credit="Manchester skyline: Pete Morris / CC BY 2.0"
+          creditHref="https://commons.wikimedia.org/wiki/File:Manchester_Skyline_2025.jpg"
+        />
 
         <section className="pageSection evidenceArchitecture">
           <div className="sectionLead">

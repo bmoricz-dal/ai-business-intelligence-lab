@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SignalScene, SiteFooter, SiteHeader } from "../../../site-shell";
+import { LandscapeStory, SignalScene, SiteFooter, SiteHeader } from "../../../site-shell";
 
 const REPORT = "/reports/UK_Accounting_SMEs_AI_Benefits_and_System_Fit_2026.pdf";
 const DATA = "/data/accounting_ai_benefits_system_fit_2026.csv";
@@ -159,6 +159,17 @@ export default function AccountingBenefitsPage() {
             <article><span>03</span><strong>Professional review</strong><p>Accountant checks, overrides or escalates</p></article>
           </div>
         </section>
+
+        <LandscapeStory
+          variant="water"
+          src="/esthwaite-water-aerial-cc-by.jpg"
+          alt="Aerial view of Esthwaite Water and the surrounding landscape"
+          kicker="CONTROLLED FLOW"
+          title="Value appears across the whole workflow—not at one automated step."
+          description="The practical case for AI strengthens when faster preparation, exception handling and professional review move together without weakening accountability."
+          credit="Esthwaite Water · Ian Dick / CC BY 2.0"
+          creditHref="https://commons.wikimedia.org/wiki/File:Esthwaite_Water_aerial_photograph_July_2019.jpg"
+        />
 
         <section className="benefitsUKContext">
           <div>

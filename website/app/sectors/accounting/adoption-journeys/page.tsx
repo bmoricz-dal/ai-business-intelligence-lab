@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { JourneyExplorer } from "../../../intelligence-ui";
-import { SignalScene, SiteFooter, SiteHeader } from "../../../site-shell";
+import { LandscapeStory, SignalScene, SiteFooter, SiteHeader } from "../../../site-shell";
 
 const DATA = "/data/accounting_ai_adoption_journeys_2026.csv";
 const METHODS = "https://github.com/bmoricz-dal/ai-business-intelligence-lab/tree/main/docs/sectors/accounting";
@@ -154,6 +154,17 @@ export default function AccountingAdoptionJourneysPage() {
             <footer className="multiSourceFooter"><p><b>Evidence boundary:</b> this is a transparent cross-study pattern, not a reconstructed firm history.</p><div><a href={sources.audit} rel="noreferrer" target="_blank">Operational study ↗</a><a href={sources.multicase} rel="noreferrer" target="_blank">Multiple cases ↗</a><a href={sources.challenges} rel="noreferrer" target="_blank">Audit challenges ↗</a></div></footer>
           </article>
         </section>
+
+        <LandscapeStory
+          variant="highlands"
+          src="/scottish-highlands-cc-by.jpg"
+          alt="A broad view across the Scottish Highlands"
+          kicker="IMPLEMENTATION TERRAIN"
+          title="The route to scale is rarely straight."
+          description="Across the cases, progress depends on data foundations, workflow fit, staff behaviour, client readiness and controls that adapt when the first design does not hold."
+          credit="Scottish Highlands · Gary Ullah / CC BY 2.0"
+          creditHref="https://commons.wikimedia.org/wiki/File:Scottish_Highlands_(24045266327).jpg"
+        />
 
         <section className="journeysComparators">
           <div className="journeysSectionIntro">

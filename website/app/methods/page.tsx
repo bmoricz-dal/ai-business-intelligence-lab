@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { METHODS_GUIDE, TECHNICAL_APPENDIX } from "../research-data";
-import { PageHero, PUBLIC_REPOSITORY, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
+import { LandscapeStory, PageHero, PUBLIC_REPOSITORY, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
 
 export const metadata: Metadata = {
   title: "Methods | DAL Data & AI Lab",
@@ -57,6 +57,17 @@ export default function MethodsPage() {
             <article><span>Reproducible layer</span><h3>Public data, code and checksums</h3><p>Publication datasets, source registers, transformations, tests and release fingerprints are maintained in GitHub.</p></article>
           </div>
         </section>
+
+        <LandscapeStory
+          variant="coast"
+          src="/felixstowe-aerial-cc-by.jpg"
+          alt="Aerial view along Felixstowe beach and the Suffolk coast"
+          kicker="VISIBLE PROVENANCE"
+          title="A credible conclusion needs a route back to evidence."
+          description="The source, denominator, transformation and limitation remain connected from first intake to the published insight—so readers can see where the claim begins and ends."
+          credit="Felixstowe coast · John Fielding / CC BY 2.0"
+          creditHref="https://commons.wikimedia.org/wiki/File:Felixstowe_Beach_aerial_image_-_Suffolk_UK_coast_(14871964066).jpg"
+        />
 
         <section className="pageSection methodDownloadsPage">
           <div><p className="kicker light">Documentation</p><h2>Audit the method. Reproduce the evidence.</h2><p>The public repository exposes the governed analytical layer behind the reports.</p></div>

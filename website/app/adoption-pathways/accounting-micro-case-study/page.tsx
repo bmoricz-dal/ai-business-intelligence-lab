@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../../site-shell";
+import { LandscapeStory, SiteFooter, SiteHeader } from "../../site-shell";
 import { AdoptionWorkspace } from "./adoption-workspace";
 import { ExperienceWorkspace } from "./experience-workspace";
 
@@ -71,6 +71,17 @@ export default function AccountingMicroCaseStudyPage() {
         </section>
 
         <AdoptionWorkspace />
+
+        <LandscapeStory
+          variant="coast"
+          src="/felixstowe-aerial-cc-by.jpg"
+          alt="Aerial view along Felixstowe beach and the Suffolk coast"
+          kicker="FROM TEST TO CONTROLLED ROUTE"
+          title="A good pilot makes the boundary visible."
+          description="The lab turns the accounting cycle into a navigable route: defined inputs, observable exceptions, accountable review and an explicit decision to proceed, revise or stop."
+          credit="Felixstowe coast · John Fielding / CC BY 2.0"
+          creditHref="https://commons.wikimedia.org/wiki/File:Felixstowe_Beach_aerial_image_-_Suffolk_UK_coast_(14871964066).jpg"
+        />
 
         <section className="microFoundation" id="foundation">
           <div className="sectionLead"><p className="kicker">Common foundation</p><h2>Six decisions before any pilot.</h2><p>Governance is not a final checkpoint. It shapes scope, data, testing and accountability from the first design choice.</p></div>

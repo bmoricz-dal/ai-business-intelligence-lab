@@ -6085,6 +6085,217 @@ body {
 .signalScene--horizon .signalSceneCore { top: 23%; left: 63%; width: clamp(125px, 16vw, 225px); }
 .signalScene--provenance .signalSceneCore { background: radial-gradient(circle at 38% 34%, rgba(209, 247, 255, .78), rgba(55, 153, 202, .29) 21%, rgba(16, 48, 79, .54) 50%, rgba(2, 11, 17, .8) 72%); border-color: rgba(113, 220, 255, .45); }
 
+/* Full-width environmental chapters keep long research pages visually paced. */
+.landscapeStory {
+  --landscape-accent: 113, 220, 255;
+  position: relative;
+  display: grid;
+  min-height: clamp(720px, 88svh, 980px);
+  align-items: end;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(5rem, 9vw, 9rem) 7vw clamp(5.5rem, 9vw, 8rem);
+  background: #06131d;
+  color: var(--white);
+}
+
+.landscapeStory > img {
+  z-index: -4;
+  object-fit: cover;
+  object-position: 50% 50%;
+  scale: 1.08;
+  filter: saturate(.86) contrast(1.08) brightness(.72);
+  transition: scale 1.4s cubic-bezier(.22, .61, .36, 1), filter 1.4s ease;
+}
+
+.landscapeStory::before,
+.landscapeStory::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  pointer-events: none;
+}
+
+.landscapeStory::before {
+  background:
+    linear-gradient(180deg, rgba(2, 10, 16, .18), rgba(2, 10, 16, .08) 34%, rgba(2, 10, 16, .9) 100%),
+    linear-gradient(90deg, rgba(2, 10, 16, .88) 0%, rgba(2, 10, 16, .26) 64%, rgba(2, 10, 16, .5) 100%),
+    radial-gradient(circle at 72% 38%, rgba(var(--landscape-accent), .2), transparent 24rem);
+}
+
+.landscapeStory::after {
+  z-index: -1;
+  opacity: .42;
+  background-image: linear-gradient(rgba(113, 220, 255, .045) 1px, transparent 1px);
+  background-size: 100% 6px;
+  mask-image: linear-gradient(180deg, transparent, #000 30%, #000 82%, transparent);
+}
+
+.landscapeStory:hover > img {
+  scale: 1.12;
+  filter: saturate(1) contrast(1.08) brightness(.78);
+}
+
+.landscapeStory--city { --landscape-accent: 113, 220, 255; }
+.landscapeStory--water { --landscape-accent: 110, 231, 194; }
+.landscapeStory--highlands { --landscape-accent: 149, 135, 255; }
+.landscapeStory--coast { --landscape-accent: 109, 210, 255; }
+.landscapeStory--city > img { object-position: 52% 52%; }
+.landscapeStory--water > img { object-position: 50% 46%; }
+.landscapeStory--highlands > img { object-position: 50% 52%; }
+.landscapeStory--coast > img { object-position: 50% 58%; }
+
+.landscapeStoryGrid {
+  position: absolute;
+  z-index: 0;
+  inset: 7% 5%;
+  overflow: hidden;
+  border: 1px solid rgba(180, 236, 255, .13);
+  border-radius: 2px;
+  background-image:
+    linear-gradient(rgba(180, 236, 255, .09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 236, 255, .09) 1px, transparent 1px);
+  background-size: 12.5% 25%;
+  box-shadow: inset 0 0 80px rgba(2, 10, 16, .45);
+  mask-image: linear-gradient(100deg, transparent 5%, #000 36%, #000 92%);
+  pointer-events: none;
+}
+
+.landscapeStoryGrid > i {
+  position: absolute;
+  width: 1px;
+  height: 140%;
+  background: linear-gradient(transparent, rgba(var(--landscape-accent), .85), transparent);
+  transform: rotate(35deg);
+  transform-origin: top;
+  box-shadow: 0 0 22px rgba(var(--landscape-accent), .5);
+}
+.landscapeStoryGrid > i:nth-child(1) { top: -28%; left: 24%; }
+.landscapeStoryGrid > i:nth-child(2) { top: -18%; left: 51%; opacity: .56; }
+.landscapeStoryGrid > i:nth-child(3) { top: -40%; left: 72%; opacity: .74; }
+.landscapeStoryGrid > i:nth-child(4) { top: -7%; left: 91%; opacity: .4; }
+
+.landscapePulse {
+  position: absolute;
+  width: 13px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, .86);
+  border-radius: 50%;
+  background: rgb(var(--landscape-accent));
+  box-shadow: 0 0 0 8px rgba(var(--landscape-accent), .11), 0 0 34px rgba(var(--landscape-accent), .82);
+}
+.landscapePulse::after {
+  content: "";
+  position: absolute;
+  inset: -13px;
+  border: 1px solid rgba(var(--landscape-accent), .5);
+  border-radius: inherit;
+}
+.landscapePulse.pulseOne { top: 26%; left: 71%; }
+.landscapePulse.pulseTwo { top: 48%; left: 83%; scale: .72; }
+.landscapePulse.pulseThree { top: 66%; left: 58%; scale: .55; }
+
+.landscapeStoryCopy {
+  position: relative;
+  z-index: 3;
+  max-width: 1040px;
+}
+
+.landscapeStoryCopy > span {
+  color: rgb(var(--landscape-accent));
+  font: 760 .63rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .17em;
+}
+
+.landscapeStoryCopy h2 {
+  max-width: 980px;
+  margin: 1rem 0 1.35rem;
+  color: var(--white);
+  font-size: clamp(3.1rem, 7.3vw, 7.8rem);
+  font-weight: 520;
+  letter-spacing: -.07em;
+  line-height: .91;
+  text-wrap: balance;
+}
+
+.landscapeStoryCopy p {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(255, 255, 255, .76);
+  font-size: clamp(1rem, 1.45vw, 1.25rem);
+  line-height: 1.62;
+}
+
+.landscapeStoryTelemetry {
+  position: absolute;
+  z-index: 3;
+  right: 7vw;
+  bottom: 7.2rem;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  color: rgba(255, 255, 255, .62);
+  font: 720 .5rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .13em;
+  writing-mode: vertical-rl;
+}
+
+.landscapeStoryTelemetry i {
+  display: block;
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(transparent, rgb(var(--landscape-accent)), transparent);
+}
+
+.landscapeStoryCredit {
+  position: absolute;
+  z-index: 4;
+  right: 7vw;
+  bottom: 2rem;
+  color: rgba(255, 255, 255, .6);
+  font-size: .62rem;
+  text-decoration: none;
+}
+.landscapeStoryCredit:hover,
+.landscapeStoryCredit:focus-visible { color: var(--white); text-decoration: underline; }
+
+/* Deeper sections receive visible but low-contrast movement of their own. */
+.immersiveSection[data-scene="orbit"],
+.immersiveSection[data-scene="constellation"] {
+  box-shadow: inset 0 1px rgba(47, 131, 197, .08), inset 0 -1px rgba(47, 131, 197, .08);
+}
+
+.immersiveSection[data-scene="orbit"] .sectionAtmosphere::after {
+  inset: 12% auto 12% 5%;
+  width: min(34vw, 28rem);
+  border-left: 1px solid rgba(113, 220, 255, .17);
+  border-bottom: 1px solid rgba(110, 231, 194, .11);
+  background: repeating-linear-gradient(0deg, transparent 0 35px, rgba(113, 220, 255, .08) 36px);
+  transform: skewY(-9deg);
+  mask-image: linear-gradient(90deg, #000, transparent);
+}
+
+.immersiveSection[data-scene="constellation"] .sectionAtmosphere::after {
+  right: 5%;
+  bottom: 10%;
+  width: min(30vw, 24rem);
+  height: min(30vw, 24rem);
+  border: 1px solid rgba(149, 135, 255, .13);
+  border-radius: 50%;
+  box-shadow: inset 0 0 70px rgba(149, 135, 255, .08), 0 0 0 3rem rgba(113, 220, 255, .02);
+}
+
+.immersiveSection[data-scene="wave"] .sectionAtmosphere::before {
+  right: -8%;
+  bottom: -40%;
+  width: 64%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(113, 220, 255, .12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3rem rgba(113, 220, 255, .025), 0 0 0 7rem rgba(110, 231, 194, .018);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .immersiveSection[data-scene="orbit"] .sectionAtmosphere::before { animation: atmosphereOrbit 24s linear infinite; }
   .immersiveSection[data-scene="scan"] .sectionAtmosphere::after { animation: atmosphereScan 8s ease-in-out infinite alternate; }
@@ -6100,6 +6311,12 @@ body {
   .signalSceneBeam.beamB { animation-delay: -1.6s; }
   .signalSceneBeam.beamC { animation-delay: -3.2s; }
   .signalSceneNode { animation: atmosphereNode 3.4s ease-in-out infinite; }
+  .landscapeStory > img { animation: landscapeDrift 18s ease-in-out infinite alternate; }
+  .landscapeStoryGrid > i { animation: landscapeRoute 9s ease-in-out infinite alternate; }
+  .landscapeStoryGrid > i:nth-child(2n) { animation-delay: -4.5s; }
+  .landscapePulse { animation: landscapePulse 3.6s ease-in-out infinite; }
+  .landscapePulse.pulseTwo { animation-delay: -1.2s; }
+  .landscapePulse.pulseThree { animation-delay: -2.4s; }
 }
 
 @keyframes atmosphereOrbit { to { transform: translateY(-50%) rotate(360deg); } }
@@ -6109,6 +6326,33 @@ body {
 @keyframes signalCoreFloat { 0%, 100% { margin-top: 0; } 50% { margin-top: -16px; } }
 @keyframes signalArc { to { transform: rotate(360deg); } }
 @keyframes signalBeam { 0%, 100% { opacity: .22; filter: hue-rotate(0deg); } 50% { opacity: .9; filter: hue-rotate(32deg); } }
+@keyframes landscapeDrift { from { transform: translate3d(-1.2%, 0, 0); } to { transform: translate3d(1.2%, -1%, 0); } }
+@keyframes landscapeRoute { from { opacity: .24; translate: -18% 0; } to { opacity: .9; translate: 24% 0; } }
+@keyframes landscapePulse { 0%, 100% { opacity: .52; } 50% { opacity: 1; box-shadow: 0 0 0 13px rgba(var(--landscape-accent), .05), 0 0 42px rgba(var(--landscape-accent), .95); } }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .landscapeStory > img {
+      animation: landscapeScroll linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+    .landscapeStoryCopy {
+      animation: landscapeCopyScroll linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 58%;
+    }
+    .sectionAtmosphere {
+      animation: atmosphereTraverse linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+  }
+}
+
+@keyframes landscapeScroll { from { transform: translate3d(0, -4%, 0) scale(1.11); } to { transform: translate3d(0, 4%, 0) scale(1.18); } }
+@keyframes landscapeCopyScroll { from { opacity: .38; transform: translateY(65px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes atmosphereTraverse { from { transform: translateY(-4%); opacity: .38; } to { transform: translateY(4%); opacity: .88; } }
 
 @media (max-width: 980px) {
   .pageSectionNavigatorMount { right: 1rem; left: 1rem; }
@@ -6119,6 +6363,8 @@ body {
   .signalSceneReadouts { grid-template-columns: repeat(3, 1fr); }
   .signalSceneReadouts article { min-height: 125px; grid-template-columns: 1fr; gap: .35rem; align-content: center; }
   .signalSceneCore { top: 10%; left: 55%; }
+  .landscapeStory { min-height: 780px; }
+  .landscapeStoryTelemetry { display: none; }
 }
 
 @media (max-width: 680px) {
@@ -6138,6 +6384,12 @@ body {
   .signalSceneCore { top: 8%; left: 48%; width: 155px; }
   .signalSceneArc { left: 34%; width: 78vw; }
   .sectionAtmosphere { opacity: .52; }
+  .landscapeStory { min-height: 720px; padding: 4rem 1.2rem 5.5rem; }
+  .landscapeStoryCopy h2 { font-size: clamp(2.8rem, 14vw, 5rem); }
+  .landscapeStoryGrid { inset: 4% 1rem 7%; mask-image: linear-gradient(90deg, transparent, #000 22%, #000 92%); }
+  .landscapeStoryCredit { right: 1.2rem; bottom: 1.5rem; max-width: calc(100% - 2.4rem); text-align: right; }
+  .landscapeStory--city > img { object-position: 58% 50%; }
+  .landscapeStory--water > img { object-position: 58% 50%; }
   .reactiveSurface:hover,
   .reactiveSurface:focus-within { transform: translateY(-2px); }
 }
@@ -6148,8 +6400,12 @@ body {
   .sectionAtmosphere::after,
   .signalSceneField *,
   .signalSceneField::before,
-  .signalSceneField::after { animation: none !important; }
+  .signalSceneField::after,
+  .landscapeStory > img,
+  .landscapeStoryGrid *,
+  .landscapeStoryCopy { animation: none !important; }
   .reactiveSurface,
   .surfaceGlow,
-  .signalSceneField { transition: none !important; }
+  .signalSceneField,
+  .landscapeStory > img { transition: none !important; }
 }

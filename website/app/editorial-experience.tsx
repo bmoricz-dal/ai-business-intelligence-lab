@@ -60,7 +60,7 @@ export function EditorialExperience() {
     );
 
     sections.forEach((section, index) => {
-      if (section.matches(".pageHero, .microCaseHero, .cinematicInterlude, .cityAerialStory, .systemVisualFeature, .signalScene")) return;
+      if (section.matches(".pageHero, .microCaseHero, .cinematicInterlude, .cityAerialStory, .landscapeStory, .systemVisualFeature, .signalScene")) return;
       section.classList.add("immersiveSection");
       section.dataset.scene = ["orbit", "scan", "constellation", "wave"][index % 4];
       const layer = document.createElement("div");
