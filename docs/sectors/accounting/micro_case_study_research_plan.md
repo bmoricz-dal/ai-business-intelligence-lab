@@ -3,7 +3,7 @@
 Status: complete and owner-approved for publication  
 Prepared: 2026-08-03  
 Research mode: secondary data only  
-Publication status: approved for distribution on 2026-08-03
+Publication status: approved and published on 2026-08-03
 
 ## Objective
 

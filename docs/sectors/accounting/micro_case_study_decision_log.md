@@ -58,3 +58,10 @@ Implication: the website must demonstrate pathway choice, step completion, measu
 Decision: The demo accepts only illustrative or aggregated numbers, keeps state in the current browser session and provides a JSON export without sending data to DAL.  
 Status: owner-approved on 2026-08-03.  
 Implication: the interface visibly prohibits names, tax identifiers, payroll data, bank details and confidential documents.
+
+## ACC-C11 — Verified release
+
+Decision: Publish the owner-approved interactive workspace, supporting report, public pathway tracker and reproducibility records to the existing public repository and Worker.  
+Status: complete on 2026-08-03.  
+Release record: GitHub commit `59b50f471e3f45f9d1b289a0ec653ea86b6bca48`; Cloudflare Worker version `5d6c15d2-5dd7-4c0d-9ee2-f8e33cb06abb`. The live route returned HTTP 200, the interactive client bundle loaded, and the live PDF and CSV SHA-256 fingerprints matched the approved files.  
+Implication: future substantive changes to case assumptions, thresholds, evidence claims or privacy behaviour require a new reviewed release.
