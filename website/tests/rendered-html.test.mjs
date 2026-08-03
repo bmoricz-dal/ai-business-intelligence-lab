@@ -83,6 +83,14 @@ test("dropdowns support hover, click, focus departure and Escape", async () => {
   assert.match(shell, /\/adoption-pathways\/accounting-micro-case-study/);
 });
 
+test("keeps dropdown panels visible at compact desktop widths", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /@media \(min-width: 681px\) and \(max-width: 1100px\)/);
+  assert.match(css, /\.pageNavigation \{[\s\S]*?flex-wrap: wrap;[\s\S]*?overflow: visible;/);
+  assert.match(css, /\.pageNavigation \.navNestedDropdown \{[\s\S]*?position: static;/);
+  assert.doesNotMatch(css, /@media \(max-width: 1100px\)[\s\S]{0,220}\.pageNavigation \{[^}]*overflow-x: auto;/);
+});
+
 test("provides a connected accounting-cycle test drive and secondary adoption planner", async () => {
   const response = await render("/adoption-pathways/accounting-micro-case-study");
   assert.equal(response.status, 200);

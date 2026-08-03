@@ -4109,7 +4109,7 @@ footer nav a:focus-visible {
 
 @media (max-width: 1100px) {
   .pageSiteHeader { align-items: flex-start; flex-direction: column; padding-top: 0.9rem; padding-bottom: 0.9rem; }
-  .pageNavigation { width: 100%; overflow-x: auto; padding-bottom: 0.3rem; }
+  .pageNavigation { width: 100%; padding-bottom: 0.3rem; }
   .pageNavigation > a,
   .pageNavigation .navMenuLink { white-space: nowrap; }
   .reportPageGrid article,
@@ -4117,6 +4117,29 @@ footer nav a:focus-visible {
   .valueCards article:nth-child(4),
   .pathwayConceptGrid article,
   .pathwayConceptGrid article:nth-child(4) { grid-column: span 3; }
+}
+
+@media (min-width: 681px) and (max-width: 1100px) {
+  .pageNavigation {
+    flex-wrap: wrap;
+    row-gap: 0.8rem;
+    overflow: visible;
+  }
+
+  .pageNavigation .navNestedDropdown {
+    position: static;
+    min-width: 0;
+    padding: 0.2rem 0 0.35rem 0.8rem;
+  }
+
+  .pageNavigation .navNestedPanel {
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 2px solid var(--sky-strong);
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 @media (max-width: 820px) {
