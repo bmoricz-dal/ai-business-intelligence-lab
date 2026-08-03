@@ -72,3 +72,10 @@ Decision: Reframe the website from a planner-first adoption lab into an Accounti
 Status: owner-approved for publication on 2026-08-03 through the explicit instruction “publish them”.  
 Experience boundary: Use, Integrate, Automate and Configure demonstrations are deterministic and browser-only. Their time, manual-touch, quality-check and control-coverage figures are illustrative mechanics, not observed firm outcomes, product performance tests, UK accounting-SME benchmarks or promised benefits.  
 Implication: the visitor should understand why adoption may improve efficiency, quality control and operational visibility, while the interface continues to show the human review, exception handling, citations and safe stops needed to make those improvements credible.
+
+## ACC-C13 — Verified Accounting AI Experience Lab release
+
+Decision: Record the tested Experience Lab extension as the current public Phase 2B release.  
+Status: complete on 2026-08-03.  
+Release record: GitHub commit `12baead4dfdb801c2b9ac622688a59b32e4b4743`; Cloudflare Worker version `588b57ca-6ab3-43ab-a5b2-f663f780670c`. The production build and lint checks passed, all 11 website tests passed, all nine public routes returned HTTP 200, and the live Experience Lab client bundle contained the four scenario workspaces, shared control room and control/failure-test interactions.  
+Implication: the public Experience Lab is the primary practical demonstration and the planner is its secondary implementation workspace. Future substantive changes to scenarios, illustrative values, evidence claims, privacy behaviour or controls require a new reviewed release.
