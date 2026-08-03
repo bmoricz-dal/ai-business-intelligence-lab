@@ -40,4 +40,4 @@
 
 - **Date:** 2026-08-03
 - **Decision:** Approve the research package, public case index and Adoption Journeys webpage for release.
-- **Outcome:** Published to GitHub at commit `fa40765` and deployed as Sites version 7 using the existing owner-only access setting.
+- **Outcome:** Published to GitHub at commit `fa40765`, saved as Sites version 7 and deployed to the public `dal-data-ai-lab` Worker as version `602e8e8e-301b-40ab-848c-b6ead9958485`. Live content and download checks passed.
