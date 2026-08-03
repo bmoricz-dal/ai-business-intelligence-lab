@@ -26,6 +26,7 @@ const routes = [
   ["/sectors", "Sectors"],
   ["/adoption-pathways", "Adoption pathways"],
   ["/methods", "Methods"],
+  ["/sectors/accounting/benefits", "Sectors"],
 ];
 
 test("serves every top-level research section as a separate page", async () => {
@@ -70,7 +71,25 @@ test("dropdowns support hover, click, focus departure and Escape", async () => {
   assert.match(shell, /\/about#background/);
   assert.match(shell, /\/ai-in-business#reports/);
   assert.match(shell, /\/sectors\/accounting/);
+  assert.match(shell, /\/sectors\/accounting\/benefits/);
   assert.match(shell, /\/adoption-pathways#governance/);
+});
+
+test("publishes the accounting benefits and system-fit evidence review", async () => {
+  const response = await render("/sectors/accounting/benefits");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Where AI creates measurable value in accounting work/);
+  assert.match(html, /7\.5–7\.9/);
+  assert.match(html, /not a UK accounting-SME benchmark/i);
+  assert.match(html, /controlled augmentation/i);
+  assert.match(html, /Benefits and errors coexist/);
+  assert.match(html, /75%/);
+  assert.match(html, /77%/);
+  assert.match(html, /No ROI claim/);
+  assert.match(html, /UK_Accounting_SMEs_AI_Benefits_and_System_Fit_2026\.pdf/);
+  assert.match(html, /accounting_ai_benefits_system_fit_2026\.csv/);
+  assert.doesNotMatch(html, /proven ROI|autonomous accounting is beneficial/i);
 });
 
 test("makes Overview the project homepage", async () => {

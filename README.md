@@ -9,9 +9,11 @@ using, integrating and governing artificial intelligence.
 - [AI in business](https://dal-data-ai-lab.moricz-labs.workers.dev/ai-in-business)
 - [Sector research](https://dal-data-ai-lab.moricz-labs.workers.dev/sectors)
 - [Accounting sector page](https://dal-data-ai-lab.moricz-labs.workers.dev/sectors/accounting)
+- [Accounting AI benefits and system fit](https://dal-data-ai-lab.moricz-labs.workers.dev/sectors/accounting/benefits)
 - [Adoption pathways](https://dal-data-ai-lab.moricz-labs.workers.dev/adoption-pathways)
 - [Methods](https://dal-data-ai-lab.moricz-labs.workers.dev/methods)
 - [UK Accounting SMEs: AI Adoption and Operational Readiness, 2026](publications/UK_Accounting_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf)
+- [UK Accounting SMEs: AI Benefits and System Fit, 2026](publications/UK_Accounting_SMEs_AI_Benefits_and_System_Fit_2026.pdf)
 - [Report 1 — AI Use by Business Size](publications/SME_Report_01_AI_Use_by_Business_Size.pdf)
 - [Report 2 — AI Adoption and System Integration](publications/SME_Report_02_AI_Adoption_and_System_Integration_by_Size.pdf)
 - [Report 3 — AI Governance by Business Size](publications/SME_Report_03_AI_Governance_by_Business_Size.pdf)
@@ -49,6 +51,13 @@ broad-sector context and the ONS SIC 69.20 population frame separate. It finds
 that AI is no longer niche, with current use concentrated in research, drafting,
 summarisation, client communication and document work; however, no official open
 source supports one exact accounting-SME adoption rate.
+
+The second accounting study assesses benefits and system fit using secondary
+evidence only. It finds the clearest measurable signal in transaction
+processing, bookkeeping and month-end close when AI is integrated with workflow
+controls and professional review. Its accounting-specific field evidence comes
+from a US setting and remains transfer evidence rather than a UK effect-size
+benchmark. The project does not publish an accounting-SME ROI or vendor ranking.
 
 ## Evidence rules
 
@@ -107,7 +116,9 @@ derived result extracts used in the reports are available in `data/public/`.
 This repository is the public evidence and reproducibility layer. The five
 reports and cross-report synthesis are owner-reviewed publication editions.
 The accounting sector report and its public observation-level CSV are now part
-of this public evidence layer. The website remains the main reader-facing product.
+of this public evidence layer. The accounting benefits review, graded source
+register and observation-level evidence matrix extend that sector package. The
+website remains the main reader-facing product.
 
 ## Licensing
 

@@ -1,0 +1,19 @@
+{
+  "title": "UK Accounting SMEs: AI Benefits and System Fit, 2026",
+  "publication_date": "2026-08-03",
+  "author": "Benedek Moricz",
+  "research_mode": "secondary_data_only",
+  "approval_status": "owner_authorised_final_publication",
+  "publication_status": "approved_for_distribution",
+  "evidence_boundary": "No open UK accounting-SME causal evaluation was identified; international field results are transfer evidence only.",
+  "output": {
+    "file": "UK_Accounting_SMEs_AI_Benefits_and_System_Fit_2026.pdf",
+    "sha256": "09a0666326950f52d97b33818fed69e188de1ba8601413d2291f2ac22750fa95",
+    "page_count": 10
+  },
+  "public_data": {
+    "file": "data/public/accounting_ai_benefits_system_fit_2026.csv",
+    "sha256": "65516a91f983d19f1e6341cf8cf25e413d90285373ec1cd302a0f9d8171431b1"
+  },
+  "generated_at": "2026-08-03T11:04:04.603363+00:00"
+}

@@ -3,6 +3,7 @@ import { SiteFooter, SiteHeader } from "../../site-shell";
 
 const REPORT = "/reports/UK_Accounting_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf";
 const DATA = "/data/accounting_ai_readiness_2026.csv";
+const BENEFITS_REPORT = "/sectors/accounting/benefits";
 const REPOSITORY = "https://github.com/bmoricz-dal/ai-business-intelligence-lab";
 
 export const metadata: Metadata = {
@@ -197,6 +198,11 @@ export default function AccountingSectorPage() {
               <p>Representative SME prevalence, verified workflow integration, consistent governance measures and evidence of business benefit.</p>
             </article>
           </div>
+          <a className="accountingNextStudy" href={BENEFITS_REPORT}>
+            <span>Next research phase</span>
+            <strong>Explore AI benefits and system fit →</strong>
+            <small>Bookkeeping, transaction processing and month-end close</small>
+          </a>
         </section>
 
         <section className="accountingMethods" id="methods">
@@ -219,8 +225,8 @@ export default function AccountingSectorPage() {
           </div>
           <p className="accountingDisclaimer">
             The study is descriptive. It does not claim that AI improves productivity,
-            accuracy, revenue or client outcomes. Benefits and system effectiveness are
-            the subject of the next research series.
+            accuracy, revenue or client outcomes. Those questions are assessed separately
+            in the benefits and system-fit evidence review.
           </p>
         </section>
       </main>

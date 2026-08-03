@@ -53,6 +53,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
           items={[
             { href: "/sectors#technology", label: "Technology" },
             { href: "/sectors/accounting", label: "Accounting" },
+            { href: "/sectors/accounting/benefits", label: "Accounting: benefits" },
             { href: "/sectors#financial-services", label: "Financial services" },
           ]}
         />

@@ -1,6 +1,6 @@
 # UK Accounting SMEs: AI Adoption and Operational Readiness, 2026
 
-This folder contains the complete secondary-data research package for the first DAL sector report.
+This folder contains the complete secondary-data research package for the accounting current-state report and the Phase 2A benefits and system-fit evidence review.
 
 ## Publication outputs
 
@@ -8,6 +8,17 @@ This folder contains the complete secondary-data research package for the first 
 - Public evidence: `data/public/accounting_ai_readiness_2026.csv`
 - Report generator: `src/reporting/accounting_ai_readiness_report.py`
 - Public webpage: `site/app/sectors/accounting/page.tsx`
+
+### Phase 2A - benefits and system fit
+
+- Final report: `output/pdf/UK_Accounting_SMEs_AI_Benefits_and_System_Fit_2026.pdf`
+- Public evidence: `data/public/accounting_ai_benefits_system_fit_2026.csv`
+- Report generator: `src/reporting/accounting_ai_benefits_report.py`
+- Public webpage: `site/app/sectors/accounting/benefits/page.tsx`
+- Research protocol: `benefits_research_plan.md`
+- Findings matrix: `benefits_findings_matrix.md`
+- Source register: `benefits_source_register.csv`
+- Decision log: `benefits_decision_log.md`
 
 ## Research controls
 
@@ -26,4 +37,4 @@ AI is no longer niche among UK accounting practices, but no official open source
 
 Current use is mainly task-level and assistive: research, drafting, summarisation, client communication, document processing, automation and reporting. External tools and vendor-embedded features dominate over bespoke development or automated decisions. Security, skills, integration and human oversight remain separate readiness capabilities.
 
-The report makes no claim about benefits, productivity, ROI or vendor effectiveness. Those questions belong to the next research programme.
+The current-state report makes no benefit claim. The separate Phase 2A review finds that transaction processing, bookkeeping and close support have the strongest measurable signal when AI is integrated with workflow controls and professional review. International field results are transfer evidence, not UK accounting-SME benchmarks; no ROI or vendor ranking is published.
