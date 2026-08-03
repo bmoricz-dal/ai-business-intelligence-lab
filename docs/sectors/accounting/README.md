@@ -11,7 +11,7 @@ This folder contains the complete secondary-data research package for the accoun
 
 ## Phase 2B — micro-practice adoption lab
 
-The next module translates the current-state and benefits evidence into a fictional seven-person accounting-practice case. Its primary output is an interactive website workspace covering pathway selection, step completion, baseline-versus-pilot measurement, decision gates and browser-only export. A 15-page PDF provides supporting theory and method.
+The next module translates the current-state and benefits evidence into a fictional seven-person accounting-practice case. Its primary output is the Accounting AI Experience Lab: four browser-only test drives showing how Use, Integrate, Automate and Configure can change routine handling, exception review, quality control and operational visibility. The earlier pathway planner remains as a secondary implementation workspace. A 15-page PDF provides supporting theory and method.
 
 - Interactive route: `site/app/adoption-pathways/accounting-micro-case-study/page.tsx`
 - Step-level tracker: `data/public/accounting_micro_ai_adoption_playbook_2026.csv`
@@ -21,7 +21,7 @@ The next module translates the current-state and benefits evidence into a fictio
 - Source register: `micro_case_study_source_register.csv`
 - Decision log: `micro_case_study_decision_log.md`
 
-Status: complete and owner-approved for publication on 2026-08-03.
+Status: complete and owner-approved for publication on 2026-08-03, including the Experience Lab extension.
 
 ### Phase 2A - benefits and system fit
 

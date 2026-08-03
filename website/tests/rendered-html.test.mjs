@@ -81,18 +81,25 @@ test("dropdowns support hover, click, focus departure and Escape", async () => {
   assert.match(shell, /\/adoption-pathways\/accounting-micro-case-study/);
 });
 
-test("provides an interactive micro-accounting adoption workspace", async () => {
+test("provides an accounting AI test drive and secondary adoption planner", async () => {
   const response = await render("/adoption-pathways/accounting-micro-case-study");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /A micro practice puts AI adoption into practice/);
-  assert.match(html, /Interactive adoption lab/);
-  assert.match(html, /Build and test your pathway/);
+  assert.match(html, /Accounting AI Experience Lab/);
+  assert.match(html, /Test-drive AI-enabled accounting workflows/);
+  assert.match(html, /Synthetic work only/);
+  assert.match(html, /Controlled assistant/);
+  assert.match(html, /Reconciliation &amp; close/);
+  assert.match(html, /Workflow automation/);
+  assert.match(html, /Firm knowledge/);
+  assert.match(html, /Shared control room/);
+  assert.match(html, /Illustrative demo result/);
+  assert.match(html, /Plan how your firm would test adoption/);
   assert.match(html, /Do not enter client data/);
   assert.match(html, /Baseline versus pilot/);
   assert.match(html, /Six gates/);
-  assert.match(html, /Fictional composite/);
-  assert.match(html, /No promised ROI/);
+  assert.match(html, /fictional composite/i);
+  assert.match(html, /promised ROI/i);
   assert.match(html, /UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026\.pdf/);
   assert.match(html, /accounting_micro_ai_adoption_playbook_2026\.csv/);
 
@@ -106,6 +113,17 @@ test("provides an interactive micro-accounting adoption workspace", async () => 
   assert.match(component, /Blob/);
   assert.match(component, /not sent to DAL/);
   assert.doesNotMatch(component, /fetch\(|axios|localStorage/);
+
+  const experience = await readFile(new URL("../app/adoption-pathways/accounting-micro-case-study/experience-workspace.tsx", import.meta.url), "utf8");
+  assert.match(experience, /^"use client"/);
+  assert.match(experience, /transactionDecisions/);
+  assert.match(experience, /wrong-client test/i);
+  assert.match(experience, /Known-case alignment/);
+  assert.match(experience, /document-level trace/);
+  assert.match(experience, /quality-control coverage/i);
+  assert.match(experience, /completeMethod/);
+  assert.match(experience, /deterministic fictional demonstrations/i);
+  assert.doesNotMatch(experience, /fetch\(|axios|localStorage/);
 });
 
 test("publishes the accounting benefits and system-fit evidence review", async () => {
@@ -135,7 +153,7 @@ test("makes Overview the project homepage", async () => {
   assert.match(html, /Build a cumulative intelligence service/);
   assert.match(html, /Accounting research programme/);
   assert.match(html, /From sector readiness to evidence-led implementation/);
-  assert.match(html, /Micro-practice adoption lab/);
+  assert.match(html, /Accounting AI Experience Lab/);
   assert.match(html, />5<\/strong><span>general reports/);
   assert.match(html, />1<\/strong><span>cross-report synthesis/);
   assert.match(html, />3<\/strong><span>accounting research outputs/);

@@ -65,3 +65,10 @@ Decision: Publish the owner-approved interactive workspace, supporting report, p
 Status: complete on 2026-08-03.  
 Release record: GitHub commit `59b50f471e3f45f9d1b289a0ec653ea86b6bca48`; Cloudflare Worker version `5d6c15d2-5dd7-4c0d-9ee2-f8e33cb06abb`. The live route returned HTTP 200, the interactive client bundle loaded, and the live PDF and CSV SHA-256 fingerprints matched the approved files.  
 Implication: future substantive changes to case assumptions, thresholds, evidence claims or privacy behaviour require a new reviewed release.
+
+## ACC-C12 — Test-drive experience becomes the primary product
+
+Decision: Reframe the website from a planner-first adoption lab into an Accounting AI Experience Lab that lets viewers experience how controlled AI changes synthetic accounting work. Preserve the pathway planner as a secondary next step.  
+Status: owner-approved for publication on 2026-08-03 through the explicit instruction “publish them”.  
+Experience boundary: Use, Integrate, Automate and Configure demonstrations are deterministic and browser-only. Their time, manual-touch, quality-check and control-coverage figures are illustrative mechanics, not observed firm outcomes, product performance tests, UK accounting-SME benchmarks or promised benefits.  
+Implication: the visitor should understand why adoption may improve efficiency, quality control and operational visibility, while the interface continues to show the human review, exception handling, citations and safe stops needed to make those improvements credible.

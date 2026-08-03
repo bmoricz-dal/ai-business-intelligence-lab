@@ -58,8 +58,10 @@ Governance is cross-cutting across every method. The pathways are choices, not a
 
 ## Product hierarchy and deliverables
 
-- **Primary output:** interactive website workspace where a firm can choose a pathway, complete steps, compare an aggregated baseline with a pilot, record gate decisions and export its browser session.
-- The interactive demonstration does not call an AI model, connect to accounting software or transmit entered figures to DAL. It prohibits client-identifiable and confidential data.
+- **Primary output:** Accounting AI Experience Lab where visitors test-drive four synthetic accounting workflows, compare manual and controlled-adoption operations, experience review and safe-stop controls, and see an illustrative shared value dashboard.
+- **Secondary output:** implementation planner where a firm can choose a pathway, complete steps, compare an aggregated baseline with a pilot, record gate decisions and export its browser session.
+- Neither interactive workspace calls an AI model, connects to accounting software or transmits entered figures to DAL. Client-identifiable and confidential data are prohibited.
+- Demonstration times, touches and control-coverage scores are deterministic scenario mechanics, not observed outcomes, UK accounting-SME benchmarks, product evaluations or forecasts.
 - **Supporting output:** detailed PDF theoretical background, evidence boundaries and implementation method.
 - Public step-level CSV that firms can copy into a project tracker.
 - Evidence and source register with transfer and claim limits.
@@ -68,4 +70,4 @@ Governance is cross-cutting across every method. The pathways are choices, not a
 
 ## Approval boundary
 
-The research director approved this fictional composite, its illustrative assumptions and its public interaction wording for publication on 2026-08-03. The approved material must retain its evidence boundaries, secondary-data-only status and visible distinction between observed evidence, illustrative inputs and firm-set decision thresholds. Material future changes require renewed review.
+The research director approved this fictional composite, its illustrative assumptions and its public interaction wording for publication on 2026-08-03. The Experience Lab extension—four deterministic test drives, manual-versus-adopted comparisons and a shared control room—was explicitly approved for publication on the same date. The approved material must retain its evidence boundaries, secondary-data-only status and visible distinction between observed evidence, illustrative inputs and firm-set decision thresholds. Material future changes require renewed review.

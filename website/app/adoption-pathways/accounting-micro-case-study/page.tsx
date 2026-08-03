@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { SiteFooter, SiteHeader } from "../../site-shell";
 import { AdoptionWorkspace } from "./adoption-workspace";
+import { ExperienceWorkspace } from "./experience-workspace";
 
 const REPORT = "/reports/UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026.pdf";
 const DATA = "/data/accounting_micro_ai_adoption_playbook_2026.csv";
 const METHODS = "https://github.com/bmoricz-dal/ai-business-intelligence-lab/tree/main/docs/sectors/accounting";
 
 export const metadata: Metadata = {
-  title: "Micro Accounting Practice AI Adoption Worked Case, 2026",
-  description: "A secondary-evidence, step-by-step AI adoption case for a fictional seven-person UK accounting practice.",
+  title: "Accounting AI Experience Lab | DAL Data & AI Lab",
+  description: "Test-drive four AI-enabled accounting workflows using a synthetic seven-person UK accounting practice.",
 };
 
 const methods = [
@@ -66,31 +67,31 @@ const gates = [
 export default function AccountingMicroCaseStudyPage() {
   return (
     <>
-      <a className="skipLink" href="#case-main">Skip to the worked case</a>
+      <a className="skipLink" href="#case-main">Skip to the Accounting AI Experience Lab</a>
       <SiteHeader active="AI in practice" />
       <main id="case-main" className="microCasePage">
         <section className="microCaseHero">
           <div className="microCaseHeroMarker" aria-hidden="true"><span>PHASE 2B</span><span>7 PEOPLE</span><span>SECONDARY EVIDENCE</span></div>
           <div>
-            <p className="kicker light">Accounting · adoption pathway</p>
-            <h1>A micro practice puts AI adoption into practice</h1>
-            <p>A detailed worked case showing how a seven-person UK accounting firm could select, test, control and measure four different adoption methods.</p>
+            <p className="kicker light">Accounting · AI in practice</p>
+            <h1>Accounting AI Experience Lab</h1>
+            <p>Test-drive AI-enabled accounting workflows and experience how controlled adoption can change routine handling, exception review, quality control and operational visibility.</p>
             <div className="heroActions">
-              <a className="primaryButton" href={REPORT}>Download the worked case</a>
-              <a className="textButton accountingTextButton" href="#foundation">Start with the six steps</a>
+              <a className="primaryButton" href="#experience-lab">Start the test drive</a>
+              <a className="textButton accountingTextButton" href="#adoption-planner">Plan your adoption</a>
             </div>
           </div>
-          <aside><span>Case status</span><strong>Fictional composite</strong><p>Every operating number is an illustrative assumption, not an observed firm or sector result.</p></aside>
+          <aside><span>Experience design</span><strong>See adopted AI at work</strong><p>One synthetic practice, four adoption methods and visible before-and-after workflow comparisons.</p></aside>
         </section>
 
         <section className="microCaseBoundary" aria-label="Case boundaries">
-          <div><strong>Seven employees</strong><span>inside the 1–9 micro band and DSIT 5–9 frame</span></div>
-          <div><strong>No promised ROI</strong><span>firms measure their own baseline and full cost</span></div>
-          <div><strong>Human approval</strong><span>required before advice, communication or posting</span></div>
-          <div><strong>No-go is valid</strong><span>pathways are choices, not maturity stages</span></div>
+          <div><strong>Synthetic accounting work</strong><span>realistic fixed scenarios without client data</span></div>
+          <div><strong>Illustrative comparisons</strong><span>experience the mechanism—not promised ROI</span></div>
+          <div><strong>Human quality control</strong><span>review, overrides, citations and safe stops remain visible</span></div>
+          <div><strong>Browser-only experience</strong><span>no upload, live model or accounting-system connection</span></div>
         </section>
 
-        <AdoptionWorkspace />
+        <ExperienceWorkspace />
 
         <section className="microCaseProfile">
           <div className="sectionLead"><p className="kicker">The fictional firm</p><h2>Cedar Ledger Ltd</h2><p>The case uses a deliberately specific practice so the adoption decisions can be followed. Replace its assumptions with the adopting firm&apos;s real baseline.</p></div>
@@ -108,6 +109,8 @@ export default function AccountingMicroCaseStudyPage() {
             {methods.map(([number, label, title, description]) => <article key={number}><span>{number}</span><b>{label}</b><h3>{title}</h3><p>{description}</p></article>)}
           </div>
         </section>
+
+        <AdoptionWorkspace />
 
         <section className="microFoundation" id="foundation">
           <div className="sectionLead"><p className="kicker">Common foundation</p><h2>Six steps before any pilot</h2><p>Governance is not the final pathway. It shapes scope, data, testing and responsibility from the beginning.</p></div>

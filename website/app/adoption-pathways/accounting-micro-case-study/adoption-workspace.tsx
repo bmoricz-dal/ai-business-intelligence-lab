@@ -157,9 +157,9 @@ export function AdoptionWorkspace() {
   }
 
   return (
-    <section className="adoptionWorkspace" aria-labelledby="workspace-title">
+    <section className="adoptionWorkspace" id="adoption-planner" aria-labelledby="workspace-title">
       <div className="workspaceHeading">
-        <div><p className="kicker">Interactive adoption lab</p><h2 id="workspace-title">Build and test your pathway</h2><p>Use illustrative or aggregated operating figures only. Entries stay in this browser session and are not sent to DAL.</p></div>
+        <div><p className="kicker">Secondary workspace · implementation planner</p><h2 id="workspace-title">Plan how your firm would test adoption</h2><p>After experiencing the demonstrations, replace the fictional assumptions with illustrative or aggregated operating figures. Entries stay in this browser session and are not sent to DAL.</p></div>
         <div className="workspaceSafety"><strong>Do not enter client data</strong><span>No names, tax identifiers, payroll records, bank details or confidential documents.</span></div>
       </div>
 

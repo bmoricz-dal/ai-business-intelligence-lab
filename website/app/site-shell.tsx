@@ -60,7 +60,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
           label="AI in practice"
           items={[
             { href: "/adoption-pathways#background", label: "Background" },
-            { href: "/adoption-pathways/accounting-micro-case-study", label: "Accounting adoption lab" },
+            { href: "/adoption-pathways/accounting-micro-case-study", label: "Accounting Experience Lab" },
           ]}
         />
         <Link aria-current={active === "Methods" ? "page" : undefined} href="/methods">Methods</Link>

@@ -203,7 +203,7 @@ export default function AccountingBenefitsPage() {
             <a href={REPORT}><span>Evidence review</span><strong>Download PDF</strong></a>
             <a href={DATA}><span>Public evidence matrix</span><strong>Download CSV</strong></a>
             <a href={METHODS} rel="noreferrer" target="_blank"><span>Research trail</span><strong>View sources and methods</strong></a>
-            <a href="/adoption-pathways/accounting-micro-case-study"><span>Put the evidence into practice</span><strong>Follow the micro accounting case</strong></a>
+            <a href="/adoption-pathways/accounting-micro-case-study"><span>Put the evidence into practice</span><strong>Test-drive the Accounting AI Experience Lab</strong></a>
             <a href="/sectors/accounting"><span>Current-state baseline</span><strong>Return to AI adoption and readiness</strong></a>
           </div>
           <p className="benefitsDisclaimer">

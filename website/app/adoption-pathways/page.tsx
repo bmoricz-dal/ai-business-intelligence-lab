@@ -81,7 +81,7 @@ export default function AdoptionPathwaysPage() {
           <div className="actionLinkGrid">
             <a href="/ai-in-business"><span>General evidence</span><strong>See all five reports</strong></a>
             <a href="/sectors/accounting"><span>Sector application</span><strong>Accounting AI readiness</strong></a>
-            <a href="/adoption-pathways/accounting-micro-case-study"><span>Worked implementation</span><strong>Follow the micro accounting case</strong></a>
+            <a href="/adoption-pathways/accounting-micro-case-study"><span>Interactive test drive</span><strong>Open the Accounting AI Experience Lab</strong></a>
             <a href="/methods"><span>Evidence controls</span><strong>Methods and limitations</strong></a>
           </div>
         </section>

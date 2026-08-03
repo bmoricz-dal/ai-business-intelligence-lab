@@ -93,9 +93,9 @@ export default function OverviewPage() {
             </article>
             <article>
               <span>03 · Practical case</span>
-              <h3>Micro-practice adoption lab</h3>
-              <p>A fictional seven-person practice works through pathway choice, controls, baseline measurement, pilot gates and an exportable decision record.</p>
-              <a href="/adoption-pathways/accounting-micro-case-study">Open the interactive case study</a>
+              <h3>Accounting AI Experience Lab</h3>
+              <p>Test-drive four AI-enabled workflows in a fictional seven-person practice, compare the operational change and then explore the implementation plan.</p>
+              <a href="/adoption-pathways/accounting-micro-case-study">Start the accounting test drive</a>
             </article>
           </div>
         </section>
@@ -103,7 +103,7 @@ export default function OverviewPage() {
         <section className="pageSection currentRelease">
           <div>
             <p className="kicker light">Latest practical release</p>
-            <h2>Interactive micro-accounting AI adoption lab</h2>
+            <h2>Accounting AI Experience Lab</h2>
             <p>
               Compare Use, Integrate, Automate and Configure pathways, complete
               implementation controls and test aggregated baseline-versus-pilot
@@ -111,7 +111,7 @@ export default function OverviewPage() {
             </p>
           </div>
           <div className="releaseActions">
-            <a className="lightButton" href="/adoption-pathways/accounting-micro-case-study">Open the interactive lab</a>
+            <a className="lightButton" href="/adoption-pathways/accounting-micro-case-study">Start the test drive</a>
             <a href={MICRO_CASE_REPORT}>Download the supporting report</a>
             <a href={SYNTHESIS.href}>Read the general synthesis</a>
           </div>
