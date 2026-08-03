@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { SYNTHESIS } from "./research-data";
+import { ProgrammeConsole } from "./intelligence-ui";
 import { PageHero, SiteFooter, SiteHeader } from "./site-shell";
 
 const MICRO_CASE_REPORT = "/reports/UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026.pdf";
@@ -12,8 +14,8 @@ export default function OverviewPage() {
         <PageHero
           kicker="Project overview"
           marker="UK · SME · AI · EVIDENCE"
-          title="Clear evidence for better conversations about business AI."
-          introduction="DAL Data & AI Lab is an independent research platform examining how UK SMEs adopt, use, integrate and govern artificial intelligence. It turns public evidence into practical intelligence without hiding uncertainty."
+          title="See where SME AI adoption is real—and where the evidence stops."
+          introduction="DAL turns public UK evidence into decision-ready intelligence on AI use, integration, governance and implementation. Every signal retains its population, denominator and limitation."
         />
 
         <section className="overviewStatus" aria-label="Current publication status">
@@ -23,22 +25,35 @@ export default function OverviewPage() {
           <div><strong>1</strong><span>interactive adoption lab</span></div>
         </section>
 
+        <section className="systemVisualFeature" aria-label="Accounting intelligence system visual">
+          <Image
+            alt="A small accounting team reviewing source documents and financial workflow screens within a connected AI control system."
+            fill
+            priority
+            sizes="100vw"
+            src="/og.png"
+            unoptimized
+          />
+          <div className="systemVisualTelemetry" aria-hidden="true">
+            <span>DOCUMENTS</span><i /><span>LEDGER</span><i /><span>REVIEW</span><i /><span>INSIGHT</span>
+          </div>
+          <div className="systemVisualCaption"><span>ACCOUNTING SYSTEM / 01</span><strong>Human judgement stays inside the AI-enabled workflow.</strong></div>
+        </section>
+
         <section className="pageSection purposeSection">
           <div className="sectionLead">
             <p className="kicker">Purpose</p>
-            <h2>Make AI adoption evidence rigorous enough to trust and clear enough to use.</h2>
+            <h2>Turn fragmented AI evidence into decisions leaders can defend.</h2>
           </div>
           <div className="purposeCopy">
             <p>
-              AI adoption is often described through headline percentages that
-              combine different businesses, tools and definitions. This project
-              keeps the population, denominator, uncertainty and limitation
-              attached to every finding.
+              Headline adoption percentages often combine different businesses,
+              tools and definitions. DAL keeps the population, denominator,
+              uncertainty and limitation attached to every finding.
             </p>
             <p>
-              The intended readers are SME leaders, advisers and researchers who
-              need a measured starting point for decisions—not promotional claims
-              or a single unexplained readiness score.
+              The result is a measured starting point for SME leaders, advisers and
+              researchers—not a promotional claim or a single unexplained readiness score.
             </p>
             <a className="inlineLink" href="/about">Read about the project and its values</a>
           </div>
@@ -47,26 +62,26 @@ export default function OverviewPage() {
         <section className="pageSection evidenceArchitecture">
           <div className="sectionLead">
             <p className="kicker">Research model</p>
-            <h2>One evidence foundation, then deeper layers.</h2>
-            <p>The programme progresses from general patterns to sector detail and, later, tested business benefit.</p>
+            <h2>Start broad. Go sector-deep. Test what changes in practice.</h2>
+            <p>The programme moves from comparable national signals to sector workflows, implementation evidence and controlled demonstrations.</p>
           </div>
           <div className="architectureCards">
             <article>
               <span>01 · Foundation</span>
               <h3>AI in business</h3>
-              <p>Five reports covering use, integration, governance, use cases and operational pathways by business size.</p>
+              <p>Five linked reports separate use, integration, governance, use cases and operational pathways by business size.</p>
               <a href="/ai-in-business">Explore the general evidence</a>
             </article>
             <article>
               <span>02 · Sector depth</span>
               <h3>Accounting SMEs</h3>
-              <p>The first sector study combines all five dimensions in one secondary-data assessment.</p>
+              <p>The first sector programme tests what those five dimensions mean inside accounting work.</p>
               <a href="/sectors/accounting">Explore accounting AI readiness</a>
             </article>
             <article>
               <span>03 · Practical application</span>
               <h3>AI in practice</h3>
-              <p>Evidence-informed business and technical cases translate research into controlled, step-by-step adoption decisions.</p>
+              <p>Interactive business and technical cases show how adoption changes a workflow—and which controls make it credible.</p>
               <a href="/adoption-pathways">Explore practical adoption</a>
             </article>
           </div>
@@ -75,45 +90,20 @@ export default function OverviewPage() {
         <section className="pageSection accountingProgrammeOverview" id="accounting-research">
           <div className="sectionLead">
             <p className="kicker">Accounting research programme</p>
-            <h2>From sector readiness to real adoption journeys and practical demonstration.</h2>
-            <p>The accounting programme connects four layers: the sector&apos;s current AI position, evidence of workflow benefit, published adoption journeys and a practical micro-practice demonstration.</p>
+            <h2>One accounting programme. Four questions leaders need answered.</h2>
+            <p>How far has adoption progressed? Where is value supported? What changes during implementation? What does an AI-enabled accounting cycle look like in use?</p>
           </div>
-          <div className="architectureCards">
-            <article>
-              <span>01 · Current state</span>
-              <h3>AI adoption and readiness</h3>
-              <p>A secondary-data assessment of adoption, use, integration, governance and pathways across UK accounting SMEs.</p>
-              <a href="/sectors/accounting">Read the readiness study</a>
-            </article>
-            <article>
-              <span>02 · Benefits evidence</span>
-              <h3>Benefits and system fit</h3>
-              <p>A controlled review of where measurable workflow benefits appear, what can transfer to UK SMEs and which safeguards matter.</p>
-              <a href="/sectors/accounting/benefits">Explore benefits and system fit</a>
-            </article>
-            <article>
-              <span>03 · Real adoption evidence</span>
-              <h3>Accounting AI Adoption Journeys</h3>
-              <p>Published cases reveal how implementation started, where it stalled, which controls changed course and what outcomes were actually observed or reported.</p>
-              <a href="/sectors/accounting/adoption-journeys">Explore the adoption journeys</a>
-            </article>
-            <article>
-              <span>04 · Practical case</span>
-              <h3>Accounting AI Experience Lab</h3>
-              <p>Test-drive four AI-enabled workflows in a fictional seven-person practice, compare the operational change and then explore the implementation plan.</p>
-              <a href="/adoption-pathways/accounting-micro-case-study">Start the accounting test drive</a>
-            </article>
-          </div>
+          <ProgrammeConsole />
         </section>
 
         <section className="pageSection currentRelease">
           <div>
-            <p className="kicker light">Latest practical release</p>
-            <h2>Accounting AI Experience Lab</h2>
+            <p className="kicker light">Accounting AI Experience Lab · latest release</p>
+            <h2>Test-drive an AI-enabled accounting cycle.</h2>
             <p>
-              Compare Use, Integrate, Automate and Configure pathways, complete
-              implementation controls and test aggregated baseline-versus-pilot
-              figures without sending entered data to the Lab.
+              Move one fictional client from source records to ledger review,
+              reconciliation, close and insight. Compare operating methods and see
+              where professional review, exceptions and safe stops remain essential.
             </p>
           </div>
           <div className="releaseActions">
@@ -126,7 +116,7 @@ export default function OverviewPage() {
         <section className="pageSection futureSection" id="future">
           <div className="sectionLead">
             <p className="kicker">Future goals</p>
-            <h2>Build a cumulative intelligence service for SME adoption decisions.</h2>
+            <h2>Build the evidence base from adoption signals to measured business value.</h2>
           </div>
           <ol className="futureRoadmap">
             <li><span>Now</span><div><strong>Complete the current-state baseline</strong><p>Maintain general and accounting-sector adoption evidence as new secondary data becomes available.</p></div></li>

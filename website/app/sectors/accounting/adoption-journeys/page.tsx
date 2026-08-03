@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JourneyExplorer } from "../../../intelligence-ui";
 import { SiteFooter, SiteHeader } from "../../../site-shell";
 
 const DATA = "/data/accounting_ai_adoption_journeys_2026.csv";
@@ -44,10 +45,11 @@ export default function AccountingAdoptionJourneysPage() {
           </div>
           <div className="journeysHeroCopy">
             <p className="kicker light">Accounting sector · implementation evidence</p>
-            <h1>Accounting AI Adoption Journeys</h1>
+            <h1>AI adoption becomes real when the workflow changes.</h1>
             <p>
-              Real implementation evidence—from the starting problem and system choice
-              to setbacks, safeguards, measured or reported outcomes, and changes to work.
+              Published cases show how firms selected systems, piloted use,
+              encountered setbacks, adapted controls and changed work—with
+              experimental, associated and self-reported outcomes kept separate.
             </p>
             <div className="heroActions">
               <a className="primaryButton" href="#cases">Explore the cases</a>
@@ -69,10 +71,12 @@ export default function AccountingAdoptionJourneysPage() {
           <article><strong>Outcome labels</strong><span>experimental · associated · self-reported · comparator-only</span></article>
         </section>
 
+        <JourneyExplorer />
+
         <section className="journeysLifecycle">
           <div className="journeysSectionIntro">
             <p className="kicker">One comparison frame</p>
-            <h2>Follow the implementation, not just the product.</h2>
+            <h2>Follow the workflow change—not the product announcement.</h2>
             <p>Every case is read against the same lifecycle. Missing steps stay missing; they are not reconstructed from another firm.</p>
           </div>
           <ol className="journeySteps">
@@ -85,7 +89,7 @@ export default function AccountingAdoptionJourneysPage() {
         <section className="journeysCases" id="cases">
           <div className="journeysSectionIntro lightIntro">
             <p className="kicker light">Core accounting-practice evidence</p>
-            <h2>Three different views of adoption in practice.</h2>
+            <h2>Three evidence bundles show where implementation succeeds—and strains.</h2>
             <p>Evidence strength travels with each finding. A recurring mechanism does not turn a management estimate into an independently measured result.</p>
           </div>
 
@@ -141,7 +145,7 @@ export default function AccountingAdoptionJourneysPage() {
         <section className="journeysComparators">
           <div className="journeysSectionIntro">
             <p className="kicker">Change-management comparators</p>
-            <h2>Useful history, clearly marked as not AI.</h2>
+            <h2>Earlier digital change reveals implementation patterns—not AI outcomes.</h2>
             <p>These cases add detail about stalled change, staged onboarding and service redesign. They do not prove an AI benefit.</p>
           </div>
           <div className="comparatorGrid">
@@ -153,7 +157,7 @@ export default function AccountingAdoptionJourneysPage() {
         <section className="journeysSynthesis">
           <div>
             <p className="kicker light">Cross-case synthesis</p>
-            <h2>What the journeys support—and where confidence stops.</h2>
+            <h2>Five implementation lessons survive across the evidence.</h2>
           </div>
           <ol>
             <li><span>01</span><p><strong>Begin with a defined workflow and data foundation.</strong> Tool access alone is not the implementation.</p></li>
@@ -167,7 +171,7 @@ export default function AccountingAdoptionJourneysPage() {
         <section className="journeysUKTransfer">
           <div className="journeysSectionIntro">
             <p className="kicker">For a UK accounting SME</p>
-            <h2>Use the cases as design evidence, not an ROI promise.</h2>
+            <h2>Transfer the design principles—not another firm&apos;s ROI.</h2>
           </div>
           <div className="transferTableWrap">
             <table>
@@ -180,7 +184,7 @@ export default function AccountingAdoptionJourneysPage() {
         <section className="journeysMethods">
           <div>
             <p className="kicker light">Methods and next step</p>
-            <h2>Trace the evidence, then test-drive the accounting workflow.</h2>
+            <h2>Trace the evidence. Then test-drive the workflow.</h2>
             <p>The open research package includes the protocol, graded source register, claim-level evidence matrix, public case index and explicit evidence gaps.</p>
           </div>
           <div className="methodDownloads">

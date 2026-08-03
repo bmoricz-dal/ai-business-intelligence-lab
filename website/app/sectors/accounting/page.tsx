@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ReadinessConsole } from "../../intelligence-ui";
 import { SiteFooter, SiteHeader } from "../../site-shell";
 
 const REPORT = "/reports/UK_Accounting_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf";
@@ -67,10 +68,11 @@ export default function AccountingSectorPage() {
           </div>
           <div className="accountingHeroCopy">
             <p className="kicker light">Sector research · 2026</p>
-            <h1>UK Accounting SMEs: AI Adoption and Operational Readiness</h1>
+            <h1>AI use is established. Operational readiness is uneven.</h1>
             <p>
-              A five-dimension current-state study of how far AI use has progressed,
-              what accounting work it supports, and where operational readiness lags.
+              A five-dimension view of how far adoption has progressed, where
+              accounting teams use AI, and which integration, governance and skills
+              capabilities remain unresolved.
             </p>
             <div className="heroActions">
               <a className="primaryButton" href={REPORT}>Download the report</a>
@@ -90,13 +92,15 @@ export default function AccountingSectorPage() {
           <div><strong>39,860</strong><span>registered SIC 69.20 SMEs</span></div>
           <div><strong>Secondary only</strong><span>no survey or primary collection</span></div>
           <div><strong>Five dimensions</strong><span>one combined report</span></div>
-          <div><strong>Current state</strong><span>benefits research comes next</span></div>
+          <div><strong>Current state</strong><span>benefit is assessed separately</span></div>
         </section>
+
+        <ReadinessConsole />
 
         <section className="accountingLead" id="evidence">
           <div className="sectionIntro">
             <p className="kicker">Evidence-led answer</p>
-            <h2>AI use is established, but the rate depends on what “adoption” means.</h2>
+            <h2>Adoption is material—but there is no single defensible sector rate.</h2>
             <p>
               No official open source isolates both accounting and SME size. The
               evidence is therefore triangulated and each percentage keeps its own
@@ -124,7 +128,7 @@ export default function AccountingSectorPage() {
         <section className="accountingDimensions" id="dimensions">
           <div className="sectionIntro">
             <p className="kicker">The five dimensions</p>
-            <h2>Use-readiness is ahead of operations-readiness.</h2>
+            <h2>Task-level use has moved ahead of operational capability.</h2>
             <p>
               Access and task-level use are visible across the accounting evidence.
               Integration, governance and skills remain separate capabilities.
@@ -162,7 +166,7 @@ export default function AccountingSectorPage() {
         <section className="accountingUseCases" id="use-cases">
           <div>
             <p className="kicker light">Current pattern</p>
-            <h2>What accounting teams use AI for</h2>
+            <h2>Language and information work lead current use.</h2>
             <p>
               The source-defined task lists overlap and come from different surveys.
               They show direction, not a cross-survey ranking.
@@ -182,16 +186,16 @@ export default function AccountingSectorPage() {
         <section className="accountingConclusion">
           <div className="sectionIntro">
             <p className="kicker">Concluding insight</p>
-            <h2>Accounting is using AI mainly as an assistant, not an autonomous operating model.</h2>
+            <h2>Accounting is adopting AI as an assistant—not an autonomous operating model.</h2>
           </div>
           <div className="conclusionGrid">
             <article>
               <span>How much?</span>
-              <p>Enough to call adoption material and no longer niche; not enough to publish one exact official sector rate.</p>
+              <p>Adoption is no longer niche. The available sources still do not support one exact official accounting-SME rate.</p>
             </article>
             <article>
               <span>What kind?</span>
-              <p>Predominantly language, research, drafting, summarisation and document tasks, plus selected automation and reporting.</p>
+              <p>Predominantly research, drafting, summarisation and document tasks, with selected automation and reporting use.</p>
             </article>
             <article>
               <span>What is missing?</span>
@@ -213,7 +217,7 @@ export default function AccountingSectorPage() {
         <section className="accountingMethods" id="methods">
           <div>
             <p className="kicker light">Methods and openness</p>
-            <h2>Built from secondary evidence only</h2>
+            <h2>Every conclusion traces to secondary evidence.</h2>
             <p>
               ONS business demography provides the population frame. Direct
               accounting surveys provide directional adoption and task evidence.

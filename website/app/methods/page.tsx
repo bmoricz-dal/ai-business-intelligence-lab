@@ -16,12 +16,16 @@ export default function MethodsPage() {
         <PageHero
           kicker="Methods"
           marker="SOURCES · DENOMINATORS · UNCERTAINTY"
-          title="The evidence trail is part of the product."
-          introduction="This programme uses secondary data only. Every public conclusion is designed to remain traceable to a source, population, denominator, reference period and limitation."
+          title="Evidence is only useful when the trail remains visible."
+          introduction="DAL uses secondary data only. Every public conclusion traces to a source, population, denominator, reference period and limitation. Missing evidence remains a gap—not an invitation to estimate."
         />
 
+        <section className="systemSignalRail" aria-label="Evidence production pipeline">
+          <span><b>01</b> SOURCE</span><i /><span><b>02</b> PROFILE</span><i /><span><b>03</b> TRANSFORM</span><i /><span><b>04</b> VALIDATE</span><i /><span><b>05</b> PUBLISH</span>
+        </section>
+
         <section className="pageSection methodPrinciples">
-          <div className="sectionLead"><p className="kicker">Core controls</p><h2>What the evidence can—and cannot—say.</h2></div>
+          <div className="sectionLead"><p className="kicker">Core controls</p><h2>Six rules keep the conclusions inside the evidence.</h2></div>
           <div className="principleGrid methodControlGrid">
             <article><span>01</span><h3>Different denominators stay separate</h3><p>All-business estimates are not combined with estimates conditional on already using AI.</p></article>
             <article><span>02</span><h3>Descriptive, not causal</h3><p>Reported patterns do not prove that business size or AI adoption causes a performance outcome.</p></article>
@@ -33,7 +37,7 @@ export default function MethodsPage() {
         </section>
 
         <section className="pageSection evidenceStack">
-          <div className="sectionLead"><p className="kicker">Evidence stack</p><h2>Sources are selected for role, not just recency.</h2></div>
+          <div className="sectionLead"><p className="kicker">Evidence stack</p><h2>Each source has a defined job.</h2></div>
           <div className="evidenceStackRows">
             <article><span>Official statistics</span><h3>Population and comparable survey estimates</h3><p>ONS and DSIT evidence provides business frames, published definitions, confidence intervals and structured comparisons.</p></article>
             <article><span>Sector research</span><h3>Direct workflows, tools and professional context</h3><p>Accounting-specific studies contribute directional evidence where their samples and limitations are disclosed.</p></article>
@@ -43,7 +47,7 @@ export default function MethodsPage() {
         </section>
 
         <section className="pageSection methodDownloadsPage">
-          <div><p className="kicker light">Documentation</p><h2>Inspect the method and reproduce the evidence.</h2><p>The public repository contains the governed analytical layer behind the reports.</p></div>
+          <div><p className="kicker light">Documentation</p><h2>Audit the method. Reproduce the evidence.</h2><p>The public repository exposes the governed analytical layer behind the reports.</p></div>
           <div className="methodDownloadCards">
             <a href={METHODS_GUIDE} rel="noreferrer" target="_blank"><span>Plain-language guide</span><strong>Data and Methods Guide</strong></a>
             <a href={TECHNICAL_APPENDIX} rel="noreferrer" target="_blank"><span>Technical documentation</span><strong>Reproducibility Appendix</strong></a>
@@ -52,7 +56,7 @@ export default function MethodsPage() {
         </section>
 
         <section className="pageSection limitationsPage">
-          <div className="sectionLead"><p className="kicker">Research boundary</p><h2>Known limitations are recorded, not filled with guesses.</h2></div>
+          <div className="sectionLead"><p className="kicker">Research boundary</p><h2>Where the evidence ends, the claim stops.</h2></div>
           <p>
             Published survey tables cannot answer every sector-by-size question.
             Where evidence is missing, the report states the gap and uses a labelled

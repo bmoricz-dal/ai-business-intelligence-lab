@@ -23,15 +23,19 @@ export default function AIInBusinessPage() {
         <PageHero
           kicker="AI in business"
           marker="REPORTS 01–05 · UKBDS 2026"
-          title="The general evidence foundation."
-          introduction="Five reports examine reported AI use, system integration, governance, use cases and operational pathways by UK business size. A synthesis connects them without mixing incompatible denominators."
+          title="AI use is expanding faster than operational depth."
+          introduction="Five reports track reported use, system integration, governance, use cases and adoption pathways by UK business size—without turning different denominators into a false maturity score."
         />
+
+        <section className="systemSignalRail metricRail" aria-label="General evidence signal path">
+          <span><b>37.4%</b> MICRO USE</span><i /><span><b>26.9%</b> MICRO INTEGRATION</span><i /><span><b>20.1%</b> MICRO GUIDANCE</span><i /><span><b>5</b> LINKED REPORTS</span>
+        </section>
 
         <section className="pageSection evidenceSnapshot" id="snapshot">
           <div className="sectionLead">
             <p className="kicker">Evidence snapshot</p>
-            <h2>Reported AI use rises with business size.</h2>
-            <p>Large businesses are shown as a separate benchmark, not part of the core SME conclusion.</p>
+            <h2>Scale remains the clearest dividing line in reported AI use.</h2>
+            <p>Micro-business use is material, but it trails every larger size band. Large businesses remain a separate benchmark—not part of the SME conclusion.</p>
           </div>
           <div className="snapshotBars" aria-label="Reported AI use estimates by business size">
             {snapshots.map((item) => (
@@ -46,7 +50,7 @@ export default function AIInBusinessPage() {
         <section className="pageSection reportLibrary" id="reports">
           <div className="sectionLead">
             <p className="kicker">Five-report series</p>
-            <h2>Each report answers a different operational question.</h2>
+            <h2>Five reports separate reach from operational readiness.</h2>
           </div>
           <div className="reportPageGrid">
             {REPORTS.map((report) => (
@@ -65,12 +69,11 @@ export default function AIInBusinessPage() {
         <section className="pageSection synthesisFeature" id="synthesis">
           <div>
             <p className="kicker light">Cross-report synthesis</p>
-            <h2>Reported use is broader than operational depth.</h2>
+            <h2>Access is not the same as operational depth.</h2>
             <p>
-              Access to AI, the tasks it supports, system integration, governance
-              and in-house development are different questions. The synthesis
-              connects them without calculating unsupported conversion rates or a
-              readiness score.
+              Tool access, task use, system integration, governance and in-house
+              development are different operating signals. The synthesis connects
+              them without inventing a conversion funnel or readiness score.
             </p>
           </div>
           <div className="synthesisPoints">

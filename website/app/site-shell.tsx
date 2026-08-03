@@ -69,6 +69,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
           GitHub
         </a>
       </nav>
+      <span className="headerSystemStatus" aria-hidden="true"><i /> EVIDENCE SYSTEM</span>
     </header>
   );
 }
@@ -78,7 +79,7 @@ export function SiteFooter() {
     <footer className="siteFooter pageSiteFooter">
       <div>
         <strong>DAL Data &amp; AI Lab</strong>
-        <span>Independent UK SME AI adoption intelligence</span>
+        <span>Decision-ready UK SME AI adoption intelligence</span>
       </div>
       <nav aria-label="Footer navigation">
         <Link href="/">Overview</Link>
@@ -106,10 +107,21 @@ export function PageHero({
       <div className="pageHeroGrid" aria-hidden="true">
         <span>{marker}</span><i /><i /><i />
       </div>
-      <div>
-        <p className="kicker light">{kicker}</p>
-        <h1>{title}</h1>
-        <p>{introduction}</p>
+      <div className="pageHeroSystemLayout">
+        <div className="pageHeroSystemCopy">
+          <p className="kicker light">{kicker}</p>
+          <h1>{title}</h1>
+          <p>{introduction}</p>
+        </div>
+        <div className="heroSignalConsole" aria-hidden="true">
+          <div className="heroSignalTop"><span>DAL / INTELLIGENCE NODE</span><b><i /> ACTIVE</b></div>
+          <div className="heroSignalCore">
+            <span className="signalOrbit orbitOne" /><span className="signalOrbit orbitTwo" />
+            <i className="signalNode nodeA" /><i className="signalNode nodeB" /><i className="signalNode nodeC" /><i className="signalNode nodeD" />
+            <div><strong>AI</strong><small>EVIDENCE</small></div>
+          </div>
+          <div className="heroSignalReadout"><span>TRACEABLE</span><span>SECONDARY DATA</span><span>HUMAN REVIEW</span></div>
+        </div>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import "./globals.css";
 
 const title = "DAL Data & AI Lab | UK SME AI Adoption Intelligence";
 const description =
-  "Independent, evidence-led research on how UK SMEs use, integrate and govern AI, with sector studies and practical adoption pathways.";
+  "Decision-ready intelligence on how UK SMEs use, integrate and govern AI, with sector evidence and practical implementation labs.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       images: imageUrl
-        ? [{ url: imageUrl, width: 1734, height: 907, alt: "DAL Data & AI Lab — UK SME AI Adoption Intelligence" }]
+        ? [{ url: imageUrl, width: 1662, height: 946, alt: "DAL Data & AI Lab — UK SME AI Adoption Intelligence" }]
         : [],
     },
     twitter: {
