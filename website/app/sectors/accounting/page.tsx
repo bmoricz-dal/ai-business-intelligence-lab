@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ReadinessConsole } from "../../intelligence-ui";
-import { SiteFooter, SiteHeader } from "../../site-shell";
+import { SignalScene, SiteFooter, SiteHeader } from "../../site-shell";
 
 const REPORT = "/reports/UK_Accounting_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf";
 const DATA = "/data/accounting_ai_readiness_2026.csv";
@@ -86,6 +86,7 @@ export default function AccountingSectorPage() {
             <div><b>54%</b><small>piloting or adopted</small></div>
             <p className="panelCaveat">Includes large practices; not an official accounting-SME prevalence estimate.</p>
           </aside>
+          <div className="pageSectionNavigatorMount" />
         </section>
 
         <section className="accountingContext" aria-label="Research context">
@@ -94,6 +95,18 @@ export default function AccountingSectorPage() {
           <div><strong>Five dimensions</strong><span>one combined report</span></div>
           <div><strong>Current state</strong><span>benefit is assessed separately</span></div>
         </section>
+
+        <SignalScene
+          variant="ledger"
+          kicker="ACCOUNTING OPERATING SYSTEM"
+          title="From source record to reviewed insight."
+          description="AI readiness becomes meaningful when adoption is traced through bookkeeping, ledger control, close, reporting and professional review."
+          signals={[
+            { label: "Registered SMEs", value: "39,860" },
+            { label: "Direct adoption signal", value: "26%" },
+            { label: "Study dimensions", value: "05" },
+          ]}
+        />
 
         <ReadinessConsole />
 

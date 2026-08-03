@@ -128,6 +128,46 @@ export function PageHero({
           <div className="heroSignalReadout"><span>TRACEABLE</span><span>SECONDARY DATA</span><span>HUMAN REVIEW</span></div>
         </div>
       </div>
+      <div className="pageSectionNavigatorMount" />
+    </section>
+  );
+}
+
+export function SignalScene({
+  variant,
+  kicker,
+  title,
+  description,
+  signals,
+}: {
+  variant: "network" | "ledger" | "flow" | "horizon" | "provenance";
+  kicker: string;
+  title: string;
+  description: string;
+  signals: Array<{ label: string; value: string }>;
+}) {
+  return (
+    <section className={`signalScene signalScene--${variant}`} aria-label={`${kicker}: ${title}`}>
+      <div className="signalSceneField" aria-hidden="true">
+        <span className="signalSceneCore"><i /><i /><i /></span>
+        <span className="signalSceneArc arcA" /><span className="signalSceneArc arcB" />
+        <span className="signalSceneBeam beamA" /><span className="signalSceneBeam beamB" /><span className="signalSceneBeam beamC" />
+        <span className="signalSceneNode nodeOne" /><span className="signalSceneNode nodeTwo" /><span className="signalSceneNode nodeThree" /><span className="signalSceneNode nodeFour" />
+      </div>
+      <div className="signalSceneCopy">
+        <span>{kicker}</span>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <div className="signalSceneReadouts">
+        {signals.map((signal, index) => (
+          <article key={signal.label}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{signal.value}</strong>
+            <small>{signal.label}</small>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }

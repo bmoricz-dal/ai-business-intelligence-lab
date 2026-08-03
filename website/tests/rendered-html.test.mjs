@@ -91,6 +91,26 @@ test("keeps dropdown panels visible at compact desktop widths", async () => {
   assert.doesNotMatch(css, /@media \(max-width: 1100px\)[\s\S]{0,220}\.pageNavigation \{[^}]*overflow-x: auto;/);
 });
 
+test("integrates reliable section navigation and varied motion scenes", async () => {
+  const experience = await readFile(new URL("../app/editorial-experience.tsx", import.meta.url), "utf8");
+  const shell = await readFile(new URL("../app/site-shell.tsx", import.meta.url), "utf8");
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(experience, /createPortal/);
+  assert.match(experience, /pageSectionNavigator/);
+  assert.match(experience, /Explore this page/);
+  assert.match(experience, /window\.history\.replaceState/);
+  assert.match(experience, /scrollIntoView/);
+  assert.doesNotMatch(experience, /Page outline|editorialOutline/);
+  assert.match(shell, /pageSectionNavigatorMount/);
+  assert.match(shell, /export function SignalScene/);
+  assert.match(shell, /"network" \| "ledger" \| "flow" \| "horizon" \| "provenance"/);
+  assert.match(css, /\.pageSectionNavigator/);
+  assert.match(css, /\.signalScene--ledger/);
+  assert.match(css, /\.signalScene--horizon/);
+  assert.match(css, /prefers-reduced-motion: reduce/);
+});
+
 test("provides a connected accounting-cycle test drive and secondary adoption planner", async () => {
   const response = await render("/adoption-pathways/accounting-micro-case-study");
   assert.equal(response.status, 200);

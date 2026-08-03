@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { JourneyExplorer } from "../../../intelligence-ui";
-import { SiteFooter, SiteHeader } from "../../../site-shell";
+import { SignalScene, SiteFooter, SiteHeader } from "../../../site-shell";
 
 const DATA = "/data/accounting_ai_adoption_journeys_2026.csv";
 const METHODS = "https://github.com/bmoricz-dal/ai-business-intelligence-lab/tree/main/docs/sectors/accounting";
@@ -63,6 +63,7 @@ export default function AccountingAdoptionJourneysPage() {
             <div><b>2</b><small>historical change comparators</small></div>
             <p className="panelCaveat">No DAL survey. No blended firm history. No pooled ROI or vendor ranking.</p>
           </aside>
+          <div className="pageSectionNavigatorMount" />
         </section>
 
         <section className="journeysBoundary" aria-label="What the study can show">
@@ -70,6 +71,18 @@ export default function AccountingAdoptionJourneysPage() {
           <article><strong>Cannot show</strong><span>a typical UK micro-practice journey or guaranteed benefit</span></article>
           <article><strong>Outcome labels</strong><span>experimental · associated · self-reported · comparator-only</span></article>
         </section>
+
+        <SignalScene
+          variant="horizon"
+          kicker="IMPLEMENTATION FLIGHTPATH"
+          title="The route bends when real work begins."
+          description="Published journeys expose selection, pilot friction, adaptation and conditional scale. Setbacks are part of the operating evidence—not footnotes to a success story."
+          signals={[
+            { label: "Core evidence bundles", value: "03" },
+            { label: "Lifecycle stages", value: "06" },
+            { label: "Guaranteed outcome", value: "None" },
+          ]}
+        />
 
         <JourneyExplorer />
 

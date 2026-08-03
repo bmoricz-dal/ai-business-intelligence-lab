@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ACCOUNTING_REPORT } from "../research-data";
-import { PageHero, SiteFooter, SiteHeader } from "../site-shell";
+import { PageHero, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
 
 export const metadata: Metadata = {
   title: "Sector Research | DAL Data & AI Lab",
@@ -23,6 +23,18 @@ export default function SectorsPage() {
         <section className="systemSignalRail" aria-label="Sector intelligence pathway">
           <span><b>01</b> GENERAL SIGNAL</span><i /><span><b>02</b> SECTOR WORKFLOW</span><i /><span><b>03</b> CONTROL CONTEXT</span><i /><span><b>04</b> PRACTICAL TEST</span>
         </section>
+
+        <SignalScene
+          variant="network"
+          kicker="SECTOR INTELLIGENCE NETWORK"
+          title="One evidence spine. Different operating realities."
+          description="The same national signal branches into sector-specific workflows, controls and test environments. The connection is visible; the distinctions remain intact."
+          signals={[
+            { label: "General evidence", value: "05 reports" },
+            { label: "Published sector", value: "Accounting" },
+            { label: "Practical layer", value: "Live lab" },
+          ]}
+        />
 
         <section className="pageSection sectorPrinciples">
           <div className="sectionLead">

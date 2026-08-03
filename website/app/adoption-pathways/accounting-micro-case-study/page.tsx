@@ -48,6 +48,7 @@ export default function AccountingMicroCaseStudyPage() {
             </div>
           </div>
           <aside><span>Interactive test drive</span><strong>See what adoption changes—and what it should not</strong><p>One synthetic practice, one fictional client and six connected accounting workstations.</p></aside>
+          <div className="pageSectionNavigatorMount" />
         </section>
 
         <section className="microCaseBoundary" aria-label="Case boundaries">

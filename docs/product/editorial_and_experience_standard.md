@@ -38,9 +38,9 @@ It is informed by representative official BCG and McKinsey pages, but it does no
 - Deep navy editorial fields, white space and restrained cyan/emerald/violet signal colours.
 - Two original signature motifs: the evidence sphere for traceable signals and route lines for movement from national context to workflow decisions.
 - Cinematic media has a narrative job: the aerial London sequence represents the UK business system; the office sequence represents firm-level workflow adoption.
-- Motion is slow, directional and sparse. It supports hierarchy and continuity rather than decorating every object.
+- Motion is slow, directional and varied by analytical purpose. Network, ledger, flow, horizon and provenance scenes create continuity without turning evidence into decoration.
 - Cards and controls respond to hover, focus and selection with position, light and border changes. Every control remains keyboard operable.
-- The fixed page outline, reading-progress indicator and section reveal system help readers navigate long research pages.
+- The hero-integrated “Explore this page” rail replaces the floating outline. Direct section buttons, active-section tracking, reading progress and section reveals support long-form navigation without covering content.
 - Reduced-motion preferences disable continuous motion and reveal transitions.
 
 ## Publication standard

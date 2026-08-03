@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { METHODS_GUIDE, TECHNICAL_APPENDIX } from "../research-data";
-import { PageHero, PUBLIC_REPOSITORY, SiteFooter, SiteHeader } from "../site-shell";
+import { PageHero, PUBLIC_REPOSITORY, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
 
 export const metadata: Metadata = {
   title: "Methods | DAL Data & AI Lab",
@@ -23,6 +23,18 @@ export default function MethodsPage() {
         <section className="systemSignalRail" aria-label="Evidence production pipeline">
           <span><b>01</b> SOURCE</span><i /><span><b>02</b> PROFILE</span><i /><span><b>03</b> TRANSFORM</span><i /><span><b>04</b> VALIDATE</span><i /><span><b>05</b> PUBLISH</span>
         </section>
+
+        <SignalScene
+          variant="provenance"
+          kicker="PROVENANCE ENGINE"
+          title="Every published signal keeps its evidence trail."
+          description="Source, population, denominator, transformation, uncertainty and limitation move together from intake to publication."
+          signals={[
+            { label: "Primary collection", value: "None" },
+            { label: "Evidence model", value: "Traceable" },
+            { label: "Unsupported inference", value: "Stop" },
+          ]}
+        />
 
         <section className="pageSection methodPrinciples">
           <div className="sectionLead"><p className="kicker">Core controls</p><h2>Six rules keep the conclusions inside the evidence.</h2></div>

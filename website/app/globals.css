@@ -5705,3 +5705,451 @@ body {
   .cityAerialStory > img,
   .cityAerialRoutes { animation: none !important; }
 }
+
+/* Immersive editorial system — release 0.9.1 */
+.pageHero,
+.accountingHero,
+.benefitsHero,
+.journeysHero,
+.microCaseHero {
+  position: relative;
+  padding-bottom: clamp(7.5rem, 10vw, 9rem);
+}
+
+.pageSectionNavigatorMount {
+  position: absolute;
+  z-index: 8;
+  right: clamp(1rem, 5vw, 5rem);
+  bottom: 0;
+  left: clamp(1rem, 5vw, 5rem);
+  min-width: 0;
+}
+
+.pageHero > .pageSectionNavigatorMount { max-width: none; }
+
+.pageSectionNavigator {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid rgba(113, 220, 255, .2);
+  border-bottom: 0;
+  border-radius: .8rem .8rem 0 0;
+  background: rgba(4, 17, 26, .86);
+  box-shadow: 0 -16px 52px rgba(1, 8, 13, .28), inset 0 1px 0 rgba(255, 255, 255, .04);
+  backdrop-filter: blur(20px);
+}
+
+.pageSectionNavigatorLabel {
+  display: grid;
+  min-width: 145px;
+  place-items: center;
+  padding: .9rem 1.1rem;
+  border-right: 1px solid rgba(113, 220, 255, .16);
+  color: var(--signal-green);
+  font: 760 .55rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.pageSectionNavigator > div {
+  display: flex;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(113, 220, 255, .3) transparent;
+}
+
+.pageSectionNavigator button {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 62px;
+  max-width: 245px;
+  align-items: center;
+  gap: .55rem;
+  padding: .75rem 1rem;
+  border: 0;
+  border-right: 1px solid rgba(113, 220, 255, .1);
+  background: transparent;
+  color: rgba(255, 255, 255, .58);
+  text-align: left;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.pageSectionNavigator button::after {
+  content: "";
+  position: absolute;
+  right: .9rem;
+  bottom: 0;
+  left: .9rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--signal), var(--signal-green));
+  opacity: 0;
+  transform: scaleX(.35);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.pageSectionNavigator button:hover,
+.pageSectionNavigator button:focus-visible,
+.pageSectionNavigator button[aria-current="location"] {
+  background: linear-gradient(180deg, rgba(113, 220, 255, .09), rgba(113, 220, 255, .02));
+  color: var(--white);
+}
+
+.pageSectionNavigator button[aria-current="location"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.pageSectionNavigator button span {
+  color: var(--signal);
+  font: 760 .5rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.pageSectionNavigator button strong {
+  overflow: hidden;
+  font-size: .66rem;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.immersiveSection {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.immersiveSection > :not(.sectionAtmosphere) {
+  position: relative;
+  z-index: 2;
+}
+
+.sectionAtmosphere {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sectionAtmosphere::before,
+.sectionAtmosphere::after,
+.sectionAtmosphere i {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.immersiveSection[data-scene="orbit"] .sectionAtmosphere {
+  background: radial-gradient(circle at 88% 38%, rgba(113, 220, 255, .13), transparent 25rem);
+}
+
+.immersiveSection[data-scene="orbit"] .sectionAtmosphere::before {
+  top: 50%;
+  right: -15rem;
+  width: min(48vw, 42rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(47, 131, 197, .15);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4rem rgba(47, 131, 197, .025), 0 0 0 9rem rgba(110, 231, 194, .018);
+  transform: translateY(-50%);
+}
+
+.immersiveSection[data-scene="orbit"] .sectionAtmosphere i {
+  top: calc(50% - 4px);
+  right: calc(7% + var(--orbit-offset, 0px));
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 18px var(--signal);
+}
+
+.immersiveSection[data-scene="orbit"] .sectionAtmosphere i:nth-child(2) { --orbit-offset: 88px; margin-top: -120px; background: var(--signal-green); }
+.immersiveSection[data-scene="orbit"] .sectionAtmosphere i:nth-child(3) { --orbit-offset: 164px; margin-top: 118px; background: var(--signal-violet); }
+.immersiveSection[data-scene="orbit"] .sectionAtmosphere i:nth-child(n+4) { display: none; }
+
+.immersiveSection[data-scene="scan"] .sectionAtmosphere {
+  opacity: .56;
+  background-image: linear-gradient(rgba(47, 131, 197, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(47, 131, 197, .07) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(90deg, transparent, #000 25%, #000 78%, transparent);
+}
+
+.immersiveSection[data-scene="scan"] .sectionAtmosphere::after {
+  top: -20%;
+  bottom: -20%;
+  left: 12%;
+  width: 1px;
+  background: linear-gradient(transparent, var(--signal), var(--signal-green), transparent);
+  box-shadow: 0 0 30px rgba(113, 220, 255, .65);
+}
+
+.immersiveSection[data-scene="constellation"] .sectionAtmosphere {
+  opacity: .7;
+  background: radial-gradient(circle at 18% 30%, rgba(149, 135, 255, .12), transparent 22rem), radial-gradient(circle at 82% 70%, rgba(110, 231, 194, .1), transparent 18rem);
+}
+
+.immersiveSection[data-scene="constellation"] .sectionAtmosphere::before {
+  inset: 12% 6%;
+  background: linear-gradient(28deg, transparent 39%, rgba(47, 131, 197, .14) 39.2% 39.4%, transparent 39.6%), linear-gradient(154deg, transparent 58%, rgba(110, 231, 194, .13) 58.2% 58.4%, transparent 58.6%);
+}
+
+.immersiveSection[data-scene="constellation"] .sectionAtmosphere i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 18px var(--signal);
+}
+.immersiveSection[data-scene="constellation"] .sectionAtmosphere i:nth-child(1) { top: 22%; left: 13%; }
+.immersiveSection[data-scene="constellation"] .sectionAtmosphere i:nth-child(2) { top: 64%; left: 24%; background: var(--signal-green); }
+.immersiveSection[data-scene="constellation"] .sectionAtmosphere i:nth-child(3) { top: 31%; right: 18%; background: var(--signal-violet); }
+.immersiveSection[data-scene="constellation"] .sectionAtmosphere i:nth-child(4) { right: 32%; bottom: 18%; }
+.immersiveSection[data-scene="constellation"] .sectionAtmosphere i:nth-child(n+5) { display: none; }
+
+.immersiveSection[data-scene="wave"] .sectionAtmosphere {
+  opacity: .45;
+  background: radial-gradient(ellipse at 50% 100%, rgba(113, 220, 255, .17), transparent 52%);
+}
+
+.immersiveSection[data-scene="wave"] .sectionAtmosphere i {
+  right: -8%;
+  bottom: calc(8% + var(--wave-y, 0px));
+  width: 52%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(113, 220, 255, .62), transparent);
+  transform: rotate(var(--wave-r, -5deg));
+  box-shadow: 0 0 18px rgba(113, 220, 255, .28);
+}
+.immersiveSection[data-scene="wave"] .sectionAtmosphere i:nth-child(2) { --wave-y: 45px; --wave-r: -2deg; }
+.immersiveSection[data-scene="wave"] .sectionAtmosphere i:nth-child(3) { --wave-y: 90px; --wave-r: 2deg; }
+.immersiveSection[data-scene="wave"] .sectionAtmosphere i:nth-child(4) { --wave-y: 135px; --wave-r: 6deg; }
+.immersiveSection[data-scene="wave"] .sectionAtmosphere i:nth-child(5) { --wave-y: 180px; --wave-r: 10deg; }
+.immersiveSection[data-scene="wave"] .sectionAtmosphere i:nth-child(6) { --wave-y: 225px; --wave-r: 14deg; }
+
+.reactiveSurface {
+  --surface-x: 50%;
+  --surface-y: 50%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 260ms cubic-bezier(.22, .61, .36, 1), box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.reactiveSurface > :not(.surfaceGlow) { position: relative; z-index: 2; }
+
+.surfaceGlow {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: radial-gradient(280px circle at var(--surface-x) var(--surface-y), rgba(113, 220, 255, .17), transparent 67%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+}
+
+.reactiveSurface:hover,
+.reactiveSurface:focus-within {
+  border-color: rgba(47, 131, 197, .38);
+  box-shadow: 0 24px 60px rgba(15, 58, 84, .14), 0 0 0 1px rgba(113, 220, 255, .06);
+  transform: translateY(-4px);
+}
+
+.reactiveSurface:hover > .surfaceGlow,
+.reactiveSurface:focus-within > .surfaceGlow { opacity: 1; }
+
+.signalScene {
+  position: relative;
+  display: grid;
+  min-height: clamp(620px, 72vw, 850px);
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: end;
+  overflow: hidden;
+  padding: clamp(5rem, 8vw, 8rem) 7vw;
+  isolation: isolate;
+  background: linear-gradient(132deg, #020b11 0%, #071b29 52%, #0c3045 100%);
+  color: var(--white);
+}
+
+.signalScene::before,
+.signalScene::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+}
+
+.signalScene::before {
+  opacity: .42;
+  background-image: linear-gradient(rgba(113, 220, 255, .065) 1px, transparent 1px), linear-gradient(90deg, rgba(113, 220, 255, .065) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(180deg, #000, transparent 78%);
+}
+
+.signalScene::after {
+  background: radial-gradient(circle at 70% 36%, rgba(113, 220, 255, .18), transparent 18rem), radial-gradient(circle at 20% 72%, rgba(149, 135, 255, .12), transparent 22rem);
+}
+
+.signalSceneField {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  perspective: 900px;
+  pointer-events: none;
+  transition: transform 700ms cubic-bezier(.22, .61, .36, 1);
+}
+
+.signalScene:hover .signalSceneField { transform: scale(1.025) translate3d(0, -1%, 0); }
+
+.signalSceneCopy,
+.signalSceneReadouts { position: relative; z-index: 3; }
+
+.signalSceneCopy { max-width: 880px; }
+.signalSceneCopy > span { color: var(--signal-green); font: 760 .62rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .15em; }
+.signalSceneCopy h2 { max-width: 920px; margin: .9rem 0 1.2rem; color: var(--white); font-size: clamp(3.2rem, 7vw, 7.4rem); font-weight: 540; letter-spacing: -.07em; line-height: .91; }
+.signalSceneCopy p { max-width: 700px; color: rgba(255, 255, 255, .7); font-size: clamp(1rem, 1.35vw, 1.2rem); }
+
+.signalSceneReadouts {
+  display: grid;
+  align-self: end;
+  border-top: 1px solid rgba(113, 220, 255, .24);
+}
+
+.signalSceneReadouts article {
+  display: grid;
+  min-height: 92px;
+  grid-template-columns: 2rem minmax(110px, auto) 1fr;
+  gap: .9rem;
+  align-items: center;
+  padding: .9rem 0;
+  border-bottom: 1px solid rgba(113, 220, 255, .16);
+  color: var(--white);
+}
+
+.signalSceneReadouts article > span { color: var(--signal); font: 740 .52rem/1 ui-monospace, monospace; }
+.signalSceneReadouts article strong { font-size: clamp(1rem, 2vw, 1.55rem); }
+.signalSceneReadouts article small { color: rgba(255, 255, 255, .52); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; }
+
+.signalSceneCore {
+  position: absolute;
+  z-index: 2;
+  top: 14%;
+  left: 58%;
+  width: clamp(150px, 22vw, 330px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(110, 231, 194, .36);
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, rgba(203, 255, 239, .72), rgba(61, 203, 170, .27) 18%, rgba(10, 48, 55, .4) 48%, rgba(2, 11, 17, .72) 72%);
+  box-shadow: inset -28px -36px 74px rgba(0, 4, 7, .72), inset 15px 15px 45px rgba(174, 255, 229, .13), 0 0 100px rgba(110, 231, 194, .2);
+}
+
+.signalSceneCore::before,
+.signalSceneCore::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(113, 220, 255, .22);
+  border-radius: 50%;
+}
+.signalSceneCore::before { inset: -18%; border-style: dashed; }
+.signalSceneCore::after { inset: 14%; }
+.signalSceneCore > i { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--signal-green); box-shadow: 0 0 18px currentColor; }
+.signalSceneCore > i:nth-child(1) { top: -4px; left: 48%; }
+.signalSceneCore > i:nth-child(2) { right: 5%; bottom: 24%; color: var(--signal); background: var(--signal); }
+.signalSceneCore > i:nth-child(3) { bottom: 8%; left: 14%; color: var(--signal-violet); background: var(--signal-violet); }
+
+.signalSceneArc { position: absolute; z-index: 1; top: 6%; left: 50%; width: 46vw; max-width: 690px; aspect-ratio: 1; border: 1px solid rgba(113, 220, 255, .13); border-radius: 50%; }
+.signalSceneArc.arcB { top: 12%; left: 56%; width: 34vw; border-color: rgba(149, 135, 255, .16); }
+.signalSceneBeam { position: absolute; z-index: 1; height: 1px; transform-origin: left; background: linear-gradient(90deg, transparent, var(--signal), var(--signal-green), transparent); box-shadow: 0 0 12px rgba(113, 220, 255, .36); }
+.signalSceneBeam.beamA { top: 29%; left: 17%; width: 63%; transform: rotate(8deg); }
+.signalSceneBeam.beamB { top: 45%; left: 40%; width: 49%; transform: rotate(-22deg); }
+.signalSceneBeam.beamC { top: 65%; left: 8%; width: 57%; transform: rotate(-9deg); }
+.signalSceneNode { position: absolute; z-index: 2; width: 9px; height: 9px; border: 1px solid rgba(255,255,255,.8); border-radius: 50%; background: var(--signal-green); box-shadow: 0 0 18px var(--signal-green); }
+.signalSceneNode.nodeOne { top: 31%; left: 32%; }
+.signalSceneNode.nodeTwo { top: 48%; right: 17%; background: var(--signal); box-shadow: 0 0 18px var(--signal); }
+.signalSceneNode.nodeThree { top: 60%; left: 46%; background: var(--signal-violet); box-shadow: 0 0 18px var(--signal-violet); }
+.signalSceneNode.nodeFour { top: 18%; right: 23%; }
+
+.signalScene--ledger::before { background-size: 38px 38px; transform: perspective(700px) rotateX(52deg) scale(1.35); transform-origin: 50% 20%; }
+.signalScene--ledger .signalSceneCore { border-radius: 18%; transform: rotate(45deg); }
+.signalScene--ledger .signalSceneCore::before,
+.signalScene--ledger .signalSceneCore::after { border-radius: 18%; }
+.signalScene--flow .signalSceneCore { top: 9%; left: 67%; width: clamp(135px, 18vw, 250px); }
+.signalScene--flow .signalSceneBeam { height: 2px; }
+.signalScene--horizon::before { transform: perspective(620px) rotateX(62deg) scale(1.45); transform-origin: 50% 52%; }
+.signalScene--horizon .signalSceneCore { top: 23%; left: 63%; width: clamp(125px, 16vw, 225px); }
+.signalScene--provenance .signalSceneCore { background: radial-gradient(circle at 38% 34%, rgba(209, 247, 255, .78), rgba(55, 153, 202, .29) 21%, rgba(16, 48, 79, .54) 50%, rgba(2, 11, 17, .8) 72%); border-color: rgba(113, 220, 255, .45); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .immersiveSection[data-scene="orbit"] .sectionAtmosphere::before { animation: atmosphereOrbit 24s linear infinite; }
+  .immersiveSection[data-scene="scan"] .sectionAtmosphere::after { animation: atmosphereScan 8s ease-in-out infinite alternate; }
+  .immersiveSection[data-scene="constellation"] .sectionAtmosphere i { animation: atmosphereNode 3.6s ease-in-out infinite; }
+  .immersiveSection[data-scene="constellation"] .sectionAtmosphere i:nth-child(2n) { animation-delay: -1.8s; }
+  .immersiveSection[data-scene="wave"] .sectionAtmosphere i { animation: atmosphereWave 7s ease-in-out infinite alternate; }
+  .immersiveSection[data-scene="wave"] .sectionAtmosphere i:nth-child(2n) { animation-delay: -3.5s; }
+  .signalSceneCore { animation: signalCoreFloat 6.5s ease-in-out infinite; }
+  .signalSceneCore::before { animation: systemOrbit 28s linear infinite; }
+  .signalSceneArc.arcA { animation: signalArc 32s linear infinite; }
+  .signalSceneArc.arcB { animation: signalArc 24s linear infinite reverse; }
+  .signalSceneBeam { animation: signalBeam 4.8s ease-in-out infinite; }
+  .signalSceneBeam.beamB { animation-delay: -1.6s; }
+  .signalSceneBeam.beamC { animation-delay: -3.2s; }
+  .signalSceneNode { animation: atmosphereNode 3.4s ease-in-out infinite; }
+}
+
+@keyframes atmosphereOrbit { to { transform: translateY(-50%) rotate(360deg); } }
+@keyframes atmosphereScan { from { left: 8%; opacity: .35; } to { left: 88%; opacity: .85; } }
+@keyframes atmosphereNode { 0%, 100% { opacity: .42; transform: scale(.72); } 50% { opacity: 1; transform: scale(1.18); } }
+@keyframes atmosphereWave { from { opacity: .32; transform: rotate(var(--wave-r, -5deg)) translateX(-4%); } to { opacity: .82; transform: rotate(var(--wave-r, -5deg)) translateX(5%); } }
+@keyframes signalCoreFloat { 0%, 100% { margin-top: 0; } 50% { margin-top: -16px; } }
+@keyframes signalArc { to { transform: rotate(360deg); } }
+@keyframes signalBeam { 0%, 100% { opacity: .22; filter: hue-rotate(0deg); } 50% { opacity: .9; filter: hue-rotate(32deg); } }
+
+@media (max-width: 980px) {
+  .pageSectionNavigatorMount { right: 1rem; left: 1rem; }
+  .pageSectionNavigator { grid-template-columns: 1fr; }
+  .pageSectionNavigatorLabel { display: none; }
+  .signalScene { grid-template-columns: 1fr; min-height: 760px; align-items: end; }
+  .signalSceneCopy { align-self: end; }
+  .signalSceneReadouts { grid-template-columns: repeat(3, 1fr); }
+  .signalSceneReadouts article { min-height: 125px; grid-template-columns: 1fr; gap: .35rem; align-content: center; }
+  .signalSceneCore { top: 10%; left: 55%; }
+}
+
+@media (max-width: 680px) {
+  .pageHero,
+  .accountingHero,
+  .benefitsHero,
+  .journeysHero,
+  .microCaseHero { padding-bottom: 7.3rem; }
+  .pageSectionNavigatorMount { right: 0; left: 0; }
+  .pageSectionNavigator { border-right: 0; border-left: 0; border-radius: 0; }
+  .pageSectionNavigator button { min-height: 58px; max-width: 200px; padding: .65rem .8rem; }
+  .pageSectionNavigator button strong { max-width: 145px; }
+  .signalScene { min-height: 780px; padding: 4rem 1.2rem; }
+  .signalSceneCopy h2 { font-size: clamp(2.8rem, 14vw, 4.8rem); }
+  .signalSceneReadouts { grid-template-columns: 1fr; }
+  .signalSceneReadouts article { min-height: 72px; grid-template-columns: 1.7rem 1fr 1fr; }
+  .signalSceneCore { top: 8%; left: 48%; width: 155px; }
+  .signalSceneArc { left: 34%; width: 78vw; }
+  .sectionAtmosphere { opacity: .52; }
+  .reactiveSurface:hover,
+  .reactiveSurface:focus-within { transform: translateY(-2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sectionAtmosphere *,
+  .sectionAtmosphere::before,
+  .sectionAtmosphere::after,
+  .signalSceneField *,
+  .signalSceneField::before,
+  .signalSceneField::after { animation: none !important; }
+  .reactiveSurface,
+  .surfaceGlow,
+  .signalSceneField { transition: none !important; }
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../../../site-shell";
+import { SignalScene, SiteFooter, SiteHeader } from "../../../site-shell";
 
 const REPORT = "/reports/UK_Accounting_SMEs_AI_Benefits_and_System_Fit_2026.pdf";
 const DATA = "/data/accounting_ai_benefits_system_fit_2026.csv";
@@ -67,6 +67,7 @@ export default function AccountingBenefitsPage() {
             <div><b>79</b><small>US private SME clients</small></div>
             <p className="panelCaveat">Peer-reviewed transfer evidence; not a UK accounting-SME benchmark.</p>
           </aside>
+          <div className="pageSectionNavigatorMount" />
         </section>
 
         <section className="benefitsContext" aria-label="Research boundaries">
@@ -79,6 +80,18 @@ export default function AccountingBenefitsPage() {
         <section className="systemSignalRail accountingFlowRail" aria-label="Controlled accounting workflow">
           <span><b>01</b> SOURCE RECORDS</span><i /><span><b>02</b> CATEGORISE</span><i /><span><b>03</b> RECONCILE</span><i /><span><b>04</b> CLOSE</span><i /><span><b>05</b> REVIEW</span>
         </section>
+
+        <SignalScene
+          variant="flow"
+          kicker="CONTROLLED VALUE FLOW"
+          title="Efficiency travels with review, exceptions and evidence."
+          description="The strongest benefit signal appears when AI works inside a bounded accounting process—not when a general tool operates without workflow control."
+          signals={[
+            { label: "Strongest evidence area", value: "Close support" },
+            { label: "Required route", value: "Exception" },
+            { label: "Accountability", value: "Human" },
+          ]}
+        />
 
         <section className="benefitsVerdict" id="verdict">
           <div className="benefitsSectionIntro">

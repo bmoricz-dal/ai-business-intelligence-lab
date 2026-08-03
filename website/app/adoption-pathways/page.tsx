@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PATHWAY_ROWS } from "../research-data";
-import { PageHero, SiteFooter, SiteHeader } from "../site-shell";
+import { PageHero, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
 
 export const metadata: Metadata = {
   title: "AI in Practice | DAL Data & AI Lab",
@@ -62,6 +62,18 @@ export default function AdoptionPathwaysPage() {
         <section className="systemSignalRail" aria-label="AI adoption pathway signals">
           <span><b>01</b> USE</span><i /><span><b>02</b> INTEGRATE</span><i /><span><b>03</b> AUTOMATE</span><i /><span><b>04</b> BUILD</span><i /><span><b>05</b> GOVERN</span>
         </section>
+
+        <SignalScene
+          variant="horizon"
+          kicker="OPERATING PATHWAYS"
+          title="There is no single route through adoption."
+          description="Use, integration, automation, internal build and governance advance in different combinations. The right route begins with the workflow and its evidence boundary."
+          signals={[
+            { label: "Operating choices", value: "05" },
+            { label: "Universal sequence", value: "None" },
+            { label: "Control layer", value: "Always on" },
+          ]}
+        />
 
         <section className="pageSection pathwayConcepts" id="background">
           <div className="sectionLead"><p className="kicker">Five operating choices</p><h2>The deeper the workflow change, the greater the control demand.</h2></div>
