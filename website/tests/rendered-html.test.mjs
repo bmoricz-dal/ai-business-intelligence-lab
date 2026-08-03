@@ -27,6 +27,7 @@ const routes = [
   ["/adoption-pathways", "AI in practice"],
   ["/methods", "Methods"],
   ["/sectors/accounting/benefits", "Sectors"],
+  ["/sectors/accounting/adoption-journeys", "Sectors"],
   ["/adoption-pathways/accounting-micro-case-study", "AI in practice"],
 ];
 
@@ -77,6 +78,7 @@ test("dropdowns support hover, click, focus departure and Escape", async () => {
   assert.doesNotMatch(shell, /\/ai-in-business#reports/);
   assert.match(shell, /\/sectors\/accounting/);
   assert.match(shell, /\/sectors\/accounting\/benefits/);
+  assert.match(shell, /\/sectors\/accounting\/adoption-journeys/);
   assert.match(shell, /\/adoption-pathways#background/);
   assert.match(shell, /\/adoption-pathways\/accounting-micro-case-study/);
 });
@@ -153,6 +155,29 @@ test("publishes the accounting benefits and system-fit evidence review", async (
   assert.doesNotMatch(html, /proven ROI|autonomous accounting is beneficial/i);
 });
 
+test("presents accounting AI adoption journeys with evidence boundaries", async () => {
+  const response = await render("/sectors/accounting/adoption-journeys");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Accounting AI Adoption Journeys/);
+  assert.match(html, /Follow the implementation, not just the product/);
+  assert.match(html, /Integrated AI bookkeeping platform/);
+  assert.match(html, /Love Your Accountants/);
+  assert.match(html, /Audit-firm implementation pattern/);
+  assert.match(html, /\+17\.5 percentage points/);
+  assert.match(html, /10–15 hours per week/);
+  assert.match(html, /self-reported/i);
+  assert.match(html, /not one company/i);
+  assert.match(html, /Useful history, clearly marked as not AI/);
+  assert.match(html, /Alfa Accountants \/ Beta/);
+  assert.match(html, /Hudson Accountants/);
+  assert.match(html, /No DAL survey/);
+  assert.match(html, /No pooled ROI or vendor ranking/);
+  assert.match(html, /accounting_ai_adoption_journeys_2026\.csv/);
+  assert.match(html, /Accounting AI Experience Lab/);
+  assert.doesNotMatch(html, /guaranteed ROI|proves AI reduces staff/i);
+});
+
 test("makes Overview the project homepage", async () => {
   const html = await (await render("/")).text();
   assert.match(html, /Clear evidence for better conversations about business AI/);
@@ -162,11 +187,12 @@ test("makes Overview the project homepage", async () => {
   assert.match(html, /Latest practical release/);
   assert.match(html, /Build a cumulative intelligence service/);
   assert.match(html, /Accounting research programme/);
-  assert.match(html, /From sector readiness to evidence-led implementation/);
+  assert.match(html, /From sector readiness to real adoption journeys and practical demonstration/);
   assert.match(html, /Accounting AI Experience Lab/);
   assert.match(html, />5<\/strong><span>general reports/);
   assert.match(html, />1<\/strong><span>cross-report synthesis/);
-  assert.match(html, />3<\/strong><span>accounting research outputs/);
+  assert.match(html, />4<\/strong><span>accounting programme outputs/);
+  assert.match(html, /Accounting AI Adoption Journeys/);
   assert.match(html, />1<\/strong><span>interactive adoption lab/);
 });
 

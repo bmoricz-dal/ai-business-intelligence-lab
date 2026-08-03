@@ -203,6 +203,11 @@ export default function AccountingSectorPage() {
             <strong>Explore AI benefits and system fit →</strong>
             <small>Bookkeeping, transaction processing and month-end close</small>
           </a>
+          <a className="accountingNextStudy" href="/sectors/accounting/adoption-journeys">
+            <span>Real implementation evidence</span>
+            <strong>Explore Accounting AI Adoption Journeys →</strong>
+            <small>Starting problems, pilots, setbacks, controls and outcomes</small>
+          </a>
         </section>
 
         <section className="accountingMethods" id="methods">

@@ -376,6 +376,118 @@
 .benefitsMethods > div:first-child > p:not(.kicker) { color: rgba(255, 255, 255, 0.68); }
 .benefitsDisclaimer { grid-column: 1 / -1; margin: 0; padding-top: 1.2rem; border-top: 1px solid rgba(223, 243, 255, 0.18); color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
 
+/* Accounting AI adoption journeys */
+.journeysPage { overflow: hidden; background: var(--paper); }
+.journeysHero {
+  position: relative;
+  display: grid;
+  min-height: 690px;
+  grid-template-columns: minmax(0, 1.42fr) minmax(300px, 0.58fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: center;
+  padding: 8rem 7vw 7rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 80% 25%, rgba(91, 191, 181, 0.2), transparent 24%), linear-gradient(135deg, #081720, #123f5c 58%, #1c6d77);
+  color: var(--white);
+}
+.journeysHero::after { content: ""; position: absolute; right: -8vw; bottom: -35vw; width: 68vw; height: 68vw; border: 1px solid rgba(223, 243, 255, 0.14); border-radius: 50%; box-shadow: 0 0 0 6vw rgba(223, 243, 255, 0.03), 0 0 0 13vw rgba(223, 243, 255, 0.02); }
+.journeysHeroGrid { position: absolute; inset: 0; opacity: 0.65; background-image: linear-gradient(rgba(223, 243, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(223, 243, 255, 0.05) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+.journeysHeroGrid span { position: absolute; color: rgba(223, 243, 255, 0.52); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.66rem; letter-spacing: 0.14em; }
+.journeysHeroGrid span:nth-child(1) { top: 16%; right: 8%; }
+.journeysHeroGrid span:nth-child(2) { bottom: 10%; left: 7%; }
+.journeysHeroGrid span:nth-child(3) { top: 38%; left: 54%; transform: rotate(90deg); }
+.journeysHeroCopy, .journeysHeroPanel { position: relative; z-index: 2; }
+.journeysHeroCopy h1 { max-width: 950px; margin: 0 0 1.4rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.2rem, 6.5vw, 6.8rem); font-weight: 500; letter-spacing: -0.06em; line-height: 0.94; }
+.journeysHeroCopy > p:not(.kicker) { max-width: 720px; color: rgba(255, 255, 255, 0.78); font-size: clamp(1.05rem, 1.7vw, 1.3rem); }
+.journeysHeroPanel { padding: 2.25rem; border: 1px solid rgba(223, 243, 255, 0.25); border-radius: 1rem; background: rgba(6, 24, 33, 0.64); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25); backdrop-filter: blur(18px); }
+.journeysHeroPanel > span { color: #a8e6e1; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.journeysHeroPanel > strong { display: block; margin-top: 0.7rem; font-size: clamp(3.5rem, 6vw, 6.2rem); line-height: 1; }
+.journeysHeroPanel > p { margin: 0.35rem 0 1.5rem; color: var(--sky); }
+.journeysHeroPanel > div { display: flex; align-items: baseline; gap: 0.7rem; padding-top: 1rem; border-top: 1px solid rgba(223, 243, 255, 0.18); }
+.journeysHeroPanel > div b { font-size: 1.8rem; }
+.journeysHeroPanel > div small { color: rgba(255, 255, 255, 0.68); }
+.journeysHeroPanel .panelCaveat { margin-top: 1rem; color: rgba(255, 255, 255, 0.55); font-size: 0.72rem; }
+.journeysBoundary { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--white); border-bottom: 1px solid var(--line); }
+.journeysBoundary article { display: grid; gap: 0.25rem; padding: 1.45rem 2rem; border-right: 1px solid var(--line); }
+.journeysBoundary article:last-child { border-right: 0; }
+.journeysBoundary strong { color: var(--navy); }
+.journeysBoundary span { color: var(--muted); font-size: 0.76rem; }
+.journeysLifecycle, .journeysComparators, .journeysUKTransfer { padding: clamp(5rem, 9vw, 9rem) 7vw; }
+.journeysSectionIntro { max-width: 900px; }
+.journeysSectionIntro h2, .journeysSynthesis h2, .journeysMethods h2 { margin: 0.4rem 0 1rem; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.3rem, 4.4vw, 4.7rem); font-weight: 500; letter-spacing: -0.045em; line-height: 1.02; }
+.journeysSectionIntro > p:not(.kicker) { color: var(--muted); font-size: 1.02rem; }
+.journeySteps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 3rem 0 0; padding: 0; list-style: none; }
+.journeySteps li { display: grid; min-height: 185px; grid-template-columns: 48px 1fr; gap: 1rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: 0.75rem; background: var(--white); box-shadow: 0 15px 45px rgba(23, 62, 91, 0.06); }
+.journeySteps li > span { color: var(--teal-dark); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.75rem; }
+.journeySteps strong { color: var(--navy); font-size: 1.12rem; }
+.journeySteps p { color: var(--muted); font-size: 0.85rem; }
+.journeysCases { padding: clamp(5rem, 9vw, 9rem) 7vw; background: linear-gradient(135deg, #0a1821, #123f5c); color: var(--white); }
+.journeysCases .lightIntro h2 { color: var(--white); }
+.journeysCases .lightIntro > p:not(.kicker) { color: rgba(255, 255, 255, 0.67); }
+.journeyCase { margin-top: 2rem; padding: clamp(1.5rem, 4vw, 3.2rem); border: 1px solid rgba(223, 243, 255, 0.18); border-radius: 1rem; background: rgba(255, 255, 255, 0.045); }
+.journeyCase.featuredCase { margin-top: 3.2rem; background: rgba(255, 255, 255, 0.07); box-shadow: 0 28px 70px rgba(0, 0, 0, 0.16); }
+.journeyCase > header { display: flex; justify-content: space-between; gap: 2rem; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(223, 243, 255, 0.16); }
+.journeyCase header p { margin: 0.25rem 0; color: rgba(255, 255, 255, 0.56); font-size: 0.76rem; }
+.journeyCase h3 { margin: 0.35rem 0 0; color: var(--white); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 500; }
+.caseNumber { color: #a8e6e1; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.12em; }
+.gradeBadge { flex: 0 0 auto; padding: 0.55rem 0.8rem; border: 1px solid rgba(168, 230, 225, 0.45); border-radius: 999px; color: #a8e6e1; font-size: 0.7rem; letter-spacing: 0.09em; text-transform: uppercase; }
+.gradeBadge.selfReport { border-color: rgba(255, 222, 151, 0.45); color: #ffde97; }
+.caseJourneyGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 1.7rem; background: rgba(223, 243, 255, 0.14); }
+.caseJourneyGrid > div { padding: 1.35rem; background: #133a50; }
+.caseJourneyGrid span, .caseOutcomes span, .reportedOutcome span { color: #a8e6e1; font-size: 0.67rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.caseJourneyGrid p { margin-bottom: 0; color: rgba(255, 255, 255, 0.72); font-size: 0.86rem; }
+.caseOutcomes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1.5rem; }
+.caseOutcomes > div, .reportedOutcome { padding: 1.3rem; border-radius: 0.65rem; background: rgba(168, 230, 225, 0.1); }
+.caseOutcomes strong, .reportedOutcome strong { display: block; margin-top: 0.45rem; color: var(--white); font-size: 1.45rem; }
+.caseOutcomes p, .reportedOutcome p { margin-bottom: 0; color: rgba(255, 255, 255, 0.62); font-size: 0.75rem; }
+.reportedOutcome { max-width: 620px; margin-top: 1.5rem; background: rgba(255, 222, 151, 0.08); }
+.reportedOutcome span { color: #ffde97; }
+.journeyCase footer { display: flex; justify-content: space-between; gap: 2rem; align-items: center; margin-top: 1.5rem; }
+.journeyCase footer p { max-width: 760px; color: rgba(255, 255, 255, 0.66); font-size: 0.82rem; }
+.journeyCase footer a { flex: 0 0 auto; color: #a8e6e1; font-weight: 700; text-decoration: none; }
+.multiSourceFooter > div { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: flex-end; }
+.comparatorGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 3rem; }
+.comparatorGrid article { padding: 2rem; border: 1px solid var(--line); border-radius: 0.8rem; background: var(--white); box-shadow: 0 15px 45px rgba(23, 62, 91, 0.06); }
+.comparatorGrid article > span { color: var(--teal-dark); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.comparatorGrid h3 { color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 1.8rem; font-weight: 500; }
+.comparatorGrid p { color: var(--muted); }
+.comparatorGrid strong { display: block; margin-top: 1.4rem; color: var(--navy); }
+.comparatorGrid a { color: var(--teal-dark); font-weight: 700; text-decoration: none; }
+.journeysSynthesis { display: grid; grid-template-columns: minmax(300px, 0.8fr) minmax(520px, 1.2fr); gap: clamp(3rem, 8vw, 8rem); padding: clamp(5rem, 9vw, 9rem) 7vw; background: #143a4f; color: var(--white); }
+.journeysSynthesis h2 { color: var(--white); }
+.journeysSynthesis ol { margin: 0; padding: 0; border-top: 1px solid rgba(223, 243, 255, 0.2); list-style: none; }
+.journeysSynthesis li { display: grid; grid-template-columns: 48px 1fr; gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(223, 243, 255, 0.16); }
+.journeysSynthesis li span { color: #a8e6e1; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.journeysSynthesis li p { margin: 0; color: rgba(255, 255, 255, 0.67); }
+.journeysSynthesis li strong { color: var(--white); }
+.transferTableWrap { margin-top: 3rem; overflow-x: auto; }
+.transferTableWrap table { width: 100%; min-width: 760px; border-collapse: collapse; background: var(--white); }
+.transferTableWrap th, .transferTableWrap td { width: 33.333%; padding: 1.2rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.transferTableWrap th { background: var(--navy); color: var(--white); }
+.transferTableWrap td { color: var(--muted); }
+.journeysMethods { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 0.65fr); gap: 5rem; padding: clamp(5rem, 9vw, 9rem) 7vw; background: var(--charcoal); color: var(--white); }
+.journeysMethods h2 { color: var(--white); }
+.journeysMethods > div:first-child > p:not(.kicker) { color: rgba(255, 255, 255, 0.68); }
+.journeysDisclaimer { grid-column: 1 / -1; margin: 0; padding-top: 1.2rem; border-top: 1px solid rgba(223, 243, 255, 0.18); color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
+
+@media (max-width: 980px) {
+  .journeysHero { grid-template-columns: 1fr; }
+  .journeysHeroPanel { max-width: 480px; }
+  .journeySteps { grid-template-columns: repeat(2, 1fr); }
+  .journeysSynthesis, .journeysMethods { grid-template-columns: 1fr; }
+  .caseOutcomes { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+  .journeysHero { min-height: 650px; padding: 7rem 1.2rem 4.5rem; }
+  .journeysHeroCopy h1 { font-size: 3.1rem; }
+  .journeysBoundary, .journeySteps, .caseJourneyGrid, .comparatorGrid { grid-template-columns: 1fr; }
+  .journeysBoundary article { border-right: 0; border-bottom: 1px solid var(--line); }
+  .journeysLifecycle, .journeysCases, .journeysComparators, .journeysSynthesis, .journeysUKTransfer, .journeysMethods { padding: 4.5rem 1.2rem; }
+  .journeyCase > header, .journeyCase footer { display: grid; }
+  .multiSourceFooter > div { justify-content: flex-start; }
+}
+
 @media (max-width: 980px) {
   .benefitsHero { grid-template-columns: 1fr; }
   .benefitsHeroPanel { max-width: 480px; }
@@ -3738,6 +3850,10 @@ footer nav a:focus-visible {
   background-size: 42px 42px, 42px 42px, auto;
 }
 
+.accountingProgrammeOverview .architectureCards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .architectureCards,
 .principleGrid,
 .sectorCardGrid {
@@ -4390,6 +4506,7 @@ footer nav a:focus-visible {
 .gateDecisionGrid label > span { color: var(--navy); font-size: .75rem; font-weight: 800; }
 
 @media (max-width: 1100px) {
+  .accountingProgrammeOverview .architectureCards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .workspaceLayout { grid-template-columns: 1fr; }
   .workspaceControls { position: static; grid-template-columns: repeat(2,1fr); }
   .workspaceActions { grid-column: 1 / -1; }
@@ -4397,6 +4514,7 @@ footer nav a:focus-visible {
 }
 
 @media (max-width: 760px) {
+  .accountingProgrammeOverview .architectureCards { grid-template-columns: 1fr; }
   .workspaceHeading, .workspaceControls, .workspaceSteps, .metricInputGrid, .gateDecisionGrid { grid-template-columns: 1fr; }
   .workspacePanelHeader { align-items: flex-start; }
   .workspaceResults { grid-template-columns: repeat(2,1fr); }

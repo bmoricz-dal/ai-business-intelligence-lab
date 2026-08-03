@@ -39,7 +39,8 @@ export default function SectorsPage() {
             <p>
               The first sector report combines adoption, integration, governance,
               use cases and pathways in one secondary-data study of SIC 69.20
-              accounting practices.
+              accounting practices. Two connected studies then examine benefits
+              and real-world adoption journeys before the practical Experience Lab.
             </p>
             <div className="sectorMetrics">
               <div><strong>39,860</strong><span>registered accounting SMEs</span></div>
@@ -49,6 +50,7 @@ export default function SectorsPage() {
           </div>
           <div className="releaseActions">
             <a className="lightButton" href="/sectors/accounting">Explore the accounting page</a>
+            <a href="/sectors/accounting/adoption-journeys">Explore adoption journeys</a>
             <a href={ACCOUNTING_REPORT}>Download the final report</a>
             <a href="/data/accounting_ai_readiness_2026.csv">Download the public evidence</a>
           </div>

@@ -19,7 +19,7 @@ export default function OverviewPage() {
         <section className="overviewStatus" aria-label="Current publication status">
           <div><strong>5</strong><span>general reports</span></div>
           <div><strong>1</strong><span>cross-report synthesis</span></div>
-          <div><strong>3</strong><span>accounting research outputs</span></div>
+          <div><strong>4</strong><span>accounting programme outputs</span></div>
           <div><strong>1</strong><span>interactive adoption lab</span></div>
         </section>
 
@@ -75,8 +75,8 @@ export default function OverviewPage() {
         <section className="pageSection accountingProgrammeOverview" id="accounting-research">
           <div className="sectionLead">
             <p className="kicker">Accounting research programme</p>
-            <h2>From sector readiness to evidence-led implementation.</h2>
-            <p>The accounting programme connects three layers: the sector&apos;s current AI position, the workflows where benefit evidence is strongest, and a practical micro-practice adoption case.</p>
+            <h2>From sector readiness to real adoption journeys and practical demonstration.</h2>
+            <p>The accounting programme connects four layers: the sector&apos;s current AI position, evidence of workflow benefit, published adoption journeys and a practical micro-practice demonstration.</p>
           </div>
           <div className="architectureCards">
             <article>
@@ -92,7 +92,13 @@ export default function OverviewPage() {
               <a href="/sectors/accounting/benefits">Explore benefits and system fit</a>
             </article>
             <article>
-              <span>03 · Practical case</span>
+              <span>03 · Real adoption evidence</span>
+              <h3>Accounting AI Adoption Journeys</h3>
+              <p>Published cases reveal how implementation started, where it stalled, which controls changed course and what outcomes were actually observed or reported.</p>
+              <a href="/sectors/accounting/adoption-journeys">Explore the adoption journeys</a>
+            </article>
+            <article>
+              <span>04 · Practical case</span>
               <h3>Accounting AI Experience Lab</h3>
               <p>Test-drive four AI-enabled workflows in a fictional seven-person practice, compare the operational change and then explore the implementation plan.</p>
               <a href="/adoption-pathways/accounting-micro-case-study">Start the accounting test drive</a>

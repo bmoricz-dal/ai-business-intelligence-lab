@@ -48,6 +48,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
               items: [
                 { href: "/sectors/accounting", label: "AI readiness" },
                 { href: "/sectors/accounting/benefits", label: "Benefits & system fit" },
+                { href: "/sectors/accounting/adoption-journeys", label: "Adoption journeys" },
               ],
             },
             { href: "/sectors#technology", label: "Technology" },

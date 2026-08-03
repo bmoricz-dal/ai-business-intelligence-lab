@@ -1,6 +1,6 @@
 # UK Accounting SMEs: AI Adoption and Operational Readiness, 2026
 
-This folder contains the complete secondary-data research package for the accounting current-state report and the Phase 2A benefits and system-fit evidence review.
+This folder contains the complete secondary-data research package for the accounting current-state report, the Phase 2A benefits and system-fit evidence review and the locally completed adoption-journeys study.
 
 ## Publication outputs
 
@@ -22,6 +22,21 @@ The next module translates the current-state and benefits evidence into a fictio
 - Decision log: `micro_case_study_decision_log.md`
 
 Status: complete and owner-approved for publication on 2026-08-03, including the Experience Lab extension.
+
+## Phase 2C — Accounting AI Adoption Journeys
+
+The third accounting-sector study examines published implementation journeys from starting problem and selection through pilot, setback, adaptation, outcome and work change. It uses secondary evidence only. Three core accounting-practice evidence bundles are kept separate from historical non-AI comparators and provider-authored finance-function transfer cases.
+
+- Webpage: `site/app/sectors/accounting/adoption-journeys/page.tsx`
+- Public case index: `data/public/accounting_ai_adoption_journeys_2026.csv`
+- Research protocol: `adoption_journeys_research_plan.md`
+- Graded source register: `adoption_journeys_source_register.csv`
+- Claim-level matrix: `adoption_journeys_evidence_matrix.csv`
+- Findings matrix: `adoption_journeys_findings_matrix.md`
+- Data dictionary: `adoption_journeys_data_dictionary.md`
+- Decision log: `adoption_journeys_decision_log.md`
+
+Status: complete locally on 2026-08-03. Public claims, GitHub push and deployment require a separate research-director approval.
 
 ### Phase 2A - benefits and system fit
 
