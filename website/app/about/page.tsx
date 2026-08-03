@@ -86,13 +86,13 @@ export default function AboutPage() {
         </section>
 
         <section className="pageSection valuesSection" id="values">
-          <div className="sectionLead"><p className="kicker">Research principles</p><h2>The standards behind every published claim.</h2></div>
+          <div className="sectionLead"><p className="kicker">Foundational values</p><h2>Five values. One standard: make every insight worth discovering.</h2></div>
           <div className="valueCards">
-            <article><span>01</span><h3>Meaning before metrics</h3><p>A percentage is useful only when its population, definition and uncertainty remain attached.</p></article>
-            <article><span>02</span><h3>Evidence without distance</h3><p>Research should be rigorous enough to trust and clear enough to use in a real business conversation.</p></article>
-            <article><span>03</span><h3>Transparency as infrastructure</h3><p>Methods, source trails and evidence limits are part of the product.</p></article>
-            <article><span>04</span><h3>Human judgement</h3><p>AI can support delivery, while professional review and accountability remain central.</p></article>
-            <article><span>05</span><h3>Cumulative intelligence</h3><p>Each report should create a reusable layer for deeper sector and adoption research.</p></article>
+            <article><span>01</span><h3>Truth</h3><p>Follow the evidence far enough to earn trust—and stop where it stops.</p></article>
+            <article><span>02</span><h3>Clarity</h3><p>Make complexity feel navigable without stripping away its meaning.</p></article>
+            <article><span>03</span><h3>Craft</h3><p>Treat every source, sentence and interaction as part of the standard.</p></article>
+            <article><span>04</span><h3>Agency</h3><p>Give SME leaders the confidence to make the next decision themselves.</p></article>
+            <article><span>05</span><h3>Progress</h3><p>Build each insight into a foundation for what comes next.</p></article>
           </div>
         </section>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ACCOUNTING_REPORT } from "../research-data";
 import { LandscapeStory, PageHero, SignalScene, SiteFooter, SiteHeader } from "../site-shell";
 
@@ -76,7 +77,7 @@ export default function SectorsPage() {
             </div>
           </div>
           <div className="releaseActions">
-            <a className="lightButton" href="/sectors/accounting">Explore the accounting page</a>
+            <Link className="lightButton" href="/sectors/accounting" scroll>Explore the accounting page</Link>
             <a href="/sectors/accounting/adoption-journeys">Explore adoption journeys</a>
             <a href={ACCOUNTING_REPORT}>Download the final report</a>
             <a href="/data/accounting_ai_readiness_2026.csv">Download the public evidence</a>

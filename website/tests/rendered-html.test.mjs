@@ -102,6 +102,8 @@ test("integrates reliable section navigation and varied motion scenes", async ()
   assert.match(experience, /Explore this page/);
   assert.match(experience, /window\.history\.replaceState/);
   assert.match(experience, /scrollIntoView/);
+  assert.match(experience, /usePathname/);
+  assert.match(experience, /\[pathname\]/);
   assert.doesNotMatch(experience, /Page outline|editorialOutline/);
   assert.match(shell, /pageSectionNavigatorMount/);
   assert.match(shell, /export function SignalScene/);
@@ -189,8 +191,17 @@ test("provides a connected accounting-cycle test drive and secondary adoption pl
   assert.match(experience, /Synthetic profit and loss/);
   assert.match(experience, /source-linked insight/i);
   assert.match(experience, /completeStage/);
+  assert.match(experience, /experienceCockpit/);
+  assert.match(experience, /SIMULATION ONLINE/);
+  assert.match(experience, /REVIEW-FIRST MODE/);
+  assert.match(experience, /data-active-stage=\{active\}/);
   assert.match(experience, /deterministic fictional accounting workflow/i);
   assert.doesNotMatch(experience, /fetch\(|axios|localStorage/);
+
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.experienceCockpit/);
+  assert.match(css, /@keyframes cockpitPanelIn/);
+  assert.match(css, /prefers-reduced-motion: reduce/);
 });
 
 test("publishes the accounting benefits and system-fit evidence review", async () => {
@@ -255,7 +266,12 @@ test("keeps About and Methods transparent and independently addressable", async 
   const about = await (await render("/about")).text();
   assert.match(about, /Research profile/);
   assert.match(about, /MSc with Merit in International Business Economics/);
-  assert.match(about, /Meaning before metrics/);
+  assert.match(about, /Five values\. One standard: make every insight worth discovering\./);
+  assert.match(about, />Truth</);
+  assert.match(about, />Clarity</);
+  assert.match(about, />Craft</);
+  assert.match(about, />Agency</);
+  assert.match(about, />Progress</);
   assert.match(about, /practical business cases/);
   assert.match(about, /technical guides/);
   assert.match(about, /benedict\.moricz@gmail\.com/);
@@ -273,15 +289,32 @@ test("keeps the general evidence library on AI in Business", async () => {
   assert.match(html, /AI use is expanding faster than operational depth/);
   assert.match(html, /Five reports track reported use/);
   assert.match(html, /Scale remains the clearest dividing line/);
-  assert.match(html, /SME system-integration estimates range/);
-  assert.match(html, /micro AI users report formal or informal policy/);
-  assert.match(html, /Research is the leading listed use case/);
-  assert.match(html, /Integration and guidance are more common/);
+  assert.match(html, /One report per scene\. One decision signal at a time\./);
+  assert.match(html, /Tool use does not mean system integration/);
+  assert.match(html, /Guidance remains uneven/);
+  assert.match(html, /Research is the leading listed use case at every size/);
+  assert.match(html, /Integration and guidance are more visible than deeper automation/);
+  assert.match(html, /Access is not the same as operational depth/);
   assert.match(html, /37\.4%/);
   assert.match(html, /50\.8%/);
   assert.match(html, /57\.1%/);
   assert.match(html, /78\.2%/);
+  assert.match(html, /25\.9%/);
+  assert.match(html, /53\.7%/);
+  assert.match(html, /SME_Report_01_AI_Use_by_Business_Size\.pdf/);
+  assert.match(html, /SME_Report_02_AI_Adoption_and_System_Integration_by_Size\.pdf/);
+  assert.match(html, /SME_Report_03_AI_Governance_by_Business_Size\.pdf/);
+  assert.match(html, /SME_Report_04_How_UK_Businesses_Use_AI\.pdf/);
+  assert.match(html, /SME_Report_05_Operational_AI_Adoption_Pathways\.pdf/);
   assert.match(html, /SME_Cross_Report_Synthesis_AI_Adoption_and_Operationalisation\.pdf/);
+
+  const deck = await readFile(new URL("../app/ai-in-business/report-story-deck.tsx", import.meta.url), "utf8");
+  assert.match(deck, /^"use client"/);
+  assert.match(deck, /useState/);
+  assert.match(deck, /aria-pressed/);
+  assert.match(deck, /aria-selected/);
+  assert.match(deck, /UK businesses already reporting AI use/);
+  assert.match(deck, /All UK businesses in each size group/);
 });
 
 test("gives sectors and adoption pathways dedicated evidence pages", async () => {
@@ -292,6 +325,10 @@ test("gives sectors and adoption pathways dedicated evidence pages", async () =>
   assert.match(sectors, /Technology/);
   assert.match(sectors, /Financial services/);
   assert.match(sectors, /href="\/sectors\/accounting"/);
+
+  const sectorsSource = await readFile(new URL("../app/sectors/page.tsx", import.meta.url), "utf8");
+  assert.match(sectorsSource, /import Link from "next\/link"/);
+  assert.match(sectorsSource, /<Link className="lightButton" href="\/sectors\/accounting" scroll>/);
 
   const pathways = await (await render("/adoption-pathways")).text();
   assert.match(pathways, /AI adoption is a portfolio of operating choices—not a maturity ladder/);
@@ -328,6 +365,9 @@ test("uses the shared DAL multi-page publication theme and generated share card"
   assert.match(css, /\.programmeConsole/);
   assert.match(css, /\.readinessConsole/);
   assert.match(css, /\.journeyExplorer/);
+  assert.match(css, /\.reportStorySlide/);
+  assert.match(css, /\.synthesisOrbit/);
+  assert.match(css, /\.experienceCockpit/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(css, /\.pathwayPageTable/);
   assert.match(layout, /\/og\.png/);

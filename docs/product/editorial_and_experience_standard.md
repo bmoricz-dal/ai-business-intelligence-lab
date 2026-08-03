@@ -42,6 +42,9 @@ It is informed by representative official BCG and McKinsey pages, but it does no
 - Motion is slow, directional and varied by analytical purpose. Network, ledger, flow, horizon and provenance scenes create continuity without turning evidence into decoration.
 - Where supported, view-linked image depth and section atmospheres respond to scroll position. Route lines and signal pulses connect the landscape to DAL's evidence-to-decision language; static fallbacks preserve the full composition.
 - Cards and controls respond to hover, focus and selection with position, light and border changes. Every control remains keyboard operable.
+- A multi-report page gives each publication one cinematic scene, one decision signal and one interactive exhibit. Denominators and evidence boundaries remain visible inside the scene rather than being deferred to downloads.
+- Practical labs use a premium control-room language: the active workflow stage, completion state, exceptions, review decisions and safe-stop behaviour remain visible while the user explores the demonstration.
+- Foundational values use a short memorable name followed by one specific behavioural promise. They avoid generic aspiration and remain accountable to the research method.
 - The hero-integrated “Explore this page” rail replaces the floating outline. Direct section buttons, active-section tracking, reading progress and section reveals support long-form navigation without covering content.
 - Reduced-motion preferences disable continuous motion and reveal transitions.
 

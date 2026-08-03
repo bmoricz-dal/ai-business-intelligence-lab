@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
 
 type OutlineItem = {
   id: string;
@@ -17,6 +18,7 @@ function slugify(value: string, fallback: string) {
 }
 
 export function EditorialExperience() {
+  const pathname = usePathname();
   const progressRef = useRef<HTMLSpanElement>(null);
   const [items, setItems] = useState<OutlineItem[]>([]);
   const [activeId, setActiveId] = useState("");
@@ -145,7 +147,7 @@ export function EditorialExperience() {
         surface.querySelector(":scope > .surfaceGlow")?.remove();
       });
     };
-  }, []);
+  }, [pathname]);
 
   function moveTo(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });

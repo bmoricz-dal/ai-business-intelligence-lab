@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { REPORTS, SYNTHESIS } from "../research-data";
 import { PageHero, SiteFooter, SiteHeader } from "../site-shell";
+import { ReportStoryDeck } from "./report-story-deck";
 
 export const metadata: Metadata = {
   title: "AI in Business | DAL Data & AI Lab",
@@ -68,42 +68,7 @@ export default function AIInBusinessPage() {
           <div className="cinematicTelemetry" aria-hidden="true"><span>USE</span><i /><span>WORKFLOW</span><i /><span>CONTROL</span><i /><span>VALUE</span></div>
         </section>
 
-        <section className="pageSection reportLibrary" id="reports">
-          <div className="sectionLead">
-            <p className="kicker">Five-report series</p>
-            <h2>Five reports separate reach from operational readiness.</h2>
-          </div>
-          <div className="reportPageGrid">
-            {REPORTS.map((report) => (
-              <article key={report.number}>
-                <span className="reportIndex">{report.number}</span>
-                <p>{report.theme}</p>
-                <h3>{report.title}</h3>
-                <strong>{report.finding}</strong>
-                <small><b>Denominator:</b> {report.denominator}</small>
-                <a href={report.href}>Read report {report.number}</a>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="pageSection synthesisFeature" id="synthesis">
-          <div>
-            <p className="kicker light">Cross-report synthesis</p>
-            <h2>Access is not the same as operational depth.</h2>
-            <p>
-              Tool access, task use, system integration, governance and in-house
-              development are different operating signals. The synthesis connects
-              them without inventing a conversion funnel or readiness score.
-            </p>
-          </div>
-          <div className="synthesisPoints">
-            <article><span>Reach</span><strong>Use expands before integration.</strong></article>
-            <article><span>Tasks</span><strong>Information work is the leading entry point.</strong></article>
-            <article><span>Operations</span><strong>Integration and governance are separate workstreams.</strong></article>
-            <a className="lightButton" href={SYNTHESIS.href}>Read the synthesis</a>
-          </div>
-        </section>
+        <ReportStoryDeck />
 
         <section className="pageSection evidenceBoundaryPage">
           <div className="sectionLead"><p className="kicker">Evidence boundary</p><h2>What these reports can—and cannot—show.</h2></div>

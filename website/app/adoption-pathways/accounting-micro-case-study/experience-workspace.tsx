@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 
 type StageKey = "capture" | "categorise" | "reconcile" | "report" | "insights" | "control";
 type TransactionDecision = "accept" | "override" | "escalate";
@@ -71,6 +71,7 @@ export function ExperienceWorkspace() {
 
   const activeStage = stages.find((stage) => stage.key === active) ?? stages[0];
   const completedStages = stages.filter((stage) => completed[stage.key]);
+  const completion = Math.round((completedStages.length / stages.length) * 100);
   const reviewedTransactions = Object.keys(transactionDecisions).length;
   const alignedTransactions = transactions.filter((item) => transactionDecisions[item.id] === item.expected).length;
 
@@ -121,6 +122,18 @@ export function ExperienceWorkspace() {
         <div><span>Objective</span><strong>Review-ready monthly accounts</strong></div>
       </div>
 
+      <div className="experienceCockpit" style={{ "--cycle-completion": `${completion * 3.6}deg` } as CSSProperties}>
+        <div className="cockpitStatus"><span><i /> SIMULATION ONLINE</span><b>REVIEW-FIRST MODE</b></div>
+        <div className="cockpitGauge" aria-label={`${completion}% of the accounting cycle complete`}><div><strong>{completion}%</strong><span>cycle complete</span></div><i /><i /><i /></div>
+        <div className="cockpitReadout" aria-live="polite"><span>ACTIVE WORKSTATION · {activeStage.number}</span><strong>{activeStage.title}</strong><p>{activeStage.adopted}</p></div>
+        <div className="cockpitTelemetry" aria-label="Current simulation telemetry">
+          <div><span>Source trace</span><strong>{captureRun ? "4 / 4" : "READY"}</strong></div>
+          <div><span>Review decisions</span><strong>{reviewedTransactions ? `${reviewedTransactions} / 4` : "PENDING"}</strong></div>
+          <div><span>Exceptions</span><strong>{exceptionsResolved ? "CLEARED" : matchRun ? "2 OPEN" : "READY"}</strong></div>
+          <div><span>Safe-stop test</span><strong>{failureTested ? "PASSED" : "PENDING"}</strong></div>
+        </div>
+      </div>
+
       <nav className="experienceMethodNav cycleStageNav" aria-label="Connected accounting cycle workstations">
         {stages.map((stage) => {
           const unlocked = isUnlocked(stage.key);
@@ -136,7 +149,7 @@ export function ExperienceWorkspace() {
 
       <div className="cycleProgress" aria-label={`${completedStages.length} of 6 accounting workstations completed`}><span style={{ width: `${(completedStages.length / stages.length) * 100}%` }} /></div>
 
-      <div className="experienceStage">
+      <div className="experienceStage" data-active-stage={active}>
         {active === "capture" ? (
           <div className="experienceDemo">
             <header><div><span>Workstation 01 · Bookkeeping</span><h3>Capture and check source records</h3><p>Open a small synthetic source pack, extract key fields and surface missing evidence before anything reaches the ledger.</p></div><b>{captureRun ? "4 records traced" : "Source pack ready"}</b></header>
