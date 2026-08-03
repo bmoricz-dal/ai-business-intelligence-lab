@@ -86,3 +86,10 @@ Decision: Move the general Use, Integrate, Automate, Configure and Govern explan
 Status: owner-approved for implementation and deployment on 2026-08-03 through the instruction “Do them and then deploy!”.  
 Evidence boundary: every record, amount, comparison, check and narrative remains deterministic and fictional. The Lab does not produce prepared accounts, accounting advice, observed performance, a UK SME benchmark, an AI product test or promised benefit.  
 Implication: the general page explains how AI can enter operations; the sector Lab demonstrates what controlled AI-enabled accounting work can look like.
+
+## ACC-C15 — Verified accounting-cycle release
+
+Decision: Record the connected accounting-cycle redesign as the current public Phase 2B release.  
+Status: complete on 2026-08-03.  
+Release record: GitHub commit `e4df810fa57a1a4d0d5b37cf02b70b69d00e0682`; Cloudflare Worker version `c3e5f313-7c4f-48c7-9d04-777f7edf3f11`. Lint and the production build passed, all 11 website tests passed, all nine public routes returned HTTP 200, the live AI in Practice page contained the general operating-approach section, and the live Accounting Lab bundle contained all six accounting workstations and the wrong-client safe-stop interaction.  
+Implication: the public background page now explains general adoption mechanisms, while the Accounting AI Experience Lab is reserved for a connected, accounting-practice-specific demonstration. Future substantive changes to scenario records, accounting figures, workflow logic, evidence claims or controls require a new reviewed release.
