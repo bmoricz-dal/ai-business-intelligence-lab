@@ -56,7 +56,10 @@ export default function AboutPage() {
             <p>
               The longer-term ambition is a credible SME-facing research service
               that connects adoption evidence with system choice, workflow design,
-              governance and demonstrable business benefit.
+              governance and demonstrable business benefit. Alongside research
+              reports, it will publish practical business case studies and
+              technical case studies and guides that show how evidence can be
+              applied, tested and governed in real operating contexts.
             </p>
           </div>
         </section>

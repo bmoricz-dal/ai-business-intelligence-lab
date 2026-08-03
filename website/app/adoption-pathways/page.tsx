@@ -3,7 +3,7 @@ import { PATHWAY_ROWS } from "../research-data";
 import { PageHero, SiteFooter, SiteHeader } from "../site-shell";
 
 export const metadata: Metadata = {
-  title: "Adoption Pathways | DAL Data & AI Lab",
+  title: "AI in Practice | DAL Data & AI Lab",
   description: "How UK SMEs access, integrate, automate, build and govern AI.",
 };
 
@@ -18,17 +18,17 @@ const pathways = [
 export default function AdoptionPathwaysPage() {
   return (
     <>
-      <a className="skipLink" href="#main">Skip to adoption pathways</a>
-      <SiteHeader active="Adoption pathways" />
+      <a className="skipLink" href="#main">Skip to AI in practice</a>
+      <SiteHeader active="AI in practice" />
       <main className="multiPage" id="main">
         <PageHero
-          kicker="Adoption pathways"
+          kicker="AI in practice"
           marker="USE · INTEGRATE · AUTOMATE · BUILD · GOVERN"
           title="AI adoption is not one linear journey."
           introduction="Businesses can use, integrate, automate, build and govern AI in different combinations. These pathways describe operating choices—not mandatory maturity stages or a readiness score."
         />
 
-        <section className="pageSection pathwayConcepts">
+        <section className="pageSection pathwayConcepts" id="background">
           <div className="sectionLead"><p className="kicker">Five pathways</p><h2>Different routes imply different operational demands.</h2></div>
           <div className="pathwayConceptGrid">
             {pathways.map((item) => (

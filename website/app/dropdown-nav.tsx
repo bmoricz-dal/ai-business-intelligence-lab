@@ -6,6 +6,7 @@ import { useId, useRef, useState } from "react";
 type DropdownItem = {
   href: string;
   label: string;
+  items?: DropdownItem[];
 };
 
 export function NavDropdown({
@@ -20,6 +21,7 @@ export function NavDropdown({
   items: DropdownItem[];
 }) {
   const [open, setOpen] = useState(false);
+  const [nestedOpen, setNestedOpen] = useState<string | null>(null);
   const menuId = useId();
   const toggleRef = useRef<HTMLButtonElement>(null);
 
@@ -27,13 +29,20 @@ export function NavDropdown({
     <div
       className={`navMenu${open ? " open" : ""}`}
       onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setOpen(false);
+          setNestedOpen(null);
+        }
       }}
       onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseLeave={() => {
+        setOpen(false);
+        setNestedOpen(null);
+      }}
       onKeyDown={(event) => {
         if (event.key === "Escape") {
           setOpen(false);
+          setNestedOpen(null);
           toggleRef.current?.focus();
         }
       }}
@@ -59,7 +68,48 @@ export function NavDropdown({
       {open ? (
         <div className="navDropdown" id={menuId}>
           <div className="navDropdownPanel">
-            {items.map((item) => (
+            {items.map((item, index) => item.items ? (
+              <div
+                className={`navNestedMenu${nestedOpen === item.label ? " open" : ""}`}
+                key={item.label}
+                onMouseEnter={() => setNestedOpen(item.label)}
+                onMouseLeave={() => setNestedOpen(null)}
+              >
+                <div className="navNestedTrigger">
+                  <Link className="navNestedLink" href={item.href} onClick={() => setOpen(false)}>
+                    {item.label}
+                  </Link>
+                  <button
+                    aria-controls={`${menuId}-nested-${index}`}
+                    aria-expanded={nestedOpen === item.label}
+                    aria-label={`Toggle ${item.label} studies submenu`}
+                    className="navNestedToggle"
+                    onClick={() => setNestedOpen((current) => current === item.label ? null : item.label)}
+                    type="button"
+                  >
+                    <span aria-hidden="true">›</span>
+                  </button>
+                </div>
+                {nestedOpen === item.label ? (
+                  <div className="navNestedDropdown" id={`${menuId}-nested-${index}`}>
+                    <div className="navNestedPanel">
+                      {item.items.map((nestedItem) => (
+                        <Link
+                          href={nestedItem.href}
+                          key={nestedItem.label}
+                          onClick={() => {
+                            setNestedOpen(null);
+                            setOpen(false);
+                          }}
+                        >
+                          {nestedItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            ) : (
               <Link href={item.href} key={item.label} onClick={() => setOpen(false)}>
                 {item.label}
               </Link>

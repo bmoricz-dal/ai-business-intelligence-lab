@@ -24,10 +24,10 @@ const routes = [
   ["/about", "About"],
   ["/ai-in-business", "AI in business"],
   ["/sectors", "Sectors"],
-  ["/adoption-pathways", "Adoption pathways"],
+  ["/adoption-pathways", "AI in practice"],
   ["/methods", "Methods"],
   ["/sectors/accounting/benefits", "Sectors"],
-  ["/adoption-pathways/accounting-micro-case-study", "Adoption pathways"],
+  ["/adoption-pathways/accounting-micro-case-study", "AI in practice"],
 ];
 
 test("serves every top-level research section as a separate page", async () => {
@@ -51,9 +51,9 @@ test("keeps headings linked to pages and restores accessible dropdown toggles", 
     assert.match(html, /href="\/adoption-pathways"/);
     assert.match(html, /href="\/methods"/);
     assert.match(html, /aria-label="Toggle About submenu"/);
-    assert.match(html, /aria-label="Toggle AI in business submenu"/);
     assert.match(html, /aria-label="Toggle Sectors submenu"/);
-    assert.match(html, /aria-label="Toggle Adoption pathways submenu"/);
+    assert.match(html, /aria-label="Toggle AI in practice submenu"/);
+    assert.doesNotMatch(html, /aria-label="Toggle AI in business submenu"/);
     assert.match(html, /aria-expanded="false"/);
   }
 });
@@ -64,16 +64,20 @@ test("dropdowns support hover, click, focus departure and Escape", async () => {
   assert.match(component, /className="navMenuLink"/);
   assert.match(component, /href=\{href\}/);
   assert.match(component, /onMouseEnter=\{\(\) => setOpen\(true\)\}/);
-  assert.match(component, /onMouseLeave=\{\(\) => setOpen\(false\)\}/);
+  assert.match(component, /onMouseLeave=\{\(\) => \{/);
+  assert.match(component, /setOpen\(false\)/);
   assert.match(component, /onClick=\{\(\) => setOpen\(\(current\) => !current\)\}/);
   assert.match(component, /event\.key === "Escape"/);
   assert.match(component, /event\.currentTarget\.contains\(event\.relatedTarget\)/);
   assert.match(component, /className="navDropdownPanel"/);
+  assert.match(component, /className="navNestedDropdown"/);
+  assert.match(component, /setNestedOpen/);
+  assert.match(component, /Toggle \$\{item\.label\} studies submenu/);
   assert.match(shell, /\/about#background/);
-  assert.match(shell, /\/ai-in-business#reports/);
+  assert.doesNotMatch(shell, /\/ai-in-business#reports/);
   assert.match(shell, /\/sectors\/accounting/);
   assert.match(shell, /\/sectors\/accounting\/benefits/);
-  assert.match(shell, /\/adoption-pathways#governance/);
+  assert.match(shell, /\/adoption-pathways#background/);
   assert.match(shell, /\/adoption-pathways\/accounting-micro-case-study/);
 });
 
@@ -127,11 +131,15 @@ test("makes Overview the project homepage", async () => {
   assert.match(html, /independent research platform examining how UK SMEs adopt/);
   assert.match(html, /Make AI adoption evidence rigorous enough to trust/);
   assert.match(html, /One evidence foundation, then deeper layers/);
-  assert.match(html, /Latest publication/);
+  assert.match(html, /Latest practical release/);
   assert.match(html, /Build a cumulative intelligence service/);
+  assert.match(html, /Accounting research programme/);
+  assert.match(html, /From sector readiness to evidence-led implementation/);
+  assert.match(html, /Micro-practice adoption lab/);
   assert.match(html, />5<\/strong><span>general reports/);
   assert.match(html, />1<\/strong><span>cross-report synthesis/);
-  assert.match(html, />1<\/strong><span>sector report/);
+  assert.match(html, />3<\/strong><span>accounting research outputs/);
+  assert.match(html, />1<\/strong><span>interactive adoption lab/);
 });
 
 test("keeps About and Methods transparent and independently addressable", async () => {
@@ -139,6 +147,8 @@ test("keeps About and Methods transparent and independently addressable", async 
   assert.match(about, /Research profile/);
   assert.match(about, /MSc with Merit in International Business Economics/);
   assert.match(about, /Meaning before metrics/);
+  assert.match(about, /practical business case studies/);
+  assert.match(about, /technical case studies and guides/);
   assert.match(about, /benedict\.moricz@gmail\.com/);
 
   const methods = await (await render("/methods")).text();
@@ -176,6 +186,7 @@ test("gives sectors and adoption pathways dedicated evidence pages", async () =>
 
   const pathways = await (await render("/adoption-pathways")).text();
   assert.match(pathways, /AI adoption is not one linear journey/);
+  assert.match(pathways, /id="background"/);
   assert.match(pathways, /System integration/);
   assert.match(pathways, /Automated decision-making/);
   assert.match(pathways, /Policy or guidance/);

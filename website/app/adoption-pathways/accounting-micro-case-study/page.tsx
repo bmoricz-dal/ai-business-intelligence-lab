@@ -67,7 +67,7 @@ export default function AccountingMicroCaseStudyPage() {
   return (
     <>
       <a className="skipLink" href="#case-main">Skip to the worked case</a>
-      <SiteHeader active="Adoption pathways" />
+      <SiteHeader active="AI in practice" />
       <main id="case-main" className="microCasePage">
         <section className="microCaseHero">
           <div className="microCaseHeroMarker" aria-hidden="true"><span>PHASE 2B</span><span>7 PEOPLE</span><span>SECONDARY EVIDENCE</span></div>

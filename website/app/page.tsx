@@ -1,5 +1,7 @@
-import { ACCOUNTING_REPORT, SYNTHESIS } from "./research-data";
+import { SYNTHESIS } from "./research-data";
 import { PageHero, SiteFooter, SiteHeader } from "./site-shell";
+
+const MICRO_CASE_REPORT = "/reports/UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026.pdf";
 
 export default function OverviewPage() {
   return (
@@ -17,8 +19,8 @@ export default function OverviewPage() {
         <section className="overviewStatus" aria-label="Current publication status">
           <div><strong>5</strong><span>general reports</span></div>
           <div><strong>1</strong><span>cross-report synthesis</span></div>
-          <div><strong>1</strong><span>sector report</span></div>
-          <div><strong>2026</strong><span>current evidence programme</span></div>
+          <div><strong>3</strong><span>accounting research outputs</span></div>
+          <div><strong>1</strong><span>interactive adoption lab</span></div>
         </section>
 
         <section className="pageSection purposeSection">
@@ -62,27 +64,55 @@ export default function OverviewPage() {
               <a href="/sectors/accounting">Explore accounting AI readiness</a>
             </article>
             <article>
-              <span>03 · Next programme</span>
+              <span>03 · Practical application</span>
+              <h3>AI in practice</h3>
+              <p>Evidence-informed business and technical cases translate research into controlled, step-by-step adoption decisions.</p>
+              <a href="/adoption-pathways">Explore practical adoption</a>
+            </article>
+          </div>
+        </section>
+
+        <section className="pageSection accountingProgrammeOverview" id="accounting-research">
+          <div className="sectionLead">
+            <p className="kicker">Accounting research programme</p>
+            <h2>From sector readiness to evidence-led implementation.</h2>
+            <p>The accounting programme connects three layers: the sector&apos;s current AI position, the workflows where benefit evidence is strongest, and a practical micro-practice adoption case.</p>
+          </div>
+          <div className="architectureCards">
+            <article>
+              <span>01 · Current state</span>
+              <h3>AI adoption and readiness</h3>
+              <p>A secondary-data assessment of adoption, use, integration, governance and pathways across UK accounting SMEs.</p>
+              <a href="/sectors/accounting">Read the readiness study</a>
+            </article>
+            <article>
+              <span>02 · Benefits evidence</span>
               <h3>Benefits and system fit</h3>
-              <p>Future research will test where AI improves businesses, which systems fit which workflows, and what controls are needed.</p>
-              <a href="#future">View future goals</a>
+              <p>A controlled review of where measurable workflow benefits appear, what can transfer to UK SMEs and which safeguards matter.</p>
+              <a href="/sectors/accounting/benefits">Explore benefits and system fit</a>
+            </article>
+            <article>
+              <span>03 · Practical case</span>
+              <h3>Micro-practice adoption lab</h3>
+              <p>A fictional seven-person practice works through pathway choice, controls, baseline measurement, pilot gates and an exportable decision record.</p>
+              <a href="/adoption-pathways/accounting-micro-case-study">Open the interactive case study</a>
             </article>
           </div>
         </section>
 
         <section className="pageSection currentRelease">
           <div>
-            <p className="kicker light">Latest publication</p>
-            <h2>UK Accounting SMEs: AI Adoption and Operational Readiness, 2026</h2>
+            <p className="kicker light">Latest practical release</p>
+            <h2>Interactive micro-accounting AI adoption lab</h2>
             <p>
-              AI is no longer niche in accounting, but current use is more
-              established at the task level than at the level of secure,
-              governed and integrated operations.
+              Compare Use, Integrate, Automate and Configure pathways, complete
+              implementation controls and test aggregated baseline-versus-pilot
+              figures without sending entered data to the Lab.
             </p>
           </div>
           <div className="releaseActions">
-            <a className="lightButton" href="/sectors/accounting">Read the sector page</a>
-            <a href={ACCOUNTING_REPORT}>Download the report</a>
+            <a className="lightButton" href="/adoption-pathways/accounting-micro-case-study">Open the interactive lab</a>
+            <a href={MICRO_CASE_REPORT}>Download the supporting report</a>
             <a href={SYNTHESIS.href}>Read the general synthesis</a>
           </div>
         </section>

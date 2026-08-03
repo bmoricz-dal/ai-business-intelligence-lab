@@ -6,7 +6,7 @@ type NavigationLabel =
   | "About"
   | "AI in business"
   | "Sectors"
-  | "Adoption pathways"
+  | "AI in practice"
   | "Methods";
 
 export const PUBLIC_REPOSITORY =
@@ -36,38 +36,31 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
             { href: "/about#contact", label: "Contact" },
           ]}
         />
-        <NavDropdown
-          active={active === "AI in business"}
-          href="/ai-in-business"
-          label="AI in business"
-          items={[
-            { href: "/ai-in-business#snapshot", label: "Evidence snapshot" },
-            { href: "/ai-in-business#reports", label: "Five reports" },
-            { href: "/ai-in-business#synthesis", label: "Cross-report synthesis" },
-          ]}
-        />
+        <Link aria-current={active === "AI in business" ? "page" : undefined} href="/ai-in-business">AI in business</Link>
         <NavDropdown
           active={active === "Sectors"}
           href="/sectors"
           label="Sectors"
           items={[
+            {
+              href: "/sectors/accounting",
+              label: "Accounting",
+              items: [
+                { href: "/sectors/accounting", label: "AI readiness" },
+                { href: "/sectors/accounting/benefits", label: "Benefits & system fit" },
+              ],
+            },
             { href: "/sectors#technology", label: "Technology" },
-            { href: "/sectors/accounting", label: "Accounting" },
-            { href: "/sectors/accounting/benefits", label: "Accounting: benefits" },
             { href: "/sectors#financial-services", label: "Financial services" },
           ]}
         />
         <NavDropdown
-          active={active === "Adoption pathways"}
+          active={active === "AI in practice"}
           href="/adoption-pathways"
-          label="Adoption pathways"
+          label="AI in practice"
           items={[
-            { href: "/adoption-pathways#use", label: "Use cases" },
-            { href: "/adoption-pathways#integration", label: "System integration" },
-            { href: "/adoption-pathways#automation", label: "Automated decisions" },
-            { href: "/adoption-pathways#build", label: "Build and training" },
-            { href: "/adoption-pathways#governance", label: "Governance" },
-            { href: "/adoption-pathways/accounting-micro-case-study", label: "Accounting micro case" },
+            { href: "/adoption-pathways#background", label: "Background" },
+            { href: "/adoption-pathways/accounting-micro-case-study", label: "Accounting adoption lab" },
           ]}
         />
         <Link aria-current={active === "Methods" ? "page" : undefined} href="/methods">Methods</Link>
