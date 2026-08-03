@@ -9,15 +9,8 @@ const METHODS = "https://github.com/bmoricz-dal/ai-business-intelligence-lab/tre
 
 export const metadata: Metadata = {
   title: "Accounting AI Experience Lab | DAL Data & AI Lab",
-  description: "Test-drive four AI-enabled accounting workflows using a synthetic seven-person UK accounting practice.",
+  description: "Take one fictional client through an AI-enabled bookkeeping, close, reporting and insight cycle.",
 };
-
-const methods = [
-  ["01", "Use", "Approved standalone assistance", "Research, summaries and first drafts without a live system connection."],
-  ["02", "Integrate", "Transaction and close support", "Coding, matching, reconciliation and exception queues inside an existing platform."],
-  ["03", "Automate", "Bounded actions", "Internal routing and draft actions with approval before communication or posting."],
-  ["04", "Configure", "Approved knowledge retrieval", "Firm procedures and templates with document-level citations and access controls."],
-];
 
 const commonSteps = [
   ["1", "Name accountability", "Owner, reviewer, operational lead and rollback authority."],
@@ -26,33 +19,6 @@ const commonSteps = [
   ["4", "Classify data", "Permitted data, environment, access and professional consequence."],
   ["5", "Choose a method", "Use, integrate, automate, configure—or do not adopt."],
   ["6", "Pre-register gates", "Quality, total cost, risk and stop rules fixed before testing."],
-];
-
-const pathwaySteps = [
-  {
-    id: "use-method",
-    title: "Use — approved standalone assistance",
-    best: "Internal research, summaries and first drafts.",
-    steps: ["Approve one controlled tool and prohibited-data rule", "Create bounded prompt templates with sources and caveats", "Test 20 illustrative known tasks with edge cases", "Score factual support, omissions and correction time", "Pilot only the approved internal task", "Review after four weeks: continue, revise or stop"],
-  },
-  {
-    id: "integrate-method",
-    title: "Integrate — transaction and close support",
-    best: "The case's central pathway and strongest evidence connection.",
-    steps: ["Select one measured ledger or close bottleneck", "Assure supplier data flows, access, logging, export and exit", "Test historical known cases and unusual items", "Run two close cycles in shadow mode", "Pilot with 10 illustrative low-complexity clients", "Route exceptions and prohibit automatic material postings", "Compare full effort, quality and cost after two live cycles"],
-  },
-  {
-    id: "automate-method",
-    title: "Automate — bound actions before autonomy",
-    best: "Internal exception routing, tasks and draft reminders.",
-    steps: ["Draw trigger, data, decision, action, review and log", "Use deterministic rules where rules are sufficient", "Make the first release read-only or draft-only", "Test wrong-client, duplicate, conflict, unusual and outage cases", "Shadow proposed actions against staff decisions", "Require approval for external messages and ledger actions", "Monitor, pause, rollback and re-authorise after change"],
-  },
-  {
-    id: "configure-method",
-    title: "Configure — retrieve approved knowledge",
-    best: "Internal procedures, checklist clauses and templates.",
-    steps: ["Define the knowledge question and authorised users", "Inventory, deduplicate and approve documents", "Require document and section citations", "Test 30 illustrative direct, conflicting and no-answer questions", "Pilot without client files", "Add refresh, deletion, access-review and incident processes", "Reject custom model training unless a separate capability case passes"],
-  },
 ];
 
 const gates = [
@@ -75,13 +41,13 @@ export default function AccountingMicroCaseStudyPage() {
           <div>
             <p className="kicker light">Accounting · AI in practice</p>
             <h1>Accounting AI Experience Lab</h1>
-            <p>Test-drive AI-enabled accounting workflows and experience how controlled adoption can change routine handling, exception review, quality control and operational visibility.</p>
+            <p>Take one fictional client from bookkeeping and ledger review through reconciliation, management accounts, business insights and final quality control.</p>
             <div className="heroActions">
               <a className="primaryButton" href="#experience-lab">Start the test drive</a>
               <a className="textButton accountingTextButton" href="#adoption-planner">Plan your adoption</a>
             </div>
           </div>
-          <aside><span>Experience design</span><strong>See adopted AI at work</strong><p>One synthetic practice, four adoption methods and visible before-and-after workflow comparisons.</p></aside>
+          <aside><span>Experience design</span><strong>See adopted AI across the accounting cycle</strong><p>One synthetic practice, one fictional client and six connected accounting workstations.</p></aside>
         </section>
 
         <section className="microCaseBoundary" aria-label="Case boundaries">
@@ -103,28 +69,11 @@ export default function AccountingMicroCaseStudyPage() {
           </div>
         </section>
 
-        <section className="microMethodSection">
-          <div className="sectionLead"><p className="kicker light">Choose the method</p><h2>Four routes. One valid no-go decision.</h2><p>Start with the least complex method that can solve one measured workflow problem.</p></div>
-          <div className="microMethodGrid">
-            {methods.map(([number, label, title, description]) => <article key={number}><span>{number}</span><b>{label}</b><h3>{title}</h3><p>{description}</p></article>)}
-          </div>
-        </section>
-
         <AdoptionWorkspace />
 
         <section className="microFoundation" id="foundation">
           <div className="sectionLead"><p className="kicker">Common foundation</p><h2>Six steps before any pilot</h2><p>Governance is not the final pathway. It shapes scope, data, testing and responsibility from the beginning.</p></div>
           <ol>{commonSteps.map(([number, title, description]) => <li key={number}><span>{number}</span><div><strong>{title}</strong><p>{description}</p></div></li>)}</ol>
-        </section>
-
-        <section className="microPathwayDetails">
-          <div className="sectionLead"><p className="kicker">Follow a pathway</p><h2>Each method has its own evidence and control gate.</h2></div>
-          {pathwaySteps.map((pathway) => (
-            <article id={pathway.id} key={pathway.id}>
-              <div><h3>{pathway.title}</h3><p>{pathway.best}</p></div>
-              <ol>{pathway.steps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}</ol>
-            </article>
-          ))}
         </section>
 
         <section className="microSequence">

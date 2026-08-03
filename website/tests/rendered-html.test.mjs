@@ -81,19 +81,23 @@ test("dropdowns support hover, click, focus departure and Escape", async () => {
   assert.match(shell, /\/adoption-pathways\/accounting-micro-case-study/);
 });
 
-test("provides an accounting AI test drive and secondary adoption planner", async () => {
+test("provides a connected accounting-cycle test drive and secondary adoption planner", async () => {
   const response = await render("/adoption-pathways/accounting-micro-case-study");
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Accounting AI Experience Lab/);
-  assert.match(html, /Test-drive AI-enabled accounting workflows/);
+  assert.match(html, /Take one fictional client through an AI-enabled accounting cycle/);
   assert.match(html, /Synthetic work only/);
-  assert.match(html, /Controlled assistant/);
-  assert.match(html, /Reconciliation &amp; close/);
-  assert.match(html, /Workflow automation/);
-  assert.match(html, /Firm knowledge/);
-  assert.match(html, /Shared control room/);
-  assert.match(html, /Illustrative demo result/);
+  assert.match(html, /Cedar Interiors Ltd/);
+  assert.match(html, /Capture source records/);
+  assert.match(html, />Bookkeeping</);
+  assert.match(html, />Ledger</);
+  assert.match(html, />Close</);
+  assert.match(html, />Accounts</);
+  assert.match(html, />Insights</);
+  assert.match(html, />Review</);
+  assert.match(html, /Accounting cycle control room/);
+  assert.match(html, /Workflow mechanics/);
   assert.match(html, /Plan how your firm would test adoption/);
   assert.match(html, /Do not enter client data/);
   assert.match(html, /Baseline versus pilot/);
@@ -116,13 +120,19 @@ test("provides an accounting AI test drive and secondary adoption planner", asyn
 
   const experience = await readFile(new URL("../app/adoption-pathways/accounting-micro-case-study/experience-workspace.tsx", import.meta.url), "utf8");
   assert.match(experience, /^"use client"/);
+  assert.match(experience, /sourceDocuments/);
   assert.match(experience, /transactionDecisions/);
+  assert.match(experience, /Categorise and post/);
+  assert.match(experience, /Reconcile and close/);
+  assert.match(experience, /Prepare management accounts/);
+  assert.match(experience, /Explain business movements/);
+  assert.match(experience, /Inspect quality and audit trail/);
   assert.match(experience, /wrong-client test/i);
   assert.match(experience, /Known-case alignment/);
-  assert.match(experience, /document-level trace/);
-  assert.match(experience, /quality-control coverage/i);
-  assert.match(experience, /completeMethod/);
-  assert.match(experience, /deterministic fictional demonstrations/i);
+  assert.match(experience, /Synthetic profit and loss/);
+  assert.match(experience, /source-linked insight/i);
+  assert.match(experience, /completeStage/);
+  assert.match(experience, /deterministic fictional accounting workflow/i);
   assert.doesNotMatch(experience, /fetch\(|axios|localStorage/);
 });
 
@@ -211,6 +221,13 @@ test("gives sectors and adoption pathways dedicated evidence pages", async () =>
   assert.match(pathways, /In-house development/);
   assert.match(pathways, /26\.9%/);
   assert.match(pathways, /67\.7%/);
+  assert.match(pathways, /What each adoption approach looks like in practice/);
+  assert.match(pathways, /Controlled task assistance/);
+  assert.match(pathways, /AI inside an existing system/);
+  assert.match(pathways, /Bounded workflow execution/);
+  assert.match(pathways, /Approved organisational knowledge/);
+  assert.match(pathways, /A control layer—not a final stage/);
+  assert.match(pathways, /Accounting Experience Lab separately demonstrates/);
 });
 
 test("uses the shared DAL multi-page publication theme and generated share card", async () => {

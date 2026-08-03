@@ -61,15 +61,17 @@ controls and professional review. Its accounting-specific field evidence comes
 from a US setting and remains transfer evidence rather than a UK effect-size
 benchmark. The project does not publish an accounting-SME ROI or vendor ranking.
 
-The Accounting AI Experience Lab then translates this evidence into four
-hands-on test drives for a fictional seven-person practice. Visitors can compare
-manual and controlled-adoption handling across Use, Integrate, Automate and
-Configure, experience review and safe-stop controls, and inspect an illustrative
-shared control room. A secondary planner supports firms that want to map their
-own test. The demonstrations are deterministic and synthetic: they do not call
-an AI model, connect to accounting software, accept document uploads or send
-entered figures to the Lab. Their displayed results are not observed outcomes,
-ROI estimates, product tests or accounting-SME benchmarks.
+The Accounting AI Experience Lab then translates this evidence into one
+connected monthly cycle for a fictional seven-person practice and fictional
+client. Visitors move from bookkeeping capture and ledger categorisation through
+reconciliation, management accounts, source-linked business insight and final
+quality control. General Use, Integrate, Automate, Configure and Govern patterns
+are explained separately on the AI in Practice background page. A secondary
+planner supports firms that want to map their own test. The demonstrations are
+deterministic and synthetic: they do not call an AI model, connect to accounting
+software, accept document uploads or send entered figures to the Lab. Their
+displayed results are not observed outcomes, prepared accounts, ROI estimates,
+product tests or accounting-SME benchmarks.
 
 ## Evidence rules
 

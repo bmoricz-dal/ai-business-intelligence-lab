@@ -15,6 +15,37 @@ const pathways = [
   { id: "governance", number: "05", title: "Govern", summary: "Policies, approved use, human review and accountability shape operations.", signal: "Policy or guidance rises with business size but is not universal." },
 ];
 
+const operatingApproaches = [
+  {
+    label: "Use",
+    title: "Controlled task assistance",
+    description: "A person uses an approved standalone AI tool for a bounded task such as research, summarisation or a first draft.",
+    example: "The employee selects the task and sources, checks the output and remains responsible for the result.",
+    control: "Approved tool, permitted-data rule and human review.",
+  },
+  {
+    label: "Integrate",
+    title: "AI inside an existing system",
+    description: "AI suggestions and exception signals appear inside software already used to run a recurring business workflow.",
+    example: "Routine items can be prioritised or proposed while unusual cases remain visible to an operator.",
+    control: "Assured data flow, access, logging, override and exit route.",
+  },
+  {
+    label: "Automate",
+    title: "Bounded workflow execution",
+    description: "AI or rules prepare or complete defined process steps rather than merely producing an answer for a user.",
+    example: "A trigger can create a task or draft an action, but consequential external steps retain an approval gate.",
+    control: "Failure tests, approval, monitoring, pause and rollback.",
+  },
+  {
+    label: "Configure",
+    title: "Approved organisational knowledge",
+    description: "A general system is configured to retrieve from approved internal procedures, templates or other controlled material.",
+    example: "Answers point back to the authorised source and escalate when evidence is missing or conflicting.",
+    control: "Source ownership, access, citations, expiry and no-answer rules.",
+  },
+];
+
 export default function AdoptionPathwaysPage() {
   return (
     <>
@@ -73,6 +104,31 @@ export default function AdoptionPathwaysPage() {
             <article><span>Denominators</span><strong>All-business and AI-user estimates stay separate.</strong></article>
             <article><span>Sequence</span><strong>The indicators are not a conversion funnel.</strong></article>
             <article><span>Impact</span><strong>Prevalence does not establish benefit or performance.</strong></article>
+          </div>
+        </section>
+
+        <section className="pageSection adoptionMechanisms" id="operating-approaches">
+          <div className="sectionLead">
+            <p className="kicker">From pathway to operation</p>
+            <h2>What each adoption approach looks like in practice.</h2>
+            <p>These are general operating patterns that can apply across sectors. They explain how AI enters work; the Accounting Experience Lab separately demonstrates what changes inside an accounting cycle.</p>
+          </div>
+          <div className="adoptionMechanismGrid">
+            {operatingApproaches.map((approach, index) => (
+              <article key={approach.label}>
+                <div><span>{String(index + 1).padStart(2, "0")}</span><b>{approach.label}</b></div>
+                <h3>{approach.title}</h3>
+                <p>{approach.description}</p>
+                <dl>
+                  <div><dt>In operation</dt><dd>{approach.example}</dd></div>
+                  <div><dt>Minimum control</dt><dd>{approach.control}</dd></div>
+                </dl>
+              </article>
+            ))}
+          </div>
+          <div className="governanceBand">
+            <span>05 · Govern</span>
+            <div><h3>A control layer—not a final stage.</h3><p>Accountability, approved data, testing, human review, incident handling and monitoring surround every approach. A business can also decide that the evidence, capability or risk case does not justify adoption.</p></div>
           </div>
         </section>
 

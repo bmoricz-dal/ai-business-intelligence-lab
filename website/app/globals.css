@@ -4134,6 +4134,20 @@ footer nav a:focus-visible {
 }
 
 /* Accounting AI Experience Lab */
+.adoptionMechanisms { background: linear-gradient(145deg,#f2f9fc,#fff); }
+.adoptionMechanismGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.adoptionMechanismGrid > article { padding: clamp(1.4rem,3vw,2.2rem); border: 1px solid var(--line); border-top: 4px solid var(--teal); border-radius: .75rem; background: var(--white); box-shadow: 0 16px 45px rgba(23,62,91,.06); }
+.adoptionMechanismGrid > article > div:first-child { display: flex; justify-content: space-between; gap: 1rem; color: var(--teal-dark); font-size: .68rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.adoptionMechanismGrid h3 { margin: 1rem 0 .65rem; color: var(--navy); font-size: clamp(1.4rem,2.4vw,2rem); }
+.adoptionMechanismGrid > article > p { color: var(--muted); }
+.adoptionMechanismGrid dl { display: grid; gap: .8rem; margin: 1.4rem 0 0; }
+.adoptionMechanismGrid dl > div { padding-top: .8rem; border-top: 1px solid var(--line); }
+.adoptionMechanismGrid dt { margin-bottom: .25rem; color: var(--teal-dark); font-size: .65rem; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+.adoptionMechanismGrid dd { margin: 0; color: var(--ink); font-size: .84rem; line-height: 1.55; }
+.governanceBand { display: grid; grid-template-columns: minmax(140px,.3fr) minmax(0,1.7fr); gap: 2rem; align-items: center; margin-top: 1rem; padding: clamp(1.4rem,3vw,2.3rem); border-radius: .75rem; background: var(--navy); color: var(--white); }
+.governanceBand > span { color: var(--sky-strong); font-size: .72rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.governanceBand h3 { margin: 0 0 .45rem; color: var(--white); font-size: 1.35rem; }
+.governanceBand p { margin: 0; color: rgba(255,255,255,.67); }
 .experienceLab { padding: clamp(5rem,9vw,8rem) clamp(1.5rem,5vw,5rem); background: #eef8fc; }
 .experienceIntro { display: grid; grid-template-columns: minmax(0,1fr) minmax(270px,.42fr); gap: clamp(2rem,6vw,6rem); align-items: end; max-width: 1500px; margin: 0 auto 2.2rem; }
 .experienceIntro h2 { max-width: 900px; margin: .4rem 0 1rem; color: var(--navy); font: 500 clamp(2.7rem,5.5vw,5.6rem)/1 Georgia, "Times New Roman", serif; letter-spacing: -.05em; }
@@ -4149,6 +4163,16 @@ footer nav a:focus-visible {
 .experienceMethodNav strong { margin: .45rem 0; font-size: 1rem; }
 .experienceMethodNav small { align-self: end; color: var(--muted); line-height: 1.45; }
 .experienceMethodNav button[aria-pressed="true"] small { color: rgba(255,255,255,.65); }
+.experienceMethodNav button:disabled { opacity: .46; cursor: not-allowed; transform: none; }
+.cycleCaseStrip { display: grid; grid-template-columns: repeat(4,1fr); max-width: 1500px; margin: 0 auto 1rem; border: 1px solid #c8dee8; border-radius: .7rem; background: var(--white); }
+.cycleCaseStrip div { display: grid; gap: .25rem; padding: 1rem; border-right: 1px solid var(--line); }
+.cycleCaseStrip div:last-child { border-right: 0; }
+.cycleCaseStrip span { color: var(--teal-dark); font-size: .62rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.cycleCaseStrip strong { color: var(--navy); font-size: .86rem; }
+.cycleStageNav { grid-template-columns: repeat(6,1fr); }
+.cycleStageNav button { min-height: 155px; }
+.cycleProgress { overflow: hidden; max-width: 1500px; height: 6px; margin: -.35rem auto 1rem; border-radius: 999px; background: #d7e7ee; }
+.cycleProgress span { display: block; height: 100%; background: linear-gradient(90deg,var(--teal),var(--sky-strong)); transition: width 220ms ease; }
 .experienceStage { max-width: 1500px; margin: 0 auto; }
 .experienceDemo { overflow: hidden; border: 1px solid #c8dee8; border-radius: .9rem; background: var(--white); box-shadow: 0 25px 75px rgba(23,62,91,.09); }
 .experienceDemo > header { display: flex; justify-content: space-between; gap: 2rem; align-items: start; padding: clamp(1.4rem,3vw,2.3rem); border-bottom: 1px solid var(--line); }
@@ -4217,6 +4241,56 @@ footer nav a:focus-visible {
 .knowledgeQuestions button[aria-pressed="true"] span { color: var(--sky-strong); }
 .knowledgeAnswer { min-height: 330px; background: linear-gradient(145deg,#f1faff,#fff); }
 .knowledgeAnswer h4 { font: 500 clamp(1.5rem,2.5vw,2.2rem)/1.25 Georgia, serif; }
+.captureWorkspace { display: grid; grid-template-columns: minmax(280px,.7fr) minmax(0,1.3fr); gap: 1rem; padding: clamp(1.2rem,3vw,2rem); }
+.sourcePack, .captureResult { min-height: 360px; padding: 1.2rem; border: 1px solid var(--line); border-radius: .65rem; background: var(--paper); }
+.sourcePack > span, .captureResult > span, .accountsStatement > span, .accountsChecks > span { color: var(--teal-dark); font-size: .65rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.sourcePack article { display: grid; grid-template-columns: auto 1fr; gap: .3rem .7rem; margin-top: .65rem; padding: .8rem; border: 1px solid var(--line); border-radius: .45rem; background: var(--white); }
+.sourcePack article b { grid-row: span 2; color: var(--teal-dark); font: 800 .66rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; }
+.sourcePack article strong { color: var(--navy); font-size: .82rem; }
+.sourcePack article small { color: var(--muted); }
+.captureResult { background: linear-gradient(145deg,#f1faff,#fff); }
+.captureResult > p { margin-top: 1.2rem; color: var(--muted); }
+.captureResultList { display: grid; gap: .55rem; margin-top: .8rem; }
+.captureResultList article { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(100px,.45fr); gap: .8rem; align-items: center; padding: .75rem; border: 1px solid var(--line); border-radius: .45rem; background: var(--white); }
+.captureResultList article div { display: grid; }
+.captureResultList article strong { color: var(--navy); }
+.captureResultList article small { color: var(--muted); }
+.captureResultList article > b { padding: .3rem .45rem; border-radius: 999px; background: #e8f6ef; color: #24634f; font-size: .65rem; }
+.captureResultList article > b.needsReview { background: #fff0e9; color: #8d3026; }
+.reconciliationBoard { display: grid; grid-template-columns: repeat(4,1fr); gap: .8rem; padding: clamp(1.2rem,3vw,2rem); }
+.reconciliationBoard article { display: grid; min-height: 170px; padding: 1rem; border: 1px solid var(--line); border-top: 4px solid #a9bfca; border-radius: .55rem; background: var(--paper); }
+.reconciliationBoard article.isActive { border-top-color: var(--teal); background: #edf8f4; }
+.reconciliationBoard article.hasException { border-top-color: #bd5b49; background: #fff3ef; }
+.reconciliationBoard span { color: var(--teal-dark); font-size: .64rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.reconciliationBoard strong { align-self: end; margin: 1rem 0 .35rem; color: var(--navy); font-size: 1.05rem; }
+.reconciliationBoard small { color: var(--muted); }
+.accountsWorkspace { display: grid; grid-template-columns: minmax(0,1fr) minmax(280px,.65fr); gap: 1rem; padding: clamp(1.2rem,3vw,2rem); }
+.accountsStatement, .accountsChecks { min-height: 360px; padding: 1.3rem; border: 1px solid var(--line); border-radius: .65rem; background: var(--paper); }
+.accountsStatement table { width: 100%; margin-top: 1rem; border-collapse: collapse; }
+.accountsStatement th, .accountsStatement td { padding: .75rem; border-bottom: 1px solid var(--line); text-align: left; }
+.accountsStatement td { text-align: right; color: var(--navy); font-weight: 800; }
+.accountsStatement .statementTotal { border-top: 2px solid var(--navy); background: var(--white); }
+.accountsStatement > p { margin-top: 1.2rem; color: var(--muted); }
+.accountsChecks { display: grid; align-content: start; gap: .65rem; background: linear-gradient(145deg,#f1faff,#fff); }
+.accountsChecks article { display: flex; justify-content: space-between; gap: 1rem; margin-top: .35rem; padding: .8rem; border: 1px solid var(--line); border-radius: .45rem; background: var(--white); }
+.accountsChecks article.isActive { border-color: var(--teal); background: #edf8f4; }
+.accountsChecks article strong { color: var(--navy); font-size: .8rem; }
+.accountsChecks article b { color: var(--teal-dark); font-size: .78rem; }
+.accountsChecks > small { margin-top: .5rem; color: var(--muted); line-height: 1.5; }
+.insightWorkspace { display: grid; grid-template-columns: repeat(2,1fr); gap: .8rem; padding: clamp(1.2rem,3vw,2rem); }
+.insightWorkspace > p { grid-column: 1 / -1; min-height: 180px; padding: 1.2rem; border: 1px solid var(--line); background: var(--paper); color: var(--muted); }
+.insightWorkspace article { padding: 1.1rem; border: 1px solid var(--line); border-top: 4px solid var(--sky-strong); border-radius: .55rem; background: var(--white); }
+.insightWorkspace article > span { color: var(--teal-dark); font-size: .64rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.insightWorkspace article > div { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin: .65rem 0; }
+.insightWorkspace article strong { color: var(--navy); font-size: 1.45rem; }
+.insightWorkspace article b { color: var(--teal-dark); }
+.insightWorkspace article p { color: var(--ink); }
+.insightWorkspace article small { display: block; padding-top: .6rem; border-top: 1px solid var(--line); color: var(--muted); }
+.auditTrailGrid { display: grid; grid-template-columns: repeat(3,1fr); gap: .8rem; padding: clamp(1.2rem,3vw,2rem); }
+.auditTrailGrid article { display: grid; min-height: 165px; padding: 1rem; border: 1px solid var(--line); border-top: 4px solid var(--teal); border-radius: .55rem; background: var(--paper); }
+.auditTrailGrid span { color: var(--teal-dark); font-size: .64rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.auditTrailGrid strong { align-self: end; margin: 1rem 0 .35rem; color: var(--navy); font-size: 1.08rem; }
+.auditTrailGrid p { margin: 0; color: var(--muted); font-size: .8rem; }
 .experienceControlRoom { display: grid; grid-template-columns: minmax(250px,.55fr) minmax(0,1.45fr); gap: clamp(2rem,5vw,5rem); max-width: 1500px; margin: 1.2rem auto 0; padding: clamp(1.5rem,4vw,3rem); border-radius: .9rem; background: linear-gradient(135deg,#0b1822,#123f5c); color: var(--white); }
 .experienceControlRoom h3 { margin: .5rem 0 1rem; color: var(--white); font: 500 clamp(2rem,3.8vw,3.8rem)/1.05 Georgia,serif; letter-spacing: -.04em; }
 .experienceControlRoom > div:first-child > p:not(.kicker) { color: rgba(255,255,255,.65); }
@@ -4232,6 +4306,8 @@ footer nav a:focus-visible {
 .experienceBoundary { grid-column: 1 / -1; margin: 0; color: rgba(255,255,255,.55); font-size: .72rem; }
 
 @media (max-width: 1100px) {
+  .cycleStageNav { grid-template-columns: repeat(3,1fr); }
+  .reconciliationBoard { grid-template-columns: repeat(2,1fr); }
   .experienceMethodNav { grid-template-columns: repeat(2,1fr); }
   .experienceControlRoom { grid-template-columns: 1fr; }
   .automationFlow { grid-template-columns: repeat(4,1fr); }
@@ -4239,13 +4315,18 @@ footer nav a:focus-visible {
 }
 
 @media (max-width: 760px) {
-  .experienceIntro, .assistantStudio, .knowledgeWorkspace, .integrationSummary { grid-template-columns: 1fr; }
+  .adoptionMechanismGrid, .governanceBand, .experienceIntro, .assistantStudio, .knowledgeWorkspace, .integrationSummary, .captureWorkspace, .accountsWorkspace, .insightWorkspace { grid-template-columns: 1fr; }
+  .cycleCaseStrip { grid-template-columns: 1fr; }
+  .cycleCaseStrip div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .cycleCaseStrip div:last-child { border-bottom: 0; }
   .experienceMethodNav { grid-template-columns: 1fr; }
   .experienceMethodNav button { min-height: 112px; }
   .experienceDemo > header { flex-direction: column; }
   .experienceComparison { grid-template-columns: 1fr; }
   .experienceComparison > i { transform: rotate(90deg); justify-self: center; }
   .automationFlow { grid-template-columns: 1fr; }
+  .reconciliationBoard, .auditTrailGrid { grid-template-columns: 1fr; }
+  .captureResultList article { grid-template-columns: 1fr; }
   .automationFlow article { min-height: 115px; }
   .demoFeedback, .controlRoomActions { align-items: flex-start; flex-direction: column; }
   .controlRoomMetrics { grid-template-columns: 1fr; }

@@ -86,6 +86,7 @@ Backlog items are evidence tasks, not deadline commitments. Only one primary pha
 | ACC-C06 | Approve the public scenario and example values | Research-director decision on assumptions, initial calculator values and wording | Research director | Complete - approved 2026-08-03 |
 | ACC-C07 | Publish and deploy the approved workspace | GitHub commit, Cloudflare deployment and live interaction verification | Project owner | Complete - commit 59b50f4; Worker version 5d6c15d2-5dd7-4c0d-9ee2-f8e33cb06abb |
 | ACC-C08 | Build the Accounting AI Experience Lab | Four hands-on synthetic method demos, manual-versus-adopted comparisons, shared control room, evidence boundaries and production tests | Project owner | Complete - commit 12baead4; Worker version 588b57ca-6ab3-43ab-a5b2-f663f780670c |
+| ACC-C09 | Rebuild the Lab around the accounting cycle | Move general method explanations to the background page; connect bookkeeping, ledger, close, accounts, insight and quality-control workstations; retain evidence boundaries and tests | Project owner | Owner-approved on 2026-08-03; publication in progress |
 
 ## Completed by handover baseline - Gate G1
 

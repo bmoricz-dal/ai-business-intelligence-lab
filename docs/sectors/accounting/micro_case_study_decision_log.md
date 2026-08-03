@@ -79,3 +79,10 @@ Decision: Record the tested Experience Lab extension as the current public Phase
 Status: complete on 2026-08-03.  
 Release record: GitHub commit `12baead4dfdb801c2b9ac622688a59b32e4b4743`; Cloudflare Worker version `588b57ca-6ab3-43ab-a5b2-f663f780670c`. The production build and lint checks passed, all 11 website tests passed, all nine public routes returned HTTP 200, and the live Experience Lab client bundle contained the four scenario workspaces, shared control room and control/failure-test interactions.  
 Implication: the public Experience Lab is the primary practical demonstration and the planner is its secondary implementation workspace. Future substantive changes to scenarios, illustrative values, evidence claims, privacy behaviour or controls require a new reviewed release.
+
+## ACC-C14 — Organise the Lab around accounting work
+
+Decision: Move the general Use, Integrate, Automate, Configure and Govern explanations to the AI in Practice background page. Rebuild the Accounting AI Experience Lab around one connected fictional monthly cycle: bookkeeping capture, ledger categorisation, reconciliation and close, management accounts, business insights, and final quality and audit-trail review. Keep adoption methods only as secondary mechanism labels.  
+Status: owner-approved for implementation and deployment on 2026-08-03 through the instruction “Do them and then deploy!”.  
+Evidence boundary: every record, amount, comparison, check and narrative remains deterministic and fictional. The Lab does not produce prepared accounts, accounting advice, observed performance, a UK SME benchmark, an AI product test or promised benefit.  
+Implication: the general page explains how AI can enter operations; the sector Lab demonstrates what controlled AI-enabled accounting work can look like.
