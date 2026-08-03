@@ -3950,3 +3950,162 @@ footer nav a:focus-visible {
   .pathwayPageTable { overflow-x: auto; }
   .pathwayPageTable table { min-width: 720px; }
 }
+
+/* Accounting micro-practice adoption worked case */
+.microCasePage { background: var(--white); }
+.microCaseHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.55fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  min-height: 690px;
+  padding: clamp(7rem, 12vw, 10rem) clamp(1.5rem, 7vw, 7rem) 5rem;
+  background: linear-gradient(135deg, #0b1822 0%, #123f5c 70%, #1f6f94 100%);
+  color: var(--white);
+  align-items: center;
+}
+.microCaseHeroMarker { grid-column: 1 / -1; display: flex; justify-content: space-between; align-self: start; border-top: 1px solid rgba(223,243,255,.22); padding-top: .7rem; color: var(--sky-strong); font: 700 .65rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .1em; }
+.microCaseHero h1 { max-width: 900px; margin: .5rem 0 1.2rem; color: var(--white); font: 700 clamp(3.3rem, 7vw, 6.8rem)/.92 Georgia, serif; letter-spacing: -.055em; }
+.microCaseHero > div:nth-child(2) > p:not(.kicker) { max-width: 780px; color: rgba(255,255,255,.72); font-size: 1.1rem; }
+.microCaseHero aside { padding: 2rem; border: 1px solid rgba(223,243,255,.22); border-radius: .7rem; background: rgba(7,25,36,.38); }
+.microCaseHero aside span { color: var(--sky-strong); font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.microCaseHero aside strong { display: block; margin: .8rem 0; color: var(--white); font-size: 1.65rem; }
+.microCaseHero aside p { color: rgba(255,255,255,.66); }
+.microCaseBoundary { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--line); background: var(--paper); }
+.microCaseBoundary div { display: grid; gap: .3rem; padding: 1.6rem clamp(1rem,3vw,2.2rem); border-right: 1px solid var(--line); }
+.microCaseBoundary div:last-child { border-right: 0; }
+.microCaseBoundary strong { color: var(--navy); }
+.microCaseBoundary span { color: var(--muted); font-size: .75rem; }
+.microCaseProfile, .microFoundation, .microPathwayDetails, .microMeasurement, .microGates { padding: clamp(5rem,9vw,8rem) clamp(1.5rem,7vw,7rem); }
+.microProfileGrid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2rem; }
+.microProfileGrid article { min-height: 230px; padding: 1.5rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--paper); }
+.microProfileGrid span, .microFormulaCards span { color: var(--teal-dark); font-size: .67rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.microProfileGrid strong { display: block; margin: 1rem 0 .7rem; color: var(--navy); font-size: 1.2rem; }
+.microProfileGrid p { color: var(--muted); }
+.microMethodSection, .microSequence, .microDownloads { padding: clamp(5rem,9vw,8rem) clamp(1.5rem,7vw,7rem); background: linear-gradient(135deg, #0b1822, #123f5c); color: var(--white); }
+.microMethodSection h2, .microSequence h2, .microDownloads h2 { color: var(--white); }
+.microMethodSection .sectionLead > p:not(.kicker), .microSequence .sectionLead > p:not(.kicker), .microDownloads > div:first-child > p:not(.kicker) { color: rgba(255,255,255,.68); }
+.microMethodGrid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2.2rem; }
+.microMethodGrid article { min-height: 300px; padding: 1.6rem; border: 1px solid rgba(223,243,255,.2); border-radius: .7rem; background: rgba(255,255,255,.035); }
+.microMethodGrid article > span { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--sky-strong); }
+.microMethodGrid b { display: block; margin-top: 2.4rem; color: var(--sky-strong); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.microMethodGrid h3 { margin: .65rem 0; color: var(--white); }
+.microMethodGrid p { color: rgba(255,255,255,.64); }
+.microFoundation { background: var(--paper); }
+.microFoundation ol { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+.microFoundation li { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; min-height: 170px; padding: 1.4rem; border: 1px solid var(--line); border-radius: .65rem; background: var(--white); }
+.microFoundation li > span { display: grid; width: 2.2rem; height: 2.2rem; place-items: center; border-radius: 50%; background: var(--navy); color: var(--white); font-weight: 800; }
+.microFoundation li strong { color: var(--navy); }
+.microFoundation li p { color: var(--muted); }
+.microPathwayDetails > article { display: grid; grid-template-columns: minmax(240px,.65fr) minmax(0,1.35fr); gap: clamp(2rem,6vw,6rem); padding: 3rem 0; border-top: 1px solid var(--line); }
+.microPathwayDetails h3 { margin: 0; color: var(--navy); font-size: 1.65rem; }
+.microPathwayDetails article > div p { color: var(--muted); }
+.microPathwayDetails ol { margin: 0; padding: 0; list-style: none; }
+.microPathwayDetails li { display: grid; grid-template-columns: 2.4rem 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid var(--line); color: var(--ink); }
+.microPathwayDetails li span { color: var(--teal-dark); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 800; }
+.microSequenceBar { display: grid; grid-template-columns: repeat(5,1fr); margin-top: 2rem; }
+.microSequenceBar article { min-height: 220px; padding: 1.4rem; border-top: 3px solid var(--sky-strong); border-right: 1px solid rgba(223,243,255,.18); }
+.microSequenceBar span { color: var(--sky-strong); font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.microSequenceBar strong { display: block; margin: 1.2rem 0 .5rem; color: var(--white); }
+.microSequenceBar p { color: rgba(255,255,255,.62); }
+.microMeasurement { display: grid; grid-template-columns: minmax(0,.7fr) minmax(430px,1.3fr); gap: clamp(3rem,8vw,8rem); background: var(--paper); }
+.microMeasurement h2 { color: var(--navy); }
+.microMeasurement > div:first-child > p:not(.kicker) { color: var(--muted); }
+.microFormulaCards { display: grid; gap: 1rem; }
+.microFormulaCards article { padding: 1.7rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--white); }
+.microFormulaCards strong { display: block; margin-top: .8rem; color: var(--navy); font-size: 1.05rem; line-height: 1.5; }
+.microGates { background: var(--white); }
+.microGates .pathwayPageTable { margin-top: 2rem; overflow-x: auto; }
+.microGates > p { color: var(--muted); font-size: .78rem; }
+.microDownloads { display: grid; grid-template-columns: minmax(0,.9fr) minmax(320px,.7fr); gap: clamp(3rem,8vw,8rem); }
+.microDownloads .methodDownloads { display: grid; gap: .75rem; }
+.microDownloads .methodDownloads a { display: grid; gap: .2rem; padding: 1rem 1.1rem; border: 1px solid rgba(223,243,255,.22); border-radius: .5rem; color: var(--white); text-decoration: none; }
+.microDownloads .methodDownloads span { color: var(--sky-strong); font-size: .67rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.microDownloads .benefitsDisclaimer { grid-column: 1 / -1; color: rgba(255,255,255,.55); }
+
+@media (max-width: 1000px) {
+  .microCaseHero, .microMeasurement, .microDownloads { grid-template-columns: 1fr; }
+  .microProfileGrid, .microMethodGrid, .microCaseBoundary { grid-template-columns: repeat(2,1fr); }
+  .microFoundation ol { grid-template-columns: repeat(2,1fr); }
+  .microSequenceBar { grid-template-columns: repeat(3,1fr); }
+}
+
+@media (max-width: 680px) {
+  .microCaseHero { min-height: 640px; padding: 6rem 1.2rem 4rem; }
+  .microCaseHero h1 { font-size: 3.2rem; }
+  .microCaseHeroMarker { gap: .7rem; flex-wrap: wrap; }
+  .microCaseBoundary, .microProfileGrid, .microMethodGrid, .microFoundation ol, .microSequenceBar { grid-template-columns: 1fr; }
+  .microCaseBoundary div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .microPathwayDetails > article { grid-template-columns: 1fr; }
+  .microMeasurement, .microDownloads { grid-template-columns: 1fr; }
+  .microGates .pathwayPageTable table { min-width: 760px; }
+}
+
+.adoptionWorkspace { padding: clamp(5rem,9vw,8rem) clamp(1.5rem,5vw,5rem); background: #eaf5fb; }
+.workspaceHeading { display: grid; grid-template-columns: minmax(0,1fr) minmax(280px,.45fr); gap: 3rem; align-items: end; max-width: 1500px; margin: 0 auto 2rem; }
+.workspaceHeading h2 { margin: .4rem 0 .8rem; color: var(--navy); font-size: clamp(2.4rem,5vw,4.5rem); }
+.workspaceHeading > div:first-child > p:not(.kicker) { max-width: 800px; color: var(--muted); }
+.workspaceSafety { display: grid; gap: .35rem; padding: 1.1rem 1.2rem; border-left: 4px solid #b74432; background: #fff5f2; color: #6d251b; }
+.workspaceSafety span { font-size: .78rem; }
+.workspaceLayout { display: grid; grid-template-columns: 320px minmax(0,1fr); gap: 1.2rem; max-width: 1500px; margin: 0 auto; align-items: start; }
+.workspaceControls { position: sticky; top: 1rem; display: grid; gap: 1rem; padding: 1.1rem; border: 1px solid #c9dfe9; border-radius: .8rem; background: var(--white); box-shadow: 0 20px 60px rgba(23,62,91,.08); }
+.workspaceControls fieldset, .metricInputGrid fieldset { display: grid; gap: .75rem; margin: 0; padding: 0; border: 0; }
+.workspaceControls legend, .metricInputGrid legend { margin-bottom: .8rem; color: var(--navy); font-weight: 800; }
+.workspaceControls label, .metricInputGrid label { display: grid; gap: .3rem; color: var(--muted); font-size: .72rem; font-weight: 750; }
+.workspaceControls input, .workspaceControls select, .metricInputGrid input, .gateDecisionGrid select { width: 100%; padding: .7rem .75rem; border: 1px solid var(--line); border-radius: .4rem; background: var(--white); color: var(--ink); font: inherit; }
+.pathwayChooser { display: grid; gap: .45rem; }
+.pathwayChooser button { display: grid; gap: .2rem; padding: .8rem; border: 1px solid var(--line); border-radius: .45rem; background: var(--paper); color: var(--navy); text-align: left; cursor: pointer; }
+.pathwayChooser button span { color: var(--muted); font-size: .68rem; font-weight: 500; line-height: 1.35; }
+.pathwayChooser button[aria-pressed="true"] { border-color: var(--teal); background: var(--navy); color: var(--white); }
+.pathwayChooser button[aria-pressed="true"] span { color: rgba(255,255,255,.65); }
+.workspaceActions { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.workspaceActions button { padding: .75rem; border: 1px solid var(--navy); border-radius: .45rem; background: var(--navy); color: var(--white); font-weight: 800; cursor: pointer; }
+.workspaceActions .secondary { background: var(--white); color: var(--navy); }
+.workspaceCanvas { display: grid; gap: 1.2rem; min-width: 0; }
+.workspacePanel { padding: clamp(1.2rem,3vw,2rem); border: 1px solid #c9dfe9; border-radius: .8rem; background: var(--white); box-shadow: 0 20px 60px rgba(23,62,91,.06); }
+.workspacePanelHeader { display: flex; justify-content: space-between; gap: 2rem; align-items: center; margin-bottom: 1.5rem; }
+.workspacePanelHeader > div:first-child > span { color: var(--teal-dark); font-size: .67rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.workspacePanelHeader h3 { margin: .3rem 0; color: var(--navy); font-size: 1.65rem; }
+.workspacePanelHeader p { max-width: 760px; margin: 0; color: var(--muted); }
+.progressDonut { --progress: 0deg; flex: 0 0 92px; display: grid; width: 92px; height: 92px; place-content: center; border-radius: 50%; background: radial-gradient(circle at center, var(--white) 57%, transparent 59%), conic-gradient(var(--teal) var(--progress), var(--pale) 0); text-align: center; }
+.progressDonut strong { color: var(--navy); }
+.progressDonut span { color: var(--muted); font-size: .62rem; }
+.workspaceSteps { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .55rem; margin: 0; padding: 0; list-style: none; }
+.workspaceSteps li { border: 1px solid var(--line); border-radius: .5rem; background: var(--paper); }
+.workspaceSteps label { display: grid; grid-template-columns: auto 2rem 1fr; gap: .65rem; min-height: 74px; align-items: center; padding: .7rem; cursor: pointer; }
+.workspaceSteps input { width: 1.05rem; height: 1.05rem; accent-color: var(--teal); }
+.workspaceSteps label > span { color: var(--teal-dark); font: 800 .68rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.workspaceSteps strong { color: var(--navy); font-size: .82rem; }
+.workspaceSteps .isComplete { border-color: #80bdad; background: #edf8f4; }
+.workspaceSteps .isComplete strong { text-decoration: line-through; text-decoration-color: #80bdad; }
+.metricInputGrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+.metricInputGrid fieldset { align-content: start; padding: 1rem; border: 1px solid var(--line); border-radius: .55rem; background: var(--paper); }
+.workspaceResults { display: grid; grid-template-columns: repeat(5,1fr); gap: .6rem; margin-top: 1rem; }
+.workspaceResults article { display: grid; gap: .25rem; padding: .9rem; border-top: 3px solid var(--teal); background: #f2f8fb; }
+.workspaceResults span { color: var(--muted); font-size: .65rem; font-weight: 800; text-transform: uppercase; }
+.workspaceResults strong { color: var(--navy); font-size: 1.2rem; }
+.workspaceResults strong.negative { color: #a33a2d; }
+.workspaceFootnote { color: var(--muted); font-size: .72rem; }
+.gateOutcome { display: grid; min-width: 125px; padding: .8rem 1rem; border-radius: .5rem; background: var(--paper); text-align: center; }
+.gateOutcome span { color: var(--muted); font-size: .62rem; font-weight: 800; text-transform: uppercase; }
+.gateOutcome strong { color: var(--navy); }
+.gateOutcome.proceed { background: #e9f7f1; }
+.gateOutcome.revise { background: #fff4d9; }
+.gateOutcome.stop { background: #fff0ed; }
+.gateOutcome.stop strong { color: #9b3328; }
+.gateDecisionGrid { display: grid; grid-template-columns: repeat(3,1fr); gap: .7rem; }
+.gateDecisionGrid label { display: grid; gap: .35rem; padding: .8rem; border: 1px solid var(--line); border-radius: .45rem; }
+.gateDecisionGrid label > span { color: var(--navy); font-size: .75rem; font-weight: 800; }
+
+@media (max-width: 1100px) {
+  .workspaceLayout { grid-template-columns: 1fr; }
+  .workspaceControls { position: static; grid-template-columns: repeat(2,1fr); }
+  .workspaceActions { grid-column: 1 / -1; }
+  .workspaceResults { grid-template-columns: repeat(3,1fr); }
+}
+
+@media (max-width: 760px) {
+  .workspaceHeading, .workspaceControls, .workspaceSteps, .metricInputGrid, .gateDecisionGrid { grid-template-columns: 1fr; }
+  .workspacePanelHeader { align-items: flex-start; }
+  .workspaceResults { grid-template-columns: repeat(2,1fr); }
+  .progressDonut { flex-basis: 76px; width: 76px; height: 76px; }
+}

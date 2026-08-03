@@ -67,6 +67,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
             { href: "/adoption-pathways#automation", label: "Automated decisions" },
             { href: "/adoption-pathways#build", label: "Build and training" },
             { href: "/adoption-pathways#governance", label: "Governance" },
+            { href: "/adoption-pathways/accounting-micro-case-study", label: "Accounting micro case" },
           ]}
         />
         <Link aria-current={active === "Methods" ? "page" : undefined} href="/methods">Methods</Link>

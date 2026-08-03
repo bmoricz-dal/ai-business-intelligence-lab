@@ -9,6 +9,20 @@ This folder contains the complete secondary-data research package for the accoun
 - Report generator: `src/reporting/accounting_ai_readiness_report.py`
 - Public webpage: `site/app/sectors/accounting/page.tsx`
 
+## Phase 2B — micro-practice adoption lab
+
+The next module translates the current-state and benefits evidence into a fictional seven-person accounting-practice case. Its primary output is an interactive website workspace covering pathway selection, step completion, baseline-versus-pilot measurement, decision gates and browser-only export. A 15-page PDF provides supporting theory and method.
+
+- Interactive route: `site/app/adoption-pathways/accounting-micro-case-study/page.tsx`
+- Step-level tracker: `data/public/accounting_micro_ai_adoption_playbook_2026.csv`
+- Supporting PDF: `output/pdf/UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026.pdf`
+- Research plan: `micro_case_study_research_plan.md`
+- Detailed method: `micro_case_study_method.md`
+- Source register: `micro_case_study_source_register.csv`
+- Decision log: `micro_case_study_decision_log.md`
+
+Status: complete and owner-approved for publication on 2026-08-03.
+
 ### Phase 2A - benefits and system fit
 
 - Final report: `output/pdf/UK_Accounting_SMEs_AI_Benefits_and_System_Fit_2026.pdf`

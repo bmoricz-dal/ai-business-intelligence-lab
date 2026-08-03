@@ -1,0 +1,20 @@
+{
+  "title": "UK Micro Accounting Practice AI Adoption Worked Case, 2026",
+  "publication_date": "2026-08-03",
+  "author": "Benedek Moricz",
+  "research_mode": "secondary_data_only",
+  "case_status": "fictional_composite",
+  "approval_status": "owner_authorised_final_publication",
+  "publication_status": "approved_for_distribution",
+  "evidence_boundary": "Scenario assumptions are illustrative and no outcome is an observed firm or sector effect.",
+  "output": {
+    "file": "UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026.pdf",
+    "sha256": "38e6e53fa96a3c73971f6ebb9b36ded645acd456b0cd75642025e39c504764e2",
+    "page_count": 15
+  },
+  "public_data": {
+    "file": "data/public/accounting_micro_ai_adoption_playbook_2026.csv",
+    "sha256": "5c2166156531b212d248de4133a02a961e56141c5e285125288edc5b65c0d255"
+  },
+  "generated_at": "2026-08-03T13:44:58.620565+00:00"
+}

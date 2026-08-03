@@ -11,9 +11,11 @@ using, integrating and governing artificial intelligence.
 - [Accounting sector page](https://dal-data-ai-lab.moricz-labs.workers.dev/sectors/accounting)
 - [Accounting AI benefits and system fit](https://dal-data-ai-lab.moricz-labs.workers.dev/sectors/accounting/benefits)
 - [Adoption pathways](https://dal-data-ai-lab.moricz-labs.workers.dev/adoption-pathways)
+- [Interactive micro-accounting AI adoption lab](https://dal-data-ai-lab.moricz-labs.workers.dev/adoption-pathways/accounting-micro-case-study)
 - [Methods](https://dal-data-ai-lab.moricz-labs.workers.dev/methods)
 - [UK Accounting SMEs: AI Adoption and Operational Readiness, 2026](publications/UK_Accounting_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf)
 - [UK Accounting SMEs: AI Benefits and System Fit, 2026](publications/UK_Accounting_SMEs_AI_Benefits_and_System_Fit_2026.pdf)
+- [UK Micro Accounting Practice AI Adoption Worked Case, 2026](publications/UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026.pdf)
 - [Report 1 — AI Use by Business Size](publications/SME_Report_01_AI_Use_by_Business_Size.pdf)
 - [Report 2 — AI Adoption and System Integration](publications/SME_Report_02_AI_Adoption_and_System_Integration_by_Size.pdf)
 - [Report 3 — AI Governance by Business Size](publications/SME_Report_03_AI_Governance_by_Business_Size.pdf)
@@ -58,6 +60,13 @@ processing, bookkeeping and month-end close when AI is integrated with workflow
 controls and professional review. Its accounting-specific field evidence comes
 from a US setting and remains transfer evidence rather than a UK effect-size
 benchmark. The project does not publish an accounting-SME ROI or vendor ranking.
+
+The interactive micro-accounting adoption lab then translates this evidence
+into a step-by-step fictional seven-person practice scenario. Firms can compare
+Use, Integrate, Automate and Configure pathways, work through controls, enter
+illustrative or aggregated baseline and pilot figures, record proceed/revise/stop
+gates and export the current browser session. The demonstration does not call an
+AI model, connect to accounting software or send entered figures to the Lab.
 
 ## Evidence rules
 
@@ -118,7 +127,8 @@ reports and cross-report synthesis are owner-reviewed publication editions.
 The accounting sector report and its public observation-level CSV are now part
 of this public evidence layer. The accounting benefits review, graded source
 register and observation-level evidence matrix extend that sector package. The
-website remains the main reader-facing product.
+owner-approved micro-practice adoption lab extends it into an interactive
+implementation demonstration. The website remains the main reader-facing product.
 
 ## Licensing
 

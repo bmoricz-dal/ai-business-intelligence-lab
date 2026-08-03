@@ -27,6 +27,7 @@ const routes = [
   ["/adoption-pathways", "Adoption pathways"],
   ["/methods", "Methods"],
   ["/sectors/accounting/benefits", "Sectors"],
+  ["/adoption-pathways/accounting-micro-case-study", "Adoption pathways"],
 ];
 
 test("serves every top-level research section as a separate page", async () => {
@@ -73,6 +74,34 @@ test("dropdowns support hover, click, focus departure and Escape", async () => {
   assert.match(shell, /\/sectors\/accounting/);
   assert.match(shell, /\/sectors\/accounting\/benefits/);
   assert.match(shell, /\/adoption-pathways#governance/);
+  assert.match(shell, /\/adoption-pathways\/accounting-micro-case-study/);
+});
+
+test("provides an interactive micro-accounting adoption workspace", async () => {
+  const response = await render("/adoption-pathways/accounting-micro-case-study");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /A micro practice puts AI adoption into practice/);
+  assert.match(html, /Interactive adoption lab/);
+  assert.match(html, /Build and test your pathway/);
+  assert.match(html, /Do not enter client data/);
+  assert.match(html, /Baseline versus pilot/);
+  assert.match(html, /Six gates/);
+  assert.match(html, /Fictional composite/);
+  assert.match(html, /No promised ROI/);
+  assert.match(html, /UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026\.pdf/);
+  assert.match(html, /accounting_micro_ai_adoption_playbook_2026\.csv/);
+
+  const component = await readFile(new URL("../app/adoption-pathways/accounting-micro-case-study/adoption-workspace.tsx", import.meta.url), "utf8");
+  assert.match(component, /^"use client"/);
+  assert.match(component, /useState/);
+  assert.match(component, /shadow mode/i);
+  assert.match(component, /gateOutcome/);
+  assert.match(component, /netCapacityValue/);
+  assert.match(component, /Export session/);
+  assert.match(component, /Blob/);
+  assert.match(component, /not sent to DAL/);
+  assert.doesNotMatch(component, /fetch\(|axios|localStorage/);
 });
 
 test("publishes the accounting benefits and system-fit evidence review", async () => {

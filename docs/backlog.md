@@ -74,6 +74,18 @@ Backlog items are evidence tasks, not deadline commitments. Only one primary pha
 | ACC-B06 | Reassess quantified UK impact | Triggered by an independent UK accounting-SME causal or strong longitudinal outcome study | Research director | Monitoring - evidence trigger not yet met |
 | ACC-B07 | Extend to client-business outcomes | Separate secondary-evidence protocol for effects on accounting-practice clients | Research director | Later scope |
 
+## Accounting sector programme - micro-practice adoption lab
+
+| ID | Task | Evidence of completion | Owner | Status |
+|---|---|---|---|---|
+| ACC-C01 | Freeze the composite-case boundary | Secondary-only research plan, seven-person scope and explicit fictional status | Research director | Complete - approved 2026-08-03 |
+| ACC-C02 | Register implementation and control evidence | Open peer-reviewed and authoritative source register with transfer limits | Project owner | Complete |
+| ACC-C03 | Build the reusable pathway tracker | Step-level CSV covering Use, Integrate, Automate, Configure and cross-cutting governance | Project owner | Complete |
+| ACC-C04 | Produce the supporting theoretical and methods PDF | Reproducible 15-page publication, metadata, automated tests and page-by-page visual QA | Project owner | Complete |
+| ACC-C05 | Build the interactive adoption workspace | Pathway selector, checklist, browser-only measurement calculator, six gates and JSON export | Project owner | Complete; 11 website tests pass |
+| ACC-C06 | Approve the public scenario and example values | Research-director decision on assumptions, initial calculator values and wording | Research director | Complete - approved 2026-08-03 |
+| ACC-C07 | Publish and deploy the approved workspace | GitHub commit, Cloudflare deployment and live interaction verification | Project owner | In progress - release approved |
+
 ## Completed by handover baseline - Gate G1
 
 | ID | Task | Evidence of completion | Owner | Status |
