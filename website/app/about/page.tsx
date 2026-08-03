@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero, PUBLIC_REPOSITORY, SiteFooter, SiteHeader } from "../site-shell";
 
 export const metadata: Metadata = {
@@ -15,15 +16,19 @@ export default function AboutPage() {
         <PageHero
           kicker="About"
           marker="ECONOMICS · DATA · APPLIED AI"
-          title="Research discipline connected to practical business questions."
-          introduction="The project combines economic reasoning, transparent data work and accessible communication to help SMEs understand what AI adoption evidence really says."
+          title="Independent research built for real AI adoption decisions."
+          introduction="DAL combines economics, reproducible data work and applied AI to translate complex evidence into practical choices for SME leaders, advisers and researchers."
         />
+
+        <section className="systemSignalRail" aria-label="Research capability system">
+          <span><b>01</b> ECONOMIC REASONING</span><i /><span><b>02</b> DATA PROVENANCE</span><i /><span><b>03</b> APPLIED AI</span><i /><span><b>04</b> SME DECISIONS</span>
+        </section>
 
         <section className="pageSection profileSection" id="background">
           <div className="profileMark" aria-hidden="true"><span>BM</span><small>DAL</small></div>
           <div>
             <p className="kicker">Research profile</p>
-            <h2>Economics, evidence and AI translated into practical intelligence.</h2>
+            <h2>Economic reasoning, research discipline and applied AI.</h2>
             <p>
               I hold an MSc with Merit in International Business Economics from
               Coventry University and a BSc (Hons) in Economics and Industrial
@@ -42,30 +47,46 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className="cityAerialStory" aria-labelledby="city-aerial-title">
+          <Image
+            alt="A bird's-eye view across central London, the Thames and the wider city."
+            fill
+            sizes="100vw"
+            src="/london-city-aerial-cc-by.jpg"
+            unoptimized
+          />
+          <div className="cityAerialRoutes" aria-hidden="true"><i /><i /><i /><b /><b /><b /></div>
+          <div className="cityAerialCopy">
+            <span>UK BUSINESS LANDSCAPE</span>
+            <h2 id="city-aerial-title">One economy. Thousands of operating contexts.</h2>
+            <p>DAL keeps the national signal in view, then moves closer—to business size, sector, workflow and the decisions an individual SME can actually control.</p>
+          </div>
+          <a className="cityAerialCredit" href="https://commons.wikimedia.org/wiki/File:Aerial_view_of_London_city.jpg" rel="noreferrer" target="_blank">London aerial: GillyBerlin / CC BY 2.0</a>
+        </section>
+
         <section className="pageSection aboutPurpose" id="purpose">
           <div className="sectionLead">
             <p className="kicker">Why the lab exists</p>
-            <h2>Evidence should support decisions, not distance people from them.</h2>
+            <h2>Evidence should narrow uncertainty—and clarify the next decision.</h2>
           </div>
           <div className="purposeCopy">
             <p>
-              The immediate goal is to make patterns in adoption, system
-              integration, governance, use cases and operational pathways easier
-              to understand without hiding differences between survey populations.
+              The immediate goal is to make adoption, integration, governance, use
+              cases and operating pathways easier to compare without obscuring
+              differences between survey populations.
             </p>
             <p>
-              The longer-term ambition is a credible SME-facing research service
-              that connects adoption evidence with system choice, workflow design,
-              governance and demonstrable business benefit. Alongside research
-              reports, it will publish practical business case studies and
-              technical case studies and guides that show how evidence can be
-              applied, tested and governed in real operating contexts.
+              The longer-term ambition is an SME-facing intelligence service that
+              connects adoption evidence with system choice, workflow design,
+              governance and demonstrable business value. Research reports will sit
+              alongside practical business cases, technical guides and interactive
+              labs that show how adoption can be applied, tested and governed.
             </p>
           </div>
         </section>
 
         <section className="pageSection valuesSection" id="values">
-          <div className="sectionLead"><p className="kicker">Values</p><h2>How the work is judged.</h2></div>
+          <div className="sectionLead"><p className="kicker">Research principles</p><h2>The standards behind every published claim.</h2></div>
           <div className="valueCards">
             <article><span>01</span><h3>Meaning before metrics</h3><p>A percentage is useful only when its population, definition and uncertainty remain attached.</p></article>
             <article><span>02</span><h3>Evidence without distance</h3><p>Research should be rigorous enough to trust and clear enough to use in a real business conversation.</p></article>
@@ -76,7 +97,7 @@ export default function AboutPage() {
         </section>
 
         <section className="pageSection contactSection" id="contact">
-          <div><p className="kicker light">Contact</p><h2>Research, collaboration and enquiries.</h2><p>I welcome conversations about the research, its methods and future sector studies.</p></div>
+          <div><p className="kicker light">Contact</p><h2>Continue the conversation.</h2><p>Research, methodology and future sector-study enquiries are welcome.</p></div>
           <div className="contactCards">
             <a href="mailto:benedict.moricz@gmail.com"><span>Email</span><strong>benedict.moricz@gmail.com</strong></a>
             <a href={PUBLIC_REPOSITORY} rel="noreferrer" target="_blank"><span>GitHub</span><strong>Public evidence repository</strong></a>

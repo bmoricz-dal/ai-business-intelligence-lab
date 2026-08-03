@@ -16,14 +16,18 @@ export default function SectorsPage() {
         <PageHero
           kicker="Sector research"
           marker="GENERAL EVIDENCE → SECTOR DEPTH"
-          title="Different sectors need different adoption questions."
-          introduction="The sector programme applies a common evidence framework while respecting differences in workflows, regulation, data sensitivity, firm structure and available sources."
+          title="Sector context changes the AI adoption question."
+          introduction="A common evidence framework meets the workflows, regulation, data sensitivity and operating models that determine what adoption means in each sector."
         />
+
+        <section className="systemSignalRail" aria-label="Sector intelligence pathway">
+          <span><b>01</b> GENERAL SIGNAL</span><i /><span><b>02</b> SECTOR WORKFLOW</span><i /><span><b>03</b> CONTROL CONTEXT</span><i /><span><b>04</b> PRACTICAL TEST</span>
+        </section>
 
         <section className="pageSection sectorPrinciples">
           <div className="sectionLead">
             <p className="kicker">Why sector depth matters</p>
-            <h2>Broad business averages cannot answer every operational question.</h2>
+            <h2>National signals show direction. Sector evidence shows what adoption requires.</h2>
           </div>
           <div className="principleGrid">
             <article><span>01</span><h3>Define the business population</h3><p>Use industry classifications and size bands that match the firms the report is intended to describe.</p></article>
@@ -37,10 +41,10 @@ export default function SectorsPage() {
             <p className="kicker light">Published sector report · 01</p>
             <h2>UK Accounting SMEs: AI Adoption and Operational Readiness, 2026</h2>
             <p>
-              The first sector report combines adoption, integration, governance,
-              use cases and pathways in one secondary-data study of SIC 69.20
-              accounting practices. Two connected studies then examine benefits
-              and real-world adoption journeys before the practical Experience Lab.
+              The accounting programme connects a five-dimension readiness study
+              with evidence on workflow benefit, real implementation journeys and
+              an interactive Experience Lab. Together, the four outputs move from
+              sector signal to operating reality.
             </p>
             <div className="sectorMetrics">
               <div><strong>39,860</strong><span>registered accounting SMEs</span></div>
@@ -57,7 +61,7 @@ export default function SectorsPage() {
         </section>
 
         <section className="pageSection upcomingSectors">
-          <div className="sectionLead"><p className="kicker">Future sector programme</p><h2>Planned only where evidence is strong enough.</h2></div>
+          <div className="sectionLead"><p className="kicker">Future sector programme</p><h2>Expand only where the evidence can support a distinct sector view.</h2></div>
           <div className="sectorCardGrid">
             <article id="technology"><span>In development</span><h3>Technology SMEs</h3><p>Adoption depth, product development, technical capability, internal build pathways and governance.</p><small>Publication depends on sector-specific source coverage and comparability review.</small></article>
             <article id="financial-services"><span>Research candidate</span><h3>Financial services SMEs</h3><p>AI use in regulated workflows, customer service, risk, compliance, data controls and human oversight.</p><small>Scope will distinguish regulated firms from in-house finance functions.</small></article>

@@ -49,11 +49,11 @@ export default function AccountingBenefitsPage() {
           </div>
           <div className="benefitsHeroCopy">
             <p className="kicker light">Accounting sector · benefits evidence</p>
-            <h1>Where AI creates measurable value in accounting work</h1>
+            <h1>AI creates the clearest value inside controlled accounting workflows.</h1>
             <p>
-              A system-fit review of bookkeeping, transaction processing and
-              month-end close—showing what is supported, what transfers cautiously,
-              and what remains unproven for UK accounting SMEs.
+              The strongest evidence sits in bookkeeping, transaction processing
+              and close support—where systems combine accounting data, exception
+              handling and professional review.
             </p>
             <div className="heroActions">
               <a className="primaryButton" href={REPORT}>Download the evidence review</a>
@@ -76,10 +76,14 @@ export default function AccountingBenefitsPage() {
           <div><strong>No ROI claim</strong><span>no vendor ranking or composite score</span></div>
         </section>
 
+        <section className="systemSignalRail accountingFlowRail" aria-label="Controlled accounting workflow">
+          <span><b>01</b> SOURCE RECORDS</span><i /><span><b>02</b> CATEGORISE</span><i /><span><b>03</b> RECONCILE</span><i /><span><b>04</b> CLOSE</span><i /><span><b>05</b> REVIEW</span>
+        </section>
+
         <section className="benefitsVerdict" id="verdict">
           <div className="benefitsSectionIntro">
             <p className="kicker">Research verdict</p>
-            <h2>The strongest case is controlled augmentation, not autonomous accounting.</h2>
+            <h2>The evidence supports controlled augmentation—not autonomous accounting.</h2>
             <p>
               Bookkeeping, transaction categorisation, reconciliation and close support
               have the clearest measurable signal. The observed system combines accounting
@@ -108,7 +112,7 @@ export default function AccountingBenefitsPage() {
         <section className="benefitsEvidence" id="evidence">
           <div>
             <p className="kicker light">Evidence ladder</p>
-            <h2>Different evidence supports different wording.</h2>
+            <h2>Claim strength should move with evidence strength.</h2>
             <p>
               Operational associations, self-reported impacts and professional
               guidance are not treated as interchangeable proof.
@@ -127,7 +131,7 @@ export default function AccountingBenefitsPage() {
         <section className="benefitsHumanAI">
           <div className="benefitsSectionIntro">
             <p className="kicker">Human–AI performance</p>
-            <h2>Benefits and errors coexist.</h2>
+            <h2>Higher average accuracy does not remove error risk.</h2>
             <p>
               A framed experiment with professional accountants found that AI
               assistance improved classification accuracy on average. It also found
@@ -146,7 +150,7 @@ export default function AccountingBenefitsPage() {
         <section className="benefitsUKContext">
           <div>
             <p className="kicker light">UK business context</p>
-            <h2>Reported productivity is common; measured revenue change is not.</h2>
+            <h2>Broad productivity signals are positive. Revenue evidence is not.</h2>
             <p>
               Official DSIT research asked 700 UK AI-using businesses about impact.
               These are broad-sector self-reports, not accounting-SME causal estimates.
@@ -163,7 +167,7 @@ export default function AccountingBenefitsPage() {
         <section className="benefitsPathway" id="system-fit">
           <div className="benefitsSectionIntro">
             <p className="kicker">System-fit pathway</p>
-            <h2>Match autonomy to verifiability and consequence.</h2>
+            <h2>Set autonomy by verifiability, reversibility and consequence.</h2>
             <p>
               Tasks that are bounded, repeatable and reviewable are the strongest fit.
               Higher-stakes conclusions need stronger assurance and human accountability.
@@ -192,7 +196,7 @@ export default function AccountingBenefitsPage() {
         <section className="benefitsMethods">
           <div>
             <p className="kicker light">Methods and openness</p>
-            <h2>Every result keeps its population and claim limit.</h2>
+            <h2>Every result keeps its population—and its claim limit.</h2>
             <p>
               The evidence review separates narrow experiments, operational field
               associations, official self-reports and professional guidance. No

@@ -55,12 +55,16 @@ export default function AdoptionPathwaysPage() {
         <PageHero
           kicker="AI in practice"
           marker="USE · INTEGRATE · AUTOMATE · BUILD · GOVERN"
-          title="AI adoption is not one linear journey."
-          introduction="Businesses can use, integrate, automate, build and govern AI in different combinations. These pathways describe operating choices—not mandatory maturity stages or a readiness score."
+          title="AI adoption is a portfolio of operating choices—not a maturity ladder."
+          introduction="Use, integration, automation, internal build and governance can advance in different combinations. The practical question is which workflow to redesign, under what controls, and how to know whether it works."
         />
 
+        <section className="systemSignalRail" aria-label="AI adoption pathway signals">
+          <span><b>01</b> USE</span><i /><span><b>02</b> INTEGRATE</span><i /><span><b>03</b> AUTOMATE</span><i /><span><b>04</b> BUILD</span><i /><span><b>05</b> GOVERN</span>
+        </section>
+
         <section className="pageSection pathwayConcepts" id="background">
-          <div className="sectionLead"><p className="kicker">Five pathways</p><h2>Different routes imply different operational demands.</h2></div>
+          <div className="sectionLead"><p className="kicker">Five operating choices</p><h2>The deeper the workflow change, the greater the control demand.</h2></div>
           <div className="pathwayConceptGrid">
             {pathways.map((item) => (
               <article id={item.id} key={item.number}>
@@ -73,7 +77,7 @@ export default function AdoptionPathwaysPage() {
         <section className="pageSection pathwayEvidence">
           <div className="sectionLead">
             <p className="kicker">Published estimates</p>
-            <h2>Operational depth varies by measure and business size.</h2>
+            <h2>Use is broad. Deeper operationalisation remains selective.</h2>
             <p>The first three rows describe businesses already using AI. Development or training describes all businesses.</p>
           </div>
           <div className="tableWrap pathwayPageTable">
@@ -92,7 +96,7 @@ export default function AdoptionPathwaysPage() {
         <section className="pageSection pathwayInterpretation">
           <div>
             <p className="kicker light">Interpretation</p>
-            <h2>Access expands before deeper operationalisation.</h2>
+            <h2>Adoption activity does not automatically become operating capability.</h2>
             <p>
               Reported use is broader than system integration, automated
               decision-making, in-house development and formal or informal
@@ -110,8 +114,8 @@ export default function AdoptionPathwaysPage() {
         <section className="pageSection adoptionMechanisms" id="operating-approaches">
           <div className="sectionLead">
             <p className="kicker">From pathway to operation</p>
-            <h2>What each adoption approach looks like in practice.</h2>
-            <p>These are general operating patterns that can apply across sectors. They explain how AI enters work; the Accounting Experience Lab separately demonstrates what changes inside an accounting cycle.</p>
+            <h2>Four ways AI enters a workflow—and the controls each one needs.</h2>
+            <p>These cross-sector patterns explain the operating mechanism. The Accounting Experience Lab then makes the change visible inside a complete accounting cycle.</p>
           </div>
           <div className="adoptionMechanismGrid">
             {operatingApproaches.map((approach, index) => (
@@ -133,7 +137,7 @@ export default function AdoptionPathwaysPage() {
         </section>
 
         <section className="pageSection pathwayActions">
-          <div className="sectionLead"><p className="kicker">Explore further</p><h2>Connect the pathways to the reports.</h2></div>
+          <div className="sectionLead"><p className="kicker">Next decision</p><h2>Move from the operating model to the evidence and test drive.</h2></div>
           <div className="actionLinkGrid">
             <a href="/ai-in-business"><span>General evidence</span><strong>See all five reports</strong></a>
             <a href="/sectors/accounting"><span>Sector application</span><strong>Accounting AI readiness</strong></a>

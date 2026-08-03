@@ -37,6 +37,7 @@ from src.reporting.accounting_ai_readiness_report import (
     metric_cards,
     report_table,
 )
+from src.reporting.publication_design import draw_page_frame, draw_signature_cover
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -76,55 +77,11 @@ def source_link(number: int, label: str, url: str) -> Paragraph:
 
 
 def page_frame(canvas, doc) -> None:
-    canvas.saveState()
-    canvas.setFillColor(NAVY)
-    canvas.rect(0, PAGE_H - 9 * mm, PAGE_W, 9 * mm, stroke=0, fill=1)
-    canvas.setFillColor(WHITE)
-    canvas.setFont("Helvetica-Bold", 7)
-    canvas.drawString(LEFT, PAGE_H - 6 * mm, BRAND)
-    canvas.setFont("Helvetica", 6.5)
-    canvas.drawRightString(PAGE_W - RIGHT, PAGE_H - 6 * mm, "ACCOUNTING AI BENEFITS AND SYSTEM FIT 2026")
-    canvas.setStrokeColor(LINE)
-    canvas.line(LEFT, 12 * mm, PAGE_W - RIGHT, 12 * mm)
-    canvas.setFillColor(MUTED)
-    canvas.setFont("Helvetica", 6.5)
-    canvas.drawString(LEFT, 8 * mm, "Secondary evidence only | UK transfer limits remain visible")
-    canvas.drawRightString(PAGE_W - RIGHT, 8 * mm, f"{doc.page}")
-    canvas.restoreState()
+    draw_page_frame(canvas, doc, page_w=PAGE_W, page_h=PAGE_H, left=LEFT, right=RIGHT, brand=BRAND, short_title="Accounting AI benefits and system fit 2026", footer_note="Secondary evidence | UK transfer limits remain visible")
 
 
 def cover(canvas, doc) -> None:
-    canvas.saveState()
-    canvas.setFillColor(NAVY)
-    canvas.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
-    canvas.setStrokeColor(colors.HexColor("#204F70"))
-    for x in range(0, int(PAGE_W), 32):
-        canvas.line(x, 0, x, PAGE_H)
-    for y in range(0, int(PAGE_H), 32):
-        canvas.line(0, y, PAGE_W, y)
-    canvas.setFillColor(SKY)
-    canvas.setFont("Helvetica-Bold", 8)
-    canvas.drawString(LEFT, PAGE_H - 24 * mm, BRAND.upper())
-    canvas.setFillColor(WHITE)
-    canvas.setFont("Helvetica-Bold", 27)
-    title = ["UK Accounting SMEs:", "AI Benefits and", "System Fit, 2026"]
-    y = PAGE_H - 58 * mm
-    for line in title:
-        canvas.drawString(LEFT, y, line)
-        y -= 12 * mm
-    canvas.setFillColor(SKY)
-    canvas.setFont("Helvetica", 11)
-    canvas.drawString(LEFT, y - 3 * mm, "What the secondary evidence can support")
-    canvas.setFillColor(BLUE)
-    canvas.rect(LEFT, 55 * mm, 48 * mm, 3 * mm, stroke=0, fill=1)
-    canvas.setFillColor(WHITE)
-    canvas.setFont("Helvetica-Bold", 9)
-    canvas.drawString(LEFT, 41 * mm, REPORT_DATE)
-    canvas.setFont("Helvetica", 8)
-    canvas.drawString(LEFT, 34 * mm, f"Prepared by {AUTHOR}")
-    canvas.setFillColor(SKY)
-    canvas.drawRightString(PAGE_W - RIGHT, 21 * mm, "WORKFLOW  |  OUTCOME  |  SYSTEM  |  CONTROL  |  TRANSFER")
-    canvas.restoreState()
+    draw_signature_cover(canvas, page_w=PAGE_W, page_h=PAGE_H, left=LEFT, right=RIGHT, brand=BRAND, series="Accounting sector / Benefits", formal_title="UK Accounting SMEs / Benefits and system fit / 2026", headline="Value is clearest when AI augments a controlled accounting workflow.", subtitle="What the secondary evidence can support - and where transfer stops.", report_date=REPORT_DATE, author=AUTHOR, taxonomy="Workflow / Outcome / System / Control / Transfer")
 
 
 def build_story() -> list:

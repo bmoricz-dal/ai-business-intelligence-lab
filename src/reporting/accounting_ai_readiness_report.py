@@ -30,6 +30,8 @@ from reportlab.platypus import (
     TableStyle,
 )
 
+from src.reporting.publication_design import draw_page_frame, draw_signature_cover
+
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "output/pdf"
@@ -183,55 +185,11 @@ class BarChart(Flowable):
 
 
 def page_frame(canvas, doc) -> None:
-    canvas.saveState()
-    canvas.setFillColor(NAVY)
-    canvas.rect(0, PAGE_H - 9 * mm, PAGE_W, 9 * mm, stroke=0, fill=1)
-    canvas.setFillColor(WHITE)
-    canvas.setFont("Helvetica-Bold", 7)
-    canvas.drawString(LEFT, PAGE_H - 6 * mm, BRAND)
-    canvas.setFont("Helvetica", 6.5)
-    canvas.drawRightString(PAGE_W - RIGHT, PAGE_H - 6 * mm, "ACCOUNTING SECTOR AI READINESS 2026")
-    canvas.setStrokeColor(LINE)
-    canvas.line(LEFT, 12 * mm, PAGE_W - RIGHT, 12 * mm)
-    canvas.setFillColor(MUTED)
-    canvas.setFont("Helvetica", 6.5)
-    canvas.drawString(LEFT, 8 * mm, "Secondary-data research | Evidence definitions remain separate")
-    canvas.drawRightString(PAGE_W - RIGHT, 8 * mm, f"{doc.page}")
-    canvas.restoreState()
+    draw_page_frame(canvas, doc, page_w=PAGE_W, page_h=PAGE_H, left=LEFT, right=RIGHT, brand=BRAND, short_title="Accounting AI readiness 2026", footer_note="Secondary evidence | Definitions and denominators remain separate")
 
 
 def cover(canvas, doc) -> None:
-    canvas.saveState()
-    canvas.setFillColor(NAVY)
-    canvas.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
-    canvas.setFillColor(colors.HexColor("#204F70"))
-    for x in range(0, int(PAGE_W), 32):
-        canvas.line(x, 0, x, PAGE_H)
-    for y in range(0, int(PAGE_H), 32):
-        canvas.line(0, y, PAGE_W, y)
-    canvas.setFillColor(SKY)
-    canvas.setFont("Helvetica-Bold", 8)
-    canvas.drawString(LEFT, PAGE_H - 24 * mm, BRAND.upper())
-    canvas.setFillColor(WHITE)
-    canvas.setFont("Helvetica-Bold", 28)
-    title = ["UK Accounting SMEs:", "AI Adoption and", "Operational Readiness, 2026"]
-    y = PAGE_H - 58 * mm
-    for line in title:
-        canvas.drawString(LEFT, y, line)
-        y -= 12 * mm
-    canvas.setFillColor(SKY)
-    canvas.setFont("Helvetica", 11)
-    canvas.drawString(LEFT, y - 3 * mm, "A five-dimension current-state report using secondary evidence only")
-    canvas.setFillColor(BLUE)
-    canvas.rect(LEFT, 55 * mm, 48 * mm, 3 * mm, stroke=0, fill=1)
-    canvas.setFillColor(WHITE)
-    canvas.setFont("Helvetica-Bold", 9)
-    canvas.drawString(LEFT, 41 * mm, REPORT_DATE)
-    canvas.setFont("Helvetica", 8)
-    canvas.drawString(LEFT, 34 * mm, f"Prepared by {AUTHOR}")
-    canvas.setFillColor(SKY)
-    canvas.drawRightString(PAGE_W - RIGHT, 21 * mm, "ADOPTION  |  INTEGRATION  |  GOVERNANCE  |  USE CASES  |  PATHWAYS")
-    canvas.restoreState()
+    draw_signature_cover(canvas, page_w=PAGE_W, page_h=PAGE_H, left=LEFT, right=RIGHT, brand=BRAND, series="Accounting sector / Current state", formal_title="UK Accounting SMEs / AI readiness / 2026", headline="AI use has started. Operational readiness is still forming.", subtitle="A five-dimension current-state report using secondary evidence only.", report_date=REPORT_DATE, author=AUTHOR, taxonomy="Adoption / Integration / Governance / Use cases / Pathways")
 
 
 def source_link(number: int, label: str, url: str) -> Paragraph:

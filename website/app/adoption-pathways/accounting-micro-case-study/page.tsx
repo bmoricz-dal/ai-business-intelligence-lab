@@ -40,14 +40,14 @@ export default function AccountingMicroCaseStudyPage() {
           <div className="microCaseHeroMarker" aria-hidden="true"><span>PHASE 2B</span><span>7 PEOPLE</span><span>SECONDARY EVIDENCE</span></div>
           <div>
             <p className="kicker light">Accounting · AI in practice</p>
-            <h1>Accounting AI Experience Lab</h1>
-            <p>Take one fictional client from bookkeeping and ledger review through reconciliation, management accounts, business insights and final quality control.</p>
+            <h1>See an AI-enabled accounting cycle at work.</h1>
+            <p>Take one fictional client from source records and bookkeeping through reconciliation, management accounts, business insight and final quality control.</p>
             <div className="heroActions">
               <a className="primaryButton" href="#experience-lab">Start the test drive</a>
               <a className="textButton accountingTextButton" href="#adoption-planner">Plan your adoption</a>
             </div>
           </div>
-          <aside><span>Experience design</span><strong>See adopted AI across the accounting cycle</strong><p>One synthetic practice, one fictional client and six connected accounting workstations.</p></aside>
+          <aside><span>Interactive test drive</span><strong>See what adoption changes—and what it should not</strong><p>One synthetic practice, one fictional client and six connected accounting workstations.</p></aside>
         </section>
 
         <section className="microCaseBoundary" aria-label="Case boundaries">
@@ -60,7 +60,7 @@ export default function AccountingMicroCaseStudyPage() {
         <ExperienceWorkspace />
 
         <section className="microCaseProfile">
-          <div className="sectionLead"><p className="kicker">The fictional firm</p><h2>Cedar Ledger Ltd</h2><p>The case uses a deliberately specific practice so the adoption decisions can be followed. Replace its assumptions with the adopting firm&apos;s real baseline.</p></div>
+          <div className="sectionLead"><p className="kicker">The fictional firm</p><h2>Cedar Ledger Ltd: specific enough to test, fictional by design.</h2><p>The practice profile makes each operating decision visible. Any adopter should replace its assumptions with a measured local baseline.</p></div>
           <div className="microProfileGrid">
             <article><span>People</span><strong>7 payroll employees</strong><p>Owner-director, senior accountant, three accountants/bookkeepers, payroll specialist and administrator.</p></article>
             <article><span>Clients</span><strong>180 illustrative clients</strong><p>A scenario input—not a UK accounting-practice average.</p></article>
@@ -72,12 +72,12 @@ export default function AccountingMicroCaseStudyPage() {
         <AdoptionWorkspace />
 
         <section className="microFoundation" id="foundation">
-          <div className="sectionLead"><p className="kicker">Common foundation</p><h2>Six steps before any pilot</h2><p>Governance is not the final pathway. It shapes scope, data, testing and responsibility from the beginning.</p></div>
+          <div className="sectionLead"><p className="kicker">Common foundation</p><h2>Six decisions before any pilot.</h2><p>Governance is not a final checkpoint. It shapes scope, data, testing and accountability from the first design choice.</p></div>
           <ol>{commonSteps.map(([number, title, description]) => <li key={number}><span>{number}</span><div><strong>{title}</strong><p>{description}</p></div></li>)}</ol>
         </section>
 
         <section className="microSequence">
-          <div className="sectionLead"><p className="kicker light">Worked sequence</p><h2>A 12-week illustration—not a prescribed timetable.</h2></div>
+          <div className="sectionLead"><p className="kicker light">Worked sequence</p><h2>Twelve illustrative weeks from scope to scale decision.</h2></div>
           <div className="microSequenceBar" aria-label="Illustrative 12 week adoption sequence">
             <article><span>Weeks 1–5</span><strong>Scope and baseline</strong><p>Map, measure, classify and assure.</p></article>
             <article><span>Weeks 3–6</span><strong>Known-case tests</strong><p>Standalone and embedded tools.</p></article>
@@ -88,7 +88,7 @@ export default function AccountingMicroCaseStudyPage() {
         </section>
 
         <section className="microMeasurement">
-          <div><p className="kicker">Measurement</p><h2>Time saved is not the whole outcome.</h2><p>Measure preparation, review, correction, quality, incidents and capacity against the same workflow baseline.</p></div>
+          <div><p className="kicker">Measurement</p><h2>Efficiency without quality control is not a complete result.</h2><p>Measure preparation, review, correction, quality, incidents and capacity against the same workflow baseline.</p></div>
           <div className="microFormulaCards">
             <article><span>Total pilot cost</span><strong>licences + setup + training + review + correction + assurance + incidents</strong></article>
             <article><span>Net measured capacity value</span><strong>(baseline hours − pilot hours) × documented loaded cost − total pilot cost</strong></article>
@@ -102,7 +102,7 @@ export default function AccountingMicroCaseStudyPage() {
         </section>
 
         <section className="microDownloads">
-          <div><p className="kicker light">Reuse the method</p><h2>Take the case into your own business.</h2><p>Replace every scenario assumption with your workflow, people, data and baseline. Keep the same evidence, testing and decision discipline.</p></div>
+          <div><p className="kicker light">Reuse the method</p><h2>Turn the demonstration into a controlled local test.</h2><p>Replace every scenario assumption with your workflow, people, data and baseline. Keep the same evidence, testing and decision discipline.</p></div>
           <div className="methodDownloads">
             <a href={REPORT}><span>15-page worked case</span><strong>Download PDF</strong></a>
             <a href={DATA}><span>Step-level project tracker</span><strong>Download CSV</strong></a>

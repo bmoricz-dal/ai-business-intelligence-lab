@@ -20,9 +20,9 @@ test("server-renders the accounting sector evidence page", async () => {
   assert.match(html, /39,860/);
   assert.match(html, /26%/);
   assert.match(html, /71\.38%/);
-  assert.match(html, /secondary evidence only/i);
+  assert.match(html, /Secondary only/i);
   assert.match(html, /not averaged/);
-  assert.match(html, /Use-readiness is ahead of operations-readiness/);
+  assert.match(html, /Task-level use has moved ahead of operational capability/);
   assert.match(html, /Download PDF/);
   assert.doesNotMatch(html, /survey respondents needed|primary data collection planned|draft finding/i);
 });

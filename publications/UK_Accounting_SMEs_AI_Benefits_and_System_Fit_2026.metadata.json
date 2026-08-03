@@ -8,12 +8,12 @@
   "evidence_boundary": "No open UK accounting-SME causal evaluation was identified; international field results are transfer evidence only.",
   "output": {
     "file": "UK_Accounting_SMEs_AI_Benefits_and_System_Fit_2026.pdf",
-    "sha256": "09a0666326950f52d97b33818fed69e188de1ba8601413d2291f2ac22750fa95",
+    "sha256": "3bfc0633b97c68c73477551e73e3a9dd08e10c9f40204e847b1221eb121c6d54",
     "page_count": 10
   },
   "public_data": {
     "file": "data/public/accounting_ai_benefits_system_fit_2026.csv",
     "sha256": "65516a91f983d19f1e6341cf8cf25e413d90285373ec1cd302a0f9d8171431b1"
   },
-  "generated_at": "2026-08-03T11:04:04.603363+00:00"
+  "generated_at": "2026-08-03T21:09:38.133502+00:00"
 }

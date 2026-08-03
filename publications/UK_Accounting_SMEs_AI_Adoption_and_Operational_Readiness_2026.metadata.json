@@ -8,12 +8,12 @@
   "evidence_boundary": "No official open estimate isolates AI adoption among UK SIC 69.20 SMEs; non-comparable sources remain separate.",
   "output": {
     "file": "UK_Accounting_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf",
-    "sha256": "22f1fbff6d37726da1d75c97e06fb93d1535adc3c82f770e3ab8592ced317f81",
+    "sha256": "a72764de6beb4c94c6afa80f689830eb3cfe23f7f27c6075d1a652f19b2f4519",
     "page_count": 11
   },
   "public_data": {
     "file": "data/public/accounting_ai_readiness_2026.csv",
     "sha256": "17fa3813311a4951d2addf4ad4be84f66d4f0e881167011fe02fa99e475c7867"
   },
-  "generated_at": "2026-08-01T13:59:07.655162+00:00"
+  "generated_at": "2026-08-03T21:09:38.002561+00:00"
 }

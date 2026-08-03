@@ -9,12 +9,12 @@
   "evidence_boundary": "Scenario assumptions are illustrative and no outcome is an observed firm or sector effect.",
   "output": {
     "file": "UK_Micro_Accounting_Practice_AI_Adoption_Worked_Case_2026.pdf",
-    "sha256": "38e6e53fa96a3c73971f6ebb9b36ded645acd456b0cd75642025e39c504764e2",
+    "sha256": "686a6de372455c318601ac8fac4832b76778087c499f7c48b8fa0f7981e97662",
     "page_count": 15
   },
   "public_data": {
     "file": "data/public/accounting_micro_ai_adoption_playbook_2026.csv",
     "sha256": "5c2166156531b212d248de4133a02a961e56141c5e285125288edc5b65c0d255"
   },
-  "generated_at": "2026-08-03T13:44:58.620565+00:00"
+  "generated_at": "2026-08-03T21:09:38.286792+00:00"
 }
