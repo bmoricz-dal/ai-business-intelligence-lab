@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../../../site-shell";
+import { LandscapeStory, SiteFooter, SiteHeader } from "../../../site-shell";
 
 const DATA = "/data/construction_ai_benefits_system_fit_2026.csv";
 const REPORT = "/reports/UK_Construction_SMEs_AI_Benefits_and_System_Fit_2026.pdf";
@@ -22,6 +22,17 @@ export default function ConstructionBenefitsPage() {
       <section className="constructionEvidence"><div className="sectionLead"><p className="kicker">Evidence verdict</p><h2>There is a plausible workflow case. The benefit magnitude remains unproven.</h2><p>RICS respondents perceived document management, scheduling and risk as significant opportunities. A research prototype reported high extraction performance. A large-company case reported faster legal review. These are different claims and are not pooled.</p></div><div className="constructionVerdictGrid"><article><span>Industry perception</span><strong>30%</strong><p>identified document management as a high-significance AI application in the global RICS survey.</p></article><article><span>Prototype result</span><strong>96.25% F1</strong><p>reported for requirement extraction; narrow technical accuracy, not full tender quality.</p></article><article><span>Self-reported case</span><strong>60 → 15 minutes</strong><p>legal document review at a large housebuilder; not independently evaluated or SME-specific.</p></article></div></section>
 
       <section className="constructionSignals"><div><p className="kicker light">System fit</p><h2>Set autonomy by consequence, verifiability and reversibility.</h2></div><div className="constructionTable"><table><thead><tr><th>Position</th><th>Candidate workflows</th><th>Minimum boundary</th></tr></thead><tbody>{workflowFit.map(([position,workflow,boundary]) => <tr key={position}><th scope="row">{position}</th><td>{workflow}</td><td>{boundary}</td></tr>)}</tbody></table></div></section>
+
+      <LandscapeStory
+        variant="water"
+        src="/esthwaite-water-aerial-cc-by.jpg"
+        alt="Aerial view of Esthwaite Water and the surrounding landscape"
+        kicker="CONTROLLED FLOW"
+        title="Value depends on the whole review path—not one faster draft."
+        description="A useful construction pilot follows requirements into approved evidence, exceptions, commercial challenge and accountable approval while measuring the correction work around each step."
+        credit="Esthwaite Water · Ian Dick / CC BY 2.0"
+        creditHref="https://commons.wikimedia.org/wiki/File:Esthwaite_Water_aerial_photograph_July_2019.jpg"
+      />
 
       <section className="constructionNext"><div className="sectionLead"><p className="kicker">Practical implication</p><h2>Test total workflow performance, not draft speed alone.</h2><p>A local pilot should measure preparation, review, correction, omissions, traceability, incidents and final approval against the same baseline.</p></div><div className="actionLinkGrid"><a href={REPORT}><span>Evidence review</span><strong>Download PDF</strong></a><a href="/sectors/construction/adoption-journeys"><span>Implementation evidence</span><strong>Explore adoption journeys</strong></a><a href="/adoption-pathways/construction-tender-lab"><span>Browser-only demonstration</span><strong>Open the Tender Lab</strong></a><a href={DATA}><span>Claim-level evidence</span><strong>Download CSV</strong></a><a href={METHODS} target="_blank" rel="noreferrer"><span>Research trail</span><strong>View methods</strong></a></div></section>
       <section className="constructionMethods"><p className="constructionDisclaimer">No published source here establishes causal UK construction-SME productivity, profit, safety or compliance improvement.</p></section>

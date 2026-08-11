@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../../site-shell";
+import { LandscapeStory, SiteFooter, SiteHeader } from "../../site-shell";
 import { TenderWorkspace } from "./tender-workspace";
 
 const DATA = "/data/construction_tender_ai_adoption_playbook_2026.csv";
@@ -24,6 +24,18 @@ export default function ConstructionTenderLabPage() {
       <section className="constructionHero"><div><p className="kicker light">Construction · AI in practice</p><h1>Test a tender workflow without using a real bid.</h1><p>Move a fictional community-centre refurbishment through six controlled workstations—from opportunity gate to human submission assurance.</p><div className="heroActions"><a className="primaryButton" href="#tender-lab">Start the test drive</a><a className="textButton accountingTextButton" href="#pilot-gates">Review the pilot gates</a></div></div><aside><span>Browser-only experience</span><strong>6</strong><p>connected tender workstations</p><small>No upload, live model, client data or construction-system connection.</small></aside></section>
       <section className="constructionContext"><article><strong>Synthetic work</strong><span>fixed fictional scenario</span><small>safe to explore</small></article><article><strong>Source linked</strong><span>clauses and evidence stay visible</span><small>gaps are not hidden</small></article><article><strong>Human controlled</strong><span>sign-off remains accountable</span><small>no autonomous submission</small></article><article><strong>No promised ROI</strong><span>local baseline required</span><small>quality and cost measured together</small></article></section>
       <TenderWorkspace />
+
+      <LandscapeStory
+        variant="coast"
+        src="/felixstowe-aerial-cc-by.jpg"
+        alt="Aerial view along Felixstowe beach and the Suffolk coast"
+        kicker="FROM DEMONSTRATION TO CONTROLLED ROUTE"
+        title="A good tender pilot makes every hand-off and stop point visible."
+        description="The synthetic workstations connect requirement extraction, evidence matching, challenge and final assurance without allowing a model to make the bid, price, safety or submission decision."
+        credit="Felixstowe coast · John Fielding / CC BY 2.0"
+        creditHref="https://commons.wikimedia.org/wiki/File:Felixstowe_Beach_aerial_image_-_Suffolk_UK_coast_(14871964066).jpg"
+      />
+
       <section className="constructionEvidence" id="pilot-gates"><div className="sectionLead"><p className="kicker">Six decision gates</p><h2>Proceed, revise, hold or stop.</h2><p>Thresholds are owner-set controls, not research findings.</p></div><div className="constructionTable light"><table><thead><tr><th>Gate</th><th>Proceed only when</th><th>Stop or revise when</th></tr></thead><tbody>{gates.map(([gate,proceed,stop]) => <tr key={gate}><th scope="row">{gate}</th><td>{proceed}</td><td>{stop}</td></tr>)}</tbody></table></div></section>
       <section className="constructionNext"><div className="sectionLead"><p className="kicker">Reuse the method</p><h2>Turn the demonstration into a controlled local test.</h2></div><div className="actionLinkGrid"><a href={REPORT}><span>Worked case</span><strong>Download PDF</strong></a><a href={DATA}><span>Step-level playbook</span><strong>Download CSV</strong></a><a href={METHODS} target="_blank" rel="noreferrer"><span>Evidence trail</span><strong>View sources and methods</strong></a><a href="/sectors/construction/benefits"><span>Why this workflow</span><strong>Read benefits &amp; system fit</strong></a><a href="/sectors/construction/adoption-journeys"><span>How others implemented</span><strong>Read adoption journeys</strong></a></div></section>
       <section className="constructionMethods"><p className="constructionDisclaimer">Evidence-informed fictional composite. Not construction, legal, safety, regulatory, procurement or investment advice.</p></section>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../../../site-shell";
+import { LandscapeStory, SiteFooter, SiteHeader } from "../../../site-shell";
 
 const DATA = "/data/construction_ai_adoption_journeys_2026.csv";
 const REPORT = "/reports/UK_Construction_SMEs_AI_Adoption_Journeys_2026.pdf";
@@ -20,6 +20,18 @@ export default function ConstructionJourneysPage() {
       <section className="constructionHero compact"><div><p className="kicker light">Construction AI Adoption Journeys</p><h1>Follow the workflow change—not the product announcement.</h1><p>Three different evidence types show how scope, people, controls and feedback shape implementation.</p></div><aside><span>Evidence boundary</span><strong>3</strong><p>cases kept separate by organisation, method and outcome type</p><small>No pooled ROI, vendor ranking or reconstructed success story.</small></aside></section>
       <section className="constructionEvidence"><div className="sectionLead"><p className="kicker">Shared comparison frame</p><h2>Problem → selection → pilot → adaptation → outcome</h2><p>Missing stages remain missing. A lesson observed in one organisation is not treated as a measured result in another.</p></div><div className="constructionJourneyGrid">{cases.map((item,index) => <article key={item.title}><header><span>{String(index+1).padStart(2,"0")} · {item.label}</span><h2>{item.title}</h2><strong>{item.status}</strong></header><dl><div><dt>Starting point</dt><dd>{item.start}</dd></div><div><dt>What changed</dt><dd>{item.change}</dd></div><div><dt>Transfer lesson</dt><dd>{item.lesson}</dd></div><div><dt>Boundary</dt><dd>{item.boundary}</dd></div></dl></article>)}</div></section>
       <section className="constructionSignals"><div><p className="kicker light">Cross-case synthesis</p><h2>Five lessons survive without overstating the evidence.</h2></div><ol className="constructionLessons"><li>Begin with one defined workflow and a named operational owner.</li><li>Include the people who do and review the work before selecting the tool.</li><li>Keep source traceability, exception handling and human override visible.</li><li>Measure correction and review effort alongside preparation time.</li><li>Transfer the implementation design—not another organisation&apos;s result.</li></ol></section>
+
+      <LandscapeStory
+        variant="highlands"
+        src="/scottish-highlands-cc-by.jpg"
+        alt="A broad view across the Scottish Highlands"
+        kicker="IMPLEMENTATION TERRAIN"
+        title="The useful lesson is the route—not another firm’s result."
+        description="Across three different evidence types, progress depends on a defined problem, staff participation, tested controls and the willingness to adapt or stop when the first design does not hold."
+        credit="Scottish Highlands · Gary Ullah / CC BY 2.0"
+        creditHref="https://commons.wikimedia.org/wiki/File:Scottish_Highlands_(24045266327).jpg"
+      />
+
       <section className="constructionNext"><div className="sectionLead"><p className="kicker">Next step</p><h2>Test the mechanism with synthetic tender data.</h2></div><div className="actionLinkGrid"><a href={REPORT}><span>Journey review</span><strong>Download PDF</strong></a><a href="/adoption-pathways/construction-tender-lab"><span>Interactive test drive</span><strong>Open the Construction Tender Lab</strong></a><a href={DATA}><span>Public case index</span><strong>Download CSV</strong></a><a href={METHODS} target="_blank" rel="noreferrer"><span>Research trail</span><strong>View protocol and sources</strong></a><a href="/sectors/construction/benefits"><span>Prior study</span><strong>Return to benefits &amp; system fit</strong></a></div></section>
       <section className="constructionMethods"><p className="constructionDisclaimer">Secondary evidence only. Not construction, legal, safety, procurement, regulatory or implementation advice.</p></section>
     </main><SiteFooter />

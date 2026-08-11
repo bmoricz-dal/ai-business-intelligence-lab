@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../../site-shell";
+import { LandscapeStory, SiteFooter, SiteHeader } from "../../site-shell";
 
 const DATA = "/data/construction_ai_readiness_2026.csv";
 const REPORT = "/reports/UK_Construction_SMEs_AI_Adoption_and_Operational_Readiness_2026.pdf";
@@ -49,6 +49,17 @@ export default function ConstructionSectorPage() {
         <div><p className="kicker light">Direct industry context</p><h2>Most firms in the RICS survey were still before regular operational use.</h2><p>The global 2025 RICS survey is not SME-only and is not a UK prevalence benchmark. It adds industry implementation context.</p></div>
         <div className="constructionSignalCards"><article><strong>45%</strong><span>reported no AI implementation</span></article><article><strong>34%</strong><span>reported early pilots</span></article><article><strong>&lt;12%</strong><span>reported regular use in specific processes</span></article><article><strong>&lt;1%</strong><span>reported organisation-wide use</span></article></div>
       </section>
+
+      <LandscapeStory
+        variant="city"
+        src="/manchester-skyline-cc-by.jpg"
+        alt="A wide view across the Manchester skyline"
+        kicker="OPERATING CONTEXT"
+        title="Readiness becomes real where projects, documents and decisions meet."
+        description="For construction SMEs, the practical question is not whether AI is visible, but whether one bounded workflow can improve without weakening traceability, review or professional accountability."
+        credit="Manchester skyline · Pete Morris / CC BY 2.0"
+        creditHref="https://commons.wikimedia.org/wiki/File:Manchester_Skyline_2025.jpg"
+      />
 
       <section className="constructionNext">
         <div className="sectionLead"><p className="kicker">Connected programme</p><h2>Move from the readiness signal to the workflow evidence.</h2></div>
