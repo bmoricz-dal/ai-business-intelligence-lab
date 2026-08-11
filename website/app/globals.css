@@ -5029,9 +5029,60 @@ body {
 
 @keyframes visualDrift { from { transform: scale(1.01); } to { transform: scale(1.045); } }
 
+/* Construction owner-review programme */
+.constructionPage { background: #f4f1e9; color: #18251f; }
+.constructionHero { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(260px,.55fr); gap: 3rem; min-height: 650px; padding: 9rem max(5vw,2rem) 5rem; color: #fff; background: radial-gradient(circle at 78% 25%,rgba(225,176,79,.18),transparent 25%),linear-gradient(135deg,#10271f 0%,#17372c 58%,#101d18 100%); }
+.constructionHero.compact { min-height: 520px; }
+.constructionHero > div { align-self: end; max-width: 900px; }
+.constructionHero h1 { max-width: 980px; margin: .8rem 0 1.4rem; font-size: clamp(3rem,6.2vw,6.7rem); line-height: .96; letter-spacing: -.065em; }
+.constructionHero.compact h1 { font-size: clamp(2.8rem,5vw,5.2rem); }
+.constructionHero > div > p:not(.kicker) { max-width: 760px; color: rgba(255,255,255,.72); font-size: 1.15rem; line-height: 1.7; }
+.constructionHero aside { align-self: end; padding: 2rem; border: 1px solid rgba(225,176,79,.42); border-radius: 1rem; background: rgba(4,18,13,.5); box-shadow: 0 24px 70px rgba(0,0,0,.22); }
+.constructionHero aside span,.constructionHero aside small { display: block; color: #e1b04f; font: 700 .67rem/1.5 ui-monospace,monospace; letter-spacing: .1em; text-transform: uppercase; }
+.constructionHero aside strong { display: block; margin: .75rem 0 0; color: #fff; font-size: clamp(3rem,5vw,5.2rem); letter-spacing: -.06em; }
+.constructionHero aside p { color: rgba(255,255,255,.78); }
+.constructionHero aside small { color: rgba(255,255,255,.5); letter-spacing: .03em; text-transform: none; }
+.constructionContext { display: grid; grid-template-columns: repeat(4,1fr); background: #fff; border-bottom: 1px solid #d7d7cf; }
+.constructionContext article { padding: 2rem; border-right: 1px solid #d7d7cf; }
+.constructionContext strong,.constructionContext span,.constructionContext small { display: block; }
+.constructionContext strong { font-size: 1.8rem; }.constructionContext span { margin: .35rem 0; font-weight: 700; }.constructionContext small { color: #66716b; line-height: 1.45; }
+.constructionEvidence,.constructionNext,.constructionMethods { padding: 6rem max(5vw,2rem); }
+.constructionEvidence .sectionLead,.constructionNext .sectionLead { max-width: 880px; margin-bottom: 2.5rem; }
+.constructionDimensionGrid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; background: #c9cec8; border: 1px solid #c9cec8; }
+.constructionDimensionGrid article { min-height: 310px; padding: 1.6rem; background: #fff; }
+.constructionDimensionGrid span,.constructionJourneyGrid header span { color: #a16e12; font: 800 .67rem/1.4 ui-monospace,monospace; letter-spacing: .1em; }
+.constructionDimensionGrid h3 { margin: 3rem 0 .8rem; }.constructionDimensionGrid p { line-height: 1.65; }.constructionDimensionGrid small { display: block; margin-top: 1.2rem; color: #65706a; }
+.constructionSignals { display: grid; grid-template-columns: .75fr 1.25fr; gap: 4rem; padding: 5rem max(5vw,2rem); color: #fff; background: #172b24; }
+.constructionSignals h2 { margin: .8rem 0; font-size: clamp(2.2rem,4vw,4rem); letter-spacing: -.05em; }.constructionSignals p { color: rgba(255,255,255,.66); line-height: 1.7; }
+.constructionSignalCards,.constructionVerdictGrid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+.constructionSignalCards article { padding: 1.5rem; border: 1px solid rgba(225,176,79,.28); background: rgba(255,255,255,.04); }.constructionSignalCards strong,.constructionSignalCards span { display: block; }.constructionSignalCards strong { color: #e1b04f; font-size: 2.4rem; }.constructionSignalCards span { margin-top: .45rem; color: rgba(255,255,255,.72); }
+.constructionVerdictGrid { grid-template-columns: repeat(3,1fr); }.constructionVerdictGrid article { padding: 2rem; background: #fff; border: 1px solid #d4d7d1; }.constructionVerdictGrid span,.constructionVerdictGrid strong { display:block; }.constructionVerdictGrid span { color:#8a5d0a; font: 750 .68rem/1.4 ui-monospace,monospace; text-transform:uppercase; }.constructionVerdictGrid strong { margin: 1.4rem 0 .5rem; font-size:2rem; }.constructionVerdictGrid p { color:#56615b; line-height:1.6; }
+.constructionTable { overflow-x: auto; align-self: center; }.constructionTable table { width: 100%; border-collapse: collapse; color: #fff; }.constructionTable th,.constructionTable td { padding: 1rem; border: 1px solid rgba(255,255,255,.18); text-align:left; vertical-align:top; line-height:1.5; }.constructionTable thead { color:#e1b04f; }.constructionTable.light table { color:#18251f; }.constructionTable.light th,.constructionTable.light td { border-color:#cbd0cb; }
+.constructionSectorFeature { display:grid; grid-template-columns:1.4fr .6fr; gap:3rem; padding:5rem; color:#fff; background:linear-gradient(135deg,#17372c,#10271f); }.constructionSectorFeature .releaseActions { align-self:end; }.constructionSectorFeature .sectorMetrics div { border-color:rgba(255,255,255,.18); }
+.constructionJourneyGrid { display:grid; gap:1.2rem; }.constructionJourneyGrid article { padding:2rem; background:#fff; border:1px solid #d3d7d2; }.constructionJourneyGrid header { display:grid; grid-template-columns:1fr auto; gap:.5rem 2rem; }.constructionJourneyGrid header span { grid-column:1/-1; }.constructionJourneyGrid header h2 { margin:.3rem 0; }.constructionJourneyGrid header strong { align-self:center; padding:.5rem .7rem; color:#6d4a09; background:#f4e6c5; border-radius:.4rem; }.constructionJourneyGrid dl { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:1.5rem 0 0; }.constructionJourneyGrid dt { margin-bottom:.5rem; font-weight:800; }.constructionJourneyGrid dd { margin:0; color:#59645e; line-height:1.6; }.constructionLessons { display:grid; gap:.7rem; margin:0; padding-left:1.4rem; }.constructionLessons li { padding:.8rem 1rem; border:1px solid rgba(225,176,79,.25); background:rgba(255,255,255,.04); line-height:1.55; }
+.constructionMethods { color:#fff; background:#0f1d18; }.constructionMethods > div:first-child { max-width:780px; }.constructionDisclaimer { margin-top:2rem; color:rgba(255,255,255,.58); font-size:.8rem; line-height:1.6; }
+
+.tenderWorkspace { margin: 5rem max(4vw,1.2rem); color:#eaf0ec; background:#0b1713; border:1px solid #2a4c40; border-radius:1rem; box-shadow:0 30px 80px rgba(6,20,14,.25); overflow:hidden; }
+.tenderWorkspace > header { display:grid; grid-template-columns:1fr auto; gap:2rem; padding:2rem; border-bottom:1px solid #2a4c40; }.tenderWorkspace > header span,.tenderStageIntro span,.tenderPlanner span,.tenderDraft span,.tenderAssurance span { color:#e1b04f; font:750 .64rem/1.4 ui-monospace,monospace; letter-spacing:.09em; }.tenderWorkspace h2 { margin:.4rem 0; }.tenderWorkspace p { color:rgba(255,255,255,.62); line-height:1.55; }
+.tenderStatus { min-width:160px; }.tenderStatus span,.tenderStatus strong { display:block; }.tenderStatus strong { margin:.3rem 0; font-size:1.8rem; }.tenderStatus i { display:block; width:160px; height:5px; background:#20382f; }.tenderStatus b { display:block; height:100%; background:#e1b04f; }
+.tenderWorkspace > nav { display:grid; grid-template-columns:repeat(6,1fr); border-bottom:1px solid #2a4c40; }.tenderWorkspace > nav button { min-height:82px; padding:.8rem; color:rgba(255,255,255,.58); background:transparent; border:0; border-right:1px solid #233f35; cursor:pointer; }.tenderWorkspace > nav button span { display:block; margin-bottom:.35rem; color:#e1b04f; font-size:.65rem; }.tenderWorkspace > nav button.active { color:#fff; background:#17372c; box-shadow:inset 0 -3px #e1b04f; }
+.tenderStageIntro { display:flex; justify-content:space-between; gap:2rem; padding:2rem; }.tenderStageIntro h3 { margin:.35rem 0; font-size:2rem; }.tenderStageIntro > strong { align-self:center; padding:.7rem 1rem; border-radius:.35rem; font-size:.75rem; }.tenderStageIntro .hold { color:#f2c875; background:#4b3513; }.tenderStageIntro .ready { color:#8be6b8; background:#173d2c; }
+.tenderGate,.tenderRequirementList,.tenderDraft,.tenderAssurance { margin:0 2rem 2rem; }.tenderGate { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }.tenderGate article,.tenderDraft article,.tenderDraft aside { padding:1.4rem; border:1px solid #2a4c40; background:#10241d; }.tenderGate span,.tenderGate strong { display:block; }.tenderGate span { color:#e1b04f; font-size:.72rem; }.tenderGate strong { margin:.6rem 0; }
+.tenderRequirementList { display:grid; gap:.7rem; }.tenderRequirementList article { display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center; padding:1.2rem; border:1px solid #2a4c40; background:#10241d; }.tenderRequirementList span,.tenderRequirementList strong { display:block; }.tenderRequirementList span { color:#e1b04f; font:700 .62rem/1.4 ui-monospace,monospace; }.tenderRequirementList strong { margin:.4rem 0; }.tenderRequirementList p { margin:0; font-size:.82rem; }.tenderRequirementList button,.tenderWorkspace > footer button { padding:.75rem 1rem; color:#fff; background:#17372c; border:1px solid #477261; border-radius:.35rem; cursor:pointer; }.tenderRequirementList button[aria-pressed="true"] { color:#10251d; background:#8be6b8; border-color:#8be6b8; }
+.tenderDraft { display:grid; grid-template-columns:1.4fr .6fr; gap:1rem; }.tenderDraft li { margin:.55rem 0; color:rgba(255,255,255,.72); }.tenderDraft aside strong { display:block; margin:1rem 0; color:#e1b04f; }
+.tenderAssurance { display:grid; grid-template-columns:1fr 1fr; gap:2rem; padding:2rem; border:1px solid #2a4c40; background:#10241d; }.tenderAssurance > div strong { display:block; margin:.5rem 0; font-size:2rem; }.tenderAssurance dl { display:grid; grid-template-columns:repeat(3,1fr); gap:.7rem; margin:0; }.tenderAssurance dl div { padding:1rem; background:#17372c; }.tenderAssurance dt { color:rgba(255,255,255,.55); font-size:.72rem; }.tenderAssurance dd { margin:.4rem 0 0; font-size:1.5rem; font-weight:800; }
+.tenderPlanner { display:grid; grid-template-columns:1.5fr repeat(3,1fr) 1.2fr; gap:1rem; padding:2rem; border-top:1px solid #2a4c40; border-bottom:1px solid #2a4c40; background:#0d1d17; }.tenderPlanner h3 { margin:.35rem 0; }.tenderPlanner label { display:grid; align-content:center; gap:.5rem; color:rgba(255,255,255,.7); font-size:.72rem; }.tenderPlanner input { width:100%; padding:.7rem; color:#fff; background:#142c23; border:1px solid #385e4f; border-radius:.3rem; }.tenderNet { display:grid; align-content:center; }.tenderNet span,.tenderNet strong,.tenderNet small { display:block; }.tenderNet strong { margin:.3rem 0; color:#e1b04f; font-size:1.6rem; }.tenderNet small { color:rgba(255,255,255,.46); line-height:1.4; }
+.tenderWorkspace > footer { display:flex; align-items:center; gap:.8rem; padding:1.2rem 2rem; }.tenderWorkspace > footer p { margin:0 0 0 auto; font-size:.72rem; }
+
 @media (max-width: 1340px) { .headerSystemStatus { display: none; } }
 
 @media (max-width: 980px) {
+  .constructionDimensionGrid { grid-template-columns:repeat(2,1fr); }
+  .constructionContext { grid-template-columns:repeat(2,1fr); }
+  .constructionSignals,.constructionSectorFeature { grid-template-columns:1fr; }
+  .constructionJourneyGrid dl { grid-template-columns:repeat(2,1fr); }
+  .tenderWorkspace > nav { grid-template-columns:repeat(3,1fr); }
+  .tenderPlanner { grid-template-columns:repeat(2,1fr); }.tenderPlanner > div:first-child { grid-column:1/-1; }
   .pageHero > .pageHeroSystemLayout { grid-template-columns: 1fr; }
   .heroSignalConsole { min-height: 230px; }
   .heroSignalCore { width: 170px; height: 170px; margin-top: .8rem; }
@@ -5046,6 +5097,12 @@ body {
 }
 
 @media (max-width: 760px) {
+  .constructionHero { grid-template-columns:1fr; min-height:700px; padding:7rem 1.2rem 3rem; }.constructionHero h1 { font-size:clamp(2.7rem,13vw,4.5rem); }
+  .constructionContext,.constructionDimensionGrid,.constructionVerdictGrid,.constructionSignalCards,.constructionJourneyGrid dl,.tenderGate,.tenderDraft,.tenderAssurance,.tenderPlanner { grid-template-columns:1fr; }
+  .constructionEvidence,.constructionNext,.constructionMethods,.constructionSignals { padding:4rem 1.2rem; }.constructionSignals { gap:2rem; }
+  .constructionSectorFeature { padding:3rem 1.2rem; }
+  .constructionJourneyGrid header { grid-template-columns:1fr; }.constructionJourneyGrid header strong { justify-self:start; }
+  .tenderWorkspace { margin:2rem .7rem; }.tenderWorkspace > header { grid-template-columns:1fr; }.tenderWorkspace > nav { grid-template-columns:repeat(2,1fr); }.tenderStageIntro { flex-direction:column; }.tenderStageIntro > strong { align-self:flex-start; }.tenderRequirementList article { grid-template-columns:1fr; }.tenderAssurance dl { grid-template-columns:1fr; }.tenderWorkspace > footer { align-items:stretch; flex-direction:column; }.tenderWorkspace > footer p { margin:0; }
   .pageHero { min-height: 560px; padding: 6rem 1.2rem 3rem; }
   .pageHero > .pageHeroSystemLayout { gap: 2rem; }
   .pageHero h1 { font-size: clamp(2.8rem,13vw,4rem); }

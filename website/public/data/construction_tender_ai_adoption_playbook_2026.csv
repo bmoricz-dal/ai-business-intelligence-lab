@@ -1,0 +1,7 @@
+step_id,workstation,action,owner,proceed_evidence,stop_or_revise_signal
+CT-01,Opportunity gate,Define tender scope deadline capability and no-bid conditions,Bid lead,"Named owner complete pack and feasible review window","Missing pack unclear scope or no accountable reviewer"
+CT-02,Requirement extraction,Create a clause-linked compliance matrix,Bid coordinator,"Every mandatory item traces to a source clause","Unsupported requirement or lost source reference"
+CT-03,Evidence matching,Map approved policies case studies and credentials,Bid team,"Current approved evidence covers the claim","Invented expired or client-confidential evidence"
+CT-04,Draft control,Prepare source-backed drafts and route gaps,Response owner,"Each material statement has evidence and a reviewer","Uncited claim copied text or hidden uncertainty"
+CT-05,Commercial challenge,Record assumptions exclusions dependencies and escalation owners,Commercial lead,"Open items are priced or explicitly escalated outside the lab","AI-generated price programme contract interpretation or safety judgement"
+CT-06,Submission assurance,Run human compliance quality and audit-trail review,Director,"No critical gaps and named sign-off is recorded","Unresolved mandatory item missing approval or unlogged change"

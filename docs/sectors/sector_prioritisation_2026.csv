@@ -1,0 +1,7 @@
+rank,candidate,ons_definition,registered_smes_2025,ukbds_sector,any_ai_use_pct,integrated_among_ai_users_pct,policy_among_ai_users_pct,reach_score,need_gap_score,evidence_score,simulator_score,distinctiveness_score,weighted_score,status,comparison_note
+1,Construction,SIC F,384525,SIC F,21.4737,14.0231,3.1232,5,5,4,5,5,4.80,recommended,"Direct broad-sector match; UKBDS is not SME-only"
+2,Manufacturing,SIC C,128950,SIC C,31.8572,12.3492,12.7991,4,4,5,4,5,4.30,runner_up,"Direct broad-sector match; UKBDS is not SME-only"
+3,Retail,SIC 47,212455,SIC G,29.6335,22.6380,4.3931,5,4,3,5,4,4.25,later_candidate,"UKBDS includes wholesale and motor-vehicle repair"
+4,Technology,SIC 62,122310,SIC J,58.1912,38.9623,32.3467,4,2,4,4,3,3.40,later_candidate,"UKBDS information and communication category is broader than SIC 62"
+5,Finance and insurance,SIC K,56035,SIC K,43.0148,27.6896,30.2952,3,3,4,3,3,3.20,later_candidate,"Direct broad-sector match; UKBDS is not SME-only"
+6,Legal activities,SIC 69.10,33360,SIC M,50.5862,19.8974,19.8934,2,3,4,4,2,3.05,later_candidate,"UKBDS professional scientific and technical category is broader than legal"

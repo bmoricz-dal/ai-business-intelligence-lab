@@ -138,7 +138,7 @@ export default function AdoptionPathwaysPage() {
           <div className="sectionLead">
             <p className="kicker">From pathway to operation</p>
             <h2>Four ways AI enters a workflow—and the controls each one needs.</h2>
-            <p>These cross-sector patterns explain the operating mechanism. The Accounting Experience Lab then makes the change visible inside a complete accounting cycle.</p>
+            <p>These cross-sector patterns explain the operating mechanism. The Accounting Experience Lab then makes the change visible inside a complete accounting cycle. The Construction Tender Lab applies the same control discipline to a tender workflow.</p>
           </div>
           <div className="adoptionMechanismGrid">
             {operatingApproaches.map((approach, index) => (
@@ -165,6 +165,7 @@ export default function AdoptionPathwaysPage() {
             <a href="/ai-in-business"><span>General evidence</span><strong>See all five reports</strong></a>
             <a href="/sectors/accounting"><span>Sector application</span><strong>Accounting AI readiness</strong></a>
             <a href="/adoption-pathways/accounting-micro-case-study"><span>Interactive test drive</span><strong>Open the Accounting AI Experience Lab</strong></a>
+            <a href="/adoption-pathways/construction-tender-lab"><span>Interactive test drive</span><strong>Open the Construction Tender Lab</strong></a>
             <a href="/methods"><span>Evidence controls</span><strong>Methods and limitations</strong></a>
           </div>
         </section>
