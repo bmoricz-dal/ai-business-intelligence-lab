@@ -51,6 +51,15 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
                 { href: "/sectors/accounting/adoption-journeys", label: "Adoption journeys" },
               ],
             },
+            {
+              href: "/sectors/construction",
+              label: "Construction",
+              items: [
+                { href: "/sectors/construction", label: "AI readiness" },
+                { href: "/sectors/construction/benefits", label: "Benefits & system fit" },
+                { href: "/sectors/construction/adoption-journeys", label: "Adoption journeys" },
+              ],
+            },
             { href: "/sectors#technology", label: "Technology" },
             { href: "/sectors#financial-services", label: "Financial services" },
           ]}
@@ -62,6 +71,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
           items={[
             { href: "/adoption-pathways#background", label: "Background" },
             { href: "/adoption-pathways/accounting-micro-case-study", label: "Accounting Experience Lab" },
+            { href: "/adoption-pathways/construction-tender-lab", label: "Construction Tender Lab" },
           ]}
         />
         <Link aria-current={active === "Methods" ? "page" : undefined} href="/methods">Methods</Link>

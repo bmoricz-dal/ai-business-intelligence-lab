@@ -1,5 +1,9 @@
 # AI Business Intelligence Lab
 
+## Construction sector programme
+
+The research director approved construction as the next sector on 11 August 2026. The programme contains a transparent sector-prioritisation decision, four publication PDFs, construction readiness and workflow evidence, adoption journeys, four public CSVs, and a browser-only synthetic Construction Tender Lab.
+
 An evidence-led research project examining how UK businesses report adopting,
 using, integrating and governing artificial intelligence.
 

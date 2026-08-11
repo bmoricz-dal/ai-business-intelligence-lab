@@ -1,0 +1,7 @@
+source_id,workflow,evidence_type,observed_or_reported_signal,claim_status,transfer_limit
+CNS-S004,Progress monitoring and scheduling,RICS respondent perception,36% rated high positive significance,perceived potential,"Global professional sentiment; not measured benefit"
+CNS-S004,Reviewing contracts and project documents,RICS respondent perception,30% rated high positive significance,perceived potential,"Global professional sentiment; not measured benefit"
+CNS-S003,Tender preparation and programme coordination,Government evidence synthesis,Named as practical construction AI training priorities,workflow priority,"Not an effect estimate"
+CNS-S012,Bid requirement extraction and retrieval,Research prototype,96.25% average F1 in the reported quantitative performance test,measured model performance,"Not firm productivity quality win-rate or UK SME evidence"
+CNS-S009,Legal document review within a large construction company,Action-research case,Time reportedly fell from around 60 to 15 minutes,self_reported,"Large employer departmental pilot; no independent baseline audit"
+CNS-S008,Gateway 2 document review and training,Named UK SME qualitative case,Reported confidence capability collaboration and critical-review gains,self_reported_qualitative,"Construction consultancy; no independently measured performance outcome"

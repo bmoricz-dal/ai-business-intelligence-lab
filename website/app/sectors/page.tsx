@@ -4,7 +4,7 @@ import { PageHero, SiteFooter, SiteHeader } from "../site-shell";
 
 export const metadata: Metadata = {
   title: "Sector Research | DAL Data & AI Lab",
-  description: "Sector-focused research on AI adoption among UK SMEs, beginning with accounting practices.",
+  description: "Sector-focused research on AI adoption among UK SMEs in accounting and construction.",
 };
 
 export default function SectorsPage() {
@@ -60,10 +60,20 @@ export default function SectorsPage() {
           </div>
         </section>
 
+        <section className="pageSection constructionSectorFeature" id="construction">
+          <div>
+            <p className="kicker light">Published sector programme · 02</p>
+            <h2>UK Construction SMEs: AI Adoption and Operational Readiness, 2026</h2>
+            <p>Construction was selected through a transparent six-sector comparison. Its large registered-SME base, below-benchmark adoption, thin governance signal and document-heavy workflows create a strong next research case.</p>
+            <div className="sectorMetrics"><div><strong>384,525</strong><span>registered construction SMEs</span></div><div><strong>21.5%</strong><span>any listed AI use; all business sizes</span></div><div><strong>3.1%</strong><span>policy or guidance among AI users</span></div></div>
+          </div>
+          <div className="releaseActions"><a className="lightButton" href="/sectors/construction">Explore construction readiness</a><a href="/sectors/construction/benefits">Benefits &amp; system fit</a><a href="/sectors/construction/adoption-journeys">Adoption journeys</a><a href="/adoption-pathways/construction-tender-lab">Open the Tender Lab</a></div>
+        </section>
+
         <section className="pageSection upcomingSectors">
           <div className="sectionLead"><p className="kicker">Future sector programme</p><h2>Expand only where the evidence can support a distinct sector view.</h2></div>
           <div className="sectorCardGrid">
-            <article id="technology"><span>In development</span><h3>Technology SMEs</h3><p>Adoption depth, product development, technical capability, internal build pathways and governance.</p><small>Publication depends on sector-specific source coverage and comparability review.</small></article>
+            <article id="technology"><span>Research candidate</span><h3>Technology SMEs</h3><p>Adoption depth, product development, technical capability, internal build pathways and governance.</p><small>Publication depends on sector-specific source coverage and comparability review.</small></article>
             <article id="financial-services"><span>Research candidate</span><h3>Financial services SMEs</h3><p>AI use in regulated workflows, customer service, risk, compliance, data controls and human oversight.</p><small>Scope will distinguish regulated firms from in-house finance functions.</small></article>
             <article><span>Evidence-led expansion</span><h3>Additional sectors</h3><p>New sectors will be prioritised by SME relevance, open-data quality and the practical value of a dedicated study.</p><small>No sector will be published from a broad proxy alone.</small></article>
           </div>

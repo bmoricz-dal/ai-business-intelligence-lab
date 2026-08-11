@@ -29,6 +29,10 @@ const routes = [
   ["/sectors/accounting/benefits", "Sectors"],
   ["/sectors/accounting/adoption-journeys", "Sectors"],
   ["/adoption-pathways/accounting-micro-case-study", "AI in practice"],
+  ["/sectors/construction", "Sectors"],
+  ["/sectors/construction/benefits", "Sectors"],
+  ["/sectors/construction/adoption-journeys", "Sectors"],
+  ["/adoption-pathways/construction-tender-lab", "AI in practice"],
 ];
 
 test("serves every top-level research section as a separate page", async () => {
@@ -79,8 +83,63 @@ test("dropdowns support hover, click, focus departure and Escape", async () => {
   assert.match(shell, /\/sectors\/accounting/);
   assert.match(shell, /\/sectors\/accounting\/benefits/);
   assert.match(shell, /\/sectors\/accounting\/adoption-journeys/);
+  assert.match(shell, /\/sectors\/construction/);
+  assert.match(shell, /\/sectors\/construction\/benefits/);
+  assert.match(shell, /\/sectors\/construction\/adoption-journeys/);
   assert.match(shell, /\/adoption-pathways#background/);
   assert.match(shell, /\/adoption-pathways\/accounting-micro-case-study/);
+  assert.match(shell, /\/adoption-pathways\/construction-tender-lab/);
+});
+
+test("publishes a bounded construction research programme for owner review", async () => {
+  const readiness = await (await render("/sectors/construction")).text();
+  assert.match(readiness, /384,525/);
+  assert.match(readiness, /21\.5%/);
+  assert.match(readiness, /95% CI 14\.2%–28\.8%/);
+  assert.match(readiness, /not an SME-only rate/i);
+  assert.match(readiness, /Construction sector research/i);
+  assert.match(readiness, /construction_ai_readiness_2026\.csv/);
+  assert.match(readiness, /UK_Construction_SMEs_AI_Adoption_and_Operational_Readiness_2026\.pdf/);
+
+  const benefits = await (await render("/sectors/construction/benefits")).text();
+  assert.match(benefits, /controlled document work—not autonomous construction/i);
+  assert.match(benefits, /96\.25%/);
+  assert.match(benefits, /60 → 15 minutes/);
+  assert.match(benefits, /do not delegate autonomously/i);
+  assert.match(benefits, /No published source here establishes causal UK construction-SME/i);
+  assert.match(benefits, /UK_Construction_SMEs_AI_Benefits_and_System_Fit_2026\.pdf/);
+
+  const journeys = await (await render("/sectors/construction/adoption-journeys")).text();
+  assert.match(journeys, /Cast Consultancy/);
+  assert.match(journeys, /ConstructionCo/);
+  assert.match(journeys, /Construction bid preparation model/);
+  assert.match(journeys, /No pooled ROI/i);
+  assert.match(journeys, /construction_ai_adoption_journeys_2026\.csv/);
+  assert.match(journeys, /UK_Construction_SMEs_AI_Adoption_Journeys_2026\.pdf/);
+});
+
+test("provides a synthetic construction tender lab with human controls", async () => {
+  const response = await render("/adoption-pathways/construction-tender-lab");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Construction Tender Lab/);
+  assert.match(html, /Northstar Build Ltd tender control room/);
+  assert.match(html, /community-centre refurbishment/i);
+  assert.match(html, /No uploads/);
+  assert.match(html, /No promised ROI/);
+  assert.match(html, /Baseline versus pilot/);
+  assert.match(html, /construction_tender_ai_adoption_playbook_2026\.csv/);
+  assert.match(html, /UK_Construction_SME_AI_Tender_Worked_Case_2026\.pdf/);
+
+  const component = await readFile(new URL("../app/adoption-pathways/construction-tender-lab/tender-workspace.tsx", import.meta.url), "utf8");
+  assert.match(component, /^"use client"/);
+  assert.match(component, /useState/);
+  assert.match(component, /requirements/);
+  assert.match(component, /Export session/);
+  assert.match(component, /READY FOR HUMAN SIGN-OFF/);
+  assert.match(component, /Blob/);
+  assert.match(component, /not sent to DAL or an AI model/i);
+  assert.doesNotMatch(component, /fetch\(|axios|localStorage/);
 });
 
 test("keeps dropdown panels visible at compact desktop widths", async () => {
