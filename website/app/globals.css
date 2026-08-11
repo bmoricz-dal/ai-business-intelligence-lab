@@ -26,11 +26,11 @@
 .accountingHero {
   position: relative;
   display: grid;
-  min-height: 680px;
+  min-height: 620px;
   grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
   gap: clamp(3rem, 8vw, 8rem);
   align-items: center;
-  padding: 8rem 7vw 7rem;
+  padding: 6.5rem 7vw 7rem;
   overflow: hidden;
   background:
     radial-gradient(circle at 76% 28%, rgba(47, 131, 197, 0.3), transparent 25%),
@@ -4354,7 +4354,8 @@ footer nav a:focus-visible {
 .demoTransactionTable th, .demoTransactionTable td { padding: .8rem; border: 1px solid var(--line); text-align: left; }
 .demoTransactionTable thead { background: var(--navy); color: var(--white); }
 .demoTransactionTable tbody tr:nth-child(even) { background: var(--paper); }
-.demoTransactionTable tbody th { color: var(--navy); }
+.demoTransactionTable tbody th,
+.demoTransactionTable tbody td { color: var(--navy); }
 .demoTransactionTable tbody th span { display: block; color: var(--teal-dark); font-size: .62rem; }
 .lowConfidence { color: #a43c2f; }
 .transactionActions { display: flex; gap: .3rem; }
