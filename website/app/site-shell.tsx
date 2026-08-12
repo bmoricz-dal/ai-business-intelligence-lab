@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { NavDropdown } from "./dropdown-nav";
+import { MobileSiteNav } from "./mobile-site-nav";
 
 type NavigationLabel =
   | "Overview"
@@ -24,7 +25,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
           <strong>DAL Data &amp; AI Lab</strong><small>SME intelligence</small>
         </span>
       </Link>
-      <nav className="pageNavigation" aria-label="Main navigation">
+      <nav className="pageNavigation desktopNavigation" aria-label="Main navigation">
         <Link aria-current={active === "Overview" ? "page" : undefined} href="/">Overview</Link>
         <NavDropdown
           active={active === "About"}
@@ -71,6 +72,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
           label="AI in practice"
           items={[
             { href: "/adoption-pathways#background", label: "Background" },
+            { href: "/ai-business-adoption-map", label: "Decision Map" },
             { href: "/adoption-pathways/accounting-micro-case-study", label: "Accounting Experience Lab" },
             { href: "/adoption-pathways/construction-tender-lab", label: "Construction Tender Lab" },
           ]}
@@ -80,6 +82,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
           GitHub
         </a>
       </nav>
+      <MobileSiteNav active={active} />
       <span className="headerSystemStatus" aria-hidden="true"><i /> EVIDENCE SYSTEM</span>
     </header>
   );

@@ -25,6 +25,7 @@ const routes = [
   ["/ai-in-business", "AI in business"],
   ["/sectors", "Sectors"],
   ["/adoption-pathways", "AI in practice"],
+  ["/ai-business-adoption-map", "AI in practice"],
   ["/methods", "Methods"],
   ["/sectors/accounting", "Sectors"],
   ["/sectors/accounting/benefits", "Sectors"],
@@ -143,6 +144,15 @@ test("provides a synthetic construction tender lab with human controls", async (
   assert.doesNotMatch(component, /fetch\(|axios|localStorage/);
 });
 
+test("keeps construction tables readable on dark and light surfaces", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.constructionTable thead \{ color:#ffe1a0; background:#10231b; \}/);
+  assert.match(css, /\.constructionTable tbody th \{ color:#fff; \}/);
+  assert.match(css, /\.constructionTable\.light thead \{ color:#fff; background:#173e5b; \}/);
+  assert.match(css, /\.constructionTable\.light tbody th \{ color:#18251f; background:#edf2ee; \}/);
+  assert.match(css, /\.constructionTable\.light tbody td \{ color:#18251f; background:#fff; \}/);
+});
+
 test("keeps dropdown panels visible at compact desktop widths", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /@media \(min-width: 681px\) and \(max-width: 1100px\)/);
@@ -183,7 +193,7 @@ test("sustains visual storytelling beyond the opening hero on every public route
     const html = await (await render(path)).text();
     assert.match(
       html,
-      /landscapeStory|cityAerialStory|cinematicInterlude/,
+      /landscapeStory|cityAerialStory|cinematicInterlude|adoptionDecisionMapSection/,
       `${path} should include a mid-page environmental visual chapter`,
     );
   }
