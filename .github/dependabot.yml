@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /website
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    groups:
+      react:
+        patterns: [react, react-dom, react-server-dom-webpack]
+      next:
+        patterns: [next, eslint-config-next]
+      cloudflare:
+        patterns: ['@cloudflare/*', wrangler]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

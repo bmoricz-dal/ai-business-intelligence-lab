@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, type CSSProperties } from "react";
+import { nonNegativeInput } from "../../numeric-input";
 
 type PathwayKey = "use" | "integrate" | "automate" | "configure";
 type GateDecision = "not_reviewed" | "proceed" | "revise" | "stop";
@@ -122,7 +123,7 @@ export function AdoptionWorkspace() {
   }, [gates]);
 
   function setMetric(key: keyof typeof metrics, value: number) {
-    setMetrics((current) => ({ ...current, [key]: Number.isFinite(value) ? Math.max(0, value) : 0 }));
+    setMetrics((current) => ({ ...current, [key]: nonNegativeInput(value) }));
   }
 
   function exportSession() {
@@ -166,8 +167,8 @@ export function AdoptionWorkspace() {
       <div className="workspaceLayout">
         <aside className="workspaceControls" aria-label="Practice and pathway settings">
           <fieldset><legend>1. Practice setup</legend>
-            <label>Employees<input type="number" min="1" max="9" value={employees} onChange={(event) => setEmployees(Math.min(9, Math.max(1, Number(event.target.value))))} /></label>
-            <label>Illustrative clients<input type="number" min="0" value={clients} onChange={(event) => setClients(Math.max(0, Number(event.target.value)))} /></label>
+            <label>Employees<input type="number" min="1" max="9" value={employees} onChange={(event) => setEmployees(Math.min(9, Math.max(1, nonNegativeInput(event.target.value))))} /></label>
+            <label>Illustrative clients<input type="number" min="0" value={clients} onChange={(event) => setClients(nonNegativeInput(event.target.value))} /></label>
             <label>Workflow<select value={workflow} onChange={(event) => setWorkflow(event.target.value)}><option>Reconciliation and month-end close</option><option>Transaction categorisation</option><option>Internal technical research</option><option>Client document requests</option><option>Firm procedure retrieval</option></select></label>
           </fieldset>
           <fieldset><legend>2. Adoption method</legend>

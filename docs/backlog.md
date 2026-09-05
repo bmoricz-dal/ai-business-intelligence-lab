@@ -128,3 +128,13 @@ Backlog items are evidence tasks, not deadline commitments. Only one primary pha
 - Power BI when a suitable environment exists.
 - Companies House firm-level extensions after aggregate analysis is stable.
 - A pilot service only after structured discovery evidence supports it.
+
+## Website maintenance follow-up — 5 September 2026
+
+| ID | Task | Status / completion evidence |
+| --- | --- | --- |
+| WEB-01 | Adopt guarded checkout and CI | Prepared locally; merge and GitHub branch rules pending |
+| WEB-02 | Resolve browser policy and test desktop/mobile, keyboard navigation and both labs | Blocked in this audit; no browser pass claimed |
+| WEB-03 | Evaluate Vinext migration for image-size advisories | Open; isolated migration and browser regressions required |
+| WEB-04 | Resolve inactive Drizzle/esbuild tooling advisories | Open; preserve or deliberately remove database scaffold |
+| WEB-05 | Establish first live release marker and verify all routes after publication | Pending explicit publication approval and live baseline check |
