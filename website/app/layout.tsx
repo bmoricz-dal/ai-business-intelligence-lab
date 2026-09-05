@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { EditorialExperience } from "./editorial-experience";
 import "./globals.css";
 
@@ -8,15 +7,12 @@ const description =
   "Decision-ready intelligence on how UK SMEs use, integrate and govern AI, with sector evidence and practical implementation labs.";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host =
-    requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
-  const protocol =
-    requestHeaders.get("x-forwarded-proto") ??
-    (host?.startsWith("localhost") ? "http" : "https");
-  const imageUrl = host ? `${protocol}://${host}/og.png` : undefined;
+  // Public metadata must not depend on client-supplied forwarding headers.
+  const metadataBase = new URL("https://dal-data-ai-lab.moricz-labs.workers.dev/");
+  const imageUrl = new URL("/og.png", metadataBase).href;
 
   return {
+    metadataBase,
     title,
     description,
     icons: {

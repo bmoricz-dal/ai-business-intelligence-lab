@@ -33,3 +33,10 @@ The accounting current-state baseline is followed by Phase 2A, **UK Accounting S
 Phase 2B adds a fictional seven-person micro-practice worked case. Its primary output is the Accounting AI Experience Lab: one deterministic browser-only monthly cycle moving a fictional client through bookkeeping capture, ledger categorisation, reconciliation and close, management accounts, source-linked business insight and final quality control. General adoption methods now sit on the AI in Practice background page; small method labels explain the mechanism behind each accounting workstation without organising the Lab. The pathway planner, baseline-versus-pilot calculation and six proceed/revise/stop gates remain as secondary implementation support. The PDF remains supporting theory and method.
 
 Phase 2C adds **Accounting AI Adoption Journeys, 2026** as a third sector study. It uses published secondary evidence only and separates three core accounting-practice evidence bundles from two historical non-AI comparators and non-practice finance-function transfer cases. Outcomes remain labelled as experimental, associated, qualitative, self-reported or comparator-only. The research director approved publication on 2026-08-03; the package was committed to GitHub, saved as Sites version 7 and deployed to the public `dal-data-ai-lab` Worker as version `602e8e8e-301b-40ab-848c-b6ead9958485`. Live route, content and download checks passed.
+
+## Website maintenance gate — 5 September 2026
+
+A maintenance candidate adds source/version controls and broader verification.
+Release remains pending live baseline comparison, browser QA and owner approval.
+The beta framework migration and optional database-tooling changes are later
+maintenance scope; research definitions and claims are unchanged.

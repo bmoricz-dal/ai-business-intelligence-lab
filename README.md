@@ -1,5 +1,9 @@
 # AI Business Intelligence Lab
 
+Website development starts in `website/` from current GitHub `main`. Open
+`DAL-Website.code-workspace` and read the [maintenance guide](docs/WEBSITE_MAINTENANCE.md)
+before changing or releasing the site. npm is the supported package manager.
+
 ## Construction sector programme
 
 The research director approved construction as the next sector on 11 August 2026. The programme contains a transparent sector-prioritisation decision, four publication PDFs, construction readiness and workflow evidence, adoption journeys, four public CSVs, and a browser-only synthetic Construction Tender Lab.

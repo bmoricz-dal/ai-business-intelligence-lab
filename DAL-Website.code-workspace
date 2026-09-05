@@ -1,0 +1,9 @@
+{
+  "folders": [{ "name": "DAL Website — maintained source", "path": "." }],
+  "settings": {
+    "files.exclude": { "**/.DS_Store": true, "**/node_modules": true, "website/dist": true, "website/.wrangler": true },
+    "search.exclude": { "**/node_modules": true, "website/dist": true, "website/.wrangler": true, "website/worker-configuration.d.ts": true },
+    "files.watcherExclude": { "**/node_modules/**": true, "**/dist/**": true, "**/.wrangler/**": true }
+  },
+  "extensions": { "recommendations": ["dbaeumer.vscode-eslint"] }
+}

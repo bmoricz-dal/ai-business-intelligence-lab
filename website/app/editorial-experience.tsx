@@ -150,8 +150,9 @@ export function EditorialExperience() {
   }, [pathname]);
 
   function moveTo(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.history.replaceState(null, "", `#${id}`);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById(id)?.scrollIntoView({ behavior: reducedMotion ? "instant" : "smooth", block: "start" });
+    window.history.replaceState(window.history.state, "", `#${id}`);
     setActiveId(id);
   }
 

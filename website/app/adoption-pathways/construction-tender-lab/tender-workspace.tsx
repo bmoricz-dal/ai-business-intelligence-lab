@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { nonNegativeInput } from "../../numeric-input";
 
 const requirements = [
   { id: "R-01", clause: "2.1", title: "Provide three comparable refurbishment projects", evidence: "P-014 · Mill Lane Library", risk: "Evidence covers two projects; one remains missing." },
@@ -67,7 +68,7 @@ export function TenderWorkspace() {
 
     {stage === 5 && <div className="tenderAssurance"><div><span>FINAL CONTROL RESULT</span><strong>{decision}</strong><p>{decision === "HOLD" ? "Return to requirements, evidence or challenge. At least one control remains incomplete." : "All simulated controls are complete. A human must still validate and authorise any real submission."}</p></div><dl><div><dt>Requirements reviewed</dt><dd>{reviewed.length}/{requirements.length}</dd></div><div><dt>Evidence approved</dt><dd>{approved.length}/{requirements.length}</dd></div><div><dt>Challenges resolved</dt><dd>{resolved.length}/{requirements.length}</dd></div></dl></div>}
 
-    <section className="tenderPlanner" aria-label="Illustrative baseline versus pilot"><div><span>ILLUSTRATIVE MANAGEMENT CALCULATION</span><h3>Baseline versus pilot</h3><p>Replace these assumptions with measured local data. A positive hour balance is not ROI.</p></div><label>Baseline preparation hours<input type="number" min="0" value={baselineHours} onChange={(e) => setBaselineHours(Number(e.target.value))} /></label><label>Pilot preparation hours<input type="number" min="0" value={pilotHours} onChange={(e) => setPilotHours(Number(e.target.value))} /></label><label>Additional review/correction<input type="number" min="0" value={reviewHours} onChange={(e) => setReviewHours(Number(e.target.value))} /></label><div className="tenderNet"><span>Net capacity signal</span><strong>{netHours} hours</strong><small>Before licences, setup, training, assurance, incidents and opportunity cost.</small></div></section>
+    <section className="tenderPlanner" aria-label="Illustrative baseline versus pilot"><div><span>ILLUSTRATIVE MANAGEMENT CALCULATION</span><h3>Baseline versus pilot</h3><p>Replace these assumptions with measured local data. A positive hour balance is not ROI.</p></div><label>Baseline preparation hours<input type="number" min="0" value={baselineHours} onChange={(e) => setBaselineHours(nonNegativeInput(e.target.value))} /></label><label>Pilot preparation hours<input type="number" min="0" value={pilotHours} onChange={(e) => setPilotHours(nonNegativeInput(e.target.value))} /></label><label>Additional review/correction<input type="number" min="0" value={reviewHours} onChange={(e) => setReviewHours(nonNegativeInput(e.target.value))} /></label><div className="tenderNet"><span>Net capacity signal</span><strong>{netHours} hours</strong><small>Before licences, setup, training, assurance, incidents and opportunity cost.</small></div></section>
 
     <footer><button type="button" onClick={reset}>Reset fictional case</button><button type="button" onClick={exportSession}>Export session</button><p>No uploads. No real bid, price, programme, method statement, safety or regulatory decision.</p></footer>
   </section>;
