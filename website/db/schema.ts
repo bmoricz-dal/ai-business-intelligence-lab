@@ -31,3 +31,17 @@ export const newsEditions = sqliteTable("news_editions", {
   approvedRevision: integer("approved_revision"), approvedBy: text("approved_by"), approvedAt: text("approved_at"),
   publishedJson: text("published_json"), publishedRevision: integer("published_revision"), publishedAt: text("published_at"),
 });
+
+export const newsReviewSessions = sqliteTable("news_review_sessions", {
+  sessionHash: text("session_hash").primaryKey(), expiresAt: text("expires_at").notNull(),
+}, t => [index("news_review_session_expiry").on(t.expiresAt)]);
+export const newsReviewDecisions = sqliteTable("news_review_decisions", {
+  itemId: text("item_id").primaryKey(), versionId: text("version_id").notNull(), runId: text("run_id").notNull(),
+  status: text("status").notNull(), revision: integer("revision").notNull(), note: text("note").notNull(),
+  rankingJson: text("ranking_json").notNull(), updatedAt: text("updated_at").notNull(),
+});
+export const newsReviewEvents = sqliteTable("news_review_events", {
+  eventId: integer("event_id").primaryKey({ autoIncrement: true }), itemId: text("item_id").notNull(),
+  versionId: text("version_id").notNull(), runId: text("run_id").notNull(), status: text("status").notNull(),
+  revision: integer("revision").notNull(), note: text("note").notNull(), rankingJson: text("ranking_json").notNull(), updatedAt: text("updated_at").notNull(),
+}, t => [index("news_review_event_item_revision").on(t.itemId, t.revision)]);

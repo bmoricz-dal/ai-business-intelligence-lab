@@ -1,6 +1,8 @@
 # DAL News workflow
 
-Implementation prepared on 10 September 2026. This document describes the news integration, not an already activated daily service.
+Core integration published on 10 September 2026 (commit `450c3344624cf3db910322536426853f3cdf5c11`). The first manual production collection stored 25 candidates; weekday scheduling and AI drafting remain inactive. The rollout checklist below records the original sequence, including steps now completed.
+
+The next, unreleased source-review stage is documented in [Private review and story selection](DAL_NEWS_REVIEW.md). Its separate private interface and additive migration are prepared for review; production is unchanged by that stage.
 
 ## What is built
 
@@ -88,4 +90,4 @@ Website verification covers lint, production build, generated bindings, applicat
 
 The local `/news` route returned HTTP 200 and a preview was opened. This is not a visual, mobile or keyboard audit. No browser-interaction QA was requested or claimed. The existing dependency tree reported 10 audit findings (six high, four moderate) during installation; dependency upgrades are outside this change.
 
-Production collection, secret configuration, public release, weekday scheduling and the AI drafting stage remain pending until the rollout steps are completed and recorded.
+Core production collection, original secret configuration and public release were completed on 10 September 2026. The first run is `c59b7f8c-8bd5-4b52-8907-da27ce198529`; storage succeeded, with an incomplete-coverage warning for the Cloudflare AI feed. Weekday scheduling, AI drafting and the subsequent private review deployment remain pending.
