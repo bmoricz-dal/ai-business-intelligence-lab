@@ -8,6 +8,7 @@ export function MobileSiteNav({ active }: { active: string }) {
       <summary><span>Menu</span><strong>{active}</strong></summary>
       <nav aria-label="Mobile navigation">
         <Link aria-current={active === "Overview" ? "page" : undefined} href="/">Overview</Link>
+        <Link aria-current={active === "News" ? "page" : undefined} href="/news">News</Link>
         <Link aria-current={active === "About" ? "page" : undefined} href="/about">About</Link>
         <Link aria-current={active === "AI in business" ? "page" : undefined} href="/ai-in-business">AI in business</Link>
         <Link aria-current={active === "Sectors" ? "page" : undefined} href="/sectors">Sectors</Link>
