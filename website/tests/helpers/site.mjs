@@ -6,6 +6,7 @@ export const productionOrigin = 'https://dal-data-ai-lab.moricz-labs.workers.dev
 export async function routes() {
   return (await readdir(new URL('../../app/', import.meta.url), { recursive: true }))
     .filter(path => /(^|\/)page\.tsx$/.test(path))
+    .filter(path => !path.includes('[')) // Parameterised news routes have dedicated tests.
     .map(path => '/' + path.replace(/(^|\/)page\.tsx$/, '')).sort();
 }
 export async function render(path, headers = {}, assets) {

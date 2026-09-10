@@ -1,7 +1,8 @@
 import { execFileSync } from 'node:child_process';
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { assertLiveAncestor, assertReleaseState, checkoutState, git } from './release-guard.mjs';
+import { requireNewsDatabaseId, validateNewsSecrets } from './news-release.mjs';
 
 const siteRoot = fileURLToPath(new URL('../', import.meta.url));
 const origin = 'https://dal-data-ai-lab.moricz-labs.workers.dev';
@@ -37,17 +38,27 @@ function run(command, commandArgs) {
 }
 try {
   const head = checkGit();
+  const hosting = JSON.parse(await readFile(new URL('../.openai/hosting.json', import.meta.url), 'utf8'));
+  const databaseId = hosting.d1 ? requireNewsDatabaseId(process.env.DAL_NEWS_DATABASE_ID) : null;
+  const secretsFile = process.env.DAL_NEWS_SECRETS_FILE;
+  if (secretsFile) validateNewsSecrets(JSON.parse(await readFile(secretsFile, 'utf8')));
+  const secretsArgs = secretsFile ? ['--secrets-file', secretsFile] : [];
   await checkLive(head);
   run('npm', ['run', 'verify']);
+  if (databaseId) {
+    const built = JSON.parse(await readFile(new URL('../dist/server/wrangler.json', import.meta.url), 'utf8'));
+    if (!built.d1_databases?.some(binding => binding.binding === hosting.d1 && binding.database_id === databaseId && binding.database_name === 'dal-news')) throw new Error('Built database binding differs from the verified release configuration.');
+  }
   // Build output is recreated from the checked source on every release.
   const marker = { schema: 1, commit: head, builtAt: new Date().toISOString() };
   await writeFile(new URL('../dist/client/release.json', import.meta.url), JSON.stringify(marker, null, 2) + '\n');
-  run(process.execPath, ['node_modules/wrangler/bin/wrangler.js', 'deploy', '--dry-run', '--config', 'dist/server/wrangler.json', '--name', 'dal-data-ai-lab']);
+  run(process.execPath, ['node_modules/wrangler/bin/wrangler.js', 'deploy', '--dry-run', '--config', 'dist/server/wrangler.json', '--name', 'dal-data-ai-lab', ...secretsArgs]);
   if (checkGit() !== head) throw new Error('Source changed during validation.');
   await checkLive(head);
   if (checkOnly) console.log('Release checks passed. Nothing published.');
   else {
-    run(process.execPath, ['node_modules/wrangler/bin/wrangler.js', 'deploy', '--config', 'dist/server/wrangler.json', '--name', 'dal-data-ai-lab']);
+    if (databaseId) run(process.execPath, ['node_modules/wrangler/bin/wrangler.js', 'd1', 'migrations', 'apply', hosting.d1, '--remote', '--config', 'dist/server/wrangler.json']);
+    run(process.execPath, ['node_modules/wrangler/bin/wrangler.js', 'deploy', '--config', 'dist/server/wrangler.json', '--name', 'dal-data-ai-lab', ...secretsArgs]);
     console.log(`Published validated commit ${head}. Verify the live routes and release.json after propagation.`);
   }
 } catch (error) {

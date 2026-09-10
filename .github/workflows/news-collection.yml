@@ -1,0 +1,37 @@
+name: DAL News collection
+on:
+  workflow_dispatch:
+# Enable only after the production trial and cost controls have been reviewed:
+#  schedule:
+#    - cron: '30 5 * * 1-5'
+permissions:
+  contents: read
+concurrency:
+  group: dal-news-collection
+  cancel-in-progress: false
+jobs:
+  collect:
+    if: vars.DAL_NEWS_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: news-workflow
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+      - name: Collect and store evidence
+        env:
+          NEWS_INGEST_TOKEN: ${{ secrets.DAL_NEWS_INGEST_TOKEN }}
+        run: python -m dal_news.remote
+      - name: Preserve review pack and recovery payload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dal-news-collection-${{ github.run_id }}
+          path: news-workflow/output/
+          if-no-files-found: ignore
+          retention-days: 7

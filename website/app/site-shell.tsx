@@ -5,6 +5,7 @@ import { MobileSiteNav } from "./mobile-site-nav";
 
 type NavigationLabel =
   | "Overview"
+  | "News"
   | "About"
   | "AI in business"
   | "Sectors"
@@ -27,6 +28,7 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
       </Link>
       <nav className="pageNavigation desktopNavigation" aria-label="Main navigation">
         <Link aria-current={active === "Overview" ? "page" : undefined} href="/">Overview</Link>
+        <Link aria-current={active === "News" ? "page" : undefined} href="/news">News</Link>
         <NavDropdown
           active={active === "About"}
           href="/about"
@@ -98,6 +100,7 @@ export function SiteFooter() {
       <nav aria-label="Footer navigation">
         <Link href="/">Overview</Link>
         <Link href="/about">About</Link>
+        <Link href="/news">News</Link>
         <Link href="/methods">Methods</Link>
         <a href={PUBLIC_REPOSITORY} rel="noreferrer" target="_blank">GitHub</a>
       </nav>
