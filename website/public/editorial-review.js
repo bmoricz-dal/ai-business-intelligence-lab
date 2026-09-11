@@ -21,7 +21,7 @@
   }
   function card(item, relation) {
     const article = el('article', undefined, 'candidate'); article.id = 'item-' + item.item_id;
-    const top = el('div', undefined, 'card-top'); top.append(el('p', item.source_name + ' · ' + date(item.published_at || item.effective_at), 'source'), el('span', item.score + ' / 100', 'score')); article.append(top);
+    const top = el('div', undefined, 'card-top'); top.append(el('p', item.source_name + ' · ' + (item.published_at ? 'Published ' + date(item.published_at) : 'Publication date unconfirmed'), 'source'), el('span', item.score + ' / 100', 'score')); article.append(top);
     article.append(el('h3', item.title));
     if (relation) article.append(el('p', relation, 'related-note'));
     const d = decision(item), stale = d && d.version_id !== item.version_id;
