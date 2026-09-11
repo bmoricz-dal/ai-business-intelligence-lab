@@ -19,6 +19,26 @@
     try { const u = new URL(item.canonical_url); if (!['https:', 'http:'].includes(u.protocol) || u.username || u.password) throw Error(); a.href = u.href; a.target = '_blank'; a.rel = 'noopener noreferrer'; } catch { a.removeAttribute('href'); a.textContent = 'Source link unavailable'; }
     return a;
   }
+  function researchDetails(item) {
+    const job = board.research?.jobs.find(j => j.version_id === item.version_id);
+    const section = el('details', undefined, 'method');
+    const status = job ? ({running:'Research in progress',complete:'Research draft ready',failed:'Research needs attention',cancelled:'Research from a changed selection'}[job.status] || job.status) : state(item) === 'selected' ? 'Queued for weekday research' : 'Select this story to request research';
+    section.append(el('summary', status));
+    if (!job) { section.append(el('p', 'The weekday Codex task checks selected stories at 09:00, 13:00 and 17:00 UK time. It needs your Mac and app running. Up to six research attempts are allowed per UTC day.')); return section; }
+    section.append(el('p', 'Started ' + date(job.started_at) + ' · attempt ' + job.attempt));
+    if (decision(item)?.revision !== job.decision_revision || state(item) !== 'selected') section.append(el('p', 'This research belongs to an earlier decision. Review its relevance to your current selection.', 'warning'));
+    if (job.error) section.append(el('p', job.error, 'warning'));
+    const r = job.result;
+    if (r) {
+      section.append(el('p', 'AI-assisted research — awaiting human editorial review. Citation checks do not establish that every claim is true.', 'warning'));
+      for (const [key, label] of Object.entries({summary:'Overview',facts:'Source-backed findings',interpretation:'DAL interpretation',evidence_boundary:'Evidence limits',watch_next:'What to check next'})) section.append(el('h4', label), el('p', r[key]));
+      section.append(el('h4', 'Claim checks'));
+      for (const c of r.claims || []) section.append(el('p', c.assessment.replaceAll('_', ' ') + ': ' + c.claim + (c.source_urls.length ? ' — ' + c.source_urls.join(', ') : ' — unresolved')));
+      section.append(el('h4', 'Sources')); const list = el('ul');
+      for (const s of r.sources || []) { const li=el('li'), a=sourceLink({canonical_url:s.url});a.textContent=s.title;li.append(a);list.append(li); } section.append(list);
+    } else if (job.status === 'running') section.append(el('p', 'Refresh evidence after the research task finishes.'));
+    return section;
+  }
   function card(item, relation) {
     const article = el('article', undefined, 'candidate'); article.id = 'item-' + item.item_id;
     const top = el('div', undefined, 'card-top'); top.append(el('p', item.source_name + ' · ' + (item.published_at ? 'Published ' + date(item.published_at) : 'Publication date unconfirmed'), 'source'), el('span', item.score + ' / 100', 'score')); article.append(top);
@@ -45,13 +65,14 @@
         try {
           const saved = await api('decision', { run_id: board.summary.run_id, item_id: item.item_id, version_id: item.version_id, expected_revision: d?.revision || 0, status, note: note.value });
           board.decisions = [...board.decisions.filter(v => v.item_id !== item.item_id), saved];
-          renderCandidates(); message(label + ' — saved. No analysis or publication was triggered.');
+          renderCandidates(); message(label + ' — saved.' + (status === 'selected' ? ' Eligible for the next weekday research check. Publication still needs approval.' : ' This story is not queued for new research.'));
           document.querySelector('#item-' + CSS.escape(item.item_id) + ' [data-status="' + status + '"]')?.focus();
         } catch (error) { message(error.message + ' Your note is still on this card. Copy it before refreshing.', true); }
         finally { saving = false; lock(false); }
       }); actions.append(button);
     }
     article.append(actions, el('p', d ? 'Saved ' + date(d.updated_at) + ' · revision ' + d.revision : 'No decision saved yet.', 'saved'));
+    article.append(researchDetails(item));
     const history = el('details', undefined, 'history'); history.append(el('summary', 'Decision history')); const entries = el('div'); history.append(entries);
     history.addEventListener('toggle', async () => { if (!history.open || entries.childNodes.length) return; try { const data = await api('history?item=' + encodeURIComponent(item.item_id)); entries.append(el('p', 'Most recent 20 changes.')); for (const h of data.events) entries.append(el('p', date(h.updated_at) + ' · ' + labels[h.status] + ' · revision ' + h.revision + (h.note ? ' — ' + h.note : ''))); if (!data.events.length) entries.append(el('p', 'No saved decisions.')); } catch (error) { entries.append(el('p', error.message)); } }); article.append(history);
     return article;
@@ -79,6 +100,11 @@
     try {
       const data = await api('board?run=' + encodeURIComponent($('runs').value)); if (sequence !== loading) return; board = data;
       const s = data.summary, area = $('collection'); const stats = el('div', undefined, 'stats');
+      const research = data.research, desk = $('research-status');
+      desk.replaceChildren(el('strong', 'Private research · Codex account access'));
+      desk.append(el('p', (research?.today_attempts || 0) + ' of ' + (research?.daily_limit || 6) + ' research attempts used today. No separate OpenAI API billing is configured.'));
+      if (research?.runner) desk.append(el('p', 'Last research check: ' + date(research.runner.checked_at) + ' · ' + research.runner.status.replaceAll('_', ' ')));
+      else desk.append(el('p', 'The scheduled research task has not connected yet.', 'warning'));
       for (const [label, value] of [['Collected', date(s.started_at)], ['Sources', s.source_total + ' · ' + s.source_ok + ' without warnings'], ['Candidates', s.item_total], ['Status', s.status]]) { const box = el('div'); box.append(el('span', label), el('strong', String(value))); stats.append(box); } area.append(stats);
       if (Date.now() - Date.parse(s.started_at) > 48 * 3600000) area.append(el('p', 'This collection is more than 48 hours old. Check for newer evidence before planning an edition.', 'warning'));
       const warnings = data.coverage.sources.filter(x => x.status !== 'ok');

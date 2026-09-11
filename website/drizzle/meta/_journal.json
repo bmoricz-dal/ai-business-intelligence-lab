@@ -15,6 +15,13 @@
       "when": 1789079241418,
       "tag": "0001_luxuriant_chronomancer",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1789122756758,
+      "tag": "0002_closed_red_ghost",
+      "breakpoints": true
     }
   ]
 }

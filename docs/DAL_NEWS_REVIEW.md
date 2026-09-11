@@ -1,5 +1,7 @@
 # DAL News: private source review and story selection
 
+The next integration extends this interface with weekday collection and private Codex research. See [DAL_NEWS_AUTOMATION.md](DAL_NEWS_AUTOMATION.md) for the current operating model. The section below records the original review-stage implementation.
+
 Prepared from the existing production release `450c3344624cf3db910322536426853f3cdf5c11`. This review stage is not deployed. The live collector, original nine D1 tables, public evidence endpoint, `/news` and exact-revision publication safeguards remain unchanged.
 
 ## Owner journey

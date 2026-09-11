@@ -1,9 +1,9 @@
 name: DAL News collection
 on:
   workflow_dispatch:
-# Enable only after the production trial and cost controls have been reviewed:
-#  schedule:
-#    - cron: '30 5 * * 1-5'
+  schedule:
+    # 06:30 UTC: 07:30 British Summer Time / 06:30 GMT.
+    - cron: '30 6 * * 1-5'
 permissions:
   contents: read
 concurrency:

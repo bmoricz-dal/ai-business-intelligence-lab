@@ -11,6 +11,7 @@ const moduleFor = async path => import('data:text/javascript;base64,'+Buffer.fro
 const { reviewRequest } = await moduleFor('../worker/review.ts');
 const { rankItem, rankPack } = await moduleFor('../worker/review-ranking.ts');
 const { newsRequest } = await moduleFor('../worker/news.ts');
+const { researchRequest } = await moduleFor('../worker/research.ts');
 const migrations = await Promise.all((await readdir(new URL('../drizzle/',import.meta.url))).filter(f=>f.endsWith('.sql')).sort().map(f=>readFile(new URL('../drizzle/'+f,import.meta.url),'utf8')));
 const origin='https://dal-data-ai-lab.moricz-labs.workers.dev';
 const key='review-test-only-'.repeat(4);
@@ -116,6 +117,10 @@ test('real Cloudflare D1 applies additive review migration and atomic history tr
  const e=env(database), p=pack();await database.prepare('INSERT INTO news_collection_runs VALUES (?,?,?,?,?,?)').bind('run-a','2026-09-10','2026-09-10T12:00:00Z','incomplete','fixture',JSON.stringify(p)).run();
  const c=await login(e);assert.equal((await reviewRequest(req('/api/news/review/decision',decision(),c),e)).status,200);
  assert.equal((await database.prepare('SELECT COUNT(*) AS n FROM news_review_events').first()).n,1);
+ const researchKey='research-d1-test-'.repeat(4);
+ const claim=await researchRequest(new Request(origin+'/api/news/research/claim',{method:'POST',headers:{Authorization:'Bearer '+researchKey,'Content-Type':'application/json'},body:'{}'}),{...e,NEWS_RESEARCH_TOKEN:researchKey});
+ assert.equal(claim.status,200);assert.equal((await claim.json()).job.version_id,'version-a');
+ assert.equal((await database.prepare('SELECT COUNT(*) AS n FROM news_research_jobs').first()).n,1);
  assert.equal((await database.prepare('SELECT COUNT(*) AS n FROM news_editions').first()).n,0);
  }finally{await mf.dispose()}
 });

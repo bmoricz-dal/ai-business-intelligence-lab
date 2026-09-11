@@ -1,4 +1,4 @@
-import { index, integer, primaryKey, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { index, integer, primaryKey, sqliteTable, text, uniqueIndex } from "drizzle-orm/sqlite-core";
 
 export const newsSourceState = sqliteTable("news_source_state", {
   sourceId: text("source_id").primaryKey(), lastSuccess: text("last_success").notNull(),
@@ -45,3 +45,14 @@ export const newsReviewEvents = sqliteTable("news_review_events", {
   versionId: text("version_id").notNull(), runId: text("run_id").notNull(), status: text("status").notNull(),
   revision: integer("revision").notNull(), note: text("note").notNull(), rankingJson: text("ranking_json").notNull(), updatedAt: text("updated_at").notNull(),
 }, t => [index("news_review_event_item_revision").on(t.itemId, t.revision)]);
+
+export const newsResearchJobs = sqliteTable("news_research_jobs", {
+  jobId: text("job_id").primaryKey(), itemId: text("item_id").notNull(), versionId: text("version_id").notNull(),
+  runId: text("run_id").notNull(), decisionRevision: integer("decision_revision").notNull(),
+  attempt: integer("attempt").notNull(), status: text("status").notNull(), lease: text("lease").notNull(),
+  startedAt: text("started_at").notNull(), finishedAt: text("finished_at"),
+  model: text("model").notNull(), resultJson: text("result_json"), error: text("error"),
+}, t => [uniqueIndex("news_research_version_attempt").on(t.versionId, t.attempt), index("news_research_started").on(t.startedAt)]);
+export const newsResearchRunner = sqliteTable("news_research_runner", {
+  id: integer("id").primaryKey(), status: text("status").notNull(), checkedAt: text("checked_at").notNull(), model: text("model").notNull(),
+});
