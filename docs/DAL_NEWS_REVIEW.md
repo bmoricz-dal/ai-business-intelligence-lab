@@ -42,7 +42,7 @@ Read back from production before changes: 10 September 2026, 21:57 UTC; run `c59
 | RFI questionnaire workflow | 48 | Implementation 18; capped time-saving claim 14; business workflow 10; vendor excerpt 6 |
 | AvioBook operational prototype | 44 | Implementation 12; operational-delay mechanism 12; adoption 14; vendor excerpt 6 |
 
-PII detection and Qwen deployment complete the eight-item shortlist. Seventeen candidates remain available below it. Bare Transformers/Ollama release numbers and consumer sports Search features score 0 on available evidence. The conservative grouping rules found no sufficiently close duplicates in this real pack; synthetic overlap/duplicate cases are covered by tests. Many items share a platform but concern distinct developments.
+PII detection and multimodal model-serving disaggregation complete the eight-item shortlist. Qwen deployment ties at 36 but falls just outside the eight-group cap; equal scores use stable item IDs as a reproducible tie-break, not an editorial preference. Seventeen candidates remain available below it. Bare Transformers/Ollama release numbers and consumer sports Search features score 0 on available evidence. The conservative grouping rules found no sufficiently close duplicates in this real pack; synthetic overlap/duplicate cases are covered by tests. Many items share a platform but concern distinct developments.
 
 This ranking is not a recommended publication order. For example, NVIDIA's performance claim still needs its hardware/workload conditions and independent validation; the US government offer has no demonstrated UK applicability.
 
