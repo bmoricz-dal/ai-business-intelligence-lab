@@ -128,7 +128,12 @@ def main():
         return
     pack, result = collect_remote(client, load_registry(args.registry), args.output)
     print(json.dumps({'collection': pack['run_summary'], 'upload': result}, indent=2))
-    raise SystemExit(0 if pack['run_summary']['status'] == 'complete' else 2)
+    # A stored pack with only freshness/coverage warnings is a successful delivery.
+    # Preserve its incomplete editorial status; real source failures still fail the job.
+    summary = pack['run_summary']
+    if summary['status'] != 'complete':
+        print('::warning::Evidence stored with coverage or freshness warnings; inspect the private review desk.')
+    raise SystemExit(2 if summary['source_failed'] else 0)
 
 
 if __name__ == '__main__':

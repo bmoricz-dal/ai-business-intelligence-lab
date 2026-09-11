@@ -2,11 +2,17 @@
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 import { newsRequest } from "./news";
+import { reviewRequest } from "./review";
+import { researchRequest } from "./research";
 import { withNewsDatabase } from "../db/news";
 
 const worker = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    const research = await researchRequest(request, env);
+    if (research) return research;
+    const review = await reviewRequest(request, env);
+    if (review) return review;
     const news = await newsRequest(request, env);
     if (news) return news;
     if (url.pathname === "/_vinext/image") {

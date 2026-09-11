@@ -30,4 +30,6 @@ jobs:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -v
         working-directory: news-workflow
+      - run: node --test tests/*.test.mjs
+        working-directory: news-workflow
       - run: git diff --exit-code
