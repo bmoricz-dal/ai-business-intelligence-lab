@@ -315,11 +315,11 @@ test("presents accounting AI adoption journeys with evidence boundaries", async 
 
 test("makes Overview the project homepage", async () => {
   const html = await (await render("/")).text();
-  assert.match(html, /See where SME AI adoption is real—and where the evidence stops/);
-  assert.match(html, /decision-ready intelligence on AI use/);
+  assert.match(html, /How are UK small businesses using AI\?/);
+  assert.match(html, /Explore UK research by business size and sector/);
   assert.match(html, /Turn fragmented AI evidence into decisions leaders can defend/);
   assert.match(html, /Start broad\. Go sector-deep\. Test what changes in practice/);
-  assert.match(html, /Accounting AI Experience Lab · latest release/);
+  assert.match(html, /Accounting AI Experience Lab · worked example/);
   assert.match(html, /Build the evidence base from adoption signals to measured business value/);
   assert.match(html, /Accounting research programme/);
   assert.match(html, /One accounting programme\. Four questions leaders need answered/);
@@ -328,7 +328,7 @@ test("makes Overview the project homepage", async () => {
   assert.match(html, />1<\/strong><span>cross-report synthesis/);
   assert.match(html, />4<\/strong><span>accounting programme outputs/);
   assert.match(html, />Journeys</);
-  assert.match(html, />1<\/strong><span>interactive adoption lab/);
+  assert.match(html, />2<\/strong><span>interactive adoption labs/);
 });
 
 test("keeps About and Methods transparent and independently addressable", async () => {
@@ -346,7 +346,7 @@ test("keeps About and Methods transparent and independently addressable", async 
   assert.match(about, /benedict\.moricz@gmail\.com/);
 
   const methods = await (await render("/methods")).text();
-  assert.match(methods, /Evidence is only useful when the trail remains visible/);
+  assert.match(methods, /How we select sources and interpret the figures/);
   assert.match(methods, /secondary data only/i);
   assert.match(methods, /Data and Methods Guide/);
   assert.match(methods, /Reproducibility Appendix/);
@@ -355,7 +355,7 @@ test("keeps About and Methods transparent and independently addressable", async 
 
 test("keeps the general evidence library on AI in Business", async () => {
   const html = await (await render("/ai-in-business")).text();
-  assert.match(html, /AI use is expanding faster than operational depth/);
+  assert.match(html, /How UK businesses use AI, by business size/);
   assert.match(html, /Five reports track reported use/);
   assert.match(html, /Scale remains the clearest dividing line/);
   assert.match(html, /One report per scene\. One decision signal at a time\./);
@@ -400,7 +400,7 @@ test("gives sectors and adoption pathways dedicated evidence pages", async () =>
   assert.match(sectorsSource, /<Link className="lightButton" href="\/sectors\/accounting" scroll>/);
 
   const pathways = await (await render("/adoption-pathways")).text();
-  assert.match(pathways, /AI adoption is a portfolio of operating choices—not a maturity ladder/);
+  assert.match(pathways, /Which parts of your workflow could use AI\?/);
   assert.match(pathways, /id="background"/);
   assert.match(pathways, /System integration/);
   assert.match(pathways, /Automated decision-making/);

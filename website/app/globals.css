@@ -6915,3 +6915,75 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .reportSlideField *, .synthesisOrbit::before, .synthesisOrbit::after, .cockpitGauge > i, .cockpitStatus i, .experienceStage > .experienceDemo, .captureResultList article, .insightWorkspace article, .auditTrailGrid article { animation: none !important; transition: none !important; }
 }
+
+
+/* Keep the introductory copy readable over the existing route artwork. */
+.multiPage .pageHero {
+  min-height: auto;
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+.pageHero > .pageHeroSystemLayout { display: block; }
+.pageHeroSystemCopy h1 {
+  max-width: 21ch;
+  font-size: clamp(2.35rem, 5.5vw, 5rem);
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+.pageHeroSystemCopy > p:not(.kicker) { max-width: 60ch; line-height: 1.6; }
+
+/* Shared horizon for the research, sector and simulation entrances. */
+:root {
+  --dal-midnight: #081827;
+  --dal-panel: #102b40;
+  --dal-cyan: #70e6f4;
+  --dal-rule: #30566b;
+  --dal-horizon: linear-gradient(90deg, #081827 0%, rgba(8,24,39,.95) 28%, rgba(8,24,39,.45) 100%), url("/dal-terrain.svg");
+}
+main :is(.pageHero,.accountingHero,.benefitsHero,.journeysHero,.microCaseHero,.constructionHero,.adoptionDecisionHero) {
+  background-color: var(--dal-midnight);
+  background-image: var(--dal-horizon);
+  background-repeat: no-repeat;
+  background-position: center, right bottom;
+  background-size: cover, max(65%, 38rem) auto;
+  color: #edf9ff;
+}
+main :is(.pageHero,.accountingHero,.benefitsHero,.journeysHero,.microCaseHero,.constructionHero,.adoptionDecisionHero) .kicker {
+  color: var(--dal-cyan);
+}
+main .constructionHero aside, main .tenderWorkspace {
+  background-color: var(--dal-midnight);
+  border-color: var(--dal-rule);
+}
+main .constructionHero aside span, main .tenderWorkspace > header span { color: var(--dal-cyan); }
+main .tenderWorkspace > nav button.active { color: var(--dal-cyan); background: var(--dal-panel); }
+.pageSiteHeader, .pageSiteFooter { border-color: var(--dal-rule); }
+main .overviewStatus, main .landscapeStory { border-block-start: 2px solid var(--dal-cyan); }
+@media (prefers-reduced-motion: no-preference) and (min-width: 701px) {
+  main :is(.pageHero,.constructionHero,.benefitsHero,.microCaseHero,.accountingHero,.journeysHero) {
+    animation: dal-horizon-arrives 1.8s ease-out both;
+  }
+  @keyframes dal-horizon-arrives { from { background-position: center, right -12px bottom; } to { background-position: center, right bottom; } }
+}
+@media (max-width: 700px) {
+  main :is(.pageHero,.constructionHero,.benefitsHero,.microCaseHero,.accountingHero,.journeysHero,.adoptionDecisionHero) {
+    background-size: cover, 100% auto;
+    padding-block: clamp(3rem, 12vw, 5rem);
+    min-height: auto;
+  }
+  main :is(.constructionHero,.accountingHero,.journeysHero,.benefitsHero,.microCaseHero) h1 { font-size: clamp(2.25rem, 9vw, 3.7rem); }
+}
+main :is(.constructionHero,.accountingHero,.benefitsHero,.journeysHero,.microCaseHero) .textButton {
+  color: var(--dal-cyan);
+  border-color: currentColor;
+}
+main .overviewStatus {
+  background: var(--dal-midnight);
+  color: #edf9ff;
+}
+main .overviewStatus > div { border-color: var(--dal-rule); }
+main .overviewStatus strong { color: var(--dal-cyan); }
+main .overviewStatus span { color: #bfdae4; }
+main .landscapeStoryGrid {
+  background-image: linear-gradient(90deg, transparent 97%, #65ddeb26 97%), linear-gradient(transparent 97%, #65ddeb26 97%);
+  background-size: 3rem 3rem;
+}

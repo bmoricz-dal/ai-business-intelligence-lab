@@ -16,7 +16,7 @@ export default function MethodsPage() {
         <PageHero
           kicker="Methods"
           marker="SOURCES · DENOMINATORS · UNCERTAINTY"
-          title="Evidence is only useful when the trail remains visible."
+          title="How we select sources and interpret the figures."
           introduction="DAL uses secondary data only. Every public conclusion traces to a source, population, denominator, reference period and limitation. Missing evidence remains a gap—not an invitation to estimate."
         />
 

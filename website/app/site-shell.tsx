@@ -85,7 +85,6 @@ export function SiteHeader({ active }: { active: NavigationLabel }) {
         </a>
       </nav>
       <MobileSiteNav active={active} />
-      <span className="headerSystemStatus" aria-hidden="true"><i /> EVIDENCE SYSTEM</span>
     </header>
   );
 }
@@ -129,20 +128,6 @@ export function PageHero({
           <p className="kicker light">{kicker}</p>
           <h1>{title}</h1>
           <p>{introduction}</p>
-          <div className="pageHeroBriefing" aria-label="Publication principles">
-            <span>Independent research</span>
-            <span>Open methods</span>
-            <span>Practical application</span>
-          </div>
-        </div>
-        <div className="heroSignalConsole" aria-hidden="true">
-          <div className="heroSignalTop"><span>DAL / INTELLIGENCE NODE</span><b><i /> ACTIVE</b></div>
-          <div className="heroSignalCore">
-            <span className="signalOrbit orbitOne" /><span className="signalOrbit orbitTwo" />
-            <i className="signalNode nodeA" /><i className="signalNode nodeB" /><i className="signalNode nodeC" /><i className="signalNode nodeD" />
-            <div><strong>AI</strong><small>EVIDENCE</small></div>
-          </div>
-          <div className="heroSignalReadout"><span>TRACEABLE</span><span>SECONDARY DATA</span><span>HUMAN REVIEW</span></div>
         </div>
       </div>
       <div className="pageSectionNavigatorMount" />

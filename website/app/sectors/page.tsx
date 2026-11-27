@@ -28,7 +28,7 @@ export default function SectorsPage() {
         <SignalScene
           variant="network"
           kicker="SECTOR INTELLIGENCE NETWORK"
-          title="One evidence spine. Different operating realities."
+          title="Compare accounting and construction workflows."
           description="The same national signal branches into sector-specific workflows, controls and test environments. The connection is visible; the distinctions remain intact."
           signals={[
             { label: "General evidence", value: "05 reports" },

@@ -24,7 +24,7 @@ export default function AIInBusinessPage() {
         <PageHero
           kicker="AI in business"
           marker="REPORTS 01–05 · UKBDS 2026"
-          title="AI use is expanding faster than operational depth."
+          title="How UK businesses use AI, by business size."
           introduction="Five reports track reported use, system integration, governance, use cases and adoption pathways by UK business size—without turning different denominators into a false maturity score."
         />
 

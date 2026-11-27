@@ -41,6 +41,19 @@ export function TenderWorkspace() {
     setter(list.includes(id) ? list.filter((item) => item !== id) : [...list, id]);
   }
 
+  function reviewClause(id: string) {
+    toggle(reviewed, setReviewed, id);
+    if (reviewed.includes(id)) {
+      setApproved(approved.filter(item => item !== id));
+      setResolved(resolved.filter(item => item !== id));
+    }
+  }
+
+  function approveEvidence(id: string) {
+    toggle(approved, setApproved, id);
+    if (approved.includes(id)) setResolved(resolved.filter(item => item !== id));
+  }
+
   function reset() { setStage(0); setReviewed([]); setApproved([]); setResolved([]); setBaselineHours(48); setPilotHours(32); setReviewHours(8); }
 
   function exportSession() {
@@ -52,23 +65,23 @@ export function TenderWorkspace() {
   return <section className="tenderWorkspace" id="tender-lab">
     <header><div><span>FICTIONAL BID · COMMUNITY-CENTRE REFURBISHMENT</span><h2>Northstar Build Ltd tender control room</h2><p>Deterministic synthetic workflow. Inputs stay in this browser and are not sent to DAL or an AI model.</p></div><div className="tenderStatus"><span>Completion</span><strong>{completion}%</strong><i><b style={{width: `${completion}%`}} /></i></div></header>
 
-    <nav aria-label="Tender workstations">{stages.map((label,index) => <button key={label} type="button" className={stage === index ? "active" : ""} onClick={() => setStage(index)}><span>{String(index+1).padStart(2,"0")}</span>{label}</button>)}</nav>
+    <nav aria-label="Tender workstations">{stages.map((label,index) => <button key={label} type="button" aria-current={stage === index ? "step" : undefined} className={stage === index ? "active" : ""} onClick={() => setStage(index)}><span>{String(index+1).padStart(2,"0")}</span>{label}</button>)}</nav>
 
     <div className="tenderStageIntro"><div><span>WORKSTATION {stage+1}</span><h3>{stageText[0]}</h3><p>{stageText[1]}</p></div><strong className={decision === "HOLD" ? "hold" : "ready"}>{decision}</strong></div>
 
     {stage === 0 && <div className="tenderGate"><article><span>Strategic fit</span><strong>Conditional proceed</strong><p>Public-building refurbishment matches the fictional portfolio.</p></article><article><span>Capacity</span><strong>Needs confirmation</strong><p>Mobilisation overlaps one live project.</p></article><article><span>Prohibited delegation</span><strong>Human owned</strong><p>Final price, programme, safety method and contractual commitments.</p></article></div>}
 
-    {stage === 1 && <div className="tenderRequirementList">{requirements.map((item) => <article key={item.id}><div><span>{item.id} · CLAUSE {item.clause}</span><strong>{item.title}</strong><p>{item.risk}</p></div><button type="button" aria-pressed={reviewed.includes(item.id)} onClick={() => toggle(reviewed,setReviewed,item.id)}>{reviewed.includes(item.id) ? "Reviewed ✓" : "Mark source reviewed"}</button></article>)}</div>}
+    {stage === 1 && <div className="tenderRequirementList">{requirements.map((item) => <article key={item.id}><div><span>{item.id} · CLAUSE {item.clause}</span><strong>{item.title}</strong><p>{item.risk}</p></div><button type="button" aria-pressed={reviewed.includes(item.id)} onClick={() => reviewClause(item.id)}>{reviewed.includes(item.id) ? "Reviewed ✓" : "Mark source reviewed"}</button></article>)}</div>}
 
-    {stage === 2 && <div className="tenderRequirementList">{requirements.map((item) => <article key={item.id}><div><span>{item.id} · CANDIDATE EVIDENCE</span><strong>{item.evidence}</strong><p>{item.risk}</p></div><button type="button" aria-pressed={approved.includes(item.id)} onClick={() => toggle(approved,setApproved,item.id)}>{approved.includes(item.id) ? "Approved ✓" : "Approve evidence"}</button></article>)}</div>}
+    {stage === 2 && <div className="tenderRequirementList">{requirements.map((item) => <article key={item.id}><div><span>{item.id} · CANDIDATE EVIDENCE</span><strong>{item.evidence}</strong><p>{item.risk}</p></div><button type="button" disabled={!reviewed.includes(item.id)} aria-pressed={approved.includes(item.id)} onClick={() => approveEvidence(item.id)}>{approved.includes(item.id) ? "Approved ✓" : reviewed.includes(item.id) ? "Approve evidence" : "Review clause first"}</button></article>)}</div>}
 
     {stage === 3 && <div className="tenderDraft"><article><span>SOURCE-LINKED FIRST DRAFT</span><h3>Response skeleton—not submission copy</h3><p>Northstar Build Ltd would begin by linking the client requirement to approved project evidence, then drafting only the factual structure supported by that evidence.</p><ul><li>Clause reference remains visible.</li><li>Unsupported third-project claim remains a gap.</li><li>Safety content routes to a competent reviewer.</li><li>Commitments remain unapproved until costed and owned.</li></ul></article><aside><span>Draft control</span><strong>{allReviewed && allApproved ? "Source chain assembled" : "Source chain incomplete"}</strong><p>Review and approve every requirement/evidence pair before the draft can move to challenge.</p></aside></div>}
 
-    {stage === 4 && <div className="tenderRequirementList">{requirements.map((item) => <article key={item.id}><div><span>{item.id} · CHALLENGE</span><strong>{item.risk}</strong><p>Resolve only when an accountable owner has checked the underlying assumption.</p></div><button type="button" aria-pressed={resolved.includes(item.id)} onClick={() => toggle(resolved,setResolved,item.id)}>{resolved.includes(item.id) ? "Resolved ✓" : "Resolve / assign"}</button></article>)}</div>}
+    {stage === 4 && <div className="tenderRequirementList">{requirements.map((item) => <article key={item.id}><div><span>{item.id} · CHALLENGE</span><strong>{item.risk}</strong><p>Resolve only when an accountable owner has checked the underlying assumption.</p></div><button type="button" disabled={!approved.includes(item.id)} aria-pressed={resolved.includes(item.id)} onClick={() => toggle(resolved,setResolved,item.id)}>{resolved.includes(item.id) ? "Resolved ✓" : approved.includes(item.id) ? "Mark resolved" : "Approve evidence first"}</button></article>)}</div>}
 
     {stage === 5 && <div className="tenderAssurance"><div><span>FINAL CONTROL RESULT</span><strong>{decision}</strong><p>{decision === "HOLD" ? "Return to requirements, evidence or challenge. At least one control remains incomplete." : "All simulated controls are complete. A human must still validate and authorise any real submission."}</p></div><dl><div><dt>Requirements reviewed</dt><dd>{reviewed.length}/{requirements.length}</dd></div><div><dt>Evidence approved</dt><dd>{approved.length}/{requirements.length}</dd></div><div><dt>Challenges resolved</dt><dd>{resolved.length}/{requirements.length}</dd></div></dl></div>}
 
-    <section className="tenderPlanner" aria-label="Illustrative baseline versus pilot"><div><span>ILLUSTRATIVE MANAGEMENT CALCULATION</span><h3>Baseline versus pilot</h3><p>Replace these assumptions with measured local data. A positive hour balance is not ROI.</p></div><label>Baseline preparation hours<input type="number" min="0" value={baselineHours} onChange={(e) => setBaselineHours(nonNegativeInput(e.target.value))} /></label><label>Pilot preparation hours<input type="number" min="0" value={pilotHours} onChange={(e) => setPilotHours(nonNegativeInput(e.target.value))} /></label><label>Additional review/correction<input type="number" min="0" value={reviewHours} onChange={(e) => setReviewHours(nonNegativeInput(e.target.value))} /></label><div className="tenderNet"><span>Net capacity signal</span><strong>{netHours} hours</strong><small>Before licences, setup, training, assurance, incidents and opportunity cost.</small></div></section>
+    <section className="tenderPlanner" aria-label="Illustrative baseline versus pilot"><div><span>ILLUSTRATIVE MANAGEMENT CALCULATION</span><h3>Baseline versus pilot</h3><p>Replace these assumptions with measured local data. A positive hour balance is not ROI.</p></div><label>Baseline preparation hours<input type="number" min="0" value={baselineHours} onChange={(e) => setBaselineHours(nonNegativeInput(e.target.value))} /></label><label>Pilot preparation hours<input type="number" min="0" value={pilotHours} onChange={(e) => setPilotHours(nonNegativeInput(e.target.value))} /></label><label>Additional review/correction<input type="number" min="0" value={reviewHours} onChange={(e) => setReviewHours(nonNegativeInput(e.target.value))} /></label><div className="tenderNet"><span>Hours saved after review</span><strong>{netHours} hours</strong><small>Before licences, setup, training, assurance, incidents and opportunity cost.</small></div></section>
 
     <footer><button type="button" onClick={reset}>Reset fictional case</button><button type="button" onClick={exportSession}>Export session</button><p>No uploads. No real bid, price, programme, method statement, safety or regulatory decision.</p></footer>
   </section>;
