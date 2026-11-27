@@ -6915,3 +6915,18 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .reportSlideField *, .synthesisOrbit::before, .synthesisOrbit::after, .cockpitGauge > i, .cockpitStatus i, .experienceStage > .experienceDemo, .captureResultList article, .insightWorkspace article, .auditTrailGrid article { animation: none !important; transition: none !important; }
 }
+
+
+/* Keep the introductory copy readable over the existing route artwork. */
+.multiPage .pageHero {
+  min-height: auto;
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+.pageHero > .pageHeroSystemLayout { display: block; }
+.pageHeroSystemCopy h1 {
+  max-width: 21ch;
+  font-size: clamp(2.35rem, 5.5vw, 5rem);
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+.pageHeroSystemCopy > p:not(.kicker) { max-width: 60ch; line-height: 1.6; }

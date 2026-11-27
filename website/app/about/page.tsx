@@ -16,7 +16,7 @@ export default function AboutPage() {
         <PageHero
           kicker="About"
           marker="ECONOMICS · DATA · APPLIED AI"
-          title="Independent research built for real AI adoption decisions."
+          title="About DAL Data & AI Lab"
           introduction="DAL combines economics, reproducible data work and applied AI to translate complex evidence into practical choices for SME leaders, advisers and researchers."
         />
 

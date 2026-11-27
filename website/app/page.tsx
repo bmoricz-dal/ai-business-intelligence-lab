@@ -14,15 +14,15 @@ export default function OverviewPage() {
         <PageHero
           kicker="Project overview"
           marker="UK · SME · AI · EVIDENCE"
-          title="See where SME AI adoption is real—and where the evidence stops."
-          introduction="DAL turns public UK evidence into decision-ready intelligence on AI use, integration, governance and implementation. Every signal retains its population, denominator and limitation."
+          title="How are UK small businesses using AI?"
+          introduction="Explore UK research by business size and sector, or try a fictional accounting or construction workflow. Each finding explains who was studied and what the figures can tell you."
         />
 
         <section className="overviewStatus" aria-label="Current publication status">
           <div><strong>5</strong><span>general reports</span></div>
           <div><strong>1</strong><span>cross-report synthesis</span></div>
           <div><strong>4</strong><span>accounting programme outputs</span></div>
-          <div><strong>1</strong><span>interactive adoption lab</span></div>
+          <div><strong>2</strong><span>interactive adoption labs</span></div>
         </section>
 
         <EvidenceLens />
@@ -111,7 +111,7 @@ export default function OverviewPage() {
 
         <section className="pageSection currentRelease">
           <div>
-            <p className="kicker light">Accounting AI Experience Lab · latest release</p>
+            <p className="kicker light">Accounting AI Experience Lab · worked example</p>
             <h2>Test-drive an AI-enabled accounting cycle.</h2>
             <p>
               Move one fictional client from source records to ledger review,

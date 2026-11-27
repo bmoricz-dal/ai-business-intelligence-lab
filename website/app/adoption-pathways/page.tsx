@@ -55,7 +55,7 @@ export default function AdoptionPathwaysPage() {
         <PageHero
           kicker="AI in practice"
           marker="USE · INTEGRATE · AUTOMATE · BUILD · GOVERN"
-          title="AI adoption is a portfolio of operating choices—not a maturity ladder."
+          title="Which parts of your workflow could use AI?"
           introduction="Use, integration, automation, internal build and governance can advance in different combinations. The practical question is which workflow to redesign, under what controls, and how to know whether it works."
         />
 
