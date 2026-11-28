@@ -112,11 +112,13 @@ export function PageHero({
   title,
   introduction,
   marker,
+  links,
 }: {
   kicker: string;
   title: string;
   introduction: string;
   marker: string;
+  links: ReadonlyArray<{ label: string; href: string }>;
 }) {
   return (
     <section className="pageHero">
@@ -129,6 +131,11 @@ export function PageHero({
           <h1>{title}</h1>
           <p>{introduction}</p>
         </div>
+        <nav className="researchIndex" aria-label="Explore this topic">
+          {links.map(({label, href}) => (
+            <Link href={href} key={href}>{label}<span aria-hidden="true">↗</span></Link>
+          ))}
+        </nav>
       </div>
       <div className="pageSectionNavigatorMount" />
     </section>

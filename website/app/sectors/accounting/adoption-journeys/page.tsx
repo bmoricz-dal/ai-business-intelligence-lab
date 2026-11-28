@@ -45,7 +45,7 @@ export default function AccountingAdoptionJourneysPage() {
           </div>
           <div className="journeysHeroCopy">
             <p className="kicker light">Accounting sector · implementation evidence</p>
-            <h1>AI adoption becomes real when the workflow changes.</h1>
+            <h1>How have accounting practices changed their workflows?</h1>
             <p>
               Published cases show how firms selected systems, piloted use,
               encountered setbacks, adapted controls and changed work—with
@@ -89,7 +89,7 @@ export default function AccountingAdoptionJourneysPage() {
         <section className="journeysLifecycle">
           <div className="journeysSectionIntro">
             <p className="kicker">One comparison frame</p>
-            <h2>Follow the workflow change—not the product announcement.</h2>
+            <h2>What changed during implementation?</h2>
             <p>Every case is read against the same lifecycle. Missing steps stay missing; they are not reconstructed from another firm.</p>
           </div>
           <ol className="journeySteps">
@@ -102,8 +102,8 @@ export default function AccountingAdoptionJourneysPage() {
         <section className="journeysCases" id="cases">
           <div className="journeysSectionIntro lightIntro">
             <p className="kicker light">Core accounting-practice evidence</p>
-            <h2>Three evidence bundles show where implementation succeeds—and strains.</h2>
-            <p>Evidence strength travels with each finding. A recurring mechanism does not turn a management estimate into an independently measured result.</p>
+            <h2>Three accounting cases document implementation and its constraints.</h2>
+            <p>Each finding identifies its source and evidence grade. A recurring mechanism does not turn a management estimate into an independently measured result.</p>
           </div>
 
           <article className="journeyCase featuredCase">

@@ -20,7 +20,7 @@ export default async function NewsPage() {
       <header className={styles.intro}>
         <p className={styles.eyebrow}>DAL NEWS · AI &amp; BUSINESS</p>
         <h1>What changed.<br />What it means for business.</h1>
-        <p className={styles.description}>A considered brief on AI developments, implementation and the economy. Primary evidence, practical implications and clear limits.</p>
+        <p className={styles.description}>Each edition examines an AI development, its implications for UK businesses and the evidence behind the assessment.</p>
       </header>
       <div className={styles.principles}><span>Primary sources</span><span>Human editorial review</span><span>UK business relevance</span></div>
       <section className={styles.latest} aria-labelledby="latest-title">
@@ -29,7 +29,7 @@ export default async function NewsPage() {
           : <><h2 id="latest-title">{available ? "The first brief is in preparation." : "The news desk is temporarily unavailable."}</h2><p>{available ? "Reviewed editions will appear here. Every story will distinguish the source evidence, DAL interpretation and what remains uncertain." : "Please try again later. You can continue reading DAL’s existing research below."}</p><Link href="/ai-in-business">Explore DAL’s existing AI research →</Link></>}
       </section>
       {archive.length > 0 && <section className={styles.archive} aria-labelledby="archive-title"><h2 id="archive-title">Previous editions</h2>{archive.map(item => <article key={item.date}><time dateTime={item.date}>{item.date}</time><h3><Link href={`/news/${item.date}`}>{item.title}</Link></h3><p>{item.introduction}</p></article>)}</section>}
-      <section className={styles.approach}><h2>Read the evidence. Understand the implications.</h2><p>We look for changes that affect cost, capability, adoption and risk. Vendor claims are attributed, preliminary findings are labelled, and uncertainty stays visible.</p><Link href="/methods">Our approach to evidence →</Link></section>
+      <section className={styles.approach}><h2>How DAL assesses a development</h2><p>We look for changes that affect cost, capability, adoption and risk. Vendor claims are attributed, preliminary findings are labelled, and uncertainty stays visible.</p><Link href="/methods">Our approach to evidence →</Link></section>
     </main><SiteFooter />
   </>;
 }

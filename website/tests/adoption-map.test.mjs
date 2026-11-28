@@ -21,7 +21,7 @@ test("publishes the decision map with decision-led framing and metadata", async 
   assert.match(html, /A useful AI use case starts with a measurable business problem/);
   assert.match(html, /12 common SME workflows/);
   assert.match(html, /Workflow visualisation/);
-  assert.match(html, /Watch the work change before you choose a tool/);
+  assert.match(html, /Identify the hand-off that requires human review/);
   assert.match(html, /Comparison mode/);
   assert.match(html, /Make the trade-offs visible/);
   assert.match(html, /Turn the route into a controlled pilot/);

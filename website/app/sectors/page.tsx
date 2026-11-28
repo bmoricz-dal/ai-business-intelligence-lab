@@ -15,10 +15,11 @@ export default function SectorsPage() {
       <SiteHeader active="Sectors" />
       <main className="multiPage" id="main">
         <PageHero
+          links={[{"label": "Accounting programme", "href": "#accounting"}, {"label": "Construction programme", "href": "#construction"}]}
           kicker="Sector research"
           marker="GENERAL EVIDENCE → SECTOR DEPTH"
           title="Sector context changes the AI adoption question."
-          introduction="A common evidence framework meets the workflows, regulation, data sensitivity and operating models that determine what adoption means in each sector."
+          introduction="Compare how accounting and construction firms use AI. Each study identifies the tasks involved, the evidence for benefits and the controls required."
         />
 
         <section className="systemSignalRail" aria-label="Sector intelligence pathway">
@@ -39,13 +40,13 @@ export default function SectorsPage() {
 
         <section className="pageSection sectorPrinciples">
           <div className="sectionLead">
-            <p className="kicker">Why sector depth matters</p>
-            <h2>National signals show direction. Sector evidence shows what adoption requires.</h2>
+            <p className="kicker">Why compare sectors?</p>
+            <h2>National estimates describe use. Sector studies identify the tasks and controls involved.</h2>
           </div>
           <div className="principleGrid">
             <article><span>01</span><h3>Define the business population</h3><p>Use industry classifications and size bands that match the firms the report is intended to describe.</p></article>
             <article><span>02</span><h3>Keep direct and contextual evidence separate</h3><p>A broad-sector proxy can add context but cannot become a sector-specific estimate.</p></article>
-            <article><span>03</span><h3>Reflect real work</h3><p>Use cases and controls should map to the tasks, professional duties and data handled in that sector.</p></article>
+            <article><span>03</span><h3>Define the workflow</h3><p>Use cases and controls should map to the tasks, professional duties and data handled in that sector.</p></article>
           </div>
         </section>
 

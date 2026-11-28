@@ -49,7 +49,7 @@ export default function AccountingBenefitsPage() {
           </div>
           <div className="benefitsHeroCopy">
             <p className="kicker light">Accounting sector · benefits evidence</p>
-            <h1>AI creates the clearest value inside controlled accounting workflows.</h1>
+            <h1>Where do accounting studies report operational benefits?</h1>
             <p>
               The strongest evidence sits in bookkeeping, transaction processing
               and close support—where systems combine accounting data, exception
@@ -96,7 +96,7 @@ export default function AccountingBenefitsPage() {
         <section className="benefitsVerdict" id="verdict">
           <div className="benefitsSectionIntro">
             <p className="kicker">Research verdict</p>
-            <h2>The evidence supports controlled augmentation—not autonomous accounting.</h2>
+            <h2>The strongest evidence concerns tasks with professional review.</h2>
             <p>
               Bookkeeping, transaction categorisation, reconciliation and close support
               have the clearest measurable signal. The observed system combines accounting

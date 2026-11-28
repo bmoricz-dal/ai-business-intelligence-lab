@@ -100,7 +100,7 @@ export function AdoptionDecisionMap() {
           <div>
             <p className="kicker light">Find a practical starting point</p>
             <h3>Choose where the work happens and what needs to improve.</h3>
-            <p>We will show a route to investigate—not a recommendation to buy.</p>
+            <p>Your selections identify a workflow to assess.</p>
           </div>
           <div className="adoptionDecisionGuideControls">
             <div className={styles.controlField}>
@@ -153,7 +153,7 @@ export function AdoptionDecisionMap() {
         <div className={styles.workflowHeader}>
           <div>
             <p className="kicker light">Workflow visualisation</p>
-            <h2 id="workflow-title">Watch the work change before you choose a tool.</h2>
+            <h2 id="workflow-title">Identify the hand-off that requires human review.</h2>
             <p>Every route keeps a human checkpoint visible. The moving signal is a prompt to test the hand-off—not a promise of automation.</p>
           </div>
           <div className={styles.workflowBadge}><span>{matchedRoute ? "MATCHED ROUTE" : "FEATURED ROUTE"}</span><strong>{workflowRoute.title}</strong><small>{workflowRoute.functionLabel} · {workflowRoute.complexity} complexity</small></div>
@@ -171,7 +171,7 @@ export function AdoptionDecisionMap() {
         </div>
       </section>
 
-      <section className={`pageSection adoptionRouteSection ${styles.routeTheme}`} id="routes"><LibraryScene /><div className="sectionLead"><p className="kicker light">MVP route library</p><h2>12 common SME workflows.</h2><p>Each route shows the business problem, potential role for AI, conditions for a pilot, human controls and measures of success. Select up to three routes to compare their trade-offs.</p></div><div className="adoptionRouteFilters" aria-label="Filter route cards">{([['all','All routes'],['marketing','Marketing & sales'],['service','Customer service'],['operations','Administration & operations'],['knowledge','Research & knowledge'],['reporting','Reporting & analysis']] as const).map(([value,label]) => <button key={value} type="button" aria-pressed={filter === value} onClick={() => setFilter(value)}>{label}</button>)}<span>{visibleRoutes.length} routes shown</span></div><div className="adoptionRouteGrid">{visibleRoutes.map((route) => <article className="adoptionRouteCard" data-matched={matchedRoute?.id === route.id || undefined} data-compared={compareIds.includes(route.id) || undefined} key={route.id}><div className="adoptionRouteCardTop"><span>{route.number}</span><b className={`complexity ${route.complexity.toLowerCase()}`}>{route.complexity} complexity</b></div><h3>{route.title}</h3><p>{route.problem}</p><footer><small>{route.capability}</small><div className={styles.routeActions}><button type="button" onClick={() => setSelectedRoute(route)}>Open route →</button><button type="button" className={styles.compareButton} aria-pressed={compareIds.includes(route.id)} onClick={() => toggleCompare(route)}>{compareIds.includes(route.id) ? "Compared ✓" : "Compare"}</button></div></footer></article>)}</div></section>
+      <section className={`pageSection adoptionRouteSection ${styles.routeTheme}`} id="routes"><LibraryScene /><div className="sectionLead"><p className="kicker light">Workflow library</p><h2>12 common SME workflows.</h2><p>Each route shows the business problem, potential role for AI, conditions for a pilot, human controls and measures of success. Select up to three routes to compare their trade-offs.</p></div><div className="adoptionRouteFilters" aria-label="Filter route cards">{([['all','All routes'],['marketing','Marketing & sales'],['service','Customer service'],['operations','Administration & operations'],['knowledge','Research & knowledge'],['reporting','Reporting & analysis']] as const).map(([value,label]) => <button key={value} type="button" aria-pressed={filter === value} onClick={() => setFilter(value)}>{label}</button>)}<span>{visibleRoutes.length} routes shown</span></div><div className="adoptionRouteGrid">{visibleRoutes.map((route) => <article className="adoptionRouteCard" data-matched={matchedRoute?.id === route.id || undefined} data-compared={compareIds.includes(route.id) || undefined} key={route.id}><div className="adoptionRouteCardTop"><span>{route.number}</span><b className={`complexity ${route.complexity.toLowerCase()}`}>{route.complexity} complexity</b></div><h3>{route.title}</h3><p>{route.problem}</p><footer><small>{route.capability}</small><div className={styles.routeActions}><button type="button" onClick={() => setSelectedRoute(route)}>Open route →</button><button type="button" className={styles.compareButton} aria-pressed={compareIds.includes(route.id)} onClick={() => toggleCompare(route)}>{compareIds.includes(route.id) ? "Compared ✓" : "Compare"}</button></div></footer></article>)}</div></section>
 
       <section className={`pageSection ${styles.comparisonSection}`} id="compare" aria-labelledby="compare-title">
         <ComparisonScene />

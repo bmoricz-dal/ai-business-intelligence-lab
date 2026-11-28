@@ -6987,3 +6987,58 @@ main .landscapeStoryGrid {
   background-image: linear-gradient(90deg, transparent 97%, #65ddeb26 97%), linear-gradient(transparent 97%, #65ddeb26 97%);
   background-size: 3rem 3rem;
 }
+
+/* Publication grid: align the reading path, topic index and evidence panels. */
+main .pageHero > .pageHeroSystemLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(13rem, .75fr);
+  align-items: end;
+  gap: clamp(1.5rem, 5vw, 6rem);
+}
+main .pageHeroSystemCopy h1 {
+  font-size: clamp(2.65rem, 6.1vw, 6.75rem);
+  line-height: .99;
+  letter-spacing: -.055em;
+}
+.researchIndex {
+  display: grid;
+  border: 1px solid #517487;
+  border-top: 4px solid var(--dal-cyan);
+  background: #071824ef;
+}
+.researchIndex a {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 1rem; min-height: 48px;
+  color: #e7f7ff; text-decoration: none; font-weight: 650;
+}
+.researchIndex a + a { border-top: 1px solid #365568; }
+.researchIndex a span { color: var(--dal-cyan); }
+.researchIndex a:is(:hover,:focus-visible) { background: #163c50; }
+main :is(.architectureCards,.principleGrid,.constructionDimensionGrid,.accountingDimensionGrid,.conclusionGrid,.constructionSignalCards) {
+  gap: 1px;
+  border: 1px solid #355c70;
+  background: #355c70;
+}
+main :is(.architectureCards,.principleGrid,.constructionDimensionGrid,.accountingDimensionGrid,.conclusionGrid,.constructionSignalCards) > article {
+  margin: 0; border: 0; border-radius: 0;
+  padding: clamp(1.25rem, 3vw, 3rem); background: #0c2334; box-shadow: none;
+  color: #edfaff;
+}
+main :is(.architectureCards,.principleGrid,.constructionDimensionGrid,.accountingDimensionGrid,.conclusionGrid,.constructionSignalCards) > article :is(h3,strong) { color: #f3fbff; }
+main :is(.architectureCards,.principleGrid,.constructionDimensionGrid,.accountingDimensionGrid,.conclusionGrid,.constructionSignalCards) > article :is(p,li,small) { color: #d2e2ec; }
+main :is(.architectureCards,.principleGrid,.constructionDimensionGrid,.accountingDimensionGrid,.conclusionGrid,.constructionSignalCards) > article > span { color: var(--dal-cyan); }
+main .sectionLead { border-inline-start: .32rem solid #15788e; padding-inline-start: clamp(1rem, 2.4vw, 2rem); }
+main .sectionLead h2 { font-size: clamp(2rem, 4.3vw, 4.9rem); line-height: 1.04; text-wrap: balance; }
+main :is(.cycleStageNav,.tenderWorkspace > nav) button:is([aria-pressed="true"],[aria-current="step"]) { box-shadow: inset 0 -4px var(--dal-cyan); background: #143e53; color: white; }
+@media (prefers-reduced-motion: no-preference) {
+  .researchIndex a span { transition: transform .2s ease; }
+  .researchIndex a:is(:hover,:focus-visible) span { transform: translate(2px,-2px); }
+}
+@media (max-width: 760px) {
+  main .pageHero > .pageHeroSystemLayout { grid-template-columns: minmax(0,1fr); gap: 1.25rem; }
+  .researchIndex a { min-height: 44px; padding: .65rem 1rem; }
+  main .pageHeroSystemCopy h1 { font-size: clamp(2.45rem, 9.4vw, 4.2rem); }
+}
+@media (max-width: 760px) {
+  .pageHeroGrid > span { display: none; }
+}

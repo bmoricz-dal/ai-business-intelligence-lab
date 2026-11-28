@@ -149,8 +149,8 @@ export function ReportStoryDeck() {
     <section className="reportStoryDeck" id="reports" aria-labelledby="report-story-title">
       <header className="reportStoryDeckIntro">
         <p className="kicker">Six-part evidence experience</p>
-        <h2 id="report-story-title">One report per scene. One decision signal at a time.</h2>
-        <p>Interact with the evidence, keep each denominator visible and open the complete report when you need the full method, intervals and source trail.</p>
+        <h2 id="report-story-title">Five reports and a cross-report synthesis.</h2>
+        <p>Select a report to compare its estimates. The full report provides the survey base, confidence intervals and source tables.</p>
       </header>
 
       {reportSlides.map((slide, slideIndex) => (
@@ -195,7 +195,7 @@ export function ReportStoryDeck() {
           <p>Connected view</p>
           <h3>Access is not the same as operational depth.</h3>
           <strong>AI Adoption and Operationalisation</strong>
-          <p>The synthesis connects six decision signals without pretending they form one funnel or score.</p>
+          <p>The synthesis compares six findings. Each retains its own survey base and interpretation.</p>
           <dl><div><dt>Evidence model</dt><dd>Distinct indicators retain their source population, denominator and limitation.</dd></div><div><dt>Decision use</dt><dd>Move from “Do firms use AI?” to “Where does it operate, under what control, and with what measured result?”</dd></div></dl>
           <a href="/reports/SME_Cross_Report_Synthesis_AI_Adoption_and_Operationalisation.pdf">Open the synthesis <span aria-hidden="true">↗</span></a>
         </div>

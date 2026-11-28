@@ -17,3 +17,11 @@
 .principles, .archive, .archive article, .story { border-color: var(--dal-rule); }
 .approach, .story aside { background: var(--dal-panel); border-left-color: var(--dal-cyan); }
 .page a:focus-visible { outline-color: var(--dal-cyan); }
+@media (min-width: 900px) {
+  .page { display: grid; grid-template-columns: minmax(0,3fr) minmax(13rem,1fr); gap: 0 3rem; }
+  .page > * { grid-column: 1/-1; }
+  .page > .intro { grid-column: 1; }
+  .page > .principles { grid-column: 2; align-self: end; display: grid; gap: 0; border: 1px solid var(--dal-rule); border-top: 4px solid var(--dal-cyan); padding: 0; }
+  .principles span { padding: 1rem; border-bottom: 1px solid var(--dal-rule); }
+}
+.latest, .archive, .story { border-top: 3px solid var(--dal-cyan); }

@@ -14,10 +14,11 @@ export default function MethodsPage() {
       <SiteHeader active="Methods" />
       <main className="multiPage" id="main">
         <PageHero
+          links={[{"label": "Interpret the estimates", "href": "#interpretation"}, {"label": "Inspect the sources", "href": "#sources"}, {"label": "Download the methodology", "href": "#downloads"}]}
           kicker="Methods"
           marker="SOURCES · DENOMINATORS · UNCERTAINTY"
           title="How we select sources and interpret the figures."
-          introduction="DAL uses secondary data only. Every public conclusion traces to a source, population, denominator, reference period and limitation. Missing evidence remains a gap—not an invitation to estimate."
+          introduction="DAL uses secondary data only. For each conclusion, DAL records the source, population, denominator and period. Where coverage is incomplete, the report identifies the gap."
         />
 
         <section className="systemSignalRail" aria-label="Evidence production pipeline">
@@ -36,8 +37,8 @@ export default function MethodsPage() {
           ]}
         />
 
-        <section className="pageSection methodPrinciples">
-          <div className="sectionLead"><p className="kicker">Core controls</p><h2>Six rules keep the conclusions inside the evidence.</h2></div>
+        <section className="pageSection methodPrinciples" id="interpretation">
+          <div className="sectionLead"><p className="kicker">Core controls</p><h2>Six rules govern how DAL interprets findings.</h2></div>
           <div className="principleGrid methodControlGrid">
             <article><span>01</span><h3>Different denominators stay separate</h3><p>All-business estimates are not combined with estimates conditional on already using AI.</p></article>
             <article><span>02</span><h3>Descriptive, not causal</h3><p>Reported patterns do not prove that business size or AI adoption causes a performance outcome.</p></article>
@@ -48,8 +49,8 @@ export default function MethodsPage() {
           </div>
         </section>
 
-        <section className="pageSection evidenceStack">
-          <div className="sectionLead"><p className="kicker">Evidence stack</p><h2>Each source has a defined job.</h2></div>
+        <section className="pageSection evidenceStack" id="sources">
+          <div className="sectionLead"><p className="kicker">Evidence stack</p><h2>Which questions can each source answer?</h2></div>
           <div className="evidenceStackRows">
             <article><span>Official statistics</span><h3>Population and comparable survey estimates</h3><p>ONS and DSIT evidence provides business frames, published definitions, confidence intervals and structured comparisons.</p></article>
             <article><span>Sector research</span><h3>Direct workflows, tools and professional context</h3><p>Accounting-specific studies contribute directional evidence where their samples and limitations are disclosed.</p></article>
@@ -69,7 +70,7 @@ export default function MethodsPage() {
           creditHref="https://commons.wikimedia.org/wiki/File:Felixstowe_Beach_aerial_image_-_Suffolk_UK_coast_(14871964066).jpg"
         />
 
-        <section className="pageSection methodDownloadsPage">
+        <section className="pageSection methodDownloadsPage" id="downloads">
           <div><p className="kicker light">Documentation</p><h2>Audit the method. Reproduce the evidence.</h2><p>The public repository exposes the governed analytical layer behind the reports.</p></div>
           <div className="methodDownloadCards">
             <a href={METHODS_GUIDE} rel="noreferrer" target="_blank"><span>Plain-language guide</span><strong>Data and Methods Guide</strong></a>

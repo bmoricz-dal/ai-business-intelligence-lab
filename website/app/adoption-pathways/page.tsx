@@ -53,10 +53,11 @@ export default function AdoptionPathwaysPage() {
       <SiteHeader active="AI in practice" />
       <main className="multiPage" id="main">
         <PageHero
+          links={[{"label": "Compare operating choices", "href": "#background"}, {"label": "Assess workflow controls", "href": "#operating-approaches"}, {"label": "Open the Decision Map", "href": "/ai-business-adoption-map"}]}
           kicker="AI in practice"
           marker="USE · INTEGRATE · AUTOMATE · BUILD · GOVERN"
           title="Which parts of your workflow could use AI?"
-          introduction="Use, integration, automation, internal build and governance can advance in different combinations. The practical question is which workflow to redesign, under what controls, and how to know whether it works."
+          introduction="A firm can use a tool, integrate it into existing systems or automate a task. Choose a workflow, assign responsibility for review and define how to measure the result."
         />
 
         <section className="systemSignalRail" aria-label="AI adoption pathway signals">
@@ -100,7 +101,7 @@ export default function AdoptionPathwaysPage() {
         <section className="pageSection pathwayEvidence">
           <div className="sectionLead">
             <p className="kicker">Published estimates</p>
-            <h2>Use is broad. Deeper operationalisation remains selective.</h2>
+            <h2>Reported use exceeds integration into business systems.</h2>
             <p>The first three rows describe businesses already using AI. Development or training describes all businesses.</p>
           </div>
           <div className="tableWrap pathwayPageTable">
@@ -160,7 +161,7 @@ export default function AdoptionPathwaysPage() {
         </section>
 
         <section className="pageSection pathwayActions">
-          <div className="sectionLead"><p className="kicker">Next decision</p><h2>Move from the operating model to the evidence and test drive.</h2></div>
+          <div className="sectionLead"><p className="kicker">Next decision</p><h2>Apply the framework to a sector case.</h2></div>
           <div className="actionLinkGrid">
             <a href="/ai-in-business"><span>General evidence</span><strong>See all five reports</strong></a>
             <a href="/sectors/accounting"><span>Sector application</span><strong>Accounting AI readiness</strong></a>

@@ -12,6 +12,7 @@ export default function OverviewPage() {
       <SiteHeader active="Overview" />
       <main className="multiPage overviewPage" id="main">
         <PageHero
+          links={[{"label": "Compare firms by size", "href": "/ai-in-business"}, {"label": "Explore sector findings", "href": "/sectors"}, {"label": "Test a workflow", "href": "/adoption-pathways"}]}
           kicker="Project overview"
           marker="UK · SME · AI · EVIDENCE"
           title="How are UK small businesses using AI?"
@@ -39,13 +40,13 @@ export default function OverviewPage() {
           <div className="systemVisualTelemetry" aria-hidden="true">
             <span>DOCUMENTS</span><i /><span>LEDGER</span><i /><span>REVIEW</span><i /><span>INSIGHT</span>
           </div>
-          <div className="systemVisualCaption"><span>ACCOUNTING SYSTEM / 01</span><strong>Human judgement stays inside the AI-enabled workflow.</strong></div>
+          <div className="systemVisualCaption"><span>ACCOUNTING SYSTEM / 01</span><strong>Accountants review exceptions before posting.</strong></div>
         </section>
 
         <section className="pageSection purposeSection">
           <div className="sectionLead">
             <p className="kicker">Purpose</p>
-            <h2>Turn fragmented AI evidence into decisions leaders can defend.</h2>
+            <h2>What can an SME conclude from the national figures?</h2>
           </div>
           <div className="purposeCopy">
             <p>
@@ -75,8 +76,8 @@ export default function OverviewPage() {
         <section className="pageSection evidenceArchitecture">
           <div className="sectionLead">
             <p className="kicker">Research model</p>
-            <h2>Start broad. Go sector-deep. Test what changes in practice.</h2>
-            <p>The programme moves from comparable national signals to sector workflows, implementation evidence and controlled demonstrations.</p>
+            <h2>Compare national findings, then test a sector workflow.</h2>
+            <p>The national reports compare businesses by size. The sector studies examine individual workflows. The labs let readers test the controls those workflows require.</p>
           </div>
           <div className="architectureCards">
             <article>
@@ -112,7 +113,7 @@ export default function OverviewPage() {
         <section className="pageSection currentRelease">
           <div>
             <p className="kicker light">Accounting AI Experience Lab · worked example</p>
-            <h2>Test-drive an AI-enabled accounting cycle.</h2>
+            <h2>Review a fictional client’s monthly accounts.</h2>
             <p>
               Move one fictional client from source records to ledger review,
               reconciliation, close and insight. Compare operating methods and see

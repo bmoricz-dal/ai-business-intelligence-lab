@@ -152,7 +152,7 @@ export function ExperienceWorkspace() {
       <div className="experienceStage" data-active-stage={active}>
         {active === "capture" ? (
           <div className="experienceDemo">
-            <header><div><span>Workstation 01 · Bookkeeping</span><h3>Capture and check source records</h3><p>Open a small synthetic source pack, extract key fields and surface missing evidence before anything reaches the ledger.</p></div><b>{captureRun ? "4 records traced" : "Source pack ready"}</b></header>
+            <header><div><span>Workstation 01 · Bookkeeping</span><h3>Capture and check source records</h3><p>Extract the required fields from the fictional source records. Flag missing evidence before posting.</p></div><b>{captureRun ? "4 records traced" : "Source pack ready"}</b></header>
             <div className="captureWorkspace">
               <div className="sourcePack"><span>Fictional source pack</span>{sourceDocuments.map((item) => <article key={item.id}><b>{item.id}</b><strong>{item.type}</strong><small>{item.counterparty} · {item.amount}</small></article>)}</div>
               <div className="captureResult" aria-live="polite"><span>AI-enabled capture</span>{captureRun ? <div className="captureResultList">{sourceDocuments.map((item) => <article key={item.id}><div><strong>{item.id}</strong><small>{item.counterparty} · {item.amount}</small></div><b className={item.evidence === "Missing" ? "needsReview" : undefined}>{item.evidence}</b><small>{item.flag}</small></article>)}</div> : <p>Run document capture to extract the fixed fields, retain each source ID and identify the record that cannot proceed without review.</p>}</div>

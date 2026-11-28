@@ -47,7 +47,7 @@ export default function AccountingMicroCaseStudyPage() {
               <a className="textButton accountingTextButton" href="#adoption-planner">Plan your adoption</a>
             </div>
           </div>
-          <aside><span>Interactive test drive</span><strong>See what adoption changes—and what it should not</strong><p>One synthetic practice, one fictional client and six connected accounting workstations.</p></aside>
+          <aside><span>Interactive test drive</span><strong>Which decisions remain with the accountant?</strong><p>One synthetic practice, one fictional client and six connected accounting workstations.</p></aside>
           <div className="pageSectionNavigatorMount" />
         </section>
 
@@ -61,7 +61,7 @@ export default function AccountingMicroCaseStudyPage() {
         <ExperienceWorkspace />
 
         <section className="microCaseProfile">
-          <div className="sectionLead"><p className="kicker">The fictional firm</p><h2>Cedar Ledger Ltd: specific enough to test, fictional by design.</h2><p>The practice profile makes each operating decision visible. Any adopter should replace its assumptions with a measured local baseline.</p></div>
+          <div className="sectionLead"><p className="kicker">The fictional firm</p><h2>Cedar Ledger Ltd: practice profile</h2><p>The practice profile makes each operating decision visible. Any adopter should replace its assumptions with a measured local baseline.</p></div>
           <div className="microProfileGrid">
             <article><span>People</span><strong>7 payroll employees</strong><p>Owner-director, senior accountant, three accountants/bookkeepers, payroll specialist and administrator.</p></article>
             <article><span>Clients</span><strong>180 illustrative clients</strong><p>A scenario input—not a UK accounting-practice average.</p></article>
