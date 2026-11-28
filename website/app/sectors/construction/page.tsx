@@ -41,7 +41,7 @@ export default function ConstructionSectorPage() {
       </section>
 
       <section className="constructionEvidence" id="evidence">
-        <div className="sectionLead"><p className="kicker">Evidence-led answer</p><h2>Construction combines large SME reach with a measurable readiness gap.</h2><p>The official survey can isolate construction, but not construction SMEs by size. Each estimate therefore keeps its denominator, uncertainty and transfer boundary.</p></div>
+        <div className="sectionLead"><p className="kicker">Evidence-led answer</p><h2>How widespread is AI use in construction?</h2><p>The official survey reports a construction estimate across business sizes. It does not isolate construction SMEs. Each estimate therefore keeps its denominator, uncertainty and transfer boundary.</p></div>
         <div className="constructionDimensionGrid">{dimensions.map(([number,title,text,note]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p><small>{note}</small></article>)}</div>
       </section>
 

@@ -128,8 +128,8 @@ export function EvidenceLens() {
     <section className="evidenceLens" aria-labelledby="evidence-lens-title">
       <div className="evidenceLensIntro">
         <span>EXECUTIVE EVIDENCE LENS</span>
-        <h2 id="evidence-lens-title">Read the signal, implication and boundary together.</h2>
-        <p>Each view uses the same research base. The distinction is what turns evidence into a defensible decision brief.</p>
+        <h2 id="evidence-lens-title">What does the finding support?</h2>
+        <p>Read the estimate alongside its business implication and the limits of the source.</p>
       </div>
       <div className="evidenceLensWorkspace">
         <div className="evidenceLensTabs" role="tablist" aria-label="Evidence views">

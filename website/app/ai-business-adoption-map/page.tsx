@@ -39,7 +39,7 @@ export default function AIAdoptionDecisionMapPage() {
           <FuturisticWorldMap />
           <p className="kicker light">Project 1 · decision support and learning tool</p>
           <h1>Start with the work. Then decide where AI fits.</h1>
-          <p className="heroIntroduction">Choose a common SME workflow, see where AI may help, and check the data, people, controls and measures needed for a safe pilot.</p>
+          <p className="heroIntroduction">Select a workflow. Assess its data requirements, review controls and success measures before authorising a pilot.</p>
           <div className="adoptionDecisionMeta"><span>12 SME workflows</span><span>Value · feasibility · risk</span><span>Evidence boundaries shown</span><span>Reviewed 09 Aug 2026</span></div>
           <div className={`heroSignalConsole ${styles.adoptionHeroConsole}`} aria-hidden="true">
             <div className="heroSignalTop"><span>DAL / INTELLIGENCE NODE</span><b><i /> ACTIVE</b></div>

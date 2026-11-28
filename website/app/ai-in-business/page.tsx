@@ -22,10 +22,11 @@ export default function AIInBusinessPage() {
       <SiteHeader active="AI in business" />
       <main className="multiPage" id="main">
         <PageHero
+          links={[{"label": "Compare survey estimates", "href": "#snapshot"}, {"label": "Open the report library", "href": "#report-library"}]}
           kicker="AI in business"
           marker="REPORTS 01–05 · UKBDS 2026"
           title="How UK businesses use AI, by business size."
-          introduction="Five reports track reported use, system integration, governance, use cases and adoption pathways by UK business size—without turning different denominators into a false maturity score."
+          introduction="Five reports track reported use, integration and governance by business size. Each chart identifies its survey population so readers can compare like with like."
         />
 
         <section className="systemSignalRail metricRail" aria-label="General evidence signal path">
@@ -62,13 +63,13 @@ export default function AIInBusinessPage() {
           </div>
           <div className="cinematicCopy">
             <span>FROM ADOPTION TO OPERATION</span>
-            <h2 id="cinematic-ai-title">The evidence changes the question.</h2>
-            <p>Not only whether a firm uses AI, but where it enters the workflow, who reviews it, what changes, and how value is measured.</p>
+            <h2 id="cinematic-ai-title">Where does AI enter the workflow?</h2>
+            <p>Identify the task, the accountable reviewer and the measure of performance before assessing the benefit.</p>
           </div>
           <div className="cinematicTelemetry" aria-hidden="true"><span>USE</span><i /><span>WORKFLOW</span><i /><span>CONTROL</span><i /><span>VALUE</span></div>
         </section>
 
-        <ReportStoryDeck />
+        <div id="report-library"><ReportStoryDeck /></div>
 
         <section className="pageSection evidenceBoundaryPage">
           <div className="sectionLead"><p className="kicker">Evidence boundary</p><h2>What these reports can—and cannot—show.</h2></div>

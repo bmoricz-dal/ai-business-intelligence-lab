@@ -226,7 +226,7 @@ test("provides a connected accounting-cycle test drive and secondary adoption pl
   assert.match(html, />Review</);
   assert.match(html, /Accounting cycle control room/);
   assert.match(html, /Workflow mechanics/);
-  assert.match(html, /Plan how your firm would test adoption/);
+  assert.match(html, /Define the scope and measures for a pilot/);
   assert.match(html, /Do not enter client data/);
   assert.match(html, /Baseline versus pilot/);
   assert.match(html, /Six gates/);
@@ -277,10 +277,10 @@ test("publishes the accounting benefits and system-fit evidence review", async (
   const response = await render("/sectors/accounting/benefits");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /AI creates the clearest value inside controlled accounting workflows/);
+  assert.match(html, /Where do accounting studies report operational benefits\?/);
   assert.match(html, /7\.5–7\.9/);
   assert.match(html, /not a UK accounting-SME benchmark/i);
-  assert.match(html, /controlled augmentation/i);
+  assert.match(html, /tasks with professional review/i);
   assert.match(html, /Higher average accuracy does not remove error risk/);
   assert.match(html, /75%/);
   assert.match(html, /77%/);
@@ -295,7 +295,7 @@ test("presents accounting AI adoption journeys with evidence boundaries", async 
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Accounting AI Adoption Journeys/);
-  assert.match(html, /Follow the workflow change—not the product announcement/);
+  assert.match(html, /What changed during implementation\?/);
   assert.match(html, /Integrated AI bookkeeping platform/);
   assert.match(html, /Love Your Accountants/);
   assert.match(html, /Audit-firm implementation pattern/);
@@ -317,8 +317,8 @@ test("makes Overview the project homepage", async () => {
   const html = await (await render("/")).text();
   assert.match(html, /How are UK small businesses using AI\?/);
   assert.match(html, /Explore UK research by business size and sector/);
-  assert.match(html, /Turn fragmented AI evidence into decisions leaders can defend/);
-  assert.match(html, /Start broad\. Go sector-deep\. Test what changes in practice/);
+  assert.match(html, /What can an SME conclude from the national figures\?/);
+  assert.match(html, /Compare national findings, then test a sector workflow/);
   assert.match(html, /Accounting AI Experience Lab · worked example/);
   assert.match(html, /Build the evidence base from adoption signals to measured business value/);
   assert.match(html, /Accounting research programme/);
@@ -335,7 +335,7 @@ test("keeps About and Methods transparent and independently addressable", async 
   const about = await (await render("/about")).text();
   assert.match(about, /Research profile/);
   assert.match(about, /MSc with Merit in International Business Economics/);
-  assert.match(about, /Five values\. One standard: make every insight worth discovering\./);
+  assert.match(about, /How DAL conducts its research\./);
   assert.match(about, />Truth</);
   assert.match(about, />Clarity</);
   assert.match(about, />Craft</);
@@ -358,7 +358,7 @@ test("keeps the general evidence library on AI in Business", async () => {
   assert.match(html, /How UK businesses use AI, by business size/);
   assert.match(html, /Five reports track reported use/);
   assert.match(html, /Scale remains the clearest dividing line/);
-  assert.match(html, /One report per scene\. One decision signal at a time\./);
+  assert.match(html, /Five reports and a cross-report synthesis\./);
   assert.match(html, /Tool use does not mean system integration/);
   assert.match(html, /Guidance remains uneven/);
   assert.match(html, /Research is the leading listed use case at every size/);

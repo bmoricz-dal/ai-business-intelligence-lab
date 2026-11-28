@@ -113,7 +113,7 @@ export default function AccountingSectorPage() {
         <section className="accountingLead" id="evidence">
           <div className="sectionIntro">
             <p className="kicker">Evidence-led answer</p>
-            <h2>Adoption is material—but there is no single defensible sector rate.</h2>
+            <h2>Surveys document adoption across practices. Their populations differ.</h2>
             <p>
               No official open source isolates both accounting and SME size. The
               evidence is therefore triangulated and each percentage keeps its own

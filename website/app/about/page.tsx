@@ -14,10 +14,11 @@ export default function AboutPage() {
       <SiteHeader active="About" />
       <main className="multiPage" id="main">
         <PageHero
+          links={[{"label": "Research profile", "href": "#background"}, {"label": "Research standards", "href": "#values"}, {"label": "Contact DAL", "href": "#contact"}]}
           kicker="About"
           marker="ECONOMICS · DATA · APPLIED AI"
           title="About DAL Data & AI Lab"
-          introduction="DAL combines economics, reproducible data work and applied AI to translate complex evidence into practical choices for SME leaders, advisers and researchers."
+          introduction="DAL examines AI adoption in UK businesses. It publishes the data, methods and limitations behind its findings so readers can assess each conclusion."
         />
 
         <section className="systemSignalRail" aria-label="Research capability system">
@@ -58,7 +59,7 @@ export default function AboutPage() {
           <div className="cityAerialRoutes" aria-hidden="true"><i /><i /><i /><b /><b /><b /></div>
           <div className="cityAerialCopy">
             <span>UK BUSINESS LANDSCAPE</span>
-            <h2 id="city-aerial-title">One economy. Thousands of operating contexts.</h2>
+            <h2 id="city-aerial-title">Business size and sector shape the comparison.</h2>
             <p>DAL keeps the national signal in view, then moves closer—to business size, sector, workflow and the decisions an individual SME can actually control.</p>
           </div>
           <a className="cityAerialCredit" href="https://commons.wikimedia.org/wiki/File:Aerial_view_of_London_city.jpg" rel="noreferrer" target="_blank">London aerial: GillyBerlin / CC BY 2.0</a>
@@ -86,18 +87,18 @@ export default function AboutPage() {
         </section>
 
         <section className="pageSection valuesSection" id="values">
-          <div className="sectionLead"><p className="kicker">Foundational values</p><h2>Five values. One standard: make every insight worth discovering.</h2></div>
+          <div className="sectionLead"><p className="kicker">Foundational values</p><h2>How DAL conducts its research.</h2></div>
           <div className="valueCards">
-            <article><span>01</span><h3>Truth</h3><p>Follow the evidence far enough to earn trust—and stop where it stops.</p></article>
-            <article><span>02</span><h3>Clarity</h3><p>Make complexity feel navigable without stripping away its meaning.</p></article>
-            <article><span>03</span><h3>Craft</h3><p>Treat every source, sentence and interaction as part of the standard.</p></article>
-            <article><span>04</span><h3>Agency</h3><p>Give SME leaders the confidence to make the next decision themselves.</p></article>
-            <article><span>05</span><h3>Progress</h3><p>Build each insight into a foundation for what comes next.</p></article>
+            <article><span>01</span><h3>Truth</h3><p>Trace each finding to a named source and disclose its limits.</p></article>
+            <article><span>02</span><h3>Clarity</h3><p>Explain the measure, its population and its relevance.</p></article>
+            <article><span>03</span><h3>Craft</h3><p>Check calculations, wording and source links before publication.</p></article>
+            <article><span>04</span><h3>Agency</h3><p>Give readers the assumptions they need to assess a finding.</p></article>
+            <article><span>05</span><h3>Progress</h3><p>Revise findings when stronger evidence becomes available.</p></article>
           </div>
         </section>
 
         <section className="pageSection contactSection" id="contact">
-          <div><p className="kicker light">Contact</p><h2>Continue the conversation.</h2><p>Research, methodology and future sector-study enquiries are welcome.</p></div>
+          <div><p className="kicker light">Contact</p><h2>Research enquiries</h2><p>Research, methodology and future sector-study enquiries are welcome.</p></div>
           <div className="contactCards">
             <a href="mailto:benedict.moricz@gmail.com"><span>Email</span><strong>benedict.moricz@gmail.com</strong></a>
             <a href={PUBLIC_REPOSITORY} rel="noreferrer" target="_blank"><span>GitHub</span><strong>Public evidence repository</strong></a>
