@@ -6937,14 +6937,14 @@ body {
   --dal-panel: #102b40;
   --dal-cyan: #70e6f4;
   --dal-rule: #30566b;
-  --dal-horizon: linear-gradient(90deg, #081827 0%, rgba(8,24,39,.95) 28%, rgba(8,24,39,.45) 100%), url("/dal-terrain.svg");
+  --dal-horizon: linear-gradient(90deg, #081827 0%, rgba(8,24,39,.95) 28%, rgba(8,24,39,.12) 100%), url("/dal-streamfield.svg");
 }
 main :is(.pageHero,.accountingHero,.benefitsHero,.journeysHero,.microCaseHero,.constructionHero,.adoptionDecisionHero) {
   background-color: var(--dal-midnight);
   background-image: var(--dal-horizon);
   background-repeat: no-repeat;
   background-position: center, right bottom;
-  background-size: cover, max(65%, 38rem) auto;
+  background-size: cover, max(87%, 42rem) auto;
   color: #edf9ff;
 }
 main :is(.pageHero,.accountingHero,.benefitsHero,.journeysHero,.microCaseHero,.constructionHero,.adoptionDecisionHero) .kicker {
@@ -7041,4 +7041,39 @@ main :is(.cycleStageNav,.tenderWorkspace > nav) button:is([aria-pressed="true"],
 }
 @media (max-width: 760px) {
   .pageHeroGrid > span { display: none; }
+}
+
+/* Put the signal behind controls; the underlying colour carries the contrast. */
+main :is(.experienceCockpit,.tenderWorkspace > header,.reportSlideField,.researchIndex) {
+  background-image: linear-gradient(100deg, #081827 5%, #081827bb 62%, #08182738), var(--dal-trace-art, url("/dal-traces.svg"));
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover, auto 100%;
+}
+main .landscapeStoryCopy { animation: none; opacity: 1; transform: none; }
+@media (prefers-reduced-motion: no-preference) {
+  main .landscapeStory > img {
+    animation: none;
+    transform: scale(1.035);
+    transition: transform .85s cubic-bezier(.2,.7,.2,1);
+  }
+  .reportSlideField > i, .reportSlideField > span, .cockpitStatus i { animation-iteration-count: 1; }
+  .tenderStageIntro { transition: box-shadow .24s ease-out; }
+  .tenderWorkspace:focus-within .tenderStageIntro { box-shadow: inset 2px 0 var(--dal-cyan); }
+  .tenderWorkspace > nav button, .cycleStageNav button { transition: background-color .18s, box-shadow .18s; }
+}
+@media (prefers-reduced-motion: no-preference) and (hover:hover) and (pointer:fine) {
+  main .landscapeStory:hover > img { transform: scale(1.055) translateY(-.5%); }
+  .researchIndex a:hover { box-shadow: inset 3px 0 var(--dal-cyan); }
+}
+@media (max-width:700px),(prefers-reduced-motion:reduce) {
+  main .landscapeStory > img, main .landscapeStoryGrid > i,
+  main .landscapePulse, main .reportSlideField > *, main .cockpitStatus i {
+    animation: none !important;
+    transition: none;
+  }
+}
+
+@media (max-width: 700px), (prefers-reduced-motion: reduce) {
+  :root { --dal-trace-art: url("/dal-traces-static.svg"); }
 }

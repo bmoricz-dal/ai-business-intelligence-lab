@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 180" fill="none">
+<defs><path id="a" d="M-20 142h96l49-49h92l46-46h108l28-28h221"/><path id="b" d="M-20 158h108l46-46h96l45-45h112l27-27h206"/></defs>
+<g stroke="#4bbbd8" opacity=".42"><use href="#a"/><use href="#b"/><path d="M0 176h96l44-44h99l45-45h109l29-29h178"/></g>
+<g fill="#9df6ff"><circle cx="217" cy="93" r="2.2"/><circle cx="371" cy="47" r="3"/><circle cx="414" cy="40" r="2"/></g>
+<style>@media(prefers-reduced-motion:no-preference){.packet{animation:travel 3.6s ease-out 1 both}@keyframes travel{from{stroke-dashoffset:250}to{stroke-dashoffset:0}}}</style>
+<use class="packet" href="#a" stroke="#a9ffff" stroke-width="2" stroke-dasharray="22 242"/>
+</svg>
